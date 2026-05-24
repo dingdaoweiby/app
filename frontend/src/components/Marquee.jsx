@@ -1,8 +1,8 @@
 const schools = [
-    "Harvard", "Yale", "Princeton", "Columbia", "Penn", "Cornell",
-    "Brown", "Dartmouth", "Stanford", "MIT", "Caltech", "Duke",
+    "Harvard", "Yale", "Princeton", "Columbia", "University of Pennsylvania",
+    "Cornell", "Brown", "Dartmouth", "Stanford", "MIT", "Caltech", "Duke",
     "Northwestern", "Johns Hopkins", "Williams", "Phillips Exeter",
-    "Deerfield", "Harvard-Westlake", "Groton", "The Lawrenceville School",
+    "Deerfield Academy", "Harvard-Westlake", "Groton School", "Lawrenceville",
 ];
 
 export default function Marquee() {
@@ -10,24 +10,23 @@ export default function Marquee() {
         <section
             data-testid="marquee"
             className="rule-bottom no-scrollbar"
-            style={{ background: "var(--alabaster)", overflow: "hidden" }}
+            style={{ background: "var(--mist)", overflow: "hidden" }}
         >
-            <div className="py-6 overflow-hidden">
+            <div className="py-5 overflow-hidden">
                 <div className="marquee-track">
                     {[...schools, ...schools].map((s, i) => (
                         <span
                             key={i}
-                            className="font-serif"
+                            className="font-display"
                             style={{
-                                fontSize: 22,
-                                fontStyle: "italic",
-                                color: "var(--ink)",
-                                opacity: 0.85,
-                                letterSpacing: "-0.01em",
+                                fontSize: 20,
+                                color: "var(--navy)",
+                                fontWeight: 500,
+                                letterSpacing: "-0.005em",
                             }}
                         >
                             {s}
-                            <span style={{ color: "var(--crimson)", margin: "0 28px", fontStyle: "normal" }}>·</span>
+                            <span style={{ color: "var(--orange)", margin: "0 26px", fontWeight: 700 }}>·</span>
                         </span>
                     ))}
                 </div>

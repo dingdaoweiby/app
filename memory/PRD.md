@@ -1,47 +1,61 @@
-# Supernova Education — Homepage Redesign Demo
+# Supernova Education — Homepage Style Demo (v2 · Collegiate)
 
-## Original Problem Statement (verbatim, Chinese)
-> https://www.supernova-seed.com/ 这个是我的网站，但是现在的排版啊，页面啊，字体呀，颜色搭配呀，设计感都太差了。我希望的是，因为它是一个教育网站嘛，嗯希望的是面向家长啊，然后学生能够更清晰一些，然后看上去呢更加，嗯学院风，嗯然后更艺术一些。
+## Original Problem Statement (verbatim)
+> 这个是我的网站，但是现在的排版啊，页面啊，字体呀，颜色搭配呀，设计感都太差了。
+> 我希望的是更加学院风，然后更艺术一些……让家长学生看着很安心、专业的感觉。
 
-User asked to start with **homepage only** as a style/font/tone lock-down demo before redesigning the full site.
+## v1 Feedback (User, in Chinese)
+- v1 太女性化 / 太艺术 — reject the literary-magazine ivory + Cormorant direction
+- Want classic collegiate (Princeton / Yale / Columbia brand-book), masculine, reassuring
+- **English only** (Chinese site will be a separate locale with language toggle)
+- Palette inspired by University of Florida (orange + navy) + Columbia (white + light blue)
+- Drop the warm ivory background
 
-## Architecture
-- Frontend: React (CRA + Tailwind) — pure presentational, no backend calls
-- Single page: `/app/frontend/src/pages/Home.jsx`
-- Components: Nav, Hero, StatsStrip, Marquee, TrackRecord, Pillars, StudentStories, Manifesto, ClosingCTA, Footer
-
-## Design System (locked)
-- **Archetype:** Old-Money Academic / Editorial Luxury
-- **Typography:** Cormorant Garamond (EN headings + body) · Noto Serif SC (Chinese) · Chivo (small caps / utility)
+## v2 Design System (locked candidate)
+- **Archetype:** Classic Collegiate Brand Book — Princeton / Yale / Columbia prospectus
+- **Typography:**
+  - Display: **Playfair Display** (500–700) — substantial, confident serif headlines
+  - Body: **Source Serif 4** — modern academic serif
+  - Utility / Labels / Numbers: **IBM Plex Mono** — institutional, archival catalogue feel
 - **Palette:**
-  - Paper `#F9F8F6`
-  - Alabaster `#F2EFE9`
-  - Ink (Oxford Navy) `#1A1B26`
-  - Graphite `#5C5F6A`
-  - Academic Crimson `#8A1538`
-  - Warm Ash hairline `#D8D1C7`
-- **Layout:** asymmetric editorial grid, hairline borders, generous whitespace, left-aligned, drop caps, subtle paper grain overlay, bilingual EN+中文 treated as a design feature.
+  - Paper (background) `#FFFFFF`
+  - Bone (cards / closing CTA) `#F5F7FA`
+  - Columbia Mist (marquee strip) `#EEF3F8`
+  - **Navy** (primary) `#0A2342`
+  - Navy Deep `#061634`
+  - Steel (secondary text) `#4A5A75`
+  - **Burnt Orange** (UF accent) `#C75B12` — used SPARINGLY for labels, numbers, accents
+  - Hairline `#D7DCE3`
+- **Conventions:**
+  - Section markers: `§ I · Track Record`, `§ II · Approach` — archival numbering
+  - Stat labels: `Figure 01`, `Figure 02` — annual-report style
+  - Image captions: `Plate I — The Reading Room · № 001` — book-plate style
+  - Pillars: Roman numerals **I · II · III** in burnt orange
+  - Mini shield crest next to the logo
+- **Rhythm:** Alternating white / navy / white / navy sections for institutional weight
 
-## What's been implemented (Jan 2026)
-- [x] Sticky editorial nav with crimson accent
-- [x] Hero with bilingual headline + ink-wash plate
-- [x] 4-up stats strip with newspaper hairline dividers
-- [x] Infinite school-name marquee (alabaster strip)
-- [x] Ivy League Class of 2026 honor roll (numbered, 2-col layout with B&W library plate)
-- [x] "Three things we believe" pillars (01/02/03 in crimson italic)
-- [x] Student Stories — featured + 3 side cards, magazine-style
-- [x] Dark Manifesto block with gothic arch image + cinematic overlay
-- [x] Closing CTA + editorial footer with contact info, WeChat, Livingston NJ
+## What's in the Demo (single homepage)
+1. Sticky nav with shield crest · EN/中文 language toggle stub
+2. Hero — massive navy serif headline + Plate I academic photo
+3. Navy stats strip — 4 figures with orange labels
+4. Columbia-mist school marquee
+5. The Ivy League Class of 2026 — numbered honor roll
+6. Navy "Three Convictions" pillars block (I · II · III)
+7. Student Stories — featured (drop cap, Columbia ED) + 3 side cards
+8. Manifesto block — dark navy with subtle background
+9. Closing CTA on bone surface
+10. Navy footer with full contact + language toggle
 
 ## Backlog (after style approval)
-- P0 — Build remaining pages: Approach, Track Record (full), Methodology, Student Stories (detail), Contact (form)
-- P1 — Animated scroll reveals (Framer Motion / GSAP)
-- P1 — i18n proper language toggle (currently both languages always visible)
-- P2 — CMS layer so the team can edit student outcomes each season
-- P2 — SEO meta, OG images, structured data (LocalBusiness + EducationalOrganization)
-- P2 — Newsletter subscribe / parent resources blog
+- P0 — Build out the remaining pages: Approach, full Track Record, Methodology, Student Stories index/detail, Contact form
+- P0 — Bring the 中文 site online with proper i18n routing
+- P1 — Replace Unsplash images with **commissioned campus / archival photography** for authenticity
+- P1 — Replace placeholder shield with a custom **Supernova crest** (subtle wordmark / Latin motto)
+- P1 — Scroll-reveal motion and smoother section transitions
+- P2 — CMS so admissions team can update outcomes each cycle
+- P2 — SEO meta, OG, structured data (EducationalOrganization)
 
 ## Next Actions
-1. Get user feedback on style/font/tone of the demo homepage
-2. Iterate on direction (color tweak, font swap, etc.) if requested
-3. Once locked → build out remaining site pages
+1. Confirm v2 style direction (palette / typography / section rhythm)
+2. Iterate: too dark? too sparse? want a softer light-blue accent zone? More serif weight?
+3. Once locked → expand to multi-page site + 中文 locale

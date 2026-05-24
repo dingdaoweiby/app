@@ -1,8 +1,8 @@
 const stats = [
-    { num: "70%", label: "Placement in Top 25", zh: "进入 Top 25" },
-    { num: "95%", label: "Admitted to Reach School", zh: "至少一所冲刺校录取" },
-    { num: "100%", label: "Overall Acceptance Rate", zh: "至少一所录取" },
-    { num: "3 : 1", label: "Student-to-Specialist Ratio", zh: "申请年师生比例" },
+    { num: "70%", label: "Placement in Top 25" },
+    { num: "95%", label: "Admitted to Reach School" },
+    { num: "100%", label: "Overall Acceptance Rate" },
+    { num: "3 : 1", label: "Student-to-Specialist Ratio" },
 ];
 
 export default function StatsStrip() {
@@ -10,7 +10,7 @@ export default function StatsStrip() {
         <section
             data-testid="stats-strip"
             className="rule-top rule-bottom"
-            style={{ background: "var(--paper)" }}
+            style={{ background: "var(--navy)" }}
         >
             <div className="section-x">
                 <div className="grid grid-cols-2 lg:grid-cols-4">
@@ -18,30 +18,32 @@ export default function StatsStrip() {
                         <div
                             key={s.label}
                             data-testid={`stat-${i}`}
-                            className={`py-12 lg:py-16 px-2 lg:px-8 ${i < stats.length - 1 ? "lg:rule-right" : ""} ${i % 2 === 0 ? "rule-right lg:rule-right" : ""} ${i < 2 ? "rule-bottom lg:border-b-0" : ""}`}
+                            className={`py-14 lg:py-20 px-4 lg:px-8`}
+                            style={{
+                                borderRight: i < stats.length - 1 ? "1px solid rgba(255,255,255,0.14)" : "none",
+                                borderBottom: i < 2 ? "1px solid rgba(255,255,255,0.14)" : "none",
+                            }}
                         >
+                            <p className="font-mono mb-6" style={{ fontSize: 10, letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--orange)" }}>
+                                Figure 0{i + 1}
+                            </p>
                             <div
-                                className="font-serif"
+                                className="font-display tabular"
                                 style={{
-                                    fontSize: "clamp(48px, 5.6vw, 84px)",
-                                    lineHeight: 1,
-                                    fontWeight: 400,
+                                    fontSize: "clamp(52px, 5.8vw, 90px)",
+                                    lineHeight: 0.95,
+                                    fontWeight: 500,
                                     letterSpacing: "-0.02em",
-                                    color: "var(--ink)",
+                                    color: "#fff",
                                 }}
                             >
                                 {s.num}
                             </div>
-                            <div className="mt-5 flex items-start gap-3">
-                                <span style={{ display: "inline-block", width: 22, height: 1, background: "var(--crimson)", marginTop: 8 }} />
-                                <div>
-                                    <p className="font-mono" style={{ fontSize: 11, letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--ink)" }}>
-                                        {s.label}
-                                    </p>
-                                    <p className="font-sc mt-1" style={{ fontSize: 13, color: "var(--graphite)" }}>
-                                        {s.zh}
-                                    </p>
-                                </div>
+                            <div className="mt-6 flex items-start gap-3">
+                                <span style={{ display: "inline-block", width: 22, height: 1, background: "var(--orange)", marginTop: 8 }} />
+                                <p className="font-mono" style={{ fontSize: 11, letterSpacing: "0.2em", textTransform: "uppercase", color: "rgba(255,255,255,0.82)", fontWeight: 400 }}>
+                                    {s.label}
+                                </p>
                             </div>
                         </div>
                     ))}

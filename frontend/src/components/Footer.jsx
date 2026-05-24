@@ -1,74 +1,69 @@
 export default function Footer() {
     return (
-        <footer data-testid="footer" className="section-x" style={{ paddingTop: 56, paddingBottom: 48, background: "var(--paper)" }}>
-            <div className="grid grid-cols-12 gap-x-8 gap-y-10">
-                <div className="col-span-12 md:col-span-4">
-                    <p
-                        className="font-serif italic"
-                        style={{ fontSize: 24, color: "var(--ink)", letterSpacing: "-0.01em" }}
-                    >
-                        Supernova<span style={{ color: "var(--crimson)" }}>.</span> Education
-                    </p>
-                    <p className="font-sc mt-3" style={{ fontSize: 14, color: "var(--graphite)", lineHeight: 1.8 }}>
-                        清晰带来结果——从认知探索到大学录取。
-                    </p>
-                    <p className="font-serif italic mt-1" style={{ fontSize: 14, color: "var(--graphite)" }}>
-                        Clarity into outcomes — from discovery to acceptance.
-                    </p>
+        <footer data-testid="footer" style={{ background: "var(--navy)", color: "#fff" }}>
+            <div className="section-x" style={{ paddingTop: 80, paddingBottom: 48 }}>
+                <div className="grid grid-cols-12 gap-x-10 gap-y-12">
+                    <div className="col-span-12 md:col-span-5">
+                        <div className="flex items-center gap-3 mb-5">
+                            <svg width="28" height="34" viewBox="0 0 26 32" aria-hidden="true">
+                                <path d="M1 1 H25 V21 L13 31 L1 21 Z" fill="none" stroke="#fff" strokeWidth="1.5" />
+                                <path d="M13 7 V25 M7 13 H19" stroke="var(--orange)" strokeWidth="1.5" />
+                            </svg>
+                            <p className="font-display" style={{ fontSize: 24, color: "#fff", fontWeight: 600, letterSpacing: "-0.01em" }}>
+                                Supernova Education
+                            </p>
+                        </div>
+                        <p className="font-serif" style={{ fontSize: 17, color: "rgba(255,255,255,0.78)", lineHeight: 1.55, fontStyle: "italic", maxWidth: 380 }}>
+                            Clarity into outcomes — from discovery to college acceptance.
+                        </p>
+                    </div>
+
+                    <div className="col-span-6 md:col-span-2">
+                        <p className="font-mono" style={{ fontSize: 11, letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--orange)", fontWeight: 500 }}>Studio</p>
+                        <p className="font-serif mt-4" style={{ fontSize: 16, color: "#fff", lineHeight: 1.65 }}>
+                            Livingston<br />New Jersey 07039<br />
+                            <span style={{ color: "rgba(255,255,255,0.62)", fontSize: 14 }}>In-person & online</span>
+                        </p>
+                    </div>
+
+                    <div className="col-span-6 md:col-span-3">
+                        <p className="font-mono" style={{ fontSize: 11, letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--orange)", fontWeight: 500 }}>Contact</p>
+                        <ul className="mt-4 space-y-2 font-serif" style={{ fontSize: 16, color: "#fff" }}>
+                            <li>
+                                <a href="mailto:info@supernovaedu.com" className="link-underline" data-testid="footer-email">
+                                    info@supernovaedu.com
+                                </a>
+                            </li>
+                            <li>
+                                <a href="tel:+19087583488" className="link-underline tabular" data-testid="footer-phone">
+                                    +1 (908) 758 · 3488
+                                </a>
+                            </li>
+                            <li style={{ color: "rgba(255,255,255,0.78)" }}>
+                                WeChat <span style={{ color: "var(--orange)", marginLeft: 6 }}>supernova-seed</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div className="col-span-12 md:col-span-2 md:text-right">
+                        <p className="font-mono" style={{ fontSize: 11, letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--orange)", fontWeight: 500 }}>Hours</p>
+                        <p className="font-serif mt-4" style={{ fontSize: 16, color: "#fff" }}>
+                            Mon — Sat<br />
+                            <span style={{ color: "rgba(255,255,255,0.62)" }}>By appointment</span>
+                        </p>
+                    </div>
                 </div>
 
-                <div className="col-span-6 md:col-span-3">
-                    <p className="eyebrow">Studio</p>
-                    <p className="font-serif mt-3" style={{ fontSize: 17, color: "var(--ink)", lineHeight: 1.6 }}>
-                        Livingston, New Jersey
-                        <br />
-                        <span className="font-sc" style={{ color: "var(--graphite)", fontSize: 14 }}>
-                            新泽西 · 利文斯顿
-                        </span>
-                        <br />
-                        <span style={{ color: "var(--graphite)", fontSize: 14 }}>
-                            In-person & online
-                        </span>
+                <div className="mt-16 pt-6 flex flex-wrap items-center justify-between gap-4" style={{ borderTop: "1px solid rgba(255,255,255,0.18)" }}>
+                    <p className="font-mono" style={{ fontSize: 11, letterSpacing: "0.2em", textTransform: "uppercase", color: "rgba(255,255,255,0.55)" }}>
+                        © {new Date().getFullYear()} Supernova Education · All Rights Reserved
                     </p>
+                    <div className="flex items-center gap-6">
+                        <a href="#" className="link-underline font-mono" style={{ fontSize: 11, letterSpacing: "0.2em", textTransform: "uppercase", color: "rgba(255,255,255,0.7)" }}>Privacy</a>
+                        <a href="#" className="link-underline font-mono" style={{ fontSize: 11, letterSpacing: "0.2em", textTransform: "uppercase", color: "rgba(255,255,255,0.7)" }}>Terms</a>
+                        <a href="#" className="link-underline font-mono" style={{ fontSize: 11, letterSpacing: "0.2em", textTransform: "uppercase", color: "rgba(255,255,255,0.7)" }}>中文</a>
+                    </div>
                 </div>
-
-                <div className="col-span-6 md:col-span-3">
-                    <p className="eyebrow">Contact</p>
-                    <ul className="mt-3 space-y-2" style={{ fontSize: 15, color: "var(--ink)" }}>
-                        <li>
-                            <a href="mailto:info@supernovaedu.com" className="link-underline font-serif" data-testid="footer-email">
-                                info@supernovaedu.com
-                            </a>
-                        </li>
-                        <li>
-                            <a href="tel:+19087583488" className="link-underline font-serif" data-testid="footer-phone">
-                                908 · 758 · 3488
-                            </a>
-                        </li>
-                        <li className="font-serif">
-                            WeChat ·{" "}
-                            <span style={{ fontStyle: "italic", color: "var(--crimson)" }}>supernova-seed</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <div className="col-span-12 md:col-span-2 md:text-right">
-                    <p className="eyebrow">Hours</p>
-                    <p className="font-serif mt-3" style={{ fontSize: 15, color: "var(--ink)" }}>
-                        Mon — Sat
-                        <br />
-                        <span style={{ color: "var(--graphite)" }}>By appointment</span>
-                    </p>
-                </div>
-            </div>
-
-            <div className="rule-top mt-14 pt-6 flex flex-wrap items-center justify-between gap-4">
-                <p className="font-mono" style={{ fontSize: 11, letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--graphite)" }}>
-                    © {new Date().getFullYear()} Supernova Education · All Rights Reserved
-                </p>
-                <p className="font-serif italic" style={{ fontSize: 14, color: "var(--graphite)" }}>
-                    Designed as an editorial — read slowly.
-                </p>
             </div>
         </footer>
     );

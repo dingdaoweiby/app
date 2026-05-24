@@ -1,10 +1,10 @@
-const FEATURE_IMG = "https://images.pexels.com/photos/1454360/pexels-photo-1454360.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940";
+const FEATURE_IMG = "https://images.unsplash.com/photo-1592280771190-3e2e4d571952?w=1200&q=85&auto=format&fit=crop";
 
 const stories = [
     {
         school: "Columbia University",
         tag: "Ivy League · ED",
-        body: "A high-achieving NJ student with a 1560 SAT and strong APs — but an activity list indistinguishable from hundreds of other applicants. We repositioned her narrative around a two-year community health project she had dismissed as ‘just volunteering.’ Her Common App essay connected that fieldwork to her pre-med ambitions in a way no other applicant from her school could replicate.",
+        body: "A high-achieving NJ student with a 1560 SAT and strong APs — but an activity list indistinguishable from hundreds of other applicants. We repositioned her narrative around a two-year community health project she had dismissed as 'just volunteering.' Her Common App essay connected that fieldwork to her pre-med ambitions in a way no other applicant from her school could replicate.",
         outcome: "Admitted Early Decision.",
         featured: true,
     },
@@ -35,29 +35,30 @@ export default function StudentStories() {
             id="stories"
             className="section-x section-y"
         >
-            <div className="grid grid-cols-12 gap-x-8 mb-16">
+            <div className="grid grid-cols-12 gap-x-10 mb-14">
                 <div className="col-span-12 lg:col-span-8">
-                    <p className="eyebrow">Student Stories · 学生故事</p>
+                    <p className="eyebrow">§ III · Student Stories</p>
                     <h2
-                        className="font-serif mt-5"
+                        className="font-display mt-5"
                         style={{
                             fontSize: "clamp(40px, 4.8vw, 68px)",
                             lineHeight: 1,
                             letterSpacing: "-0.02em",
-                            fontWeight: 400,
-                            color: "var(--ink)",
+                            fontWeight: 500,
+                            color: "var(--navy)",
                         }}
                     >
-                        How students <em style={{ fontStyle: "italic", color: "var(--crimson)" }}>found</em>
-                        <br />their path.
+                        How students found their path.
                     </h2>
-                    <p className="font-sc mt-5" style={{ fontSize: 17, color: "var(--graphite)" }}>
-                        学生如何找到自己的道路——四个真实的申请故事。
+                </div>
+                <div className="col-span-12 lg:col-span-4 flex items-end">
+                    <p className="font-serif mt-6 lg:mt-0" style={{ fontSize: 17, color: "var(--steel)", lineHeight: 1.55 }}>
+                        Four representative cases drawn from this season's cohort. Names withheld; outcomes verified.
                     </p>
                 </div>
             </div>
 
-            <div className="grid grid-cols-12 gap-8 rule-top pt-12">
+            <div className="grid grid-cols-12 gap-10 rule-top pt-12" style={{ borderTopWidth: 2, borderTopColor: "var(--navy)" }}>
                 {/* Featured */}
                 <article
                     data-testid="story-featured"
@@ -66,38 +67,38 @@ export default function StudentStories() {
                     <div className="img-bordered overflow-hidden order-2 lg:order-1" style={{ aspectRatio: "4/5" }}>
                         <img
                             src={FEATURE_IMG}
-                            alt="Student at desk"
+                            alt="Student writing at a campus desk"
                             className="w-full h-full object-cover"
-                            style={{ filter: "grayscale(45%) contrast(1.05)" }}
+                            style={{ filter: "grayscale(60%) contrast(1.05)" }}
                         />
                     </div>
                     <div className="order-1 lg:order-2">
-                        <p className="font-mono" style={{ fontSize: 11, letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--crimson)" }}>
+                        <p className="font-mono" style={{ fontSize: 11, letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--orange)", fontWeight: 500 }}>
                             {stories[0].tag}
                         </p>
                         <h3
-                            className="font-serif mt-3"
+                            className="font-display mt-3"
                             style={{
                                 fontSize: "clamp(28px, 2.6vw, 38px)",
                                 lineHeight: 1.05,
-                                color: "var(--ink)",
+                                color: "var(--navy)",
                                 fontWeight: 500,
                                 letterSpacing: "-0.01em",
                             }}
                         >
                             {stories[0].school}
                         </h3>
-                        <div className="my-6" style={{ width: 36, height: 1, background: "var(--ash)" }} />
-                        <p className="font-serif dropcap" style={{ fontSize: 18, lineHeight: 1.6, color: "var(--ink)" }}>
+                        <div className="my-6" style={{ width: 36, height: 2, background: "var(--orange)" }} />
+                        <p className="font-serif dropcap" style={{ fontSize: 17, lineHeight: 1.6, color: "var(--ink)" }}>
                             {stories[0].body}
                         </p>
                         <p
-                            className="font-serif mt-5"
+                            className="font-display mt-5"
                             style={{
-                                fontSize: 20,
-                                fontStyle: "italic",
-                                color: "var(--crimson)",
-                                fontWeight: 500,
+                                fontSize: 19,
+                                color: "var(--navy)",
+                                fontWeight: 600,
+                                letterSpacing: "-0.005em",
                             }}
                         >
                             {stories[0].outcome}
@@ -115,24 +116,25 @@ export default function StudentStories() {
                         >
                             <div className="flex items-baseline justify-between gap-4">
                                 <h3
-                                    className="font-serif"
+                                    className="font-display"
                                     style={{
                                         fontSize: "clamp(22px, 1.7vw, 26px)",
                                         lineHeight: 1.1,
-                                        color: "var(--ink)",
+                                        color: "var(--navy)",
                                         fontWeight: 500,
+                                        letterSpacing: "-0.01em",
                                     }}
                                 >
                                     {s.school}
                                 </h3>
-                                <span className="font-mono whitespace-nowrap" style={{ fontSize: 10, letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--crimson)" }}>
+                                <span className="font-mono whitespace-nowrap" style={{ fontSize: 10, letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--orange)", fontWeight: 500 }}>
                                     {s.tag}
                                 </span>
                             </div>
                             <p className="font-serif mt-3" style={{ fontSize: 16, lineHeight: 1.55, color: "var(--ink)" }}>
                                 {s.body}
                             </p>
-                            <p className="font-serif italic mt-3" style={{ fontSize: 16, color: "var(--crimson)" }}>
+                            <p className="font-display mt-3" style={{ fontSize: 16, color: "var(--navy)", fontWeight: 600 }}>
                                 {s.outcome}
                             </p>
                         </article>

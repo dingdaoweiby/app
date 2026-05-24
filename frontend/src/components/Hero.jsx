@@ -1,108 +1,103 @@
-const HERO_IMG = "https://static.prod-images.emergentagent.com/jobs/718a1430-805c-4227-88dc-2b6915a64a52/images/0eaa009623dbe16cf50f1e1b30efe8254b82f444b2d9e8d8d17e2c20d4ed06f9.png";
+const HERO_IMG = "https://images.unsplash.com/photo-1607237138185-eedd9c632b0b?w=1600&q=85&auto=format&fit=crop";
 
 export default function Hero() {
     return (
-        <section data-testid="hero" id="top" className="section-x relative" style={{ paddingTop: "clamp(60px, 9vw, 120px)", paddingBottom: "clamp(80px, 10vw, 140px)" }}>
-            {/* Eyebrow */}
-            <div className="rise flex items-center gap-4 mb-12">
+        <section data-testid="hero" id="top" className="section-x relative" style={{ paddingTop: "clamp(56px, 8vw, 110px)", paddingBottom: "clamp(72px, 10vw, 140px)" }}>
+            {/* Eyebrow with locator */}
+            <div className="rise flex flex-wrap items-center gap-4 mb-14">
                 <span className="eyebrow">Est. Livingston · New Jersey</span>
-                <span className="block" style={{ width: 56, height: 1, background: "var(--ash)" }} />
-                <span className="eyebrow" style={{ color: "var(--crimson)" }}>A Practice in Admissions</span>
+                <span style={{ width: 56, height: 1, background: "var(--line-strong)" }} />
+                <span className="eyebrow" style={{ color: "var(--orange)" }}>A Practice in Admissions Counsel</span>
             </div>
 
-            <div className="grid grid-cols-12 gap-x-8 gap-y-12">
-                {/* Headline column */}
+            <div className="grid grid-cols-12 gap-x-10 gap-y-14">
                 <div className="col-span-12 lg:col-span-8">
                     <h1
                         data-testid="hero-headline"
-                        className="rise delay-1 font-serif"
+                        className="rise delay-1 font-display"
                         style={{
-                            fontSize: "clamp(46px, 7.6vw, 116px)",
-                            lineHeight: 0.94,
+                            fontSize: "clamp(48px, 7.4vw, 112px)",
+                            lineHeight: 0.96,
                             letterSpacing: "-0.025em",
-                            fontWeight: 400,
-                            color: "var(--ink)",
+                            fontWeight: 500,
+                            color: "var(--navy)",
                         }}
                     >
-                        Growth Mindset.
-                        <br />
-                        <em style={{ fontStyle: "italic", color: "var(--crimson)", fontWeight: 500 }}>Clear Goals.</em>
-                        <br />
+                        Growth Mindset.<br />
+                        Clear Goals.<br />
                         Consistent Effort.
                     </h1>
 
-                    <h2
-                        className="rise delay-2 font-sc mt-8"
+                    <p
+                        className="rise delay-2 font-mono mt-10"
                         style={{
-                            fontSize: "clamp(22px, 2.6vw, 34px)",
-                            lineHeight: 1.35,
-                            fontWeight: 400,
-                            color: "var(--graphite)",
-                            letterSpacing: "0.04em",
+                            fontSize: 12,
+                            letterSpacing: "0.22em",
+                            textTransform: "uppercase",
+                            color: "var(--orange)",
+                            fontWeight: 500,
                         }}
                     >
-                        成长思维 · 清晰目标 · 持续努力
-                    </h2>
+                        K–12 · Ivy League · Top 15 Admissions
+                    </p>
                 </div>
 
-                {/* Image column */}
                 <div className="col-span-12 lg:col-span-4 rise delay-3">
                     <div className="img-bordered overflow-hidden" style={{ aspectRatio: "4/5" }}>
                         <img
                             src={HERO_IMG}
-                            alt="Ink wash editorial mark"
+                            alt="Collegiate gothic library archway"
                             className="w-full h-full object-cover"
-                            style={{ display: "block" }}
+                            style={{ display: "block", filter: "grayscale(85%) contrast(1.06)" }}
                         />
                     </div>
-                    <p className="eyebrow mt-3" style={{ color: "var(--graphite)" }}>
-                        Plate I — A Quiet Discipline
-                    </p>
+                    <div className="mt-4 flex items-center justify-between">
+                        <p className="eyebrow">Plate I — The Reading Room</p>
+                        <p className="font-mono" style={{ fontSize: 10, color: "var(--steel)", letterSpacing: "0.18em" }}>№ 001</p>
+                    </div>
                 </div>
             </div>
 
             {/* Body + CTA */}
-            <div className="grid grid-cols-12 gap-x-8 mt-16 rise delay-4">
-                <div className="col-span-12 lg:col-span-7 lg:col-start-1">
+            <div className="grid grid-cols-12 gap-x-10 mt-20 rise delay-4 rule-top pt-14">
+                <div className="col-span-12 lg:col-span-7">
                     <p
                         className="font-serif"
                         style={{
-                            fontSize: "clamp(18px, 1.45vw, 22px)",
-                            lineHeight: 1.6,
+                            fontSize: "clamp(19px, 1.5vw, 24px)",
+                            lineHeight: 1.55,
                             color: "var(--ink)",
-                            maxWidth: 680,
+                            maxWidth: 720,
+                            fontWeight: 400,
                         }}
                     >
                         Through personalized guidance and genuine understanding, we help students build
-                        meaningful academic and extracurricular profiles, tell their authentic stories,
-                        and navigate admissions with clarity and confidence — from <em>K–9 private school</em> to
-                        the <em>Ivy League</em> and <em>Top 15</em> colleges.
-                    </p>
-                    <p
-                        className="font-sc mt-5"
-                        style={{
-                            fontSize: 17,
-                            lineHeight: 1.85,
-                            color: "var(--graphite)",
-                            maxWidth: 640,
-                        }}
-                    >
-                        通过个性化指导与真诚的理解，我们帮助学生建立扎实的学术与课外履历，讲述真实可信的故事，并以清晰与自信走过申请全程——从 K–9 私立学校到常春藤与全美前 15 所大学。
+                        meaningful academic and extracurricular profiles, tell their authentic stories, and
+                        navigate admissions with clarity and confidence — from K–9 private school to the
+                        Ivy League and Top 15 colleges.
                     </p>
 
-                    <div className="mt-10 flex flex-wrap items-center gap-6">
+                    <div className="mt-12 flex flex-wrap items-center gap-8">
                         <a href="#contact" data-testid="hero-cta-primary" className="btn-primary">
                             Schedule a Conversation
-                            <span style={{ fontFamily: "serif", marginLeft: 4 }}>→</span>
+                            <span style={{ fontFamily: "serif", marginLeft: 6 }}>→</span>
                         </a>
-                        <div>
-                            <p className="font-mono" style={{ fontSize: 11, letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--graphite)" }}>
-                                预约诊断式对话
-                            </p>
-                            <p className="font-serif italic mt-1" style={{ fontSize: 15, color: "var(--ink)" }}>
-                                No sales pitch — only a clearer picture of your child.
-                            </p>
-                        </div>
+                        <p className="font-mono" style={{ fontSize: 12, color: "var(--steel)", lineHeight: 1.6, letterSpacing: "0.04em" }}>
+                            No sales pitch. A diagnostic conversation —<br />
+                            you leave with a clearer picture of your child.
+                        </p>
+                    </div>
+                </div>
+
+                <div className="col-span-12 lg:col-span-4 lg:col-start-9 mt-10 lg:mt-0">
+                    <div className="rule-left pl-6" style={{ borderLeftWidth: 2, borderLeftColor: "var(--orange)" }}>
+                        <p className="eyebrow" style={{ color: "var(--navy)" }}>Trusted Approach</p>
+                        <p className="font-serif mt-3" style={{ fontSize: 17, lineHeight: 1.55, color: "var(--ink)", fontStyle: "italic" }}>
+                            “Real coaching, not consulting. We work with twenty to thirty families a year — and we know each of them by name.”
+                        </p>
+                        <p className="font-mono mt-4" style={{ fontSize: 11, color: "var(--steel)", letterSpacing: "0.18em", textTransform: "uppercase" }}>
+                            — Founding Principal
+                        </p>
                     </div>
                 </div>
             </div>
