@@ -3,19 +3,20 @@
 @tailwind utilities;
 
 :root {
-    /* Collegiate Palette — Columbia Navy + UF Orange */
+    /* Collegiate Palette — Columbia Navy + UF Orange (v3 brighter) */
     --paper: #ffffff;          /* Crisp white */
-    --bone:  #f5f7fa;          /* Cool off-white card surface */
-    --mist:  #eef3f8;          /* Columbia mist — pale blue tint */
-    --navy:  #0a2342;          /* Deep collegiate navy (primary) */
-    --navy-deep: #061634;      /* Darker shade for hover/depth */
-    --steel: #4a5a75;          /* Muted secondary text */
+    --bone:  #f6f8fb;          /* Cool off-white card surface */
+    --mist:  #eaf1f7;          /* Columbia mist — pale blue tint (hero / accents) */
+    --mist-deep: #d8e4ef;
+    --navy:  #163e72;          /* Brighter collegiate navy (primary) */
+    --navy-deep: #0e2d56;      /* Darker shade for manifesto / footer */
+    --steel: #56698a;          /* Muted secondary text */
     --orange: #c75b12;         /* Burnt collegiate orange (UF, restrained) */
     --orange-bright: #e16622;  /* Accent hover */
     --col-blue: #b9d9eb;       /* Columbia light blue */
-    --line:  #d7dce3;          /* Cool hairline border */
-    --line-strong: #b9c2ce;
-    --ink:   #0a1325;          /* Almost-black for body */
+    --line:  #d6dde7;          /* Cool hairline border */
+    --line-strong: #b6c1d0;
+    --ink:   #0f1a30;          /* Almost-black for body */
 }
 
 html, body {

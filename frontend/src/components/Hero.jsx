@@ -2,7 +2,7 @@ const HERO_IMG = "https://images.unsplash.com/photo-1607237138185-eedd9c632b0b?w
 
 export default function Hero() {
     return (
-        <section data-testid="hero" id="top" className="section-x relative" style={{ paddingTop: "clamp(56px, 8vw, 110px)", paddingBottom: "clamp(72px, 10vw, 140px)" }}>
+        <section data-testid="hero" id="top" className="section-x relative" style={{ paddingTop: "clamp(56px, 8vw, 110px)", paddingBottom: "clamp(72px, 10vw, 140px)", background: "var(--mist)" }}>
             {/* Eyebrow with locator */}
             <div className="rise flex flex-wrap items-center gap-4 mb-14">
                 <span className="eyebrow">Est. Livingston · New Jersey</span>

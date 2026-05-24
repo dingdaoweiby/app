@@ -25,7 +25,7 @@ export default function Pillars() {
             data-testid="pillars"
             id="approach"
             className="section-x section-y"
-            style={{ background: "var(--navy)", color: "#fff" }}
+            style={{ background: "var(--bone)" }}
         >
             <div className="grid grid-cols-12 gap-x-10">
                 <div className="col-span-12 lg:col-span-7">
@@ -39,7 +39,7 @@ export default function Pillars() {
                             lineHeight: 1,
                             letterSpacing: "-0.02em",
                             fontWeight: 500,
-                            color: "#fff",
+                            color: "var(--navy)",
                         }}
                     >
                         Three convictions —<br />
@@ -47,21 +47,22 @@ export default function Pillars() {
                     </h2>
                 </div>
                 <div className="col-span-12 lg:col-span-4 lg:col-start-9 mt-8 lg:mt-0 flex items-end">
-                    <p className="font-serif" style={{ fontSize: 17, lineHeight: 1.6, color: "rgba(255,255,255,0.78)", fontStyle: "italic" }}>
+                    <p className="font-serif" style={{ fontSize: 17, lineHeight: 1.6, color: "var(--steel)", fontStyle: "italic" }}>
                         These principles shape every decision we make on behalf of a family — from first conversation to submitted application.
                     </p>
                 </div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-0 mt-20" style={{ borderTop: "1px solid rgba(255,255,255,0.18)" }}>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-0 mt-16" style={{ borderTop: "2px solid var(--navy)" }}>
                 {pillars.map((p, i) => (
                     <article
                         key={p.n}
                         data-testid={`pillar-${i}`}
                         className="p-10 lg:p-12"
                         style={{
-                            borderRight: i < pillars.length - 1 ? "1px solid rgba(255,255,255,0.18)" : "none",
-                            borderBottom: i < pillars.length - 1 ? "1px solid rgba(255,255,255,0.18)" : "none",
+                            background: "var(--paper)",
+                            borderRight: i < pillars.length - 1 ? "1px solid var(--line)" : "none",
+                            borderBottom: i < pillars.length - 1 ? "1px solid var(--line)" : "none",
                         }}
                     >
                         <div className="flex items-start justify-between mb-12">
@@ -77,7 +78,7 @@ export default function Pillars() {
                             >
                                 {p.n}
                             </span>
-                            <span className="font-mono" style={{ fontSize: 10, letterSpacing: "0.22em", color: "rgba(255,255,255,0.5)", marginTop: 10, textTransform: "uppercase" }}>
+                            <span className="font-mono" style={{ fontSize: 10, letterSpacing: "0.22em", color: "var(--steel)", marginTop: 10, textTransform: "uppercase" }}>
                                 Pillar {p.roman}
                             </span>
                         </div>
@@ -87,8 +88,8 @@ export default function Pillars() {
                             style={{
                                 fontSize: "clamp(22px, 1.75vw, 26px)",
                                 lineHeight: 1.2,
-                                color: "#fff",
-                                fontWeight: 500,
+                                color: "var(--navy)",
+                                fontWeight: 600,
                                 letterSpacing: "-0.01em",
                             }}
                         >
@@ -97,7 +98,7 @@ export default function Pillars() {
 
                         <div className="mt-6" style={{ width: 36, height: 1, background: "var(--orange)" }} />
 
-                        <p className="font-serif mt-6" style={{ fontSize: 16, lineHeight: 1.65, color: "rgba(255,255,255,0.82)" }}>
+                        <p className="font-serif mt-6" style={{ fontSize: 16, lineHeight: 1.65, color: "var(--ink)" }}>
                             {p.body}
                         </p>
                     </article>
