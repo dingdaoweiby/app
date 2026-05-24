@@ -1,61 +1,63 @@
-# Supernova Education — Homepage Style Demo (v2 · Collegiate)
+# Supernova Education — Full Multi-Page Build (v8)
 
-## Original Problem Statement (verbatim)
-> 这个是我的网站，但是现在的排版啊，页面啊，字体呀，颜色搭配呀，设计感都太差了。
-> 我希望的是更加学院风，然后更艺术一些……让家长学生看着很安心、专业的感觉。
+## Original Problem Statement
+> https://www.supernova-seed.com 这个是我的网站，但是现在的排版啊，页面啊，字体呀，颜色搭配呀，设计感都太差了。需要更加学院风、更艺术、让家长安心。
 
-## v1 Feedback (User, in Chinese)
-- v1 太女性化 / 太艺术 — reject the literary-magazine ivory + Cormorant direction
-- Want classic collegiate (Princeton / Yale / Columbia brand-book), masculine, reassuring
-- **English only** (Chinese site will be a separate locale with language toggle)
-- Palette inspired by University of Florida (orange + navy) + Columbia (white + light blue)
-- Drop the warm ivory background
+## Latest Iteration — Full Site Build
+**User Direction (this round):**
+- Remove Hero watermark (didn't like the crest texture)
+- Remove Track Record honor roll from homepage
+- Replace nav with program structure: K-12 · College ▾ · Graduate · Research · International · Contact
+- College has dropdown with two sub-pages (Strategic Planning + Admissions Consulting)
+- Add 4-stage Methodology flow on homepage AFTER Three Convictions
+- Use simplified Page Header on all sub-pages (not full Hero)
+- English only — no Chinese for now
+- Optimize content from original site
 
-## v2 Design System (locked candidate)
-- **Archetype:** Classic Collegiate Brand Book — Princeton / Yale / Columbia prospectus
-- **Typography:**
-  - Display: **Playfair Display** (500–700) — substantial, confident serif headlines
-  - Body: **Source Serif 4** — modern academic serif
-  - Utility / Labels / Numbers: **IBM Plex Mono** — institutional, archival catalogue feel
+## Locked Design System
+- **Theme:** Old-money academic / editorial / Princeton–Yale–Columbia viewbook
+- **Typography:** Playfair Display (headlines) · Source Serif 4 (body) · IBM Plex Mono (labels/numbers)
 - **Palette:**
-  - Paper (background) `#FFFFFF`
-  - Bone (cards / closing CTA) `#F5F7FA`
-  - Columbia Mist (marquee strip) `#EEF3F8`
-  - **Navy** (primary) `#0A2342`
-  - Navy Deep `#061634`
-  - Steel (secondary text) `#4A5A75`
-  - **Burnt Orange** (UF accent) `#C75B12` — used SPARINGLY for labels, numbers, accents
-  - Hairline `#D7DCE3`
-- **Conventions:**
-  - Section markers: `§ I · Track Record`, `§ II · Approach` — archival numbering
-  - Stat labels: `Figure 01`, `Figure 02` — annual-report style
-  - Image captions: `Plate I — The Reading Room · № 001` — book-plate style
-  - Pillars: Roman numerals **I · II · III** in burnt orange
-  - Mini shield crest next to the logo
-- **Rhythm:** Alternating white / navy / white / navy sections for institutional weight
+  - Paper white `#FFFFFF`
+  - Columbia Mist `#EAF1F7`
+  - Navy `#163E72` (Nav + Footer)
+  - Burnt Orange `#C75B12` (accent — eyebrows, italic emphasis, numbers, hover)
+  - Steel `#56698A`, Hairline `#D6DDE7`
+- **Background pattern:** Alternating mist / white across content sections; navy bookends (Nav top + Footer bottom)
 
-## What's in the Demo (single homepage)
-1. Sticky nav with shield crest · EN/中文 language toggle stub
-2. Hero — massive navy serif headline + Plate I academic photo
-3. Navy stats strip — 4 figures with orange labels
-4. Columbia-mist school marquee
-5. The Ivy League Class of 2026 — numbered honor roll
-6. Navy "Three Convictions" pillars block (I · II · III)
-7. Student Stories — featured (drop cap, Columbia ED) + 3 side cards
-8. Manifesto block — dark navy with subtle background
-9. Closing CTA on bone surface
-10. Navy footer with full contact + language toggle
+## Architecture
+- React Router v7 — multi-page SPA
+- All routes scroll-to-top on navigation
+- Reusable: `Nav`, `Footer`, `PageHeader`, `PageCTA`, `ProgramSection`, `Marquee`, `Methodology`
 
-## Backlog (after style approval)
-- P0 — Build out the remaining pages: Approach, full Track Record, Methodology, Student Stories index/detail, Contact form
-- P0 — Bring the 中文 site online with proper i18n routing
-- P1 — Replace Unsplash images with **commissioned campus / archival photography** for authenticity
-- P1 — Replace placeholder shield with a custom **Supernova crest** (subtle wordmark / Latin motto)
-- P1 — Scroll-reveal motion and smoother section transitions
-- P2 — CMS so admissions team can update outcomes each cycle
-- P2 — SEO meta, OG, structured data (EducationalOrganization)
+## Routes (8 pages)
+| Route | Page | Sections |
+|---|---|---|
+| `/` | Home | Hero · Stats · Marquee · Pillars · Methodology · Stories · CTA |
+| `/k-12` | K-12 | Overview · ISEE/SSAT Prep · Private School Admissions |
+| `/college/strategic-planning` | College — 9-11 | Why Early · Course Selection · ECs · Summer/Testing |
+| `/college/admissions-consulting` | College — Senior Year | School List · Essays · Interviews · Decisions |
+| `/graduate` | Graduate | Med School · PhD · MBA · DIY Support |
+| `/research` | Research | 12-Month Arc · Fields Supported |
+| `/international` | International | Visa · Homestay · Guardianship |
+| `/contact` | Contact | 3 ways (Email/Phone/WeChat) · Studio · Next Steps |
+
+## Content Highlights
+- 4-stage Methodology (Diagnostic → Roadmap → Coaching → Decisions) with deliverable per stage
+- Each program page = breadcrumb + Page Header + Overview card + 2–4 ProgramSection blocks + PageCTA + Footer
+- Recent admits showcased on every program page in orange-bordered sidebar
+- Contact page replaces traditional form with "Three Ways to Reach" + "What Happens Next" 4-step process
+
+## Backlog / Future
+- P1 — Replace Unsplash images with authentic Supernova photography
+- P1 — Design proper Supernova crest (logo currently uses placeholder shield)
+- P1 — Add subtle scroll-reveal animations
+- P2 — Chinese locale (separate i18n route)
+- P2 — Real contact form with email backend
+- P2 — CMS for editing program content & student outcomes
+- P2 — Blog / Insights section for SEO + parent education content
 
 ## Next Actions
-1. Confirm v2 style direction (palette / typography / section rhythm)
-2. Iterate: too dark? too sparse? want a softer light-blue accent zone? More serif weight?
-3. Once locked → expand to multi-page site + 中文 locale
+1. Review the live site end-to-end (8 pages)
+2. Edits requested per page (content, imagery, micro-copy)
+3. After approval: image replacement + crest design + animations

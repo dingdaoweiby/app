@@ -61,7 +61,6 @@ export default function Footer() {
                     <div className="flex items-center gap-6">
                         <a href="#" className="link-underline font-mono" style={{ fontSize: 11, letterSpacing: "0.2em", textTransform: "uppercase", color: "rgba(255,255,255,0.7)" }}>Privacy</a>
                         <a href="#" className="link-underline font-mono" style={{ fontSize: 11, letterSpacing: "0.2em", textTransform: "uppercase", color: "rgba(255,255,255,0.7)" }}>Terms</a>
-                        <a href="#" className="link-underline font-mono" style={{ fontSize: 11, letterSpacing: "0.2em", textTransform: "uppercase", color: "rgba(255,255,255,0.7)" }}>中文</a>
                     </div>
                 </div>
             </div>

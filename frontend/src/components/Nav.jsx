@@ -1,15 +1,34 @@
 import { useEffect, useState } from "react";
+import { Link, NavLink, useLocation } from "react-router-dom";
 
-const links = ["Approach", "Track Record", "Stories", "Methodology", "Contact"];
+const navItems = [
+    { label: "K–12", to: "/k-12" },
+    {
+        label: "College",
+        children: [
+            { label: "9–11th Grade Strategic Planning", to: "/college/strategic-planning" },
+            { label: "Admissions Consulting", to: "/college/admissions-consulting" },
+        ],
+    },
+    { label: "Graduate", to: "/graduate" },
+    { label: "Research", to: "/research" },
+    { label: "International", to: "/international" },
+    { label: "Contact", to: "/contact" },
+];
 
 export default function Nav() {
     const [scrolled, setScrolled] = useState(false);
+    const [openCollege, setOpenCollege] = useState(false);
+    const [mobileOpen, setMobileOpen] = useState(false);
+    const location = useLocation();
 
     useEffect(() => {
         const onScroll = () => setScrolled(window.scrollY > 8);
         window.addEventListener("scroll", onScroll);
         return () => window.removeEventListener("scroll", onScroll);
     }, []);
+
+    useEffect(() => { setMobileOpen(false); setOpenCollege(false); }, [location.pathname]);
 
     return (
         <header
@@ -22,7 +41,7 @@ export default function Nav() {
             }}
         >
             <div className="section-x flex items-center justify-between" style={{ height: 74 }}>
-                <a href="#top" data-testid="nav-logo" className="flex items-center gap-3">
+                <Link to="/" data-testid="nav-logo" className="flex items-center gap-3">
                     <svg width="26" height="32" viewBox="0 0 26 32" aria-hidden="true">
                         <path d="M1 1 H25 V21 L13 31 L1 21 Z" fill="none" stroke="#fff" strokeWidth="1.5" />
                         <path d="M13 7 V25 M7 13 H19" stroke="var(--orange)" strokeWidth="1.5" />
@@ -33,40 +52,101 @@ export default function Nav() {
                     >
                         Supernova Education
                     </span>
-                </a>
+                </Link>
 
-                <nav className="hidden md:flex items-center gap-9">
-                    {links.map((l) => (
-                        <a
-                            key={l}
-                            href={`#${l.toLowerCase().replace(/\s+/g, "-")}`}
-                            data-testid={`nav-link-${l.toLowerCase().replace(/\s+/g, "-")}`}
-                            className="link-underline font-mono"
-                            style={{
-                                fontSize: 11,
-                                letterSpacing: "0.18em",
-                                textTransform: "uppercase",
-                                color: "rgba(255,255,255,0.88)",
-                                fontWeight: 500,
-                            }}
-                        >
-                            {l}
-                        </a>
-                    ))}
+                <nav className="hidden lg:flex items-center gap-8">
+                    {navItems.map((item) =>
+                        item.children ? (
+                            <div
+                                key={item.label}
+                                className="relative"
+                                onMouseEnter={() => setOpenCollege(true)}
+                                onMouseLeave={() => setOpenCollege(false)}
+                            >
+                                <button
+                                    data-testid="nav-college-trigger"
+                                    className="font-mono flex items-center gap-2"
+                                    style={{
+                                        fontSize: 11,
+                                        letterSpacing: "0.18em",
+                                        textTransform: "uppercase",
+                                        color: "rgba(255,255,255,0.88)",
+                                        fontWeight: 500,
+                                        background: "transparent",
+                                        border: "none",
+                                        padding: "8px 0",
+                                        cursor: "pointer",
+                                    }}
+                                >
+                                    {item.label}
+                                    <span style={{ fontSize: 9, color: "var(--orange)" }}>▾</span>
+                                </button>
+
+                                {openCollege && (
+                                    <div
+                                        data-testid="nav-college-menu"
+                                        style={{
+                                            position: "absolute",
+                                            top: "100%",
+                                            left: "50%",
+                                            transform: "translateX(-50%)",
+                                            minWidth: 320,
+                                            background: "#fff",
+                                            border: "1px solid var(--line)",
+                                            boxShadow: "0 12px 28px rgba(15,26,48,0.12)",
+                                            padding: "8px 0",
+                                        }}
+                                    >
+                                        <div className="px-5 py-3" style={{ borderBottom: "1px solid var(--line)" }}>
+                                            <p className="font-mono" style={{ fontSize: 10, letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--orange)", fontWeight: 500 }}>
+                                                College Admissions
+                                            </p>
+                                        </div>
+                                        {item.children.map((c) => (
+                                            <NavLink
+                                                key={c.to}
+                                                to={c.to}
+                                                data-testid={`nav-college-${c.to.split("/").pop()}`}
+                                                className="block px-5 py-4 font-display"
+                                                style={{
+                                                    fontSize: 16,
+                                                    color: "var(--navy)",
+                                                    fontWeight: 500,
+                                                    letterSpacing: "-0.005em",
+                                                    transition: "background-color 180ms ease, color 180ms ease",
+                                                }}
+                                                onMouseEnter={(e) => { e.currentTarget.style.background = "var(--mist)"; e.currentTarget.style.color = "var(--orange)"; }}
+                                                onMouseLeave={(e) => { e.currentTarget.style.background = "transparent"; e.currentTarget.style.color = "var(--navy)"; }}
+                                            >
+                                                {c.label}
+                                            </NavLink>
+                                        ))}
+                                    </div>
+                                )}
+                            </div>
+                        ) : (
+                            <NavLink
+                                key={item.to}
+                                to={item.to}
+                                data-testid={`nav-link-${item.label.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}
+                                className="link-underline font-mono"
+                                style={({ isActive }) => ({
+                                    fontSize: 11,
+                                    letterSpacing: "0.18em",
+                                    textTransform: "uppercase",
+                                    color: isActive ? "var(--orange)" : "rgba(255,255,255,0.88)",
+                                    fontWeight: 500,
+                                })}
+                            >
+                                {item.label}
+                            </NavLink>
+                        )
+                    )}
                 </nav>
 
-                <div className="flex items-center gap-5">
-                    <span
-                        className="hidden lg:inline font-mono"
-                        style={{ fontSize: 10, letterSpacing: "0.22em", color: "rgba(255,255,255,0.72)", textTransform: "uppercase" }}
-                    >
-                        <span style={{ color: "var(--orange)", fontWeight: 500 }}>EN</span>
-                        <span style={{ margin: "0 8px", color: "rgba(255,255,255,0.45)" }}>·</span>
-                        <a href="#" className="link-underline" data-testid="lang-toggle-zh">中文</a>
-                    </span>
-
-                    <a
-                        href="#contact"
+                <div className="flex items-center gap-3">
+                    <Link
+                        to="/contact"
                         data-testid="nav-cta"
                         className="hidden md:inline-flex items-center"
                         style={{
@@ -84,29 +164,75 @@ export default function Nav() {
                         onMouseEnter={(e) => { e.currentTarget.style.background = "var(--orange)"; e.currentTarget.style.borderColor = "var(--orange)"; e.currentTarget.style.color = "#fff"; }}
                         onMouseLeave={(e) => { e.currentTarget.style.background = "#fff"; e.currentTarget.style.borderColor = "#fff"; e.currentTarget.style.color = "var(--navy)"; }}
                     >
-                        Schedule a Conversation
-                    </a>
+                        Schedule
+                    </Link>
 
-                    <a
-                        href="#contact"
-                        data-testid="nav-cta-mobile"
-                        className="md:hidden inline-flex items-center"
+                    <button
+                        data-testid="nav-mobile-trigger"
+                        className="lg:hidden inline-flex items-center justify-center"
+                        onClick={() => setMobileOpen((v) => !v)}
                         style={{
-                            background: "#fff",
-                            color: "var(--navy)",
+                            background: "transparent",
+                            color: "#fff",
+                            border: "1px solid rgba(255,255,255,0.4)",
+                            padding: "10px 12px",
                             fontFamily: "'IBM Plex Mono', monospace",
                             fontSize: 10,
-                            fontWeight: 500,
-                            letterSpacing: "0.2em",
+                            letterSpacing: "0.22em",
                             textTransform: "uppercase",
-                            padding: "10px 14px",
-                            border: "1px solid #fff",
+                            cursor: "pointer",
                         }}
                     >
-                        Schedule
-                    </a>
+                        {mobileOpen ? "Close" : "Menu"}
+                    </button>
                 </div>
             </div>
+
+            {mobileOpen && (
+                <div
+                    data-testid="nav-mobile-menu"
+                    className="lg:hidden section-x"
+                    style={{ background: "var(--navy-deep)", padding: "20px 0 28px", borderTop: "1px solid rgba(255,255,255,0.12)" }}
+                >
+                    <ul className="space-y-1">
+                        {navItems.map((item) => (
+                            <li key={item.label}>
+                                {item.children ? (
+                                    <details>
+                                        <summary
+                                            className="font-mono py-3 cursor-pointer"
+                                            style={{ fontSize: 12, letterSpacing: "0.22em", textTransform: "uppercase", color: "#fff" }}
+                                        >
+                                            {item.label} <span style={{ color: "var(--orange)", marginLeft: 6 }}>▾</span>
+                                        </summary>
+                                        <ul className="pl-4 mt-1 space-y-1" style={{ borderLeft: "1px solid rgba(255,255,255,0.2)" }}>
+                                            {item.children.map((c) => (
+                                                <li key={c.to}>
+                                                    <NavLink
+                                                        to={c.to}
+                                                        className="block py-2 font-serif"
+                                                        style={{ fontSize: 15, color: "rgba(255,255,255,0.85)" }}
+                                                    >
+                                                        {c.label}
+                                                    </NavLink>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </details>
+                                ) : (
+                                    <NavLink
+                                        to={item.to}
+                                        className="block py-3 font-mono"
+                                        style={{ fontSize: 12, letterSpacing: "0.22em", textTransform: "uppercase", color: "#fff" }}
+                                    >
+                                        {item.label}
+                                    </NavLink>
+                                )}
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            )}
         </header>
     );
 }
