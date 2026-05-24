@@ -1,0 +1,124 @@
+{
+  "theme_and_archetype": {
+    "theme": "Light",
+    "archetype": "5 (Luxury - Old Money Academic / Editorial Variation)",
+    "rationale": "The audience is sophisticated Chinese-American parents looking for K-12 to Ivy League consulting. They evaluate Ivy-League-level brands. The design must eschew generic SaaS aesthetics in favor of a classical, editorial, highly trustworthy, and prestigious layout. We blend classical Western serif typography with elegant Chinese Serif to create an 'artistic' (艺术) and 'academic' (学院风) visual language resembling high-end literary magazines or Ivy League prospectuses."
+  },
+  "typography": {
+    "google_fonts_url": "https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,300;0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Noto+Serif+SC:wght@300;400;500;700&display=swap",
+    "primary_heading": {
+      "family": "'Cormorant Garamond', 'Noto Serif SC', serif",
+      "description": "Used for all massive hero text and major section headers. It must feature tight tracking (tracking-tighter) and elegant weights (light or regular, NOT bold by default)."
+    },
+    "body": {
+      "family": "'Cormorant Garamond', 'Noto Serif SC', serif",
+      "description": "For editorial paragraphs and storytelling elements."
+    },
+    "utility_and_small_caps": {
+      "family": "'Chivo', sans-serif",
+      "description": "Used for contrast: navigation links, overlines (tracking-widest uppercase), numbers, and data points. This provides the 'modern structural' balance to the classical serif."
+    },
+    "rules": [
+      "No Inter, Roboto, or generic sans-serif for headings.",
+      "Bilingual typography is a feature: Ensure English and Chinese strings are styled seamlessly together.",
+      "Overlines/Labels MUST be Uppercase, Tiny (text-xs), and Wide Spacing (tracking-[0.2em]).",
+      "Line Height: leading-none for H1, leading-relaxed for body."
+    ]
+  },
+  "colors": {
+    "background": {
+      "primary": "#F9F8F6",
+      "name": "Warm Ivory / Paper",
+      "description": "Main page background to simulate high-quality editorial paper."
+    },
+    "surface": {
+      "card": "#F2EFE9",
+      "name": "Tinted Alabaster",
+      "description": "Used for subtle differentiation in bento boxes or story cards."
+    },
+    "text": {
+      "primary": "#1A1B26",
+      "name": "Deep Oxford Navy / Ink",
+      "description": "Almost black with a hint of navy for classical depth."
+    },
+    "text_muted": {
+      "primary": "#5C5F6A",
+      "name": "Graphite",
+      "description": "For secondary text, small caps, and subtle metadata."
+    },
+    "accent": {
+      "primary": "#8A1538",
+      "name": "Academic Crimson",
+      "description": "Used SPARINGLY for hairline borders, critical numbers, or subtle hover states."
+    },
+    "border": {
+      "primary": "#D8D1C7",
+      "name": "Warm Ash",
+      "description": "Used for the mandatory hairline editorial rules (1px solid borders) dividing sections."
+    }
+  },
+  "spacing_and_layout": {
+    "grid_system": "Asymmetrical Editorial Grid. Avoid perfectly balanced columns. Mix 4-col and 8-col spans.",
+    "spacing_scale": "Extremely generous. Sections should be padded with py-24 or py-32. Elements within a bento or column should use p-8 or p-12.",
+    "borders": "Expose the skeleton. Use border-t, border-b, and border-r (border-collapse style) with the Warm Ash color to create structured, newspaper-like subdivisions.",
+    "alignment": "Left-align almost everything to respect the editorial origin. Only center-align if it is a singular poetic quote."
+  },
+  "components": {
+    "buttons": {
+      "primary": "Solid Deep Oxford Navy background, Warm Ivory text, sharp corners (rounded-none or max rounded-sm). Chivo font, uppercase, tracking-wider, text-xs. On hover: background shifts to Academic Crimson.",
+      "secondary": "Transparent background, 1px border of Deep Oxford Navy, Oxford Navy text. On hover: subtle Tinted Alabaster background."
+    },
+    "cards": {
+      "style": "Flat, sharp corners. NO soft drop shadows. If depth is needed, use a sharp 1px offset shadow or rely entirely on hairline borders (border border-border/40) for structure."
+    }
+  },
+  "sections_blueprint": {
+    "top_nav": {
+      "layout": "Solid ivory background with a strict 1px bottom hairline border. Logo (Supernova Education) on the left (Cormorant Garamond, italic). Links in the center (Chivo, text-xs, uppercase, wide tracking). 'Schedule a Conversation' button on the right.",
+      "behavior": "Sticky z-50."
+    },
+    "hero": {
+      "layout": "Massive left-aligned typography. English in Cormorant, Chinese seamlessly flowing. 'Growth Mindset. Clear Goals. Consistent Effort. 成长思维，清晰目标，持续努力'. Below it, a narrower column (col-span-1 md:col-span-5) of the descriptive subhead in English/Chinese.",
+      "visual": "Right side or background incorporates the 'hero_ink_wash' image abstractly. Avoid full dark overlays. If using as a side image, wrap it in a sharp border.",
+      "cta": "Primary CTA button 'Schedule a Conversation 预约诊断式对话' + secondary text 'No sales pitch' underneath in Chivo italic text-xs."
+    },
+    "stats_strip": {
+      "layout": "4-column grid (border-collapse style with vertical hairline dividers border-r). Each cell has generous padding (p-8).",
+      "typography": "The number itself is massive (text-5xl) in Cormorant or Chivo Light, accented in Academic Crimson. The label is text-xs uppercase Chivo."
+    },
+    "track_record": {
+      "layout": "Editorial honor roll. 'Ivy League Class of 2026' heading. Below, a 2-column or 3-column masonry list. Each item has student initials, major, and a short note (e.g., 'J.L. — Applied Mathematics, Harvard').",
+      "visual": "A classic photo (track_record_img_1) can be placed asymmetrically to break up the text list, resembling a magazine spread."
+    },
+    "three_pillars": {
+      "layout": "'Three Things We Believe'. 3-column bento/grid layout. Top border on the whole section.",
+      "details": "Each pillar gets a massive '01', '02', '03' in Cormorant Light (text-6xl+). The titles are bilingual. Left-aligned, heavy spacing."
+    },
+    "student_stories": {
+      "layout": "3-4 case study cards in an asymmetrical layout. Some cards span 2 columns, some span 1.",
+      "card_design": "School name (e.g., 'Columbia ED') as a small-caps overline. Narrative paragraph in Cormorant. Outcome in bold. Image (student_stories_1) integrated into one of the featured cards."
+    },
+    "manifesto": {
+      "layout": "Full-bleed or massive container holding the 'manifesto_archway' B&W image. Text overlay: 'A practice, not a firm — We take 20 to 30 families at a time'.",
+      "overlay": "bg-black/40 with white text. Cormorant Garamond italic. Extremely cinematic and exclusive."
+    },
+    "footer": {
+      "layout": "Closing CTA 'Start with a diagnostic conversation 从一次诊断式对话开始' massive in the center. Below, grid for Livingston NJ, email, phone, WeChat. Hairline top border."
+    }
+  },
+  "media": {
+    "hero_ink_wash": "https://static.prod-images.emergentagent.com/jobs/718a1430-805c-4227-88dc-2b6915a64a52/images/0eaa009623dbe16cf50f1e1b30efe8254b82f444b2d9e8d8d17e2c20d4ed06f9.png",
+    "manifesto_archway": "https://static.prod-images.emergentagent.com/jobs/718a1430-805c-4227-88dc-2b6915a64a52/images/4b7ef68e9343101bf57c98eb1e40219eb7f77b477fb4e5ac65b8da786de9a76a.png",
+    "track_record_img_1": "https://images.unsplash.com/photo-1554473675-d0904f3cbf38?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMzV8MHwxfHNlYXJjaHwyfHxpdnklMjBsZWFndWUlMjB1bml2ZXJzaXR5JTIwYXJjaGl0ZWN0dXJlJTIwZ290aGljfGVufDB8fHx8MTc3OTYyNzYyNXww&ixlib=rb-4.1.0&q=85",
+    "student_stories_1": "https://images.pexels.com/photos/1454360/pexels-photo-1454360.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+  },
+  "instructions_to_main_agent": [
+    "Load Chivo, Cormorant Garamond, and Noto Serif SC from Google Fonts.",
+    "Implement the Warm Ivory background and Oxford Navy text globally.",
+    "Avoid Shadcn rounded cards; use sharp, flat DIVs with hairline borders (border-collapse style).",
+    "Ensure all interactive elements have data-testid attributes.",
+    "Treat bilingual text as an art form: respect line heights and spacing.",
+    "Do not use generic UI components. Build raw HTML/Tailwind for the asymmetrical editorial sections.",
+    "Use all provided media URLs. No placeholders are allowed."
+  ]
+}
