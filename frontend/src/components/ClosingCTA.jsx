@@ -4,7 +4,7 @@ export default function ClosingCTA() {
             data-testid="closing-cta"
             id="contact"
             className="section-x section-y rule-bottom"
-            style={{ background: "var(--bone)" }}
+            style={{ background: "var(--paper)" }}
         >
             <div className="grid grid-cols-12 gap-x-10 items-end">
                 <div className="col-span-12 lg:col-span-8">

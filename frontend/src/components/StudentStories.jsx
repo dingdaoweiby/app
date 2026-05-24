@@ -34,6 +34,7 @@ export default function StudentStories() {
             data-testid="student-stories"
             id="stories"
             className="section-x section-y"
+            style={{ background: "var(--mist)" }}
         >
             <div className="grid grid-cols-12 gap-x-10 mb-14">
                 <div className="col-span-12 lg:col-span-8">

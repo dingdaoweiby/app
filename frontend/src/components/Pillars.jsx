@@ -25,7 +25,7 @@ export default function Pillars() {
             data-testid="pillars"
             id="approach"
             className="section-x section-y"
-            style={{ background: "var(--bone)" }}
+            style={{ background: "var(--paper)" }}
         >
             <div className="grid grid-cols-12 gap-x-10">
                 <div className="col-span-12 lg:col-span-7">
@@ -60,7 +60,7 @@ export default function Pillars() {
                         data-testid={`pillar-${i}`}
                         className="p-10 lg:p-12"
                         style={{
-                            background: "var(--paper)",
+                            background: "var(--mist)",
                             borderRight: i < pillars.length - 1 ? "1px solid var(--line)" : "none",
                             borderBottom: i < pillars.length - 1 ? "1px solid var(--line)" : "none",
                         }}

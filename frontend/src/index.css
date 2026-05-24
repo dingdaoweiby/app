@@ -3,20 +3,20 @@
 @tailwind utilities;
 
 :root {
-    /* Collegiate Palette — Columbia Navy + UF Orange (v3 brighter) */
+    /* Collegiate Palette — Columbia Navy + UF Orange (v4 unified) */
     --paper: #ffffff;          /* Crisp white */
-    --bone:  #f6f8fb;          /* Cool off-white card surface */
-    --mist:  #eaf1f7;          /* Columbia mist — pale blue tint (hero / accents) */
+    --bone:  #eaf1f7;          /* Unified with mist for consistency */
+    --mist:  #eaf1f7;          /* Columbia mist — the ONE tinted background */
     --mist-deep: #d8e4ef;
-    --navy:  #163e72;          /* Brighter collegiate navy (primary) */
-    --navy-deep: #0e2d56;      /* Darker shade for manifesto / footer */
-    --steel: #56698a;          /* Muted secondary text */
-    --orange: #c75b12;         /* Burnt collegiate orange (UF, restrained) */
-    --orange-bright: #e16622;  /* Accent hover */
-    --col-blue: #b9d9eb;       /* Columbia light blue */
-    --line:  #d6dde7;          /* Cool hairline border */
+    --navy:  #163e72;          /* The single navy used for all dark surfaces */
+    --navy-deep: #163e72;      /* Same as navy — unified */
+    --steel: #56698a;
+    --orange: #c75b12;
+    --orange-bright: #e16622;
+    --col-blue: #b9d9eb;
+    --line:  #d6dde7;
     --line-strong: #b6c1d0;
-    --ink:   #0f1a30;          /* Almost-black for body */
+    --ink:   #0f1a30;
 }
 
 html, body {

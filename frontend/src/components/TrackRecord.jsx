@@ -17,6 +17,7 @@ export default function TrackRecord() {
             data-testid="track-record"
             id="track-record"
             className="section-x section-y"
+            style={{ background: "var(--mist)" }}
         >
             <div className="grid grid-cols-12 gap-x-10 gap-y-12">
                 <div className="col-span-12 lg:col-span-4">

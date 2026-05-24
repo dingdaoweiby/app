@@ -53,9 +53,6 @@ export default function Nav() {
                 </nav>
 
                 <div className="flex items-center gap-4">
-                    <span className="hidden lg:inline font-mono" style={{ fontSize: 10, letterSpacing: "0.22em", color: "var(--steel)", textTransform: "uppercase" }}>
-                        EN · <a href="#" className="link-underline" data-testid="lang-toggle">中文</a>
-                    </span>
                     <a href="#contact" data-testid="nav-cta" className="btn-primary hidden md:inline-flex">
                         Schedule a Conversation
                     </a>
