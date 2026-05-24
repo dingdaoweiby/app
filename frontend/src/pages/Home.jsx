@@ -9,10 +9,12 @@ import StudentStories from "@/components/StudentStories";
 import ClosingCTA from "@/components/ClosingCTA";
 import Footer from "@/components/Footer";
 
+// TopBar intentionally not rendered — keeping import available for future re-use.
+void TopBar;
+
 export default function Home() {
     return (
         <main data-testid="home-page" className="min-h-screen">
-            <TopBar />
             <Nav />
             <Hero />
             <StatsStrip />
