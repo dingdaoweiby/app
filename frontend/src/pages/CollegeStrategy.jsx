@@ -2,98 +2,310 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import PageHeader from "@/components/PageHeader";
 import PageCTA from "@/components/PageCTA";
-import ProgramSection from "@/components/ProgramSection";
 
-const IMG_COURSE = "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=1200&q=85&auto=format&fit=crop";
-const IMG_EC     = "https://images.unsplash.com/photo-1571260899304-425eee4c7efc?w=1200&q=85&auto=format&fit=crop";
-const IMG_SUMMER = "https://images.unsplash.com/photo-1532153975070-2e9ab71f1b14?w=1200&q=85&auto=format&fit=crop";
+const HERO_IMG = "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=1200&q=85&auto=format&fit=crop";
+
+const specialists = [
+    {
+        n: "01",
+        role: "Strategic Counselor",
+        sub: "Direction & long-term planning",
+        bullets: [
+            "Builds the Comprehensive Student Evaluation",
+            "Sets Ivy / Top 15 targets and defines the ideal school profile",
+            "Designs the College Roadmap across Grades 9–12",
+            "Recalibrates the strategy every year as your child grows",
+        ],
+    },
+    {
+        n: "02",
+        role: "Admissions Officer",
+        sub: "Quality & institutional perspective",
+        bullets: [
+            "Former admissions officer from a top-tier university",
+            "Reviews every deliverable with a critical institutional lens",
+            "Pressure-tests the narrative, school list, and application materials",
+            "Catches weaknesses long before submission",
+        ],
+    },
+    {
+        n: "03",
+        role: "Resource Manager",
+        sub: "Execution & opportunities",
+        bullets: [
+            "Sources research placements, summer programs, and competitions",
+            "Manages AP and SAT timelines, scholarships, and awards calendars",
+            "Tracks every milestone across three years",
+            "Turns strategy into concrete, scheduled action",
+        ],
+    },
+    {
+        n: "04",
+        role: "Family Coach",
+        sub: "Mental health & family dynamics",
+        bullets: [
+            "Monitors teen mental health throughout high-pressure periods",
+            "Supports parent-child communication and expectation alignment",
+            "Helps the family navigate stress without damaging relationships",
+            "ICF-certified — a role no other consulting practice offers",
+        ],
+    },
+];
+
+const dimensions = [
+    {
+        title: "Comprehensive Student Evaluation",
+        tagline: "The foundation. Before any planning begins, we map who your child actually is.",
+        items: [
+            "Personality, learning style & executive function assessment",
+            "Gallup StrengthsFinder — full 34-dimension talent profile",
+            "Academic interest mapping & potential major recommendations",
+            "Career trajectory — a 20-year directional read",
+            "Student profile: strengths, gaps, and risk points",
+            "Family education style assessment — expectations, involvement, alignment",
+        ],
+        deliverable: "Comprehensive Student Report",
+    },
+    {
+        title: "College Strategy Planning",
+        tagline: "Where to aim — and why. A living strategy, not a static list.",
+        items: [
+            "Dream schools (Ivy League / Top 15) target setting — data-grounded, no false promises",
+            "Ideal school profile: academic fit, culture, activities, location",
+            "Reach / Match / Safety portfolio — balanced, risk-managed",
+            "Major–school alignment logic",
+            "Annual recalibration — the list evolves as your child grows",
+        ],
+        deliverable: "College Selection Strategy",
+    },
+    {
+        title: "College Roadmap (Grades 9–12)",
+        tagline: "The operational plan. Five parallel tracks, running simultaneously across three years.",
+        items: [
+            "GPA targets, AP sequencing, SAT milestones & testing timeline",
+            "Retake planning and score optimization",
+            "Clubs: participate → contribute → lead",
+            "Sports: recreational vs. recruit track",
+            "Arts: portfolio development and competitions",
+            "Volunteering: long-term, impact-driven projects",
+            "Pre-college courses, online learning, and summer programs",
+            "Research: independent or mentor-led, with publishable output",
+            "Projects: engineering, business, or social impact",
+            "Competitions: AMC, ISEF, DECA, and equivalents",
+            "Awards & honors: National / State / School pipeline with hit-rate strategy",
+        ],
+        deliverable: "College Roadmap with milestone tracking",
+    },
+    {
+        title: "Progress Report + Regular Follow-Up Meetings",
+        tagline: "The accountability structure. Strategy means nothing without execution.",
+        groups: [
+            { h: "1) Core Academics", items: ["Course selection", "Academic criteria — GPA & rigor balance", "Standardized tests — SAT / AP planning"] },
+            { h: "2) Extracurricular Activity", items: ["Required activities — matched to target direction", "Optional activities — interest exploration", "Annual activity goal: Explore → Develop → Lead", "Activity depth design: participate → deepen → impact"] },
+            { h: "3) Academics Theme & Achievement", items: ["Research / Projects — output-driven", "Summer programs", "Specialties — Art / Athlete / Talent"] },
+            { h: "4) Personal Growth & Family Relationships", items: ["Basic skills: writing, public speaking, STEM fluency", "Interest exploration: videos, seminars, external exposure", "Career path — aligned with the evaluation report", "Family relationships", "Teenagers' mental health"] },
+        ],
+        deliverable: "Annual Plan + Monthly Progress Report",
+    },
+];
+
+const operatingLayers = [
+    { h: "Student work", body: "Identity coaching, academic strategy, and the ongoing conversation about who they're becoming." },
+    { h: "Parent work", body: "Family system coaching, expectation calibration, and support for the hardest years of parenting." },
+    { h: "Admissions-track work", body: "Testing, course selection, activities, and the technical execution every serious consultant offers." },
+];
 
 export default function CollegeStrategy() {
     return (
         <main data-testid="page-college-strategy" className="min-h-screen">
             <Nav />
             <PageHeader
-                eyebrow="§ Program · College — 9th to 11th Grade"
-                title="Strategy"
-                italicWord="before the application."
-                subtitle="The strongest college applications are not written senior year — they're lived from ninth grade onward. Three years of deliberate course selection, activity development, and narrative direction."
-                breadcrumb={[{ label: "College", to: "/college/strategic-planning" }, { label: "Strategic Planning" }]}
+                eyebrow="§ Program · 9–11th Grade Cultivation"
+                title="Real capability. Real growth."
+                italicWord="The offer is the proof."
+                subtitle="Skills, mindset, substance — built through three years of authentic development, not just application tactics."
+                breadcrumb={[{ label: "College", to: "/college/strategic-planning" }, { label: "9–11th Grade Strategic Planning" }]}
             />
 
-            <section className="section-x" style={{ paddingTop: "clamp(64px, 7vw, 110px)", paddingBottom: "clamp(40px, 5vw, 80px)", background: "var(--paper)" }}>
+            <section className="section-x" style={{ background: "var(--paper)", paddingTop: 48, paddingBottom: 0 }}>
+                <div className="img-bordered overflow-hidden" style={{ aspectRatio: "16/7" }}>
+                    <img src={HERO_IMG} alt="High school student focused on academic planning" className="w-full h-full object-cover" style={{ filter: "grayscale(40%) contrast(1.05)" }} />
+                </div>
+                <p className="eyebrow mt-3">Plate C-I — The Long View</p>
+            </section>
+
+            {/* Our Belief */}
+            <section className="section-x section-y" style={{ background: "var(--paper)" }}>
                 <div className="grid grid-cols-12 gap-x-10 gap-y-10">
-                    <div className="col-span-12 lg:col-span-8">
-                        <p className="eyebrow mb-5">Why Start Early</p>
-                        <p className="font-serif" style={{ fontSize: "clamp(19px, 1.55vw, 24px)", lineHeight: 1.55, color: "var(--ink)" }}>
-                            By the time most families think about college consulting, half the decisions
-                            that shape an application have already been made. Course load is set. Activities
-                            are chosen. The story is half-written. Starting in ninth grade — or even tenth —
-                            gives a student room to choose deliberately rather than retrofit.
-                        </p>
+                    <div className="col-span-12 lg:col-span-5">
+                        <p className="eyebrow">§ I · Our Belief</p>
+                        <h2 className="font-display mt-5" style={{ fontSize: "clamp(32px, 4vw, 56px)", lineHeight: 1.05, letterSpacing: "-0.02em", fontWeight: 500, color: "var(--navy)" }}>
+                            Success isn't the letter. It's the student.
+                        </h2>
                     </div>
-                    <div className="col-span-12 lg:col-span-4">
-                        <div className="rule-left pl-6" style={{ borderLeftWidth: 2, borderLeftColor: "var(--orange)" }}>
-                            <p className="font-mono" style={{ fontSize: 10, letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--orange)", fontWeight: 500 }}>
-                                Best Fit For
-                            </p>
-                            <p className="font-display mt-3" style={{ fontSize: 17, lineHeight: 1.5, color: "var(--navy)", fontWeight: 500 }}>
-                                Families with students entering 9th, 10th, or early 11th grade who want a strategic plan — not last-minute application help.
-                            </p>
-                        </div>
+                    <div className="col-span-12 lg:col-span-7">
+                        <p className="font-display" style={{ fontSize: "clamp(20px, 1.7vw, 26px)", lineHeight: 1.4, color: "var(--orange)", fontWeight: 500, fontStyle: "italic" }}>
+                            Motivation cannot be imposed. It must be awakened.
+                        </p>
+                        <p className="font-display mt-3" style={{ fontSize: "clamp(20px, 1.7vw, 26px)", lineHeight: 1.4, color: "var(--orange)", fontWeight: 500, fontStyle: "italic" }}>
+                            We build students for themselves, not simply for an application.
+                        </p>
+                        <p className="font-serif mt-8" style={{ fontSize: 17, lineHeight: 1.65, color: "var(--ink)" }}>
+                            Through challenge, guidance, and genuine belief in each child, we cultivate what no consultant can manufacture: discipline that comes from within, a sense of direction that belongs to them, and the quiet confidence that doesn't need to perform to be seen.
+                        </p>
+                        <p className="font-serif mt-5" style={{ fontSize: 17, lineHeight: 1.65, color: "var(--ink)" }}>
+                            By the time application season arrives, nothing needs to be forced. What colleges see is the result of years of authentic growth. What your child carries forward is far more valuable than any acceptance letter: not only tactics, but enduring strengths — the skills, mindset, and clarity that carry value in education, in a career, and in a life.
+                        </p>
                     </div>
                 </div>
             </section>
 
-            <ProgramSection
-                index={1}
-                eyebrow="Pillar I"
-                title="Course Selection & Academic Trajectory"
-                body="The transcript is the single most important document in a college application — and most students build it accidentally. We map four years of course choices with attention to rigor, major direction, and how admissions offices will read the path. AP and dual-enrollment decisions are made with strategy, not anxiety."
-                bullets={[
-                    "Year-by-year course mapping aligned to intended major and college tier.",
-                    "Honest assessment of where to push for rigor and where to protect GPA.",
-                    "Summer course planning — for credit, depth, or competitive advantage.",
-                ]}
-                deliverable="4-Year Course Map · Grade-by-Grade Plan"
-                image={IMG_COURSE}
-                imageCaption="Plate C-I — The Schedule"
-            />
+            {/* Specialists */}
+            <section className="section-x section-y" style={{ background: "var(--mist)" }}>
+                <div className="grid grid-cols-12 gap-x-10 mb-12">
+                    <div className="col-span-12 lg:col-span-7">
+                        <p className="eyebrow">§ II · Who Serves Your Family</p>
+                        <h2 className="font-display mt-5" style={{ fontSize: "clamp(32px, 4vw, 56px)", lineHeight: 1.05, letterSpacing: "-0.02em", fontWeight: 500, color: "var(--navy)" }}>
+                            Four experts for one student / one family.
+                        </h2>
+                    </div>
+                    <div className="col-span-12 lg:col-span-5 flex items-end">
+                        <p className="font-serif" style={{ fontSize: 17, lineHeight: 1.6, color: "var(--steel)", fontStyle: "italic" }}>
+                            We assign four specialists who work in coordination — from the first meeting through the acceptance letter. Every decision passes through all four. Your child is never handed off.
+                        </p>
+                    </div>
+                </div>
 
-            <ProgramSection
-                index={2}
-                eyebrow="Pillar II"
-                title="Extracurricular Development"
-                body="Top colleges read activity lists looking for one thing: evidence of authentic, sustained engagement. A student who started a club in tenth grade and led it for three years is more compelling than a student with twelve scattered activities. We help students go deep on what they actually care about — and document it well."
-                bullets={[
-                    "Identify two or three genuine passion areas; eliminate the rest.",
-                    "Build leadership opportunities — clubs, research, fundraising, community projects.",
-                    "Create a tangible record — publications, founded organizations, measurable impact.",
-                ]}
-                deliverable="Activity Portfolio · Documented Track Record"
-                image={IMG_EC}
-                imageCaption="Plate C-II — The Project"
-                reverse
-            />
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-0" style={{ borderTop: "2px solid var(--navy)" }}>
+                    {specialists.map((s, i) => (
+                        <article key={s.n} className="p-8 lg:p-10" style={{
+                            background: "var(--paper)",
+                            borderRight: i % 2 === 0 ? "1px solid var(--line)" : "none",
+                            borderBottom: "1px solid var(--line)",
+                        }} data-testid={`specialist-${i}`}>
+                            <div className="flex items-baseline gap-4 mb-6">
+                                <span className="font-display" style={{ fontSize: 56, lineHeight: 0.85, color: "var(--orange)", fontWeight: 600 }}>{s.n}</span>
+                                <p className="font-mono" style={{ fontSize: 10, letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--steel)" }}>Specialist {s.n}</p>
+                            </div>
+                            <h3 className="font-display" style={{ fontSize: 24, lineHeight: 1.15, color: "var(--navy)", fontWeight: 600 }}>{s.role}</h3>
+                            <p className="font-mono mt-2" style={{ fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--orange)" }}>{s.sub}</p>
+                            <div className="my-5" style={{ width: 36, height: 2, background: "var(--orange)" }} />
+                            <ul className="space-y-2">
+                                {s.bullets.map((b, j) => (
+                                    <li key={j} className="flex items-start gap-3">
+                                        <span className="font-mono" style={{ fontSize: 10, color: "var(--orange)", marginTop: 6 }}>▸</span>
+                                        <p className="font-serif" style={{ fontSize: 16, lineHeight: 1.55, color: "var(--ink)" }}>{b}</p>
+                                    </li>
+                                ))}
+                            </ul>
+                        </article>
+                    ))}
+                </div>
 
-            <ProgramSection
-                index={3}
-                eyebrow="Pillar III"
-                title="Summer Strategy & Testing"
-                body="Summers between sophomore and junior year are where applications are quietly won or lost. We plan summers to either advance a student's signature work, expose them to a field they're considering, or build the credentials top programs look for. Test prep timing — SAT, ACT, subject tests — is sequenced to remove pressure from senior year."
-                bullets={[
-                    "Summer program selection — research, pre-college, internships, competitions.",
-                    "SAT / ACT diagnostic and a 12-month preparation plan with target test dates.",
-                    "Junior summer capstone — a project that becomes the heart of the application narrative.",
-                ]}
-                deliverable="Summer Plan · Test Calendar · Capstone Project"
-                image={IMG_SUMMER}
-                imageCaption="Plate C-III — The Long Days"
-            />
+                <p className="font-serif italic mt-10" style={{ fontSize: 18, lineHeight: 1.5, color: "var(--navy)", maxWidth: 900 }}>
+                    Four specialists. One coordinated team. A combined perspective no single consultant can match — and a level of care your child will feel for three years.
+                </p>
+            </section>
 
-            <PageCTA
-                title="Three years of intention beats one year of urgency."
-                note="If your student is in 9th, 10th, or early 11th grade, the most valuable thing we can offer is time. Let's talk about what a thoughtful three-year plan could look like for your family."
-            />
+            {/* Four Dimensions */}
+            <section className="section-x section-y" style={{ background: "var(--paper)" }}>
+                <p className="eyebrow">§ III · What You Receive</p>
+                <h2 className="font-display mt-5" style={{ fontSize: "clamp(32px, 4vw, 56px)", lineHeight: 1.05, letterSpacing: "-0.02em", fontWeight: 500, color: "var(--navy)" }}>
+                    Four core dimensions on a yearly basis.
+                </h2>
+                <p className="font-serif mt-6" style={{ fontSize: 17, lineHeight: 1.6, color: "var(--ink)", maxWidth: 820 }}>
+                    Every family receives four structured deliverables — the tools we use to make decisions, track progress, and keep your child on course from Grade 9 through application season.
+                </p>
+
+                <ol className="mt-14" style={{ borderTop: "2px solid var(--navy)" }}>
+                    {dimensions.map((d, i) => (
+                        <li key={d.title} className="py-12" style={{ borderBottom: "1px solid var(--line)" }} data-testid={`dimension-${i}`}>
+                            <div className="grid grid-cols-12 gap-x-10">
+                                <div className="col-span-12 lg:col-span-4">
+                                    <span className="font-display" style={{ fontSize: 56, lineHeight: 0.85, color: "var(--orange)", fontWeight: 600 }}>{String(i + 1).padStart(2, "0")}</span>
+                                    <h3 className="font-display mt-4" style={{ fontSize: "clamp(22px, 1.9vw, 28px)", lineHeight: 1.15, color: "var(--navy)", fontWeight: 600, letterSpacing: "-0.005em" }}>{d.title}</h3>
+                                    <p className="font-serif italic mt-4" style={{ fontSize: 16, lineHeight: 1.5, color: "var(--steel)" }}>{d.tagline}</p>
+                                </div>
+                                <div className="col-span-12 lg:col-span-8 mt-6 lg:mt-0">
+                                    {d.items && (
+                                        <ul className="space-y-2">
+                                            {d.items.map((it, j) => (
+                                                <li key={j} className="flex items-start gap-3">
+                                                    <span className="font-mono" style={{ fontSize: 10, color: "var(--orange)", marginTop: 6 }}>▸</span>
+                                                    <p className="font-serif" style={{ fontSize: 16, lineHeight: 1.55, color: "var(--ink)" }}>{it}</p>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    )}
+                                    {d.groups && (
+                                        <div className="space-y-6">
+                                            {d.groups.map((g, j) => (
+                                                <div key={j}>
+                                                    <p className="font-mono" style={{ fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--orange)", fontWeight: 500 }}>{g.h}</p>
+                                                    <ul className="mt-2 space-y-2">
+                                                        {g.items.map((it, k) => (
+                                                            <li key={k} className="flex items-start gap-3">
+                                                                <span className="font-mono" style={{ fontSize: 10, color: "var(--orange)", marginTop: 6 }}>▸</span>
+                                                                <p className="font-serif" style={{ fontSize: 16, lineHeight: 1.55, color: "var(--ink)" }}>{it}</p>
+                                                            </li>
+                                                        ))}
+                                                    </ul>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    )}
+                                    <div className="mt-6 pt-5" style={{ borderTop: "1px solid var(--line)" }}>
+                                        <p className="font-mono" style={{ fontSize: 10, letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--steel)" }}>→ Deliverable</p>
+                                        <p className="font-display mt-1" style={{ fontSize: 17, color: "var(--navy)", fontWeight: 600 }}>{d.deliverable}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    ))}
+                </ol>
+
+                <p className="font-serif italic mt-10" style={{ fontSize: "clamp(20px, 2vw, 28px)", lineHeight: 1.4, color: "var(--navy)", maxWidth: 820 }}>
+                    “Three years from now, your child won't just be applying to college. They'll be ready for it.”
+                </p>
+            </section>
+
+            {/* Operating Rhythm */}
+            <section className="section-x section-y" style={{ background: "var(--mist)" }}>
+                <p className="eyebrow">§ IV · Our Operating Rhythm</p>
+                <h2 className="font-display mt-5" style={{ fontSize: "clamp(32px, 4vw, 56px)", lineHeight: 1.05, letterSpacing: "-0.02em", fontWeight: 500, color: "var(--navy)" }}>
+                    Three layers, every month.
+                </h2>
+                <p className="font-serif mt-6" style={{ fontSize: 17, lineHeight: 1.6, color: "var(--ink)", maxWidth: 700 }}>
+                    The mix shifts with age, but all three stay in motion.
+                </p>
+
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-0 mt-12" style={{ borderTop: "2px solid var(--navy)" }}>
+                    {operatingLayers.map((l, i) => (
+                        <article key={l.h} className="p-8 lg:p-10" style={{
+                            background: "var(--paper)",
+                            borderRight: i < 2 ? "1px solid var(--line)" : "none",
+                            borderBottom: "1px solid var(--line)",
+                        }} data-testid={`layer-${i}`}>
+                            <span className="font-display" style={{ fontSize: 48, lineHeight: 0.85, color: "var(--orange)", fontWeight: 600 }}>{String(i + 1).padStart(2, "0")}</span>
+                            <h3 className="font-display mt-4" style={{ fontSize: 22, color: "var(--navy)", fontWeight: 600, letterSpacing: "-0.005em" }}>{l.h}</h3>
+                            <div className="my-4" style={{ width: 30, height: 2, background: "var(--orange)" }} />
+                            <p className="font-serif" style={{ fontSize: 16, lineHeight: 1.6, color: "var(--ink)" }}>{l.body}</p>
+                        </article>
+                    ))}
+                </div>
+
+                <div className="mt-14 p-10" style={{ background: "var(--paper)", border: "1px solid var(--line)" }}>
+                    <p className="eyebrow">Quarterly Written Deliverable</p>
+                    <p className="font-display italic mt-5" style={{ fontSize: "clamp(22px, 2.2vw, 30px)", lineHeight: 1.35, color: "var(--navy)", fontWeight: 500 }}>
+                        “Here's how your child is coming into focus.”
+                    </p>
+                    <p className="font-serif mt-4" style={{ fontSize: 17, lineHeight: 1.55, color: "var(--ink)" }}>
+                        — a short written narrative that makes the invisible work visible.
+                    </p>
+                </div>
+            </section>
+
+            <PageCTA />
             <Footer />
         </main>
     );

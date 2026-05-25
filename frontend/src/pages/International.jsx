@@ -2,101 +2,109 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import PageHeader from "@/components/PageHeader";
 import PageCTA from "@/components/PageCTA";
-import ProgramSection from "@/components/ProgramSection";
 
-const IMG_VISA  = "https://images.unsplash.com/photo-1569949381669-ecf31ae8e613?w=1200&q=85&auto=format&fit=crop";
-const IMG_HOME  = "https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=1200&q=85&auto=format&fit=crop";
-const IMG_GUARD = "https://images.unsplash.com/photo-1497486751825-1233686d5d80?w=1200&q=85&auto=format&fit=crop";
+const HERO_IMG = "https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?w=1200&q=85&auto=format&fit=crop";
+
+const services = [
+    {
+        h: "Visa Support",
+        sub: "Guidance through US F-1 student visa applications, renewals, and status maintenance.",
+        body: "A successful F-1 process depends on timing, clean documentation, and a coherent story at the interview — not only on completing forms. We help families build a realistic schedule that lines up school enrollment, I-20 issuance, SEVIS fee payment, and consular appointments, then walk through each deliverable so materials stay consistent across DS-160, financial evidence, and academic records.",
+        bulletsHeader: "What we help with",
+        items: [
+            "Application strategy and milestone planning matched to your program start date and travel needs",
+            "Document preparation: financial evidence, sponsor letters, transcripts, and school correspondence",
+            "Interview preparation — practice prompts, concise study plans, and grounded answers that reflect your file",
+            "Status tracking after submission, including guidance if administrative processing or extra evidence is requested",
+            "Renewals, travel signatures, and transfer coordination when you change programs or schools",
+            "Coordination with your school's international office and, when relevant, host-family logistics",
+        ],
+        footnote: "We provide educational consulting support; visa decisions are made solely by U.S. government agencies.",
+    },
+    {
+        h: "Homestay Program",
+        sub: "Carefully vetted homestay placements that feel like a second home for international students.",
+        body: "Matching a student to the right household is part logistics and part chemistry. We collect detailed preferences on routine, diet, commute, study habits, and expectations on both sides, then place students with hosts who understand the responsibility of welcoming an international minor or young adult. Orientation covers house rules, communication norms, and who to contact when questions arise.",
+        bulletsHeader: "How we work with families",
+        items: [
+            "Structured intake for student and host priorities, boundaries, and academic-year milestones",
+            "Ongoing check-ins during the first weeks and periodic touchpoints when schedules shift",
+            "Lightweight mediation when misunderstandings appear — early, calmly, and with clear next steps",
+        ],
+    },
+    {
+        h: "Guardian Program",
+        sub: "Trusted local guardian services for international minors studying in the US.",
+        body: "Many schools require a U.S.-based adult who can respond to emergencies, attend required meetings, and advocate for the student when parents are overseas. We designate experienced local guardians who know how to liaise with school nurses, deans, and residential offices while keeping parents informed in real time. The arrangement emphasizes safety, transparency, and age-appropriate independence — not replacing parents, but standing in responsibly when distance makes daily presence impossible.",
+        bulletsHeader: "Typical responsibilities",
+        items: [
+            "Emergency contact availability aligned with school and host-family protocols",
+            "Authorized pickup, medical visits, or school conferences when parental travel is not feasible",
+            "Clear reporting rhythms — short updates after key events and channels parents already use",
+        ],
+    },
+];
 
 export default function International() {
     return (
         <main data-testid="page-international" className="min-h-screen">
             <Nav />
             <PageHeader
-                eyebrow="§ Program · International Families"
-                title="Coming to America,"
-                italicWord="prepared."
-                subtitle="For international families placing children in U.S. private schools or universities, the application is only half the work. The other half is everything that happens after the offer arrives — visas, housing, guardianship, and a soft landing."
+                eyebrow="§ Program · International Student Support"
+                title="From acceptance"
+                italicWord="through the school year."
+                subtitle="Visa guidance, homestay placement, and guardian services — structured so families, schools, and hosts stay aligned."
                 breadcrumb={[{ label: "International" }]}
             />
 
-            <section className="section-x" style={{ paddingTop: "clamp(64px, 7vw, 110px)", paddingBottom: "clamp(40px, 5vw, 80px)", background: "var(--paper)" }}>
-                <div className="grid grid-cols-12 gap-x-10 gap-y-10">
-                    <div className="col-span-12 lg:col-span-8">
-                        <p className="eyebrow mb-5">For Families Outside the U.S.</p>
-                        <p className="font-serif" style={{ fontSize: "clamp(19px, 1.55vw, 24px)", lineHeight: 1.55, color: "var(--ink)" }}>
-                            We work with families from East Asia, Southeast Asia, the Middle East, and Latin
-                            America. Some are bringing children to U.S. boarding school as early as eighth
-                            grade; some are placing university students. Across all of them, the operational
-                            details — visa, residency, daily life — matter as much as the academic placement.
-                        </p>
-                    </div>
-                    <div className="col-span-12 lg:col-span-4">
-                        <div className="rule-left pl-6" style={{ borderLeftWidth: 2, borderLeftColor: "var(--orange)" }}>
-                            <p className="font-mono" style={{ fontSize: 10, letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--orange)", fontWeight: 500 }}>
-                                Languages Spoken
-                            </p>
-                            <p className="font-display mt-3" style={{ fontSize: 17, lineHeight: 1.5, color: "var(--navy)", fontWeight: 500 }}>
-                                English · Mandarin · Cantonese · Spanish · Arabic (via partners)
-                            </p>
-                        </div>
-                    </div>
+            <section className="section-x" style={{ background: "var(--paper)", paddingTop: 48, paddingBottom: 0 }}>
+                <div className="img-bordered overflow-hidden" style={{ aspectRatio: "16/7" }}>
+                    <img src={HERO_IMG} alt="Students on a university campus" className="w-full h-full object-cover" style={{ filter: "grayscale(40%) contrast(1.05)" }} />
                 </div>
+                <p className="eyebrow mt-3">Plate INT — The Quad</p>
             </section>
 
-            <ProgramSection
-                index={1}
-                eyebrow="Service I"
-                title="Visa Support"
-                body="F-1 student visas, J-1 exchange visas, and the I-20 process require precise documentation and timing. We coordinate with school international offices, prepare families for embassy interviews, and walk parents through every form. We do not provide legal counsel — we work alongside immigration attorneys when complex cases require it."
-                bullets={[
-                    "I-20 issuance coordination with admitting institution.",
-                    "DS-160 preparation and embassy interview readiness sessions.",
-                    "Financial documentation strategy — bank letters, sponsor affidavits.",
-                    "Referral to vetted immigration attorneys for complex cases.",
-                ]}
-                deliverable="Visa-Ready Family · Embassy Interview Preparation"
-                image={IMG_VISA}
-                imageCaption="Plate I-I — The Documents"
-            />
+            <section className="section-x section-y" style={{ background: "var(--paper)" }}>
+                <ol style={{ borderTop: "2px solid var(--navy)" }}>
+                    {services.map((s, i) => (
+                        <li key={s.h} className="py-14" style={{
+                            borderBottom: "1px solid var(--line)",
+                            background: i % 2 === 1 ? "var(--mist)" : "var(--paper)",
+                            marginLeft: "calc(-1 * clamp(20px, 6vw, 96px))",
+                            marginRight: "calc(-1 * clamp(20px, 6vw, 96px))",
+                            paddingLeft: "clamp(20px, 6vw, 96px)",
+                            paddingRight: "clamp(20px, 6vw, 96px)",
+                        }} data-testid={`intl-service-${i}`}>
+                            <div className="grid grid-cols-12 gap-x-10">
+                                <div className="col-span-12 lg:col-span-4">
+                                    <span className="font-display" style={{ fontSize: 56, lineHeight: 0.85, color: "var(--orange)", fontWeight: 600 }}>{String(i + 1).padStart(2, "0")}</span>
+                                    <h3 className="font-display mt-4" style={{ fontSize: "clamp(24px, 2.2vw, 32px)", lineHeight: 1.1, color: "var(--navy)", fontWeight: 600, letterSpacing: "-0.01em" }}>{s.h}</h3>
+                                    <p className="font-mono mt-3" style={{ fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--orange)", lineHeight: 1.5 }}>{s.sub}</p>
+                                </div>
+                                <div className="col-span-12 lg:col-span-8 mt-6 lg:mt-0">
+                                    <p className="font-serif" style={{ fontSize: 17, lineHeight: 1.65, color: "var(--ink)" }}>{s.body}</p>
+                                    <p className="font-mono mt-8 mb-4" style={{ fontSize: 11, letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--orange)", fontWeight: 500 }}>{s.bulletsHeader}</p>
+                                    <ul className="space-y-3">
+                                        {s.items.map((it, j) => (
+                                            <li key={j} className="flex items-start gap-3">
+                                                <span className="font-mono" style={{ fontSize: 10, color: "var(--orange)", marginTop: 6 }}>▸</span>
+                                                <p className="font-serif" style={{ fontSize: 16, lineHeight: 1.55, color: "var(--ink)" }}>{it}</p>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                    {s.footnote && (
+                                        <p className="font-serif italic mt-8 pt-4" style={{ fontSize: 14, lineHeight: 1.55, color: "var(--steel)", borderTop: "1px solid var(--line)" }}>
+                                            {s.footnote}
+                                        </p>
+                                    )}
+                                </div>
+                            </div>
+                        </li>
+                    ))}
+                </ol>
+            </section>
 
-            <ProgramSection
-                index={2}
-                eyebrow="Service II"
-                title="Homestay Placement"
-                body="For day-school students whose families remain abroad, finding the right host family is the single most important decision after school selection. We work with a hand-vetted network of homestay families in the New York metro area, Boston, and select California regions. Every placement is built around the student's age, school, and family preferences."
-                bullets={[
-                    "Vetted homestay families — background-checked, interviewed, and visited in person.",
-                    "Match based on student age, gender, dietary needs, and school proximity.",
-                    "Quarterly check-ins with student, host family, and biological parents.",
-                    "Backup placement available if the original match is not working.",
-                ]}
-                deliverable="Confirmed Homestay · Ongoing Family Liaison"
-                image={IMG_HOME}
-                imageCaption="Plate I-II — A Second Home"
-                reverse
-            />
-
-            <ProgramSection
-                index={3}
-                eyebrow="Service III"
-                title="Educational Guardianship"
-                body="Boarding schools require an in-country educational guardian for international students under eighteen. We provide formal guardianship services — emergency contact, school liaison, holiday transport, weekend accommodation, and the soft work of being someone an adolescent can call when they need an adult. This is the role most international families underestimate, and it matters more than any other."
-                bullets={[
-                    "Legal educational guardian status with the student's school.",
-                    "24-hour emergency contact for medical, academic, or personal situations.",
-                    "Holiday transport and weekend accommodation when school is closed.",
-                    "Quarterly written reports to biological parents on academic and personal wellbeing.",
-                ]}
-                deliverable="Legal Guardianship · Ongoing Adolescent Support"
-                image={IMG_GUARD}
-                imageCaption="Plate I-III — The Phone Call"
-            />
-
-            <PageCTA
-                title="Everything that happens after the offer arrives."
-                note="For international families, the work of getting your child to America is often more complicated than the application itself. We have done this for many families before yours."
-            />
+            <PageCTA />
             <Footer />
         </main>
     );
