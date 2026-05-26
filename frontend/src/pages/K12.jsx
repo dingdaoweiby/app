@@ -156,7 +156,7 @@ export default function K12() {
                 <div className="mt-14 grid grid-cols-1 lg:grid-cols-3 gap-x-10 gap-y-12" style={{ borderTop: "2px solid var(--navy)", paddingTop: 40 }}>
                     {servicePhases.map((p, i) => (
                         <div key={p.phase} data-testid={`k12-phase-${i}`}>
-                            <div className="flex items-center gap-4">
+                            <div className="flex flex-col items-center text-center">
                                 <div
                                     className="flex items-center justify-center"
                                     style={{
@@ -183,9 +183,9 @@ export default function K12() {
                                     </span>
                                 </div>
                                 <p
-                                    className="font-mono"
+                                    className="font-mono mt-5"
                                     style={{
-                                        fontSize: 12,
+                                        fontSize: 14,
                                         letterSpacing: "0.22em",
                                         textTransform: "uppercase",
                                         color: "var(--navy)",
@@ -194,8 +194,8 @@ export default function K12() {
                                 >
                                     {p.label}
                                 </p>
+                                <div className="mt-4" style={{ width: 32, height: 2, background: "var(--orange)" }} />
                             </div>
-                            <div className="mt-5" style={{ width: 32, height: 2, background: "var(--orange)" }} />
 
                             <ul className="mt-6 space-y-3.5">
                                 {p.items.map((it, j) => (
@@ -335,7 +335,7 @@ export default function K12() {
 
                 <p
                     className="font-serif italic mt-12"
-                    style={{ fontSize: "clamp(20px, 2vw, 28px)", lineHeight: 1.4, color: "var(--navy)", maxWidth: 820 }}
+                    style={{ fontSize: "clamp(18px, 1.8vw, 24px)", lineHeight: 1.4, color: "var(--navy)", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}
                 >
                     “Every child deserves to be seen clearly. We make sure the right school sees them.”
                 </p>
