@@ -88,14 +88,14 @@ export default function AssessmentTools() {
                             <div
                                 className="flex items-center justify-center"
                                 style={{
-                                    width: 44,
-                                    height: 44,
+                                    width: 52,
+                                    height: 52,
                                     background: "var(--mist)",
                                     border: "1px solid var(--line)",
                                     color: "var(--orange)",
                                 }}
                             >
-                                <Icon size={22} strokeWidth={1.75} />
+                                <Icon size={28} strokeWidth={1.75} />
                             </div>
                             <h3
                                 className="font-display mt-4"

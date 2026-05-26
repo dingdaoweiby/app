@@ -1,39 +1,66 @@
 const ivy = [
-    { school: "Harvard",   initials: "E.W.", note: "Economics" },
-    { school: "Yale",      initials: "M.L.", note: "Molecular Biology" },
-    { school: "Princeton", initials: "A.C.", note: "CS + Math" },
-    { school: "Columbia",  initials: "J.H.", note: "Engineering" },
-    { school: "Penn — Wharton", initials: "S.Z.", note: "Business" },
-    { school: "Cornell",   initials: "R.K.", note: "Engineering" },
-    { school: "Brown — PLME", initials: "D.W.", note: "BS / MD" },
-    { school: "Dartmouth", initials: "N.P.", note: "Government" },
+    { school: "Harvard",        domain: "harvard.edu",       initials: "E.W.", note: "Economics" },
+    { school: "Yale",           domain: "yale.edu",          initials: "M.L.", note: "Molecular Biology" },
+    { school: "Princeton",      domain: "princeton.edu",     initials: "A.C.", note: "CS + Math" },
+    { school: "Columbia",       domain: "columbia.edu",      initials: "J.H.", note: "Engineering" },
+    { school: "Penn — Wharton", domain: "wharton.upenn.edu", initials: "S.Z.", note: "Business" },
+    { school: "Cornell",        domain: "cornell.edu",       initials: "R.K.", note: "Engineering" },
+    { school: "Brown — PLME",   domain: "brown.edu",         initials: "D.W.", note: "BS / MD" },
+    { school: "Dartmouth",      domain: "dartmouth.edu",     initials: "N.P.", note: "Government" },
 ];
 
 const top15 = [
-    { school: "Stanford",      initials: "L.T.", note: "CS + AI" },
-    { school: "MIT",           initials: "K.Y.", note: "EECS" },
-    { school: "Caltech",       initials: "B.X.", note: "Physics" },
-    { school: "Duke",          initials: "T.G.", note: "Public Policy" },
-    { school: "Northwestern",  initials: "P.Q.", note: "Journalism" },
-    { school: "Johns Hopkins", initials: "C.L.", note: "BME" },
-    { school: "Georgetown",    initials: "W.F.", note: "Intl Relations" },
-    { school: "Williams",      initials: "H.M.", note: "Econ + Phil" },
+    { school: "Stanford",      domain: "stanford.edu",     initials: "L.T.", note: "CS + AI" },
+    { school: "MIT",           domain: "mit.edu",          initials: "K.Y.", note: "EECS" },
+    { school: "Caltech",       domain: "caltech.edu",      initials: "B.X.", note: "Physics" },
+    { school: "Duke",          domain: "duke.edu",         initials: "T.G.", note: "Public Policy" },
+    { school: "Northwestern",  domain: "northwestern.edu", initials: "P.Q.", note: "Journalism" },
+    { school: "Johns Hopkins", domain: "jhu.edu",          initials: "C.L.", note: "BME" },
+    { school: "Georgetown",    domain: "georgetown.edu",   initials: "W.F.", note: "Intl Relations" },
+    { school: "Williams",      domain: "williams.edu",     initials: "H.M.", note: "Econ + Phil" },
 ];
 
 const k12 = [
-    { school: "Newark Academy",        initials: "M.C.", note: "4th Grade" },
-    { school: "Pingry",                initials: "S.W.", note: "7th Grade" },
-    { school: "Harvard-Westlake",      initials: "R.L.", note: "9th Grade" },
-    { school: "Phillips Exeter",       initials: "A.Z.", note: "9th · Boarding" },
-    { school: "Princeton Day School",  initials: "E.K.", note: "6th Grade" },
-    { school: "Blair Academy",         initials: "J.M.", note: "9th · Boarding" },
-    { school: "Horace Mann",           initials: "L.X.", note: "9th Grade" },
-    { school: "The Dalton School",     initials: "C.H.", note: "Kindergarten" },
-    { school: "Groton School",         initials: "T.W.", note: "8th · Boarding" },
-    { school: "Lawrenceville",         initials: "B.Y.", note: "9th · Boarding" },
-    { school: "Peddie School",         initials: "N.S.", note: "9th · Boarding" },
-    { school: "Deerfield Academy",     initials: "K.R.", note: "9th · Boarding" },
+    { school: "Newark Academy",        domain: "newarka.edu",        initials: "M.C.", note: "4th Grade" },
+    { school: "Pingry",                domain: "pingry.org",         initials: "S.W.", note: "7th Grade" },
+    { school: "Harvard-Westlake",      domain: "hw.com",             initials: "R.L.", note: "9th Grade" },
+    { school: "Phillips Exeter",       domain: "exeter.edu",         initials: "A.Z.", note: "9th · Boarding" },
+    { school: "Princeton Day School",  domain: "pds.org",            initials: "E.K.", note: "6th Grade" },
+    { school: "Blair Academy",         domain: "blair.edu",          initials: "J.M.", note: "9th · Boarding" },
+    { school: "Horace Mann",           domain: "horacemann.org",     initials: "L.X.", note: "9th Grade" },
+    { school: "The Dalton School",     domain: "dalton.org",         initials: "C.H.", note: "Kindergarten" },
+    { school: "Groton School",         domain: "groton.org",         initials: "T.W.", note: "8th · Boarding" },
+    { school: "Lawrenceville",         domain: "lawrenceville.org",  initials: "B.Y.", note: "9th · Boarding" },
+    { school: "Peddie School",         domain: "peddie.org",         initials: "N.S.", note: "9th · Boarding" },
+    { school: "Deerfield Academy",     domain: "deerfield.edu",      initials: "K.R.", note: "9th · Boarding" },
 ];
+
+function SchoolLogo({ domain, name }) {
+    return (
+        <div
+            className="flex items-center justify-center"
+            style={{
+                width: 44,
+                height: 44,
+                background: "var(--paper)",
+                border: "1px solid var(--line)",
+                flexShrink: 0,
+                overflow: "hidden",
+            }}
+        >
+            <img
+                src={`https://logo.clearbit.com/${domain}`}
+                alt={`${name} logo`}
+                loading="lazy"
+                style={{ maxWidth: 32, maxHeight: 32, objectFit: "contain" }}
+                onError={(e) => {
+                    e.currentTarget.onerror = null;
+                    e.currentTarget.src = `https://www.google.com/s2/favicons?domain=${domain}&sz=128`;
+                }}
+            />
+        </div>
+    );
+}
 
 function Group({ title, schools, columns = 4 }) {
     return (
@@ -55,21 +82,24 @@ function Group({ title, schools, columns = 4 }) {
                     <div
                         key={s.school + i}
                         className="p-5 flex flex-col justify-between"
-                        style={{ background: "var(--paper)", minHeight: 110 }}
+                        style={{ background: "var(--paper)", minHeight: 150 }}
                         data-testid={`tr-card-${s.school.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}
                     >
-                        <p
-                            className="font-display"
-                            style={{
-                                fontSize: "clamp(15px, 1.25vw, 19px)",
-                                lineHeight: 1.15,
-                                color: "var(--navy)",
-                                fontWeight: 600,
-                                letterSpacing: "-0.005em",
-                            }}
-                        >
-                            {s.school}
-                        </p>
+                        <div className="flex items-start gap-3">
+                            <SchoolLogo domain={s.domain} name={s.school} />
+                            <p
+                                className="font-display"
+                                style={{
+                                    fontSize: "clamp(15px, 1.25vw, 19px)",
+                                    lineHeight: 1.15,
+                                    color: "var(--navy)",
+                                    fontWeight: 600,
+                                    letterSpacing: "-0.005em",
+                                }}
+                            >
+                                {s.school}
+                            </p>
+                        </div>
                         <div className="mt-4 pt-3" style={{ borderTop: "1px solid var(--line)" }}>
                             <p className="font-mono" style={{ fontSize: 10, color: "var(--orange)", letterSpacing: "0.12em", fontWeight: 500 }}>
                                 {s.initials}
