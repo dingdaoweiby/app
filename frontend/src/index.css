@@ -3,20 +3,20 @@
 @tailwind utilities;
 
 :root {
-    /* Collegiate Palette — Columbia Navy + UF Orange (v4 unified) */
+    /* Collegiate Palette — matched to source site supernova-seed.com */
     --paper: #ffffff;          /* Crisp white */
-    --bone:  #eaf1f7;          /* Unified with mist for consistency */
-    --mist:  #eaf1f7;          /* Columbia mist — the ONE tinted background */
-    --mist-deep: #d8e4ef;
-    --navy:  #163e72;          /* Restored — deeper, more elegant navy */
-    --navy-deep: #163e72;      /* Same as navy — unified */
-    --steel: #56698a;
-    --orange: #c75b12;
-    --orange-bright: #e16622;
-    --col-blue: #b9d9eb;
-    --line:  #d6dde7;
-    --line-strong: #b6c1d0;
-    --ink:   #0f1a30;
+    --bone:  #ebf5ff;
+    --mist:  #ebf5ff;          /* Source site pale Columbia blue */
+    --mist-deep: #d6e8f7;
+    --navy:  #0077c8;          /* Source site primary blue */
+    --navy-deep: #005a9a;
+    --steel: #53565a;
+    --orange: #ff9800;         /* Source site bright orange accent */
+    --orange-bright: #ffb74d;
+    --col-blue: #6cace4;
+    --line:  #d6e2ed;
+    --line-strong: #b9c9da;
+    --ink:   #1a1a1a;
 }
 
 html, body {
