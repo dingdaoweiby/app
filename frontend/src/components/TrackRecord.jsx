@@ -100,11 +100,11 @@ function Group({ title, schools, columns = 4 }) {
                                 {s.school}
                             </p>
                         </div>
-                        <div className="mt-4 pt-3" style={{ borderTop: "1px solid var(--line)" }}>
-                            <p className="font-mono" style={{ fontSize: 10, color: "var(--orange)", letterSpacing: "0.12em", fontWeight: 500 }}>
+                        <div className="mt-4 flex items-baseline gap-3">
+                            <p className="font-mono" style={{ fontSize: 11, color: "var(--orange)", letterSpacing: "0.12em", fontWeight: 500 }}>
                                 {s.initials}
                             </p>
-                            <p className="font-mono mt-1" style={{ fontSize: 9.5, color: "var(--steel)", letterSpacing: "0.14em", textTransform: "uppercase" }}>
+                            <p className="font-mono" style={{ fontSize: 10, color: "var(--steel)", letterSpacing: "0.14em", textTransform: "uppercase" }}>
                                 {s.note}
                             </p>
                         </div>

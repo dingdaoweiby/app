@@ -85,31 +85,34 @@ export default function AssessmentTools() {
                                 borderBottom: "1px solid var(--line)",
                             }}
                         >
-                            <div
-                                className="flex items-center justify-center"
-                                style={{
-                                    width: 52,
-                                    height: 52,
-                                    background: "var(--mist)",
-                                    border: "1px solid var(--line)",
-                                    color: "var(--orange)",
-                                }}
-                            >
-                                <Icon size={28} strokeWidth={1.75} />
+                            <div className="flex items-center gap-4">
+                                <div
+                                    className="flex items-center justify-center"
+                                    style={{
+                                        width: 52,
+                                        height: 52,
+                                        background: "var(--mist)",
+                                        border: "1px solid var(--line)",
+                                        color: "var(--orange)",
+                                        flexShrink: 0,
+                                    }}
+                                >
+                                    <Icon size={28} strokeWidth={1.75} />
+                                </div>
+                                <h3
+                                    className="font-display"
+                                    style={{
+                                        fontSize: 18,
+                                        lineHeight: 1.2,
+                                        color: "var(--navy)",
+                                        fontWeight: 600,
+                                        letterSpacing: "-0.005em",
+                                    }}
+                                >
+                                    {t.title}
+                                </h3>
                             </div>
-                            <h3
-                                className="font-display mt-4"
-                                style={{
-                                    fontSize: 18,
-                                    lineHeight: 1.25,
-                                    color: "var(--navy)",
-                                    fontWeight: 600,
-                                    letterSpacing: "-0.005em",
-                                }}
-                            >
-                                {t.title}
-                            </h3>
-                            <div className="my-3" style={{ width: 24, height: 2, background: "var(--orange)" }} />
+                            <div className="my-4" style={{ width: 24, height: 2, background: "var(--orange)" }} />
                             <p className="font-serif" style={{ fontSize: 14.5, lineHeight: 1.55, color: "var(--ink)" }}>
                                 {t.body}
                             </p>
