@@ -84,8 +84,8 @@ export default function K12() {
 
             <PageHeader
                 eyebrow="K–9 Private School Admissions"
-                title="The right school."
-                italicWord="The right fit. From the very beginning."
+                title="The right school. The right fit."
+                italicWord="From the very beginning."
                 subtitle="Day schools and boarding schools, Kindergarten through 9th grade — guided by people who know how admissions offices actually read an application."
                 breadcrumb={[{ label: "K–12" }]}
             />

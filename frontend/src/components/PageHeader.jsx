@@ -15,7 +15,7 @@ export default function PageHeader({ eyebrow, title, italicWord, subtitle, bread
             {breadcrumb && (
                 <nav
                     className="flex items-center gap-2 mb-10 font-mono"
-                    style={{ fontSize: 10, letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--steel)" }}
+                    style={{ fontSize: 12, letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--steel)" }}
                 >
                     <Link to="/" className="link-underline" data-testid="breadcrumb-home">Home</Link>
                     {breadcrumb.map((b, i) => (
@@ -32,11 +32,11 @@ export default function PageHeader({ eyebrow, title, italicWord, subtitle, bread
             )}
 
             <div className="flex items-center gap-3">
-                <div style={{ width: 32, height: 1, background: "var(--orange)" }} />
+                <div style={{ width: 36, height: 1, background: "var(--orange)" }} />
                 {eyebrow && (
                     <p
                         className="font-mono"
-                        style={{ fontSize: 11, letterSpacing: "0.24em", textTransform: "uppercase", color: "var(--orange)", fontWeight: 500 }}
+                        style={{ fontSize: 13, letterSpacing: "0.24em", textTransform: "uppercase", color: "var(--orange)", fontWeight: 500 }}
                     >
                         {eyebrow}
                     </p>
