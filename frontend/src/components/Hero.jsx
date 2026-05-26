@@ -60,7 +60,7 @@ export default function Hero() {
                                 <li
                                     key={s.label}
                                     data-testid={`hero-stat-${i}`}
-                                    className="flex items-baseline justify-between gap-4 py-2.5"
+                                    className="flex items-center justify-between gap-4 py-2.5"
                                     style={{ borderBottom: i < arr.length - 1 ? "1px solid var(--line)" : "none" }}
                                 >
                                     <span className="font-display tabular" style={{ fontSize: 26, lineHeight: 1, color: "var(--navy)", fontWeight: 600, letterSpacing: "-0.01em" }}>

@@ -59,8 +59,7 @@ export default function AssessmentTools() {
                         maxWidth: 880,
                     }}
                 >
-                    Start with <em style={{ fontStyle: "italic", color: "var(--orange)", fontWeight: 500 }}>diagnosis</em>,<br />
-                    not templates.
+                    Start with <em style={{ fontStyle: "italic", color: "var(--orange)", fontWeight: 500 }}>diagnosis</em>, not templates.
                 </h2>
                 <div className="mt-8" style={{ width: 56, height: 2, background: "var(--navy)" }} />
                 <p className="font-serif italic mt-6" style={{ fontSize: 17, lineHeight: 1.65, color: "var(--steel)", maxWidth: 620 }}>

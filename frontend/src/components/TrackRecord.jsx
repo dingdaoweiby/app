@@ -141,8 +141,7 @@ export default function TrackRecord() {
                         maxWidth: 880,
                     }}
                 >
-                    Where our students<br />
-                    <em style={{ fontStyle: "italic", color: "var(--orange)", fontWeight: 500 }}>actually went.</em>
+                    Where our students <em style={{ fontStyle: "italic", color: "var(--orange)", fontWeight: 500 }}>actually went.</em>
                 </h2>
                 <div className="mt-8" style={{ width: 56, height: 2, background: "var(--navy)" }} />
                 <p className="font-serif italic mt-6" style={{ fontSize: 17, lineHeight: 1.65, color: "var(--steel)", maxWidth: 620 }}>
