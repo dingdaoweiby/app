@@ -70,10 +70,10 @@ export default function International() {
                         <li key={s.h} className="py-14" style={{
                             borderBottom: "1px solid var(--line)",
                             background: i % 2 === 1 ? "var(--mist)" : "var(--paper)",
-                            marginLeft: "calc(-1 * clamp(20px, 6vw, 96px))",
-                            marginRight: "calc(-1 * clamp(20px, 6vw, 96px))",
-                            paddingLeft: "clamp(20px, 6vw, 96px)",
-                            paddingRight: "clamp(20px, 6vw, 96px)",
+                            marginLeft: "calc(-1 * max(clamp(20px, 4vw, 40px), (100vw - 1200px) / 2))",
+                            marginRight: "calc(-1 * max(clamp(20px, 4vw, 40px), (100vw - 1200px) / 2))",
+                            paddingLeft: "max(clamp(20px, 4vw, 40px), calc((100vw - 1200px) / 2))",
+                            paddingRight: "max(clamp(20px, 4vw, 40px), calc((100vw - 1200px) / 2))",
                         }} data-testid={`intl-service-${i}`}>
                             <div className="grid grid-cols-12 gap-x-10">
                                 <div className="col-span-12 lg:col-span-4">
