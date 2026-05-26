@@ -5,13 +5,13 @@ export default function SectionHeading({
     subtitle,
     align = "left",
     maxTitle = 880,
-    maxSubtitle = 620,
+    maxSubtitle = 720,
 }) {
     const alignCls = align === "center" ? "items-center text-center" : "items-start";
     return (
         <div className={`flex flex-col ${alignCls}`}>
             <div className="flex items-center gap-3">
-                <div style={{ width: 32, height: 1, background: "var(--orange)" }} />
+                <div style={{ width: 28, height: 1, background: "var(--orange)" }} />
                 <p
                     className="font-mono"
                     style={{
@@ -26,11 +26,11 @@ export default function SectionHeading({
                 </p>
             </div>
             <h2
-                className="font-display mt-6"
+                className="font-display mt-5"
                 style={{
-                    fontSize: "clamp(32px, 3.4vw, 50px)",
-                    lineHeight: 1.12,
-                    letterSpacing: "-0.02em",
+                    fontSize: "clamp(26px, 2.4vw, 36px)",
+                    lineHeight: 1.2,
+                    letterSpacing: "-0.01em",
                     fontWeight: 500,
                     color: "var(--navy)",
                     maxWidth: maxTitle,
@@ -38,17 +38,16 @@ export default function SectionHeading({
             >
                 {title}
                 {italic && (
-                    <> <em style={{ fontStyle: "italic", color: "var(--orange)", fontWeight: 500 }}>{italic}</em></>
+                    <> <em style={{ fontStyle: "italic", color: "var(--steel)", fontWeight: 500 }}>{italic}</em></>
                 )}
             </h2>
-            <div className="mt-8" style={{ width: 56, height: 2, background: "var(--navy)" }} />
             {subtitle && (
                 <p
-                    className="font-serif italic mt-6"
+                    className="font-serif mt-5"
                     style={{
-                        fontSize: 17,
+                        fontSize: 16.5,
                         lineHeight: 1.65,
-                        color: "var(--steel)",
+                        color: "var(--ink)",
                         maxWidth: maxSubtitle,
                     }}
                 >

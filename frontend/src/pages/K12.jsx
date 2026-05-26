@@ -100,41 +100,51 @@ export default function K12() {
             <section className="section-x section-y" style={{ background: "var(--paper)" }}>
                 <SectionHeading
                     eyebrow="What We Do"
-                    title="Full-service private"
-                    italic="school admissions."
-                    subtitle="We help families understand who their child is, identify the schools that genuinely fit, and present an application that lets the admissions officer see your child clearly."
+                    title="A complete advisory practice for private school admissions."
+                    subtitle="From first conversation to enrollment day, our work spans every stage of the application year — testing, narrative, interviews, school selection, and decision support."
                 />
 
                 <div className="mt-14 grid grid-cols-1 lg:grid-cols-3 gap-x-10 gap-y-12" style={{ borderTop: "2px solid var(--navy)", paddingTop: 40 }}>
                     {servicePhases.map((p, i) => (
                         <div key={p.phase} data-testid={`k12-phase-${i}`}>
-                            <div className="flex items-baseline gap-3">
-                                <span
-                                    className="font-display"
+                            <div className="flex items-center gap-4">
+                                <div
+                                    className="flex items-center justify-center"
                                     style={{
-                                        fontSize: 32,
-                                        lineHeight: 1,
-                                        color: "var(--orange)",
-                                        fontWeight: 600,
-                                        letterSpacing: "-0.02em",
+                                        width: 56,
+                                        height: 56,
+                                        background: "var(--navy)",
+                                        color: "#fff",
+                                        flexShrink: 0,
                                     }}
                                 >
-                                    {p.phase}
-                                </span>
+                                    <span
+                                        className="font-display"
+                                        style={{
+                                            fontSize: 24,
+                                            lineHeight: 1,
+                                            color: "#fff",
+                                            fontWeight: 600,
+                                            letterSpacing: "-0.01em",
+                                        }}
+                                    >
+                                        {p.phase}
+                                    </span>
+                                </div>
                                 <p
                                     className="font-mono"
                                     style={{
-                                        fontSize: 11,
+                                        fontSize: 12,
                                         letterSpacing: "0.22em",
                                         textTransform: "uppercase",
-                                        color: "var(--steel)",
-                                        fontWeight: 500,
+                                        color: "var(--navy)",
+                                        fontWeight: 600,
                                     }}
                                 >
                                     {p.label}
                                 </p>
                             </div>
-                            <div className="mt-4" style={{ width: 32, height: 2, background: "var(--orange)" }} />
+                            <div className="mt-5" style={{ width: 32, height: 2, background: "var(--orange)" }} />
 
                             <ul className="mt-6 space-y-3.5">
                                 {p.items.map((it, j) => (
@@ -172,9 +182,8 @@ export default function K12() {
             <section className="section-x section-y" style={{ background: "var(--mist)" }}>
                 <SectionHeading
                     eyebrow="Where Our Students Go"
-                    title="Schools our families"
-                    italic="have been admitted to."
-                    subtitle="A representative selection of day and boarding schools across the country."
+                    title="Day and boarding schools where our families have been admitted."
+                    subtitle="A representative selection across the country — boarding programs and leading day schools in New Jersey, New York, and California."
                 />
 
                 <div className="mt-14 grid grid-cols-1 md:grid-cols-2 gap-px" style={{ background: "var(--line)", border: "1px solid var(--line)" }}>
@@ -215,9 +224,8 @@ export default function K12() {
             <section className="section-x section-y" style={{ background: "var(--paper)" }}>
                 <SectionHeading
                     eyebrow="Student Stories"
-                    title="How families found"
-                    italic="the right fit."
-                    subtitle="Four short cases from recent admissions cycles. Initials shown out of respect for privacy."
+                    title="How four families found the right fit."
+                    subtitle="Short cases from recent admissions cycles. Initials shown out of respect for privacy."
                 />
 
                 <ol className="mt-12" style={{ borderTop: "2px solid var(--navy)" }}>
