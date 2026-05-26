@@ -66,12 +66,12 @@ export default function Pillars() {
                             borderBottom: i < pillars.length - 1 ? "1px solid var(--line)" : "none",
                         }}
                     >
-                        <div className="flex items-start justify-between mb-12">
+                        <div className="flex items-start justify-between mb-8">
                             <span
                                 className="font-display"
                                 style={{
-                                    fontSize: "clamp(56px, 6vw, 96px)",
-                                    lineHeight: 0.85,
+                                    fontSize: "clamp(32px, 3vw, 44px)",
+                                    lineHeight: 0.9,
                                     color: "var(--orange)",
                                     fontWeight: 600,
                                     letterSpacing: "-0.02em",
@@ -79,7 +79,7 @@ export default function Pillars() {
                             >
                                 {p.n}
                             </span>
-                            <span className="font-mono" style={{ fontSize: 10, letterSpacing: "0.22em", color: "var(--steel)", marginTop: 10, textTransform: "uppercase" }}>
+                            <span className="font-mono" style={{ fontSize: 10, letterSpacing: "0.22em", color: "var(--steel)", marginTop: 6, textTransform: "uppercase" }}>
                                 Pillar {p.roman}
                             </span>
                         </div>

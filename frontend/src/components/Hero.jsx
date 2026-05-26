@@ -12,7 +12,7 @@ export default function Hero() {
                 background: "var(--mist)",
             }}
         >
-            <div className="grid grid-cols-12 gap-x-10 gap-y-14">
+            <div className="grid grid-cols-12 gap-x-10 gap-y-10 items-center">
                 <div className="col-span-12 lg:col-span-8">
                     <h1
                         data-testid="hero-headline"
@@ -31,7 +31,7 @@ export default function Hero() {
                     </h1>
 
                     <p
-                        className="rise delay-2 font-mono mt-10"
+                        className="rise delay-2 font-mono mt-7"
                         style={{
                             fontSize: 12,
                             letterSpacing: "0.22em",
@@ -45,11 +45,11 @@ export default function Hero() {
                 </div>
 
                 <div className="col-span-12 lg:col-span-4 rise delay-3">
-                    <div className="p-7" style={{ background: "var(--paper)", border: "1px solid var(--line)" }}>
+                    <div className="px-5 py-5" style={{ background: "var(--paper)", border: "1px solid var(--line)" }}>
                         <p className="font-mono" style={{ fontSize: 11, letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--orange)", fontWeight: 500 }}>
                             Outcomes
                         </p>
-                        <div className="mt-2 mb-5" style={{ width: 30, height: 2, background: "var(--orange)" }} />
+                        <div className="mt-2 mb-3" style={{ width: 30, height: 2, background: "var(--orange)" }} />
                         <ul>
                             {[
                                 { num: "70%",  label: "Placement in Top 25" },
@@ -60,13 +60,13 @@ export default function Hero() {
                                 <li
                                     key={s.label}
                                     data-testid={`hero-stat-${i}`}
-                                    className="flex items-baseline justify-between gap-4 py-3"
+                                    className="flex items-baseline justify-between gap-4 py-2.5"
                                     style={{ borderBottom: i < arr.length - 1 ? "1px solid var(--line)" : "none" }}
                                 >
-                                    <span className="font-display tabular" style={{ fontSize: 30, lineHeight: 1, color: "var(--navy)", fontWeight: 600, letterSpacing: "-0.01em" }}>
+                                    <span className="font-display tabular" style={{ fontSize: 26, lineHeight: 1, color: "var(--navy)", fontWeight: 600, letterSpacing: "-0.01em" }}>
                                         {s.num}
                                     </span>
-                                    <span className="font-mono text-right" style={{ fontSize: 10, letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--steel)", lineHeight: 1.4, maxWidth: 170 }}>
+                                    <span className="font-mono text-right" style={{ fontSize: 11.5, letterSpacing: "0.16em", textTransform: "uppercase", color: "var(--steel)", lineHeight: 1.4, maxWidth: 180 }}>
                                         {s.label}
                                     </span>
                                 </li>
@@ -76,7 +76,7 @@ export default function Hero() {
                 </div>
             </div>
 
-            <div className="grid grid-cols-12 gap-x-10 mt-20 rise delay-4 rule-top pt-14">
+            <div className="grid grid-cols-12 gap-x-10 mt-12 rise delay-4 rule-top pt-10">
                 <div className="col-span-12 lg:col-span-7">
                     <p
                         className="font-serif"
