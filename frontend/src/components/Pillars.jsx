@@ -27,30 +27,31 @@ export default function Pillars() {
             className="section-x section-y"
             style={{ background: "var(--paper)" }}
         >
-            <div className="grid grid-cols-12 gap-x-10">
-                <div className="col-span-12 lg:col-span-7">
-                    <p className="font-mono" style={{ fontSize: 11, letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--orange)", fontWeight: 500 }}>
+            <div>
+                <div className="flex items-center gap-3">
+                    <div style={{ width: 32, height: 1, background: "var(--orange)" }} />
+                    <p className="font-mono" style={{ fontSize: 11, letterSpacing: "0.24em", textTransform: "uppercase", color: "var(--orange)", fontWeight: 500 }}>
                         Approach
                     </p>
-                    <h2
-                        className="font-display mt-6"
-                        style={{
-                            fontSize: "clamp(40px, 5vw, 72px)",
-                            lineHeight: 1,
-                            letterSpacing: "-0.02em",
-                            fontWeight: 500,
-                            color: "var(--navy)",
-                        }}
-                    >
-                        Three convictions —<br />
-                        and the practice we built around them.
-                    </h2>
                 </div>
-                <div className="col-span-12 lg:col-span-4 lg:col-start-9 mt-8 lg:mt-0 flex items-end">
-                    <p className="font-serif" style={{ fontSize: 17, lineHeight: 1.6, color: "var(--steel)", fontStyle: "italic" }}>
-                        These principles shape every decision we make on behalf of a family — from first conversation to submitted application.
-                    </p>
-                </div>
+                <h2
+                    className="font-display mt-6"
+                    style={{
+                        fontSize: "clamp(32px, 3.4vw, 50px)",
+                        lineHeight: 1.12,
+                        letterSpacing: "-0.02em",
+                        fontWeight: 500,
+                        color: "var(--navy)",
+                        maxWidth: 880,
+                    }}
+                >
+                    Three convictions —<br />
+                    <em style={{ fontStyle: "italic", color: "var(--orange)", fontWeight: 500 }}>the practice we built around them.</em>
+                </h2>
+                <div className="mt-8" style={{ width: 56, height: 2, background: "var(--navy)" }} />
+                <p className="font-serif italic mt-6" style={{ fontSize: 17, lineHeight: 1.65, color: "var(--steel)", maxWidth: 620 }}>
+                    These principles shape every decision we make on behalf of a family — from first conversation to submitted application.
+                </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-0 mt-16" style={{ borderTop: "2px solid var(--navy)" }}>

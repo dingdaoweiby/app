@@ -39,31 +39,34 @@ export default function AssessmentTools() {
             className="section-x section-y"
             style={{ background: "var(--mist)" }}
         >
-            <div className="grid grid-cols-12 gap-x-10 mb-14">
-                <div className="col-span-12 lg:col-span-7">
-                    <p className="eyebrow">Assessment Tools</p>
-                    <h2
-                        className="font-display mt-5"
-                        style={{
-                            fontSize: "clamp(38px, 4.6vw, 64px)",
-                            lineHeight: 1.02,
-                            letterSpacing: "-0.02em",
-                            fontWeight: 500,
-                            color: "var(--navy)",
-                        }}
-                    >
-                        Start with <em style={{ fontStyle: "italic", color: "var(--orange)" }}>diagnosis</em>,
-                        <br />not templates.
-                    </h2>
-                    <p className="font-serif italic mt-6" style={{ fontSize: 18, lineHeight: 1.5, color: "var(--steel)", maxWidth: 560 }}>
-                        Every student's path is uniquely theirs. The frameworks below guide our partnership — from the first session through application submission.
+            <div className="mb-14">
+                <div className="flex items-center gap-3">
+                    <div style={{ width: 32, height: 1, background: "var(--orange)" }} />
+                    <p className="font-mono" style={{ fontSize: 11, letterSpacing: "0.24em", textTransform: "uppercase", color: "var(--orange)", fontWeight: 500 }}>
+                        Assessment Tools
                     </p>
                 </div>
-                <div className="col-span-12 lg:col-span-5 flex items-end">
-                    <p className="font-mono" style={{ fontSize: 11, letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--steel)", lineHeight: 1.6, maxWidth: 360 }}>
-                        Six structured frameworks · one coordinated practice
-                    </p>
-                </div>
+                <h2
+                    className="font-display mt-6"
+                    style={{
+                        fontSize: "clamp(32px, 3.4vw, 50px)",
+                        lineHeight: 1.12,
+                        letterSpacing: "-0.02em",
+                        fontWeight: 500,
+                        color: "var(--navy)",
+                        maxWidth: 880,
+                    }}
+                >
+                    Start with <em style={{ fontStyle: "italic", color: "var(--orange)", fontWeight: 500 }}>diagnosis</em>,<br />
+                    not templates.
+                </h2>
+                <div className="mt-8" style={{ width: 56, height: 2, background: "var(--navy)" }} />
+                <p className="font-serif italic mt-6" style={{ fontSize: 17, lineHeight: 1.65, color: "var(--steel)", maxWidth: 620 }}>
+                    Every student's path is uniquely theirs. The frameworks below guide our partnership — from the first session through application submission.
+                </p>
+                <p className="font-mono mt-5" style={{ fontSize: 10.5, letterSpacing: "0.24em", textTransform: "uppercase", color: "var(--steel)", fontWeight: 500 }}>
+                    Six structured frameworks · one coordinated practice
+                </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0" style={{ borderTop: "2px solid var(--navy)" }}>

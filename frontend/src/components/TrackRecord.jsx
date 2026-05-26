@@ -93,28 +93,31 @@ export default function TrackRecord() {
             className="section-x section-y"
             style={{ background: "var(--paper)" }}
         >
-            <div className="grid grid-cols-12 gap-x-10 mb-4">
-                <div className="col-span-12 lg:col-span-7">
-                    <p className="eyebrow">Track Record</p>
-                    <h2
-                        className="font-display mt-5"
-                        style={{
-                            fontSize: "clamp(34px, 4.2vw, 60px)",
-                            lineHeight: 1.02,
-                            letterSpacing: "-0.02em",
-                            fontWeight: 500,
-                            color: "var(--navy)",
-                        }}
-                    >
-                        Where our students<br />
-                        <em style={{ fontStyle: "italic", color: "var(--orange)" }}>actually went.</em>
-                    </h2>
-                </div>
-                <div className="col-span-12 lg:col-span-5 flex items-end">
-                    <p className="font-serif italic" style={{ fontSize: 16, lineHeight: 1.6, color: "var(--steel)", maxWidth: 460 }}>
-                        Class of 2026 admissions outcomes — Ivy League, Top 15 and Elite Technical, and K–12 Private Schools. Initials shown out of respect for privacy.
+            <div className="mb-4">
+                <div className="flex items-center gap-3">
+                    <div style={{ width: 32, height: 1, background: "var(--orange)" }} />
+                    <p className="font-mono" style={{ fontSize: 11, letterSpacing: "0.24em", textTransform: "uppercase", color: "var(--orange)", fontWeight: 500 }}>
+                        Track Record
                     </p>
                 </div>
+                <h2
+                    className="font-display mt-6"
+                    style={{
+                        fontSize: "clamp(32px, 3.4vw, 50px)",
+                        lineHeight: 1.12,
+                        letterSpacing: "-0.02em",
+                        fontWeight: 500,
+                        color: "var(--navy)",
+                        maxWidth: 880,
+                    }}
+                >
+                    Where our students<br />
+                    <em style={{ fontStyle: "italic", color: "var(--orange)", fontWeight: 500 }}>actually went.</em>
+                </h2>
+                <div className="mt-8" style={{ width: 56, height: 2, background: "var(--navy)" }} />
+                <p className="font-serif italic mt-6" style={{ fontSize: 17, lineHeight: 1.65, color: "var(--steel)", maxWidth: 620 }}>
+                    Class of 2026 admissions outcomes — Ivy League, Top 15 and Elite Technical, and K–12 Private Schools. Initials shown out of respect for privacy.
+                </p>
             </div>
 
             <Group title="Ivy League"               schools={ivy}   columns={4} />
