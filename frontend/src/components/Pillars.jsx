@@ -54,7 +54,7 @@ export default function Pillars() {
                 </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-0 mt-16" style={{ borderTop: "2px solid var(--navy)" }}>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-0 mt-12" style={{ borderTop: "2px solid var(--navy)" }}>
                 {pillars.map((p, i) => (
                     <article
                         key={p.n}

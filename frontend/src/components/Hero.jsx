@@ -7,8 +7,8 @@ export default function Hero() {
             id="top"
             className="section-x relative"
             style={{
-                paddingTop: "clamp(56px, 8vw, 110px)",
-                paddingBottom: "clamp(72px, 10vw, 140px)",
+                paddingTop: "clamp(40px, 5vw, 76px)",
+                paddingBottom: "clamp(48px, 6vw, 88px)",
                 background: "var(--mist)",
             }}
         >

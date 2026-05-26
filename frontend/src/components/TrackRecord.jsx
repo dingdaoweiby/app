@@ -64,7 +64,7 @@ function SchoolLogo({ domain, name }) {
 
 function Group({ title, schools, columns = 4 }) {
     return (
-        <div className="mt-14" data-testid={`tr-group-${title.toLowerCase().replace(/[^a-z]+/g, "-")}`}>
+        <div className="mt-10" data-testid={`tr-group-${title.toLowerCase().replace(/[^a-z]+/g, "-")}`}>
             <div className="flex items-end justify-between mb-6" style={{ borderBottom: "2px solid var(--navy)", paddingBottom: 10 }}>
                 <h3 className="font-display" style={{ fontSize: "clamp(20px, 1.8vw, 26px)", color: "var(--navy)", fontWeight: 600, letterSpacing: "-0.005em" }}>{title}</h3>
                 <p className="font-mono" style={{ fontSize: 10, letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--steel)" }}>Class of 2026</p>
@@ -81,16 +81,16 @@ function Group({ title, schools, columns = 4 }) {
                 {schools.map((s, i) => (
                     <div
                         key={s.school + i}
-                        className="p-5 flex flex-col justify-between"
-                        style={{ background: "var(--paper)", minHeight: 150 }}
+                        className="p-4 flex flex-col justify-between"
+                        style={{ background: "var(--paper)", minHeight: 116 }}
                         data-testid={`tr-card-${s.school.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}
                     >
-                        <div className="flex items-start gap-3">
+                        <div className="flex items-center gap-3">
                             <SchoolLogo domain={s.domain} name={s.school} />
                             <p
                                 className="font-display"
                                 style={{
-                                    fontSize: "clamp(15px, 1.25vw, 19px)",
+                                    fontSize: "clamp(15px, 1.2vw, 18px)",
                                     lineHeight: 1.15,
                                     color: "var(--navy)",
                                     fontWeight: 600,
@@ -100,7 +100,7 @@ function Group({ title, schools, columns = 4 }) {
                                 {s.school}
                             </p>
                         </div>
-                        <div className="mt-4 flex items-baseline gap-3">
+                        <div className="mt-3 flex items-baseline gap-3">
                             <p className="font-mono" style={{ fontSize: 11, color: "var(--orange)", letterSpacing: "0.12em", fontWeight: 500 }}>
                                 {s.initials}
                             </p>
