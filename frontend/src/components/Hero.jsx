@@ -90,7 +90,7 @@ export default function Hero() {
                     >
                         Through personalized guidance and genuine understanding, we help students build
                         meaningful academic and extracurricular profiles, tell their authentic stories, and
-                        navigate admissions with clarity and confidence — from K–9 private school to the
+                        navigate admissions with clarity and confidence — from K–12 private school to the
                         Ivy League and Top 15 colleges.
                     </p>
 

@@ -28,8 +28,8 @@ export default function SectionHeading({
             <h2
                 className="font-display mt-5"
                 style={{
-                    fontSize: "clamp(26px, 2.4vw, 36px)",
-                    lineHeight: 1.2,
+                    fontSize: "clamp(32px, 3vw, 44px)",
+                    lineHeight: 1.15,
                     letterSpacing: "-0.01em",
                     fontWeight: 500,
                     color: "var(--navy)",

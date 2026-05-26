@@ -40,19 +40,63 @@ const servicePhases = [
 const schoolGroups = [
     {
         region: "Top Boarding Schools",
-        schools: "Phillips Academy Andover · Phillips Exeter Academy · St. Paul's School · Deerfield Academy · The Lawrenceville School · The Hotchkiss School · Choate Rosemary Hall · Groton School · Middlesex School · Milton Academy",
+        schools: [
+            "Phillips Academy Andover",
+            "Phillips Exeter Academy",
+            "St. Paul's School",
+            "Deerfield Academy",
+            "The Lawrenceville School",
+            "The Hotchkiss School",
+            "Choate Rosemary Hall",
+            "Groton School",
+            "Middlesex School",
+            "Milton Academy",
+        ],
     },
     {
         region: "New Jersey",
-        schools: "Newark Academy · The Pingry School · Princeton Day School · Gill St. Bernard's · Kent Place School · Montclair Kimberley Academy · Dwight-Englewood School · Saddle River Day School",
+        schools: [
+            "Newark Academy",
+            "The Pingry School",
+            "Princeton Day School",
+            "Gill St. Bernard's",
+            "Kent Place School",
+            "Montclair Kimberley Academy",
+            "Dwight-Englewood School",
+            "Saddle River Day School",
+        ],
     },
     {
         region: "New York",
-        schools: "Trinity School · Horace Mann School · Collegiate School · Dalton School · Brearley School · Spence School · Chapin School · Riverdale Country School · Poly Prep Country Day School · Rye Country Day School · Ethical Culture Fieldston School · Hackley School",
+        schools: [
+            "Trinity School",
+            "Horace Mann School",
+            "Collegiate School",
+            "Dalton School",
+            "Brearley School",
+            "Spence School",
+            "Chapin School",
+            "Riverdale Country School",
+            "Poly Prep Country Day School",
+            "Rye Country Day School",
+            "Ethical Culture Fieldston School",
+            "Hackley School",
+        ],
     },
     {
         region: "California",
-        schools: "Harvard-Westlake School · The Harker School · Castilleja School · Marlborough School · The Bishop's School · Chadwick School · Crystal Springs Uplands School · Menlo School · Head-Royce School · Polytechnic School",
+        schools: [
+            "Harvard-Westlake School",
+            "The Harker School",
+            "Castilleja School",
+            "Marlborough School",
+            "The Bishop's School",
+            "Chadwick School",
+            "Crystal Springs Uplands School",
+            "Menlo School",
+            "Head-Royce School",
+            "Polytechnic School",
+        ],
     },
 ];
 
@@ -89,7 +133,7 @@ export default function K12() {
             <Nav />
 
             <PageHeader
-                eyebrow="K–9 Private School Admissions"
+                eyebrow="K–12 Private School Admissions"
                 title="The right school."
                 italicWord="The right fit."
                 subtitle="Day schools and boarding schools, Kindergarten through 9th grade — guided by people who know how admissions offices actually read an application."
@@ -113,9 +157,11 @@ export default function K12() {
                                     style={{
                                         width: 56,
                                         height: 56,
-                                        background: "var(--navy)",
+                                        background: "var(--orange)",
                                         color: "#fff",
                                         flexShrink: 0,
+                                        borderRadius: "50%",
+                                        boxShadow: "0 4px 14px rgba(255,152,0,0.28)",
                                     }}
                                 >
                                     <span
@@ -209,12 +255,28 @@ export default function K12() {
                                     {g.region}
                                 </p>
                             </div>
-                            <p
-                                className="font-display mt-5"
-                                style={{ fontSize: 17, lineHeight: 1.55, color: "var(--navy)", fontWeight: 500, letterSpacing: "-0.005em" }}
-                            >
-                                {g.schools}
-                            </p>
+                            <div className="mt-5 flex flex-wrap gap-2">
+                                {g.schools.map((s, j) => (
+                                    <span
+                                        key={s}
+                                        data-testid={`k12-region-${i}-school-${j}`}
+                                        className="font-display"
+                                        style={{
+                                            display: "inline-block",
+                                            padding: "8px 12px",
+                                            background: "var(--mist)",
+                                            border: "1px solid var(--line)",
+                                            color: "var(--navy)",
+                                            fontSize: 13.5,
+                                            lineHeight: 1.2,
+                                            fontWeight: 500,
+                                            letterSpacing: "-0.005em",
+                                        }}
+                                    >
+                                        {s}
+                                    </span>
+                                ))}
+                            </div>
                         </article>
                     ))}
                 </div>
