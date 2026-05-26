@@ -104,24 +104,28 @@ const stories = [
     {
         name: "E.D.",
         school: "Phillips Exeter Academy",
+        domain: "exeter.edu",
         tag: "Boarding",
         body: "A quiet, math-driven 8th grader with strong test scores but a flat activity list that looked like every other high-achieving applicant. We helped the family step back from resume-padding and instead built the application around his genuine obsession with topology puzzles and the math club he started in his garage. Exeter's admissions team saw a thinker, not a template. Admitted with financial aid.",
     },
     {
         name: "J.W.",
         school: "The Pingry School",
+        domain: "pingry.org",
         tag: "NJ Day School",
         body: "A 5th grader applying for 6th-grade entry whose parents were convinced she needed more trophies. We redirected the narrative toward what was already there — a deep love of environmental science and a quiet leadership style her teachers adored but her parents hadn't noticed. Her parent essay and interview reflected a family that truly understood their child. Admitted to Pingry and Newark Academy; enrolled at Pingry.",
     },
     {
         name: "J.C.",
         school: "Trinity School",
+        domain: "trinityschoolnyc.org",
         tag: "NY Day School",
         body: "A Kindergarten applicant in a hyper-competitive Manhattan cycle. The family had been coached by another consultant to rehearse interview answers. We undid that entirely — helped the parents relax, reframed the parent essay around their actual parenting values, and let the child show up as herself in the playgroup observation. Admitted on the first round.",
     },
     {
         name: "S.L.",
         school: "The Harker School",
+        domain: "harker.org",
         tag: "CA Day School",
         body: "A 7th grader transferring from public school with no private school network, no legacy, and parents who spoke limited English. We handled the full application architecture — school selection, ISEE prep, essay development, interview coaching in both English and Mandarin — and positioned the student's robotics work and Mandarin debate experience as distinctive strengths. Admitted to Harker and Castilleja.",
     },
@@ -294,20 +298,41 @@ export default function K12() {
                     {stories.map((s, i) => (
                         <li
                             key={s.school + i}
-                            className="grid grid-cols-12 gap-x-8 py-8"
+                            className="grid grid-cols-12 gap-x-6 py-8"
                             style={{ borderBottom: "1px solid var(--line)" }}
                             data-testid={`k12-story-${i}`}
                         >
-                            <div className="col-span-12 lg:col-span-4">
+                            <div className="col-span-12 lg:col-span-3">
+                                <div
+                                    className="flex items-center justify-center"
+                                    style={{
+                                        width: 56,
+                                        height: 56,
+                                        background: "var(--paper)",
+                                        border: "1px solid var(--line)",
+                                        overflow: "hidden",
+                                    }}
+                                >
+                                    <img
+                                        src={`https://www.google.com/s2/favicons?domain=${s.domain}&sz=128`}
+                                        alt={`${s.school} logo`}
+                                        loading="lazy"
+                                        style={{ maxWidth: 40, maxHeight: 40, objectFit: "contain" }}
+                                        onError={(e) => {
+                                            e.currentTarget.onerror = null;
+                                            e.currentTarget.src = `https://logo.clearbit.com/${s.domain}`;
+                                        }}
+                                    />
+                                </div>
                                 <p
-                                    className="font-mono"
+                                    className="font-mono mt-4"
                                     style={{ fontSize: 10, letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--orange)", fontWeight: 500 }}
                                 >
                                     {s.tag}
                                 </p>
                                 <h3
-                                    className="font-display mt-3"
-                                    style={{ fontSize: 22, color: "var(--navy)", fontWeight: 600, lineHeight: 1.2, letterSpacing: "-0.005em" }}
+                                    className="font-display mt-2"
+                                    style={{ fontSize: 20, color: "var(--navy)", fontWeight: 600, lineHeight: 1.2, letterSpacing: "-0.005em" }}
                                 >
                                     {s.school}
                                 </h3>
@@ -318,7 +343,7 @@ export default function K12() {
                                     {s.name}
                                 </p>
                             </div>
-                            <div className="col-span-12 lg:col-span-8 mt-3 lg:mt-0">
+                            <div className="col-span-12 lg:col-span-9 mt-3 lg:mt-0">
                                 <p className="font-serif" style={{ fontSize: 16.5, lineHeight: 1.65, color: "var(--ink)" }}>
                                     {s.body}
                                 </p>
