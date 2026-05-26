@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import PageHeader from "@/components/PageHeader";
 import SectionHeading from "@/components/SectionHeading";
 import ClosingCTA from "@/components/ClosingCTA";
+import SchoolLogo from "@/components/SchoolLogo";
 
 const servicePhases = [
     {
@@ -303,27 +304,7 @@ export default function K12() {
                             data-testid={`k12-story-${i}`}
                         >
                             <div className="col-span-12 lg:col-span-3">
-                                <div
-                                    className="flex items-center justify-center"
-                                    style={{
-                                        width: 56,
-                                        height: 56,
-                                        background: "var(--paper)",
-                                        border: "1px solid var(--line)",
-                                        overflow: "hidden",
-                                    }}
-                                >
-                                    <img
-                                        src={`https://www.google.com/s2/favicons?domain=${s.domain}&sz=128`}
-                                        alt={`${s.school} logo`}
-                                        loading="lazy"
-                                        style={{ maxWidth: 40, maxHeight: 40, objectFit: "contain" }}
-                                        onError={(e) => {
-                                            e.currentTarget.onerror = null;
-                                            e.currentTarget.src = `https://logo.clearbit.com/${s.domain}`;
-                                        }}
-                                    />
-                                </div>
+                                <SchoolLogo domain={s.domain} name={s.school} size={56} imgSize={40} />
                                 <p
                                     className="font-mono mt-4"
                                     style={{ fontSize: 10, letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--orange)", fontWeight: 500 }}
