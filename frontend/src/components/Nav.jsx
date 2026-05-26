@@ -30,31 +30,43 @@ export default function Nav() {
 
     useEffect(() => { setMobileOpen(false); setOpenCollege(false); }, [location.pathname]);
 
+    const linkBase = {
+        fontFamily: "'Source Serif Pro', Georgia, serif",
+        fontSize: 17,
+        fontWeight: 500,
+        letterSpacing: "-0.005em",
+        color: "var(--navy)",
+        transition: "color 180ms ease",
+        padding: "10px 4px",
+    };
+
     return (
         <header
             data-testid="top-nav"
-            className="sticky top-0 z-50 transition-shadow"
+            className="sticky top-0 z-50"
             style={{
-                backgroundColor: "var(--navy)",
-                color: "#fff",
-                boxShadow: scrolled ? "0 1px 0 rgba(0,0,0,0.18)" : "none",
+                backgroundColor: "#fff",
+                color: "var(--navy)",
+                borderBottom: scrolled ? "1px solid var(--line)" : "1px solid transparent",
+                boxShadow: scrolled ? "0 1px 0 rgba(15,26,48,0.04)" : "none",
+                transition: "border-color 200ms ease, box-shadow 200ms ease",
             }}
         >
-            <div className="section-x flex items-center justify-between" style={{ height: 74 }}>
+            <div className="section-x flex items-center justify-between" style={{ height: 88 }}>
                 <Link to="/" data-testid="nav-logo" className="flex items-center gap-3">
-                    <svg width="26" height="32" viewBox="0 0 26 32" aria-hidden="true">
-                        <path d="M1 1 H25 V21 L13 31 L1 21 Z" fill="none" stroke="#fff" strokeWidth="1.5" />
+                    <svg width="30" height="36" viewBox="0 0 26 32" aria-hidden="true">
+                        <path d="M1 1 H25 V21 L13 31 L1 21 Z" fill="none" stroke="var(--navy)" strokeWidth="1.5" />
                         <path d="M13 7 V25 M7 13 H19" stroke="var(--orange)" strokeWidth="1.5" />
                     </svg>
                     <span
-                        className="font-display tracking-tight"
-                        style={{ fontSize: 21, color: "#fff", fontWeight: 600, letterSpacing: "-0.01em" }}
+                        className="font-display"
+                        style={{ fontSize: 24, color: "var(--navy)", fontWeight: 600, letterSpacing: "-0.015em", lineHeight: 1 }}
                     >
                         Supernova Education
                     </span>
                 </Link>
 
-                <nav className="hidden lg:flex items-center gap-8">
+                <nav className="hidden lg:flex items-center" style={{ gap: 36 }}>
                     {navItems.map((item) =>
                         item.children ? (
                             <div
@@ -65,21 +77,16 @@ export default function Nav() {
                             >
                                 <button
                                     data-testid="nav-college-trigger"
-                                    className="font-mono flex items-center gap-2"
+                                    className="flex items-center gap-1.5"
                                     style={{
-                                        fontSize: 11,
-                                        letterSpacing: "0.18em",
-                                        textTransform: "uppercase",
-                                        color: "rgba(255,255,255,0.88)",
-                                        fontWeight: 500,
+                                        ...linkBase,
                                         background: "transparent",
                                         border: "none",
-                                        padding: "8px 0",
                                         cursor: "pointer",
                                     }}
                                 >
                                     {item.label}
-                                    <span style={{ fontSize: 9, color: "var(--orange)" }}>▾</span>
+                                    <span style={{ fontSize: 11, color: "var(--orange)", marginTop: 2 }}>▾</span>
                                 </button>
 
                                 {openCollege && (
@@ -90,14 +97,14 @@ export default function Nav() {
                                             top: "100%",
                                             left: "50%",
                                             transform: "translateX(-50%)",
-                                            minWidth: 320,
+                                            minWidth: 340,
                                             background: "#fff",
                                             border: "1px solid var(--line)",
-                                            boxShadow: "0 12px 28px rgba(15,26,48,0.12)",
+                                            boxShadow: "0 16px 32px rgba(15,26,48,0.12)",
                                             padding: "8px 0",
                                         }}
                                     >
-                                        <div className="px-5 py-3" style={{ borderBottom: "1px solid var(--line)" }}>
+                                        <div className="px-6 py-3" style={{ borderBottom: "1px solid var(--line)" }}>
                                             <p className="font-mono" style={{ fontSize: 10, letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--orange)", fontWeight: 500 }}>
                                                 College Admissions
                                             </p>
@@ -107,7 +114,7 @@ export default function Nav() {
                                                 key={c.to}
                                                 to={c.to}
                                                 data-testid={`nav-college-${c.to.split("/").pop()}`}
-                                                className="block px-5 py-4 font-display"
+                                                className="block px-6 py-4 font-display"
                                                 style={{
                                                     fontSize: 16,
                                                     color: "var(--navy)",
@@ -129,14 +136,14 @@ export default function Nav() {
                                 key={item.to}
                                 to={item.to}
                                 data-testid={`nav-link-${item.label.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}
-                                className="link-underline font-mono"
                                 style={({ isActive }) => ({
-                                    fontSize: 11,
-                                    letterSpacing: "0.18em",
-                                    textTransform: "uppercase",
-                                    color: isActive ? "var(--orange)" : "rgba(255,255,255,0.88)",
-                                    fontWeight: 500,
+                                    ...linkBase,
+                                    color: isActive ? "var(--orange)" : "var(--navy)",
                                 })}
+                                onMouseEnter={(e) => { e.currentTarget.style.color = "var(--orange)"; }}
+                                onMouseLeave={(e) => {
+                                    e.currentTarget.style.color = e.currentTarget.classList.contains("active") ? "var(--orange)" : "var(--navy)";
+                                }}
                             >
                                 {item.label}
                             </NavLink>
@@ -150,21 +157,20 @@ export default function Nav() {
                         data-testid="nav-cta"
                         className="hidden md:inline-flex items-center"
                         style={{
-                            background: "#fff",
-                            color: "var(--navy)",
-                            fontFamily: "'IBM Plex Mono', monospace",
-                            fontSize: 11,
+                            background: "var(--navy)",
+                            color: "#fff",
+                            fontFamily: "'Source Serif Pro', Georgia, serif",
+                            fontSize: 15,
                             fontWeight: 500,
-                            letterSpacing: "0.2em",
-                            textTransform: "uppercase",
-                            padding: "13px 22px",
-                            border: "1px solid #fff",
-                            transition: "background-color 220ms ease, color 220ms ease, border-color 220ms ease",
+                            letterSpacing: "-0.005em",
+                            padding: "14px 26px",
+                            border: "1px solid var(--navy)",
+                            transition: "background-color 220ms ease, border-color 220ms ease, color 220ms ease",
                         }}
-                        onMouseEnter={(e) => { e.currentTarget.style.background = "var(--orange)"; e.currentTarget.style.borderColor = "var(--orange)"; e.currentTarget.style.color = "#fff"; }}
-                        onMouseLeave={(e) => { e.currentTarget.style.background = "#fff"; e.currentTarget.style.borderColor = "#fff"; e.currentTarget.style.color = "var(--navy)"; }}
+                        onMouseEnter={(e) => { e.currentTarget.style.background = "var(--orange)"; e.currentTarget.style.borderColor = "var(--orange)"; }}
+                        onMouseLeave={(e) => { e.currentTarget.style.background = "var(--navy)"; e.currentTarget.style.borderColor = "var(--navy)"; }}
                     >
-                        Schedule
+                        Schedule a Consultation
                     </Link>
 
                     <button
@@ -173,13 +179,11 @@ export default function Nav() {
                         onClick={() => setMobileOpen((v) => !v)}
                         style={{
                             background: "transparent",
-                            color: "#fff",
-                            border: "1px solid rgba(255,255,255,0.4)",
-                            padding: "10px 12px",
-                            fontFamily: "'IBM Plex Mono', monospace",
-                            fontSize: 10,
-                            letterSpacing: "0.22em",
-                            textTransform: "uppercase",
+                            color: "var(--navy)",
+                            border: "1px solid var(--line-strong)",
+                            padding: "10px 14px",
+                            fontFamily: "'Source Serif Pro', Georgia, serif",
+                            fontSize: 14,
                             cursor: "pointer",
                         }}
                     >
@@ -192,7 +196,7 @@ export default function Nav() {
                 <div
                     data-testid="nav-mobile-menu"
                     className="lg:hidden section-x"
-                    style={{ background: "var(--navy-deep)", padding: "20px 0 28px", borderTop: "1px solid rgba(255,255,255,0.12)" }}
+                    style={{ background: "#fff", padding: "16px 0 24px", borderTop: "1px solid var(--line)" }}
                 >
                     <ul className="space-y-1">
                         {navItems.map((item) => (
@@ -200,18 +204,18 @@ export default function Nav() {
                                 {item.children ? (
                                     <details>
                                         <summary
-                                            className="font-mono py-3 cursor-pointer"
-                                            style={{ fontSize: 12, letterSpacing: "0.22em", textTransform: "uppercase", color: "#fff" }}
+                                            className="font-display py-3 cursor-pointer"
+                                            style={{ fontSize: 18, color: "var(--navy)", fontWeight: 500 }}
                                         >
                                             {item.label} <span style={{ color: "var(--orange)", marginLeft: 6 }}>▾</span>
                                         </summary>
-                                        <ul className="pl-4 mt-1 space-y-1" style={{ borderLeft: "1px solid rgba(255,255,255,0.2)" }}>
+                                        <ul className="pl-4 mt-1 space-y-1" style={{ borderLeft: "1px solid var(--line)" }}>
                                             {item.children.map((c) => (
                                                 <li key={c.to}>
                                                     <NavLink
                                                         to={c.to}
                                                         className="block py-2 font-serif"
-                                                        style={{ fontSize: 15, color: "rgba(255,255,255,0.85)" }}
+                                                        style={{ fontSize: 15, color: "var(--steel)" }}
                                                     >
                                                         {c.label}
                                                     </NavLink>
@@ -222,8 +226,8 @@ export default function Nav() {
                                 ) : (
                                     <NavLink
                                         to={item.to}
-                                        className="block py-3 font-mono"
-                                        style={{ fontSize: 12, letterSpacing: "0.22em", textTransform: "uppercase", color: "#fff" }}
+                                        className="block py-3 font-display"
+                                        style={{ fontSize: 18, color: "var(--navy)", fontWeight: 500 }}
                                     >
                                         {item.label}
                                     </NavLink>
