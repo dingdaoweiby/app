@@ -1,63 +1,33 @@
-# Supernova Education — Full Multi-Page Build (v8)
+# Supernova Education — Full Site (v9 · Final Content Port)
 
-## Original Problem Statement
-> https://www.supernova-seed.com 这个是我的网站，但是现在的排版啊，页面啊，字体呀，颜色搭配呀，设计感都太差了。需要更加学院风、更艺术、让家长安心。
+## Status: Style locked · Content fully ported from supernova-seed.com (English only)
 
-## Latest Iteration — Full Site Build
-**User Direction (this round):**
-- Remove Hero watermark (didn't like the crest texture)
-- Remove Track Record honor roll from homepage
-- Replace nav with program structure: K-12 · College ▾ · Graduate · Research · International · Contact
-- College has dropdown with two sub-pages (Strategic Planning + Admissions Consulting)
-- Add 4-stage Methodology flow on homepage AFTER Three Convictions
-- Use simplified Page Header on all sub-pages (not full Hero)
-- English only — no Chinese for now
-- Optimize content from original site
+## What's Live
+- **8 routes** rendered via React Router (BrowserRouter + ScrollToTop)
+- **Homepage** (`/`):
+  - Nav (deep navy) · Hero (mist + Reading Room plate) · Stats (white) · Marquee (mist)
+  - **Track Record** (Ivy 8 + Top 15 8 + K-12 Private 12) — RESTORED with full original data
+  - Three Convictions (Pillars) on mist
+  - **Assessment Tools** — 6 tools (5 original + new Family Communication Audit) on mist
+  - Student Stories · Closing CTA · Footer
+- **Subpages**: K-12 · College › Strategic Planning · College › Admissions Consulting · Graduate · Research · International · Contact (no form, only 3 ways to reach + "what happens next" 4-step process)
+- All content sourced verbatim from supernova-seed.com (English only). Chinese intentionally omitted per user direction.
 
-## Locked Design System
-- **Theme:** Old-money academic / editorial / Princeton–Yale–Columbia viewbook
-- **Typography:** Playfair Display (headlines) · Source Serif 4 (body) · IBM Plex Mono (labels/numbers)
-- **Palette:**
-  - Paper white `#FFFFFF`
-  - Columbia Mist `#EAF1F7`
-  - Navy `#163E72` (Nav + Footer)
-  - Burnt Orange `#C75B12` (accent — eyebrows, italic emphasis, numbers, hover)
-  - Steel `#56698A`, Hairline `#D6DDE7`
-- **Background pattern:** Alternating mist / white across content sections; navy bookends (Nav top + Footer bottom)
-
-## Architecture
-- React Router v7 — multi-page SPA
-- All routes scroll-to-top on navigation
-- Reusable: `Nav`, `Footer`, `PageHeader`, `PageCTA`, `ProgramSection`, `Marquee`, `Methodology`
-
-## Routes (8 pages)
-| Route | Page | Sections |
-|---|---|---|
-| `/` | Home | Hero · Stats · Marquee · Pillars · Methodology · Stories · CTA |
-| `/k-12` | K-12 | Overview · ISEE/SSAT Prep · Private School Admissions |
-| `/college/strategic-planning` | College — 9-11 | Why Early · Course Selection · ECs · Summer/Testing |
-| `/college/admissions-consulting` | College — Senior Year | School List · Essays · Interviews · Decisions |
-| `/graduate` | Graduate | Med School · PhD · MBA · DIY Support |
-| `/research` | Research | 12-Month Arc · Fields Supported |
-| `/international` | International | Visa · Homestay · Guardianship |
-| `/contact` | Contact | 3 ways (Email/Phone/WeChat) · Studio · Next Steps |
-
-## Content Highlights
-- 4-stage Methodology (Diagnostic → Roadmap → Coaching → Decisions) with deliverable per stage
-- Each program page = breadcrumb + Page Header + Overview card + 2–4 ProgramSection blocks + PageCTA + Footer
-- Recent admits showcased on every program page in orange-bordered sidebar
-- Contact page replaces traditional form with "Three Ways to Reach" + "What Happens Next" 4-step process
+## Tech
+- React (CRA) + Tailwind + React Router v7
+- Source Serif 4 · Playfair Display · IBM Plex Mono
+- Palette: Navy `#163E72` (Nav + Footer bookend) · Mist `#EAF1F7` · White · Burnt Orange `#C75B12`
 
 ## Backlog / Future
-- P1 — Replace Unsplash images with authentic Supernova photography
-- P1 — Design proper Supernova crest (logo currently uses placeholder shield)
-- P1 — Add subtle scroll-reveal animations
-- P2 — Chinese locale (separate i18n route)
-- P2 — Real contact form with email backend
-- P2 — CMS for editing program content & student outcomes
-- P2 — Blog / Insights section for SEO + parent education content
+- P1 — Replace Unsplash placeholders with the practice's own commissioned photography
+- P1 — Design proper Supernova crest (current shield is a placeholder)
+- P1 — Animation polish (scroll reveals, page transitions)
+- P2 — Add real contact form with email backend (user said no form for now)
+- P2 — Chinese locale (`/zh/...` routes) when user is ready
+- P2 — Insights / blog section for SEO and parent education
+- P2 — CMS layer for editing program content & student outcomes
+- P2 — Founder bio page (high trust-signal for parents calling in)
 
 ## Next Actions
-1. Review the live site end-to-end (8 pages)
-2. Edits requested per page (content, imagery, micro-copy)
-3. After approval: image replacement + crest design + animations
+- User reviews 8 pages end-to-end
+- Iterate page-by-page on copy, structure, or imagery as requested

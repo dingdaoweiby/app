@@ -3,7 +3,7 @@ import Footer from "@/components/Footer";
 import PageHeader from "@/components/PageHeader";
 import PageCTA from "@/components/PageCTA";
 
-const HERO_IMG = "https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?w=1200&q=85&auto=format&fit=crop";
+const HERO_IMG = "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=1200&q=85&auto=format&fit=crop";
 
 const services = [
     {

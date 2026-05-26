@@ -1,16 +1,13 @@
-import { Link } from "react-router-dom";
 import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
 import StatsStrip from "@/components/StatsStrip";
 import Marquee from "@/components/Marquee";
+import TrackRecord from "@/components/TrackRecord";
 import Pillars from "@/components/Pillars";
-import Methodology from "@/components/Methodology";
+import AssessmentTools from "@/components/AssessmentTools";
 import StudentStories from "@/components/StudentStories";
 import ClosingCTA from "@/components/ClosingCTA";
 import Footer from "@/components/Footer";
-
-// Link import is kept to ensure react-router context is intact for nested anchors.
-void Link;
 
 export default function Home() {
     return (
@@ -19,8 +16,9 @@ export default function Home() {
             <Hero />
             <StatsStrip />
             <Marquee />
+            <TrackRecord />
             <Pillars />
-            <Methodology />
+            <AssessmentTools />
             <StudentStories />
             <ClosingCTA />
             <Footer />
