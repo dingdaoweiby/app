@@ -13,7 +13,7 @@ export default function Hero() {
             }}
         >
             <div className="grid grid-cols-12 gap-x-10 gap-y-10 items-center">
-                <div className="col-span-12 lg:col-span-8">
+                <div className="col-span-12 lg:col-span-7">
                     <h1
                         data-testid="hero-headline"
                         className="rise delay-1 font-display"
@@ -44,12 +44,12 @@ export default function Hero() {
                     </p>
                 </div>
 
-                <div className="col-span-12 lg:col-span-4 rise delay-3">
-                    <div className="px-5 py-5" style={{ background: "var(--paper)", border: "1px solid var(--line)" }}>
+                <div className="col-span-12 lg:col-span-5 rise delay-3">
+                    <div className="px-7 py-7" style={{ background: "var(--paper)", border: "1px solid var(--line)" }}>
                         <p className="font-mono" style={{ fontSize: 11, letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--orange)", fontWeight: 500 }}>
                             Outcomes
                         </p>
-                        <div className="mt-2 mb-3" style={{ width: 30, height: 2, background: "var(--orange)" }} />
+                        <div className="mt-2 mb-4" style={{ width: 32, height: 2, background: "var(--orange)" }} />
                         <ul>
                             {[
                                 { num: "70%",  label: "Placement in Top 25" },
@@ -60,13 +60,13 @@ export default function Hero() {
                                 <li
                                     key={s.label}
                                     data-testid={`hero-stat-${i}`}
-                                    className="flex items-center justify-between gap-4 py-2.5"
+                                    className="flex items-center justify-between gap-4 py-3.5"
                                     style={{ borderBottom: i < arr.length - 1 ? "1px solid var(--line)" : "none" }}
                                 >
-                                    <span className="font-display tabular" style={{ fontSize: 26, lineHeight: 1, color: "var(--navy)", fontWeight: 600, letterSpacing: "-0.01em" }}>
+                                    <span className="font-display tabular" style={{ fontSize: 32, lineHeight: 1, color: "var(--navy)", fontWeight: 600, letterSpacing: "-0.01em" }}>
                                         {s.num}
                                     </span>
-                                    <span className="font-mono text-right" style={{ fontSize: 11.5, letterSpacing: "0.16em", textTransform: "uppercase", color: "var(--steel)", lineHeight: 1.4, maxWidth: 180 }}>
+                                    <span className="font-mono text-right" style={{ fontSize: 12, letterSpacing: "0.16em", textTransform: "uppercase", color: "var(--steel)", lineHeight: 1.4, maxWidth: 220 }}>
                                         {s.label}
                                     </span>
                                 </li>
