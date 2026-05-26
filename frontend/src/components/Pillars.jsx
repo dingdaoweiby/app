@@ -62,11 +62,12 @@ export default function Pillars() {
                         aria-hidden="true"
                         style={{
                             position: "absolute",
-                            top: 56,
+                            top: 36,
                             left: "16.66%",
                             right: "16.66%",
                             height: 1,
-                            background: "var(--line-strong)",
+                            background: "var(--orange)",
+                            opacity: 0.5,
                             zIndex: 0,
                         }}
                     />
@@ -79,21 +80,21 @@ export default function Pillars() {
                         >
                             <div
                                 style={{
-                                    width: 112,
-                                    height: 112,
+                                    width: 72,
+                                    height: 72,
                                     borderRadius: "50%",
-                                    background: "var(--navy)",
+                                    background: "var(--orange)",
                                     color: "#fff",
                                     display: "flex",
                                     alignItems: "center",
                                     justifyContent: "center",
-                                    boxShadow: "0 6px 18px rgba(0,119,200,0.18)",
+                                    boxShadow: "0 4px 14px rgba(255,152,0,0.28)",
                                 }}
                             >
                                 <span
                                     className="font-display"
                                     style={{
-                                        fontSize: 48,
+                                        fontSize: 30,
                                         lineHeight: 1,
                                         color: "#fff",
                                         fontWeight: 600,
@@ -104,7 +105,7 @@ export default function Pillars() {
                                 </span>
                             </div>
                             <h3
-                                className="font-display mt-8"
+                                className="font-display mt-7"
                                 style={{
                                     fontSize: "clamp(20px, 1.6vw, 24px)",
                                     lineHeight: 1.2,
@@ -116,7 +117,7 @@ export default function Pillars() {
                             >
                                 {p.title}
                             </h3>
-                            <div className="mt-4" style={{ width: 32, height: 2, background: "var(--orange)" }} />
+                            <div className="mt-4" style={{ width: 28, height: 2, background: "var(--orange)" }} />
                             <p
                                 className="font-serif mt-5"
                                 style={{
