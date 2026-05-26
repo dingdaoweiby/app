@@ -30,7 +30,7 @@ export default function Pillars() {
             <div className="grid grid-cols-12 gap-x-10">
                 <div className="col-span-12 lg:col-span-7">
                     <p className="font-mono" style={{ fontSize: 11, letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--orange)", fontWeight: 500 }}>
-                        § II · Approach
+                        Approach
                     </p>
                     <h2
                         className="font-display mt-6"

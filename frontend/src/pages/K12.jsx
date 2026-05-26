@@ -71,7 +71,7 @@ export default function K12() {
         <main data-testid="page-k12" className="min-h-screen">
             <Nav />
             <PageHeader
-                eyebrow="§ Program · K–9 Private School Admissions"
+                eyebrow="K–9 Private School Admissions"
                 title="The right school. The right fit."
                 italicWord="From the very beginning."
                 subtitle=""
@@ -90,7 +90,7 @@ export default function K12() {
             <section className="section-x section-y" style={{ background: "var(--paper)" }}>
                 <div className="grid grid-cols-12 gap-x-10 gap-y-10">
                     <div className="col-span-12 lg:col-span-5">
-                        <p className="eyebrow">§ I · What We Do</p>
+                        <p className="eyebrow">What We Do</p>
                         <h2 className="font-display mt-5" style={{ fontSize: "clamp(32px, 4vw, 56px)", lineHeight: 1.05, letterSpacing: "-0.02em", fontWeight: 500, color: "var(--navy)" }}>
                             Full-service private school admissions.
                         </h2>
@@ -117,7 +117,7 @@ export default function K12() {
 
             {/* Where students go */}
             <section className="section-x section-y" style={{ background: "var(--mist)" }}>
-                <p className="eyebrow">§ II · Where Our Students Go</p>
+                <p className="eyebrow">Where Our Students Go</p>
                 <h2 className="font-display mt-5" style={{ fontSize: "clamp(32px, 4vw, 56px)", lineHeight: 1.05, letterSpacing: "-0.02em", fontWeight: 500, color: "var(--navy)", maxWidth: 820 }}>
                     Schools our families have been admitted to.
                 </h2>
@@ -137,7 +137,7 @@ export default function K12() {
 
             {/* Student stories */}
             <section className="section-x section-y" style={{ background: "var(--paper)" }}>
-                <p className="eyebrow">§ III · Student Stories</p>
+                <p className="eyebrow">Student Stories</p>
                 <h2 className="font-display mt-5" style={{ fontSize: "clamp(32px, 4vw, 56px)", lineHeight: 1.05, letterSpacing: "-0.02em", fontWeight: 500, color: "var(--navy)" }}>
                     How families found the right fit.
                 </h2>

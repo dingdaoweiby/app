@@ -22,7 +22,7 @@ export default function Footer() {
                         <p className="font-mono" style={{ fontSize: 11, letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--orange)", fontWeight: 500 }}>Studio</p>
                         <p className="font-serif mt-4" style={{ fontSize: 16, color: "#fff", lineHeight: 1.65 }}>
                             Livingston<br />New Jersey 07039<br />
-                            <span style={{ color: "rgba(255,255,255,0.62)", fontSize: 14 }}>In-person & online</span>
+                            <span style={{ color: "rgba(255,255,255,0.62)", fontSize: 14 }}>In-person and online</span>
                         </p>
                     </div>
 

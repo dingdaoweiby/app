@@ -7,7 +7,7 @@ export default function Contact() {
         <main data-testid="page-contact" className="min-h-screen">
             <Nav />
             <PageHeader
-                eyebrow="§ Begin · Contact"
+                eyebrow="Contact"
                 title="We would love to meet"
                 italicWord="your family."
                 subtitle="The first conversation is always diagnostic, never a sales call. We respond within 24 hours to find a time that works."

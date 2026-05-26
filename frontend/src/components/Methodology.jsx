@@ -22,7 +22,7 @@ const stages = [
     },
     {
         n: "IV",
-        title: "Decisions & Beyond",
+        title: "Decisions and Beyond",
         when: "Notification Season",
         body: "We help you read offers with clarity — financial aid letters, honors programs, post-acceptance choices, and the conversations that come next. The relationship doesn't end at submission.",
         deliverable: "Final Decision · Transition to Campus",
@@ -39,7 +39,7 @@ export default function Methodology() {
         >
             <div className="grid grid-cols-12 gap-x-10 mb-16">
                 <div className="col-span-12 lg:col-span-7">
-                    <p className="eyebrow">§ III · Methodology</p>
+                    <p className="eyebrow">Methodology</p>
                     <h2
                         className="font-display mt-5"
                         style={{

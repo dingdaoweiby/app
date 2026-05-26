@@ -12,7 +12,7 @@ const stories = [
         school: "Duke University",
         tag: "Top 15",
         body: "A student-athlete with Division III–level lacrosse talent and a genuine interest in public policy, but a scattered application. We streamlined the story — sport, policy, leadership — and built a supplemental essay set that showed Duke exactly how he would contribute beyond the field.",
-        outcome: "Admitted to Trinity College of Arts & Sciences.",
+        outcome: "Admitted to Trinity College of Arts and Sciences.",
     },
     {
         school: "Williams College",
@@ -38,7 +38,7 @@ export default function StudentStories() {
         >
             <div className="grid grid-cols-12 gap-x-10 mb-14">
                 <div className="col-span-12 lg:col-span-8">
-                    <p className="eyebrow">§ III · Student Stories</p>
+                    <p className="eyebrow">Student Stories</p>
                     <h2
                         className="font-display mt-5"
                         style={{

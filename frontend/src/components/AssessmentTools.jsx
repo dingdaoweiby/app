@@ -41,7 +41,7 @@ export default function AssessmentTools() {
         >
             <div className="grid grid-cols-12 gap-x-10 mb-14">
                 <div className="col-span-12 lg:col-span-7">
-                    <p className="eyebrow">§ III · Assessment Tools</p>
+                    <p className="eyebrow">Assessment Tools</p>
                     <h2
                         className="font-display mt-5"
                         style={{

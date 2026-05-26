@@ -9,39 +9,39 @@ const fields = [
     {
         h: "STEM",
         items: [
-            "Biology & Biomedical Sciences",
-            "Computer Science & Artificial Intelligence",
-            "Engineering & Robotics",
-            "Mathematics & Applied Statistics",
-            "Chemistry & Environmental Science",
-            "Physics & Astronomy",
+            "Biology and Biomedical Sciences",
+            "Computer Science and Artificial Intelligence",
+            "Engineering and Robotics",
+            "Mathematics and Applied Statistics",
+            "Chemistry and Environmental Science",
+            "Physics and Astronomy",
         ],
     },
     {
         h: "Business",
         items: [
-            "Finance & Economics",
-            "Marketing & Consumer Behavior",
-            "Entrepreneurship & Innovation",
-            "Data Analytics & Business Intelligence",
+            "Finance and Economics",
+            "Marketing and Consumer Behavior",
+            "Entrepreneurship and Innovation",
+            "Data Analytics and Business Intelligence",
         ],
     },
     {
         h: "Social Sciences",
         items: [
-            "Psychology & Behavioral Science",
-            "Political Science & Public Policy",
-            "Sociology & Education",
+            "Psychology and Behavioral Science",
+            "Political Science and Public Policy",
+            "Sociology and Education",
             "International Relations",
         ],
     },
     {
         h: "Humanities",
         items: [
-            "History & Philosophy",
-            "Literature & Cultural Studies",
-            "Linguistics & Communication",
-            "Art History & Visual Culture",
+            "History and Philosophy",
+            "Literature and Cultural Studies",
+            "Linguistics and Communication",
+            "Art History and Visual Culture",
         ],
     },
 ];
@@ -77,7 +77,7 @@ const formats = [
 
 const projects = [
     {
-        field: "Business — Finance & Economics / Digital Economy & Development Economics",
+        field: "Business — Finance and Economics / Digital Economy and Development Economics",
         title: "Next Generation Economic Modalities: How emerging economic modalities shape carbon reduction and sharing mechanisms",
         mentor: "Robert Lyon, NYU Stern School of Business Professor",
         time: "Course starts 2026/03/13 · Paper deadline 2026/07/10",
@@ -91,28 +91,28 @@ const projects = [
         img: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=800&q=80",
     },
     {
-        field: "STEM — Computer Science & AI / Data Science",
-        title: "From Linear Programming to ‘Learning Well & Computing Stable’ in Neural Networks",
+        field: "STEM — Computer Science and AI / Data Science",
+        title: "From Linear Programming to ‘Learning Well and Computing Stable’ in Neural Networks",
         mentor: "David Woodruff, Carnegie Mellon University (Tenured Professor)",
         time: "Paper deadline 2026/06/26",
         img: "https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=800&q=80",
     },
     {
-        field: "STEM — Computer Science & AI / Operations Research",
-        title: "The Secrets of Optimization & AI Algorithms",
+        field: "STEM — Computer Science and AI / Operations Research",
+        title: "The Secrets of Optimization and AI Algorithms",
         mentor: "David Woodruff, Carnegie Mellon University (Tenured Professor)",
         time: "Paper deadline 2026/06/26",
         img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
     },
     {
-        field: "STEM — Artificial Intelligence & Machine Learning",
+        field: "STEM — Artificial Intelligence and Machine Learning",
         title: "Algorithms for Big Data",
         mentor: "David Woodruff, Carnegie Mellon University (Tenured Professor)",
         time: "Paper deadline 2026/06/26",
         img: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=800&q=80",
     },
     {
-        field: "STEM — AI & Operations Research",
+        field: "STEM — AI and Operations Research",
         title: "Optimal Control and Planning via Dynamic Programming and Reinforcement Learning",
         mentor: "Peter Zhang, Carnegie Mellon University Professor",
         time: "Paper deadline 2026/07/10",
@@ -120,15 +120,15 @@ const projects = [
     },
     {
         field: "STEM — Data Science / Computer Science",
-        title: "Network Social Data Mining & User Behavior Pattern Analysis",
-        mentor: "O.Y., Carnegie Mellon University (Tenured Professor, Electrical & Computer Engineering)",
+        title: "Network Social Data Mining and User Behavior Pattern Analysis",
+        mentor: "O.Y., Carnegie Mellon University (Tenured Professor, Electrical and Computer Engineering)",
         time: "Course starts 2026/07/12",
         img: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=80",
     },
     {
         field: "STEM — Data Science / Computer Science",
         title: "Data Science Classification Techniques and Algorithms",
-        mentor: "O.Y., Carnegie Mellon University (Tenured Professor, Electrical & Computer Engineering)",
+        mentor: "O.Y., Carnegie Mellon University (Tenured Professor, Electrical and Computer Engineering)",
         time: "Course starts 2026/08/02",
         img: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=800&q=80",
     },
@@ -139,7 +139,7 @@ export default function Research() {
         <main data-testid="page-research" className="min-h-screen">
             <Nav />
             <PageHeader
-                eyebrow="§ Program · Research Mentorship"
+                eyebrow="Research Mentorship"
                 title="From curiosity to publication."
                 italicWord="Real research. Real output."
                 subtitle="We pair students with active researchers and PhD mentors. Every project produces a tangible academic output — a conference paper, a research report, or a competition submission."
@@ -155,7 +155,7 @@ export default function Research() {
 
             {/* Fields */}
             <section className="section-x section-y" style={{ background: "var(--paper)" }}>
-                <p className="eyebrow">§ I · Research Fields</p>
+                <p className="eyebrow">Research Fields</p>
                 <h2 className="font-display mt-5" style={{ fontSize: "clamp(32px, 4vw, 56px)", lineHeight: 1.05, letterSpacing: "-0.02em", fontWeight: 500, color: "var(--navy)" }}>
                     What you can study.
                 </h2>
@@ -184,7 +184,7 @@ export default function Research() {
 
             {/* Formats */}
             <section className="section-x section-y" style={{ background: "var(--mist)" }}>
-                <p className="eyebrow">§ II · Program Formats</p>
+                <p className="eyebrow">Program Formats</p>
                 <h2 className="font-display mt-5" style={{ fontSize: "clamp(32px, 4vw, 56px)", lineHeight: 1.05, letterSpacing: "-0.02em", fontWeight: 500, color: "var(--navy)" }}>
                     Two formats.
                 </h2>
@@ -217,7 +217,7 @@ export default function Research() {
 
             {/* Current projects */}
             <section className="section-x section-y" style={{ background: "var(--paper)" }}>
-                <p className="eyebrow">§ III · Current Projects</p>
+                <p className="eyebrow">Current Projects</p>
                 <h2 className="font-display mt-5" style={{ fontSize: "clamp(32px, 4vw, 56px)", lineHeight: 1.05, letterSpacing: "-0.02em", fontWeight: 500, color: "var(--navy)" }}>
                     Open projects this cycle.
                 </h2>

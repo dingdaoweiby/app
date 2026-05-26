@@ -55,7 +55,7 @@ export default function Graduate() {
         <main data-testid="page-graduate" className="min-h-screen">
             <Nav />
             <PageHeader
-                eyebrow="§ Program · Graduate Admissions"
+                eyebrow="Graduate Admissions"
                 title="Graduate Admissions"
                 italicWord="Support."
                 subtitle="Strategic guidance for medical school, doctoral, MBA, and self-directed applicants — structured support at every stage of the graduate application process."

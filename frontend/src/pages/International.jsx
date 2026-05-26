@@ -50,7 +50,7 @@ export default function International() {
         <main data-testid="page-international" className="min-h-screen">
             <Nav />
             <PageHeader
-                eyebrow="§ Program · International Student Support"
+                eyebrow="International Student Support"
                 title="From acceptance"
                 italicWord="through the school year."
                 subtitle="Visa guidance, homestay placement, and guardian services — structured so families, schools, and hosts stay aligned."

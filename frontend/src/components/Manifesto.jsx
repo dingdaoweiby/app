@@ -8,7 +8,7 @@ export default function Manifesto() {
             <div className="grid grid-cols-12 gap-10">
                 <div className="col-span-12 lg:col-span-9">
                     <p className="font-mono" style={{ fontSize: 11, letterSpacing: "0.24em", textTransform: "uppercase", color: "var(--orange)", fontWeight: 500 }}>
-                        § IV · A Practice, Not a Firm
+                        A Practice, Not a Firm
                     </p>
                     <h2
                         className="font-display mt-8"

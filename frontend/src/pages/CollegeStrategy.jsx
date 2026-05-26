@@ -9,7 +9,7 @@ const specialists = [
     {
         n: "01",
         role: "Strategic Counselor",
-        sub: "Direction & long-term planning",
+        sub: "Direction and long-term planning",
         bullets: [
             "Builds the Comprehensive Student Evaluation",
             "Sets Ivy / Top 15 targets and defines the ideal school profile",
@@ -20,7 +20,7 @@ const specialists = [
     {
         n: "02",
         role: "Admissions Officer",
-        sub: "Quality & institutional perspective",
+        sub: "Quality and institutional perspective",
         bullets: [
             "Former admissions officer from a top-tier university",
             "Reviews every deliverable with a critical institutional lens",
@@ -31,7 +31,7 @@ const specialists = [
     {
         n: "03",
         role: "Resource Manager",
-        sub: "Execution & opportunities",
+        sub: "Execution and opportunities",
         bullets: [
             "Sources research placements, summer programs, and competitions",
             "Manages AP and SAT timelines, scholarships, and awards calendars",
@@ -42,7 +42,7 @@ const specialists = [
     {
         n: "04",
         role: "Family Coach",
-        sub: "Mental health & family dynamics",
+        sub: "Mental health and family dynamics",
         bullets: [
             "Monitors teen mental health throughout high-pressure periods",
             "Supports parent-child communication and expectation alignment",
@@ -57,9 +57,9 @@ const dimensions = [
         title: "Comprehensive Student Evaluation",
         tagline: "The foundation. Before any planning begins, we map who your child actually is.",
         items: [
-            "Personality, learning style & executive function assessment",
+            "Personality, learning style and executive function assessment",
             "Gallup StrengthsFinder — full 34-dimension talent profile",
-            "Academic interest mapping & potential major recommendations",
+            "Academic interest mapping and potential major recommendations",
             "Career trajectory — a 20-year directional read",
             "Student profile: strengths, gaps, and risk points",
             "Family education style assessment — expectations, involvement, alignment",
@@ -82,7 +82,7 @@ const dimensions = [
         title: "College Roadmap (Grades 9–12)",
         tagline: "The operational plan. Five parallel tracks, running simultaneously across three years.",
         items: [
-            "GPA targets, AP sequencing, SAT milestones & testing timeline",
+            "GPA targets, AP sequencing, SAT milestones and testing timeline",
             "Retake planning and score optimization",
             "Clubs: participate → contribute → lead",
             "Sports: recreational vs. recruit track",
@@ -92,7 +92,7 @@ const dimensions = [
             "Research: independent or mentor-led, with publishable output",
             "Projects: engineering, business, or social impact",
             "Competitions: AMC, ISEF, DECA, and equivalents",
-            "Awards & honors: National / State / School pipeline with hit-rate strategy",
+            "Awards and honors: National / State / School pipeline with hit-rate strategy",
         ],
         deliverable: "College Roadmap with milestone tracking",
     },
@@ -100,10 +100,10 @@ const dimensions = [
         title: "Progress Report + Regular Follow-Up Meetings",
         tagline: "The accountability structure. Strategy means nothing without execution.",
         groups: [
-            { h: "1) Core Academics", items: ["Course selection", "Academic criteria — GPA & rigor balance", "Standardized tests — SAT / AP planning"] },
+            { h: "1) Core Academics", items: ["Course selection", "Academic criteria — GPA and rigor balance", "Standardized tests — SAT / AP planning"] },
             { h: "2) Extracurricular Activity", items: ["Required activities — matched to target direction", "Optional activities — interest exploration", "Annual activity goal: Explore → Develop → Lead", "Activity depth design: participate → deepen → impact"] },
-            { h: "3) Academics Theme & Achievement", items: ["Research / Projects — output-driven", "Summer programs", "Specialties — Art / Athlete / Talent"] },
-            { h: "4) Personal Growth & Family Relationships", items: ["Basic skills: writing, public speaking, STEM fluency", "Interest exploration: videos, seminars, external exposure", "Career path — aligned with the evaluation report", "Family relationships", "Teenagers' mental health"] },
+            { h: "3) Academics Theme and Achievement", items: ["Research / Projects — output-driven", "Summer programs", "Specialties — Art / Athlete / Talent"] },
+            { h: "4) Personal Growth and Family Relationships", items: ["Basic skills: writing, public speaking, STEM fluency", "Interest exploration: videos, seminars, external exposure", "Career path — aligned with the evaluation report", "Family relationships", "Teenagers' mental health"] },
         ],
         deliverable: "Annual Plan + Monthly Progress Report",
     },
@@ -120,7 +120,7 @@ export default function CollegeStrategy() {
         <main data-testid="page-college-strategy" className="min-h-screen">
             <Nav />
             <PageHeader
-                eyebrow="§ Program · 9–11th Grade Cultivation"
+                eyebrow="9–11th Grade Cultivation"
                 title="Real capability. Real growth."
                 italicWord="The offer is the proof."
                 subtitle="Skills, mindset, substance — built through three years of authentic development, not just application tactics."
@@ -138,7 +138,7 @@ export default function CollegeStrategy() {
             <section className="section-x section-y" style={{ background: "var(--paper)" }}>
                 <div className="grid grid-cols-12 gap-x-10 gap-y-10">
                     <div className="col-span-12 lg:col-span-5">
-                        <p className="eyebrow">§ I · Our Belief</p>
+                        <p className="eyebrow">Our Belief</p>
                         <h2 className="font-display mt-5" style={{ fontSize: "clamp(32px, 4vw, 56px)", lineHeight: 1.05, letterSpacing: "-0.02em", fontWeight: 500, color: "var(--navy)" }}>
                             Success isn't the letter. It's the student.
                         </h2>
@@ -164,7 +164,7 @@ export default function CollegeStrategy() {
             <section className="section-x section-y" style={{ background: "var(--mist)" }}>
                 <div className="grid grid-cols-12 gap-x-10 mb-12">
                     <div className="col-span-12 lg:col-span-7">
-                        <p className="eyebrow">§ II · Who Serves Your Family</p>
+                        <p className="eyebrow">Who Serves Your Family</p>
                         <h2 className="font-display mt-5" style={{ fontSize: "clamp(32px, 4vw, 56px)", lineHeight: 1.05, letterSpacing: "-0.02em", fontWeight: 500, color: "var(--navy)" }}>
                             Four experts for one student / one family.
                         </h2>
@@ -209,7 +209,7 @@ export default function CollegeStrategy() {
 
             {/* Four Dimensions */}
             <section className="section-x section-y" style={{ background: "var(--paper)" }}>
-                <p className="eyebrow">§ III · What You Receive</p>
+                <p className="eyebrow">What You Receive</p>
                 <h2 className="font-display mt-5" style={{ fontSize: "clamp(32px, 4vw, 56px)", lineHeight: 1.05, letterSpacing: "-0.02em", fontWeight: 500, color: "var(--navy)" }}>
                     Four core dimensions on a yearly basis.
                 </h2>
@@ -271,7 +271,7 @@ export default function CollegeStrategy() {
 
             {/* Operating Rhythm */}
             <section className="section-x section-y" style={{ background: "var(--mist)" }}>
-                <p className="eyebrow">§ IV · Our Operating Rhythm</p>
+                <p className="eyebrow">Our Operating Rhythm</p>
                 <h2 className="font-display mt-5" style={{ fontSize: "clamp(32px, 4vw, 56px)", lineHeight: 1.05, letterSpacing: "-0.02em", fontWeight: 500, color: "var(--navy)" }}>
                     Three layers, every month.
                 </h2>

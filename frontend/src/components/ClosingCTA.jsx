@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function ClosingCTA() {
     return (
         <section
@@ -8,31 +10,27 @@ export default function ClosingCTA() {
         >
             <div className="grid grid-cols-12 gap-x-10 items-end">
                 <div className="col-span-12 lg:col-span-8">
-                    <p className="eyebrow">§ V · Begin</p>
                     <h2
-                        className="font-display mt-6"
+                        className="font-display"
                         style={{
-                            fontSize: "clamp(44px, 6.4vw, 104px)",
-                            lineHeight: 0.98,
-                            letterSpacing: "-0.025em",
+                            fontSize: "clamp(28px, 3.4vw, 52px)",
+                            lineHeight: 1.05,
+                            letterSpacing: "-0.02em",
                             fontWeight: 500,
                             color: "var(--navy)",
                         }}
                     >
-                        Start with a diagnostic<br />conversation.
+                        Start with a diagnostic conversation.
                     </h2>
                 </div>
                 <div className="col-span-12 lg:col-span-4 mt-10 lg:mt-0">
-                    <p className="font-serif" style={{ fontSize: 18, lineHeight: 1.55, color: "var(--ink)" }}>
+                    <p className="font-serif" style={{ fontSize: 17, lineHeight: 1.55, color: "var(--ink)" }}>
                         No sales pitch. Just a real conversation. You'll leave having learned something about your child you didn't know before.
                     </p>
-                    <a href="mailto:info@supernovaedu.com" className="btn-primary mt-10" data-testid="closing-cta-btn">
-                        Begin the Conversation
+                    <Link to="/contact" className="btn-primary mt-8" data-testid="closing-cta-btn">
+                        Begin the conversation. Response within 24 hours.
                         <span style={{ fontFamily: "serif", marginLeft: 6 }}>→</span>
-                    </a>
-                    <p className="font-mono mt-6" style={{ fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--steel)" }}>
-                        Response within 24 hours · Livingston, NJ
-                    </p>
+                    </Link>
                 </div>
             </div>
         </section>

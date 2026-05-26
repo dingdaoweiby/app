@@ -7,7 +7,7 @@ const HERO_IMG = "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w
 
 const blocks = [
     {
-        h: "Student Assessment & Strategy",
+        h: "Student Assessment and Strategy",
         items: [
             "Holistic student evaluation — academic profile, interests, strengths, and long-term goals",
             "Individualized college counseling plan aligned with evolving interests and aspirations",
@@ -44,7 +44,7 @@ const blocks = [
         ],
     },
     {
-        h: "Interview & Decision Support",
+        h: "Interview and Decision Support",
         items: [
             "Mock interviews with targeted feedback",
             "Application status tracking and follow-up with colleges",
@@ -59,7 +59,7 @@ export default function CollegeAdmissions() {
         <main data-testid="page-college-admissions" className="min-h-screen">
             <Nav />
             <PageHeader
-                eyebrow="§ Program · College Admissions Consulting"
+                eyebrow="College Admissions Consulting"
                 title="Precision strategy."
                 italicWord="Proven results."
                 subtitle="Expert-led, full-service, every detail handled — for students applying to top US universities."
@@ -76,7 +76,7 @@ export default function CollegeAdmissions() {
             <section className="section-x section-y" style={{ background: "var(--paper)" }}>
                 <div className="grid grid-cols-12 gap-x-10 gap-y-10">
                     <div className="col-span-12 lg:col-span-5">
-                        <p className="eyebrow">§ I · What We Do</p>
+                        <p className="eyebrow">What We Do</p>
                         <h2 className="font-display mt-5" style={{ fontSize: "clamp(32px, 4vw, 56px)", lineHeight: 1.05, letterSpacing: "-0.02em", fontWeight: 500, color: "var(--navy)" }}>
                             Full-cycle college admissions consulting.
                         </h2>
@@ -119,7 +119,7 @@ export default function CollegeAdmissions() {
 
             {/* Student Stories - placeholders per original site */}
             <section className="section-x section-y" style={{ background: "var(--paper)" }}>
-                <p className="eyebrow">§ II · Student Stories</p>
+                <p className="eyebrow">Student Stories</p>
                 <h2 className="font-display mt-5" style={{ fontSize: "clamp(32px, 4vw, 56px)", lineHeight: 1.05, letterSpacing: "-0.02em", fontWeight: 500, color: "var(--navy)" }}>
                     How our students got in.
                 </h2>

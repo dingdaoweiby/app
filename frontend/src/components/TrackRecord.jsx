@@ -1,66 +1,87 @@
 const ivy = [
-    { school: "Harvard",   round: "RD",        initials: "E.W.", note: "Prospective Economics; Research in behavioral finance, published 2024" },
-    { school: "Yale",      round: "RD",        initials: "M.L.", note: "Molecular Biology; 2× Regeneron STS semifinalist" },
-    { school: "Princeton", round: "RD",        initials: "A.C.", note: "Computer Science + Math" },
-    { school: "Columbia",  round: "ED",        initials: "J.H.", note: "Engineering; USAMO qualifier" },
-    { school: "Penn",      round: "ED",        initials: "S.Z.", note: "Wharton; debater, raised $50K+ fundraising" },
-    { school: "Cornell",   round: "ED",        initials: "R.K.", note: "College of Engineering" },
-    { school: "Brown",     round: "RD (PLME)", initials: "D.W.", note: "8-year BS/MD program" },
-    { school: "Dartmouth", round: "ED",        initials: "N.P.", note: "Government + Asian Studies" },
+    { school: "Harvard",   initials: "E.W.", note: "Economics" },
+    { school: "Yale",      initials: "M.L.", note: "Molecular Biology" },
+    { school: "Princeton", initials: "A.C.", note: "CS + Math" },
+    { school: "Columbia",  initials: "J.H.", note: "Engineering" },
+    { school: "Penn — Wharton", initials: "S.Z.", note: "Business" },
+    { school: "Cornell",   initials: "R.K.", note: "Engineering" },
+    { school: "Brown — PLME", initials: "D.W.", note: "BS / MD" },
+    { school: "Dartmouth", initials: "N.P.", note: "Government" },
 ];
 
 const top15 = [
-    { school: "Stanford",       round: "RD", initials: "L.T.", note: "CS + AI research" },
-    { school: "MIT",            round: "EA", initials: "K.Y.", note: "EECS; robotics world finalist" },
-    { school: "Caltech",        round: "RD", initials: "B.X.", note: "Physics; published in AJP" },
-    { school: "Duke",           round: "ED", initials: "T.G.", note: "Trinity; Policy research" },
-    { school: "Northwestern",   round: "ED", initials: "P.Q.", note: "Medill; investigative journalism" },
-    { school: "Johns Hopkins",  round: "ED", initials: "C.L.", note: "BME; pre-med track" },
-    { school: "Georgetown",     round: "RD", initials: "W.F.", note: "SFS; international relations" },
-    { school: "Williams",       round: "RD", initials: "H.M.", note: "Economics + Philosophy" },
+    { school: "Stanford",      initials: "L.T.", note: "CS + AI" },
+    { school: "MIT",           initials: "K.Y.", note: "EECS" },
+    { school: "Caltech",       initials: "B.X.", note: "Physics" },
+    { school: "Duke",          initials: "T.G.", note: "Public Policy" },
+    { school: "Northwestern",  initials: "P.Q.", note: "Journalism" },
+    { school: "Johns Hopkins", initials: "C.L.", note: "BME" },
+    { school: "Georgetown",    initials: "W.F.", note: "Intl Relations" },
+    { school: "Williams",      initials: "H.M.", note: "Econ + Phil" },
 ];
 
 const k12 = [
-    { school: "Newark Academy",          tag: "Day · 4th Grade",           note: "Student M. — Newark Academy" },
-    { school: "Pingry (NJ)",             tag: "Day · 7th Grade",           note: "Student S. — Middle school admission" },
-    { school: "Harvard-Westlake",        tag: "Day · 9th Grade (CA)",      note: "Student R. — Transfer from NYC" },
-    { school: "Phillips Exeter",         tag: "Boarding · 9th Grade",      note: "Student A. — Financial aid" },
-    { school: "Princeton Day School",    tag: "Private school admit",      note: "—" },
-    { school: "Blair Academy",           tag: "Private school admit",      note: "—" },
-    { school: "Horace Mann School",      tag: "Private school admit",      note: "—" },
-    { school: "The Dalton School",       tag: "Private school admit",      note: "—" },
-    { school: "Groton School",           tag: "Private school admit",      note: "—" },
-    { school: "The Lawrenceville School",tag: "Private school admit",      note: "—" },
-    { school: "The Peddie School",       tag: "Private school admit",      note: "—" },
-    { school: "Deerfield Academy",       tag: "Private school admit",      note: "—" },
+    { school: "Newark Academy",        initials: "M.C.", note: "4th Grade" },
+    { school: "Pingry",                initials: "S.W.", note: "7th Grade" },
+    { school: "Harvard-Westlake",      initials: "R.L.", note: "9th Grade" },
+    { school: "Phillips Exeter",       initials: "A.Z.", note: "9th · Boarding" },
+    { school: "Princeton Day School",  initials: "E.K.", note: "6th Grade" },
+    { school: "Blair Academy",         initials: "J.M.", note: "9th · Boarding" },
+    { school: "Horace Mann",           initials: "L.X.", note: "9th Grade" },
+    { school: "The Dalton School",     initials: "C.H.", note: "Kindergarten" },
+    { school: "Groton School",         initials: "T.W.", note: "8th · Boarding" },
+    { school: "Lawrenceville",         initials: "B.Y.", note: "9th · Boarding" },
+    { school: "Peddie School",         initials: "N.S.", note: "9th · Boarding" },
+    { school: "Deerfield Academy",     initials: "K.R.", note: "9th · Boarding" },
 ];
 
-function GroupHeader({ title }) {
+function Group({ title, schools, columns = 4 }) {
     return (
-        <div className="mt-10 mb-3 flex items-end justify-between" style={{ borderBottom: "2px solid var(--navy)", paddingBottom: 8 }}>
-            <h3 className="font-display" style={{ fontSize: "clamp(22px, 2vw, 28px)", color: "var(--navy)", fontWeight: 600, letterSpacing: "-0.005em" }}>{title}</h3>
-            <p className="font-mono" style={{ fontSize: 10, letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--steel)" }}>Class of 2026</p>
-        </div>
-    );
-}
+        <div className="mt-14" data-testid={`tr-group-${title.toLowerCase().replace(/[^a-z]+/g, "-")}`}>
+            <div className="flex items-end justify-between mb-6" style={{ borderBottom: "2px solid var(--navy)", paddingBottom: 10 }}>
+                <h3 className="font-display" style={{ fontSize: "clamp(20px, 1.8vw, 26px)", color: "var(--navy)", fontWeight: 600, letterSpacing: "-0.005em" }}>{title}</h3>
+                <p className="font-mono" style={{ fontSize: 10, letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--steel)" }}>Class of 2026</p>
+            </div>
 
-function Row({ idx, school, round, initials, note }) {
-    return (
-        <li className="grid grid-cols-12 gap-x-4 py-5" style={{ borderBottom: "1px solid var(--line)" }} data-testid={`tr-row-${school.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}>
-            <div className="col-span-1 font-mono tabular" style={{ fontSize: 10, color: "var(--orange)", fontWeight: 500, letterSpacing: "0.05em" }}>
-                {String(idx + 1).padStart(2, "0")}.
+            <div
+                className="grid gap-px"
+                style={{
+                    gridTemplateColumns: `repeat(${columns}, minmax(0, 1fr))`,
+                    background: "var(--line)",
+                    border: "1px solid var(--line)",
+                }}
+            >
+                {schools.map((s, i) => (
+                    <div
+                        key={s.school + i}
+                        className="p-5 flex flex-col justify-between"
+                        style={{ background: "var(--paper)", minHeight: 110 }}
+                        data-testid={`tr-card-${s.school.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}
+                    >
+                        <p
+                            className="font-display"
+                            style={{
+                                fontSize: "clamp(15px, 1.25vw, 19px)",
+                                lineHeight: 1.15,
+                                color: "var(--navy)",
+                                fontWeight: 600,
+                                letterSpacing: "-0.005em",
+                            }}
+                        >
+                            {s.school}
+                        </p>
+                        <div className="mt-4 pt-3" style={{ borderTop: "1px solid var(--line)" }}>
+                            <p className="font-mono" style={{ fontSize: 10, color: "var(--orange)", letterSpacing: "0.12em", fontWeight: 500 }}>
+                                {s.initials}
+                            </p>
+                            <p className="font-mono mt-1" style={{ fontSize: 9.5, color: "var(--steel)", letterSpacing: "0.14em", textTransform: "uppercase" }}>
+                                {s.note}
+                            </p>
+                        </div>
+                    </div>
+                ))}
             </div>
-            <div className="col-span-5 lg:col-span-3">
-                <p className="font-display" style={{ fontSize: 18, color: "var(--navy)", fontWeight: 600, lineHeight: 1.15, letterSpacing: "-0.005em" }}>{school}</p>
-                <p className="font-mono mt-1" style={{ fontSize: 10, letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--steel)" }}>{round}</p>
-            </div>
-            <div className="col-span-6 lg:col-span-8">
-                <p className="font-serif" style={{ fontSize: 15, lineHeight: 1.5, color: "var(--ink)" }}>
-                    <span style={{ fontWeight: 600, color: "var(--navy)", marginRight: 8 }}>{initials}</span>
-                    {note}
-                </p>
-            </div>
-        </li>
+        </div>
     );
 }
 
@@ -72,14 +93,14 @@ export default function TrackRecord() {
             className="section-x section-y"
             style={{ background: "var(--paper)" }}
         >
-            <div className="grid grid-cols-12 gap-x-10 mb-12">
+            <div className="grid grid-cols-12 gap-x-10 mb-4">
                 <div className="col-span-12 lg:col-span-7">
-                    <p className="eyebrow">§ II · Track Record</p>
+                    <p className="eyebrow">Track Record</p>
                     <h2
                         className="font-display mt-5"
                         style={{
-                            fontSize: "clamp(40px, 5vw, 72px)",
-                            lineHeight: 1,
+                            fontSize: "clamp(34px, 4.2vw, 60px)",
+                            lineHeight: 1.02,
                             letterSpacing: "-0.02em",
                             fontWeight: 500,
                             color: "var(--navy)",
@@ -90,39 +111,15 @@ export default function TrackRecord() {
                     </h2>
                 </div>
                 <div className="col-span-12 lg:col-span-5 flex items-end">
-                    <p className="font-serif italic" style={{ fontSize: 17, lineHeight: 1.6, color: "var(--steel)", maxWidth: 460 }}>
-                        Class of 2026 admissions outcomes — Ivy League, Top 15 and elite technical, and K–12 private schools. Initials shown out of respect for privacy.
+                    <p className="font-serif italic" style={{ fontSize: 16, lineHeight: 1.6, color: "var(--steel)", maxWidth: 460 }}>
+                        Class of 2026 admissions outcomes — Ivy League, Top 15 and Elite Technical, and K–12 Private Schools. Initials shown out of respect for privacy.
                     </p>
                 </div>
             </div>
 
-            <GroupHeader title="Ivy League" />
-            <ol>
-                {ivy.map((r, i) => <Row key={r.school} idx={i} {...r} />)}
-            </ol>
-
-            <GroupHeader title="Top 15 & Elite Technical" />
-            <ol>
-                {top15.map((r, i) => <Row key={r.school} idx={i} {...r} />)}
-            </ol>
-
-            <GroupHeader title="K–12 Private School" />
-            <ol>
-                {k12.map((r, i) => (
-                    <li key={r.school} className="grid grid-cols-12 gap-x-4 py-5" style={{ borderBottom: "1px solid var(--line)" }} data-testid={`tr-row-k12-${i}`}>
-                        <div className="col-span-1 font-mono tabular" style={{ fontSize: 10, color: "var(--orange)", fontWeight: 500, letterSpacing: "0.05em" }}>
-                            {String(i + 1).padStart(2, "0")}.
-                        </div>
-                        <div className="col-span-5 lg:col-span-4">
-                            <p className="font-display" style={{ fontSize: 18, color: "var(--navy)", fontWeight: 600, lineHeight: 1.15, letterSpacing: "-0.005em" }}>{r.school}</p>
-                            <p className="font-mono mt-1" style={{ fontSize: 10, letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--steel)" }}>{r.tag}</p>
-                        </div>
-                        <div className="col-span-6 lg:col-span-7">
-                            <p className="font-serif" style={{ fontSize: 15, lineHeight: 1.5, color: "var(--ink)" }}>{r.note}</p>
-                        </div>
-                    </li>
-                ))}
-            </ol>
+            <Group title="Ivy League"               schools={ivy}   columns={4} />
+            <Group title="Top 15 and Elite Technical" schools={top15} columns={4} />
+            <Group title="K–12 Private School"      schools={k12}   columns={4} />
         </section>
     );
 }

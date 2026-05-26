@@ -12,12 +12,6 @@ export default function Hero() {
                 background: "var(--mist)",
             }}
         >
-            <div className="rise flex flex-wrap items-center gap-4 mb-14">
-                <span className="eyebrow">Est. Livingston · New Jersey</span>
-                <span style={{ width: 56, height: 1, background: "var(--line-strong)" }} />
-                <span className="eyebrow" style={{ color: "var(--orange)" }}>A Practice in Admissions Counsel</span>
-            </div>
-
             <div className="grid grid-cols-12 gap-x-10 gap-y-14">
                 <div className="col-span-12 lg:col-span-8">
                     <h1
