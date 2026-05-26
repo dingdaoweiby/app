@@ -1,6 +1,5 @@
 import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
-import StatsStrip from "@/components/StatsStrip";
 import Marquee from "@/components/Marquee";
 import TrackRecord from "@/components/TrackRecord";
 import Pillars from "@/components/Pillars";
@@ -14,7 +13,6 @@ export default function Home() {
         <main data-testid="home-page" className="min-h-screen">
             <Nav />
             <Hero />
-            <StatsStrip />
             <Marquee />
             <TrackRecord />
             <Pillars />

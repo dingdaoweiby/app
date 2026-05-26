@@ -24,15 +24,15 @@ export default function Hero() {
                         data-testid="hero-headline"
                         className="rise delay-1 font-display"
                         style={{
-                            fontSize: "clamp(48px, 7.4vw, 112px)",
-                            lineHeight: 0.96,
-                            letterSpacing: "-0.025em",
+                            fontSize: "clamp(38px, 5.4vw, 78px)",
+                            lineHeight: 1.02,
+                            letterSpacing: "-0.02em",
                             fontWeight: 500,
                             color: "var(--navy)",
                         }}
                     >
                         Growth Mindset.<br />
-                        Clear Goals.<br />
+                        <em style={{ fontStyle: "italic", color: "var(--orange)", fontWeight: 500 }}>Clear Goals.</em><br />
                         Consistent Effort.
                     </h1>
 
@@ -51,17 +51,33 @@ export default function Hero() {
                 </div>
 
                 <div className="col-span-12 lg:col-span-4 rise delay-3">
-                    <div className="img-bordered overflow-hidden" style={{ aspectRatio: "4/5" }}>
-                        <img
-                            src={HERO_IMG}
-                            alt="Collegiate academic building"
-                            className="w-full h-full object-cover"
-                            style={{ display: "block", filter: "grayscale(85%) contrast(1.06)" }}
-                        />
-                    </div>
-                    <div className="mt-4 flex items-center justify-between">
-                        <p className="eyebrow">Plate I — The Reading Room</p>
-                        <p className="font-mono" style={{ fontSize: 10, color: "var(--steel)", letterSpacing: "0.18em" }}>№ 001</p>
+                    <div className="p-7" style={{ background: "var(--paper)", border: "1px solid var(--line)" }}>
+                        <p className="font-mono" style={{ fontSize: 11, letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--orange)", fontWeight: 500 }}>
+                            2026 Outcomes
+                        </p>
+                        <div className="mt-2 mb-5" style={{ width: 30, height: 2, background: "var(--orange)" }} />
+                        <ul>
+                            {[
+                                { num: "70%",  label: "Placement in Top 25" },
+                                { num: "95%",  label: "Admitted to Reach School" },
+                                { num: "100%", label: "Overall Acceptance Rate" },
+                                { num: "3 : 1", label: "Student-to-Specialist Ratio" },
+                            ].map((s, i, arr) => (
+                                <li
+                                    key={s.label}
+                                    data-testid={`hero-stat-${i}`}
+                                    className="flex items-baseline justify-between gap-4 py-3"
+                                    style={{ borderBottom: i < arr.length - 1 ? "1px solid var(--line)" : "none" }}
+                                >
+                                    <span className="font-display tabular" style={{ fontSize: 30, lineHeight: 1, color: "var(--navy)", fontWeight: 600, letterSpacing: "-0.01em" }}>
+                                        {s.num}
+                                    </span>
+                                    <span className="font-mono text-right" style={{ fontSize: 10, letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--steel)", lineHeight: 1.4, maxWidth: 170 }}>
+                                        {s.label}
+                                    </span>
+                                </li>
+                            ))}
+                        </ul>
                     </div>
                 </div>
             </div>
