@@ -54,56 +54,83 @@ export default function Pillars() {
                 </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-0 mt-12" style={{ borderTop: "2px solid var(--navy)" }}>
-                {pillars.map((p, i) => (
-                    <article
-                        key={p.n}
-                        data-testid={`pillar-${i}`}
-                        className="p-10 lg:p-12"
+            <div className="mt-16">
+                {/* Circles with connecting line */}
+                <div className="relative grid grid-cols-3 gap-6 md:gap-10">
+                    {/* horizontal connector line behind circles */}
+                    <div
+                        aria-hidden="true"
                         style={{
-                            background: "var(--mist)",
-                            borderRight: i < pillars.length - 1 ? "1px solid var(--line)" : "none",
-                            borderBottom: i < pillars.length - 1 ? "1px solid var(--line)" : "none",
+                            position: "absolute",
+                            top: 56,
+                            left: "16.66%",
+                            right: "16.66%",
+                            height: 1,
+                            background: "var(--line-strong)",
+                            zIndex: 0,
                         }}
-                    >
-                        <div className="flex items-start justify-between mb-8">
-                            <span
-                                className="font-display"
+                    />
+                    {pillars.map((p, i) => (
+                        <div
+                            key={p.n}
+                            data-testid={`pillar-${i}`}
+                            className="relative flex flex-col items-center text-center"
+                            style={{ zIndex: 1 }}
+                        >
+                            <div
                                 style={{
-                                    fontSize: "clamp(32px, 3vw, 44px)",
-                                    lineHeight: 0.9,
-                                    color: "var(--orange)",
-                                    fontWeight: 600,
-                                    letterSpacing: "-0.02em",
+                                    width: 112,
+                                    height: 112,
+                                    borderRadius: "50%",
+                                    background: "var(--navy)",
+                                    color: "#fff",
+                                    display: "flex",
+                                    alignItems: "center",
+                                    justifyContent: "center",
+                                    boxShadow: "0 6px 18px rgba(0,119,200,0.18)",
                                 }}
                             >
-                                {p.n}
-                            </span>
-                            <span className="font-mono" style={{ fontSize: 10, letterSpacing: "0.22em", color: "var(--steel)", marginTop: 6, textTransform: "uppercase" }}>
-                                Pillar {p.roman}
-                            </span>
+                                <span
+                                    className="font-display"
+                                    style={{
+                                        fontSize: 48,
+                                        lineHeight: 1,
+                                        color: "#fff",
+                                        fontWeight: 600,
+                                        letterSpacing: "-0.02em",
+                                    }}
+                                >
+                                    {i + 1}
+                                </span>
+                            </div>
+                            <h3
+                                className="font-display mt-8"
+                                style={{
+                                    fontSize: "clamp(20px, 1.6vw, 24px)",
+                                    lineHeight: 1.2,
+                                    color: "var(--navy)",
+                                    fontWeight: 600,
+                                    letterSpacing: "-0.01em",
+                                    maxWidth: 320,
+                                }}
+                            >
+                                {p.title}
+                            </h3>
+                            <div className="mt-4" style={{ width: 32, height: 2, background: "var(--orange)" }} />
+                            <p
+                                className="font-serif mt-5"
+                                style={{
+                                    fontSize: 15.5,
+                                    lineHeight: 1.65,
+                                    color: "var(--ink)",
+                                    maxWidth: 320,
+                                }}
+                            >
+                                {p.body}
+                            </p>
                         </div>
-
-                        <h3
-                            className="font-display"
-                            style={{
-                                fontSize: "clamp(22px, 1.75vw, 26px)",
-                                lineHeight: 1.2,
-                                color: "var(--navy)",
-                                fontWeight: 600,
-                                letterSpacing: "-0.01em",
-                            }}
-                        >
-                            {p.title}
-                        </h3>
-
-                        <div className="mt-6" style={{ width: 36, height: 1, background: "var(--orange)" }} />
-
-                        <p className="font-serif mt-6" style={{ fontSize: 16, lineHeight: 1.65, color: "var(--ink)" }}>
-                            {p.body}
-                        </p>
-                    </article>
-                ))}
+                    ))}
+                </div>
             </div>
         </section>
     );
