@@ -53,7 +53,7 @@ export default function Hero() {
                 <div className="col-span-12 lg:col-span-4 rise delay-3">
                     <div className="p-7" style={{ background: "var(--paper)", border: "1px solid var(--line)" }}>
                         <p className="font-mono" style={{ fontSize: 11, letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--orange)", fontWeight: 500 }}>
-                            2026 Outcomes
+                            Outcomes
                         </p>
                         <div className="mt-2 mb-5" style={{ width: 30, height: 2, background: "var(--orange)" }} />
                         <ul>
