@@ -3,32 +3,38 @@ import Footer from "@/components/Footer";
 import PageHeader from "@/components/PageHeader";
 import SectionHeading from "@/components/SectionHeading";
 import ClosingCTA from "@/components/ClosingCTA";
-import {
-    UserSearch,
-    Compass,
-    ClipboardList,
-    BookOpen,
-    PenLine,
-    MessageCircle,
-    Mail,
-    FileCheck,
-    Timer,
-    LogIn,
-} from "lucide-react";
 
-const services = [
-    { Icon: UserSearch,    title: "Personalized Student Assessment", body: "Strengths, interests, learning style, and areas for growth — mapped before any school list is built." },
-    { Icon: Compass,       title: "Family Education Philosophy",     body: "We help you articulate what matters most to your family before you walk into a single open house." },
-    { Icon: ClipboardList, title: "School Selection Guidance",       body: "A curated list built around your child's profile and fit — not rankings alone." },
-    { Icon: Timer,         title: "Timeline and Step-by-Step Plan",  body: "A month-by-month application timeline so nothing slips through the cracks." },
-    { Icon: BookOpen,      title: "School Visit Strategy",           body: "What to look for, what to ask, and how to prepare your child for each visit." },
-    { Icon: FileCheck,     title: "ISEE / SSAT Preparation",         body: "Diagnostic testing, study plan, practice tests, and consistent score tracking." },
-    { Icon: PenLine,       title: "Parent and Student Essays",       body: "Brainstorming, drafting, and editing — voice-first, never generic." },
-    { Icon: MessageCircle, title: "Interview and Visit Coaching",    body: "For both parents and students — what to expect, how to show up authentically." },
-    { Icon: Mail,          title: "Recommender Strategy",            body: "Who to ask, how to communicate with current schools, and how to time the request." },
-    { Icon: FileCheck,     title: "Application Review and Submission", body: "Final read of every essay, form, and supporting document before submission." },
-    { Icon: Timer,         title: "Waitlist and Post-Decision Advising", body: "Strategy for waitlists, comparing offers, and managing rolling outcomes." },
-    { Icon: LogIn,         title: "Enrollment Transition Guidance",  body: "Once admitted, we help your family land — academically, socially, and logistically." },
+const servicePhases = [
+    {
+        phase: "01",
+        label: "Discovery & Fit",
+        items: [
+            "Personalized student assessment — strengths, interests, learning style",
+            "Family education philosophy — what matters most to your family",
+            "School selection guidance — curated for fit, not just rankings",
+            "School visit strategy — what to look for, what to ask",
+        ],
+    },
+    {
+        phase: "02",
+        label: "Application & Preparation",
+        items: [
+            "Timeline and step-by-step application plan",
+            "ISEE / SSAT preparation — diagnostic, study plan, practice tests",
+            "Parent and student essay guidance — brainstorming, drafting, editing",
+            "Interview and visit-day coaching — for parents and students",
+            "Recommender strategy — who to ask and how to approach them",
+        ],
+    },
+    {
+        phase: "03",
+        label: "Submission & Beyond",
+        items: [
+            "Final application review and submission management",
+            "Waitlist strategy and post-decision advising",
+            "Enrollment transition guidance — academic, social, logistical",
+        ],
+    },
 ];
 
 const schoolGroups = [
@@ -84,8 +90,8 @@ export default function K12() {
 
             <PageHeader
                 eyebrow="K–9 Private School Admissions"
-                title="The right school. The right fit."
-                italicWord="From the very beginning."
+                title="The right school."
+                italicWord="The right fit."
                 subtitle="Day schools and boarding schools, Kindergarten through 9th grade — guided by people who know how admissions offices actually read an application."
                 breadcrumb={[{ label: "K–12" }]}
             />
@@ -99,54 +105,66 @@ export default function K12() {
                     subtitle="We help families understand who their child is, identify the schools that genuinely fit, and present an application that lets the admissions officer see your child clearly."
                 />
 
-                <div className="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0" style={{ borderTop: "2px solid var(--navy)" }}>
-                    {services.map((s, i) => {
-                        const Icon = s.Icon;
-                        return (
-                            <article
-                                key={s.title + i}
-                                data-testid={`k12-service-${i}`}
-                                className="p-6 lg:p-7"
-                                style={{
-                                    background: "var(--paper)",
-                                    borderRight: (i % 3) !== 2 ? "1px solid var(--line)" : "none",
-                                    borderBottom: "1px solid var(--line)",
-                                }}
-                            >
-                                <div className="flex items-center gap-4">
-                                    <div
-                                        className="flex items-center justify-center"
-                                        style={{
-                                            width: 52,
-                                            height: 52,
-                                            background: "var(--mist)",
-                                            border: "1px solid var(--line)",
-                                            color: "var(--orange)",
-                                            flexShrink: 0,
-                                        }}
-                                    >
-                                        <Icon size={28} strokeWidth={1.75} />
-                                    </div>
-                                    <h3
-                                        className="font-display"
-                                        style={{
-                                            fontSize: 17,
-                                            lineHeight: 1.2,
-                                            color: "var(--navy)",
-                                            fontWeight: 600,
-                                            letterSpacing: "-0.005em",
-                                        }}
-                                    >
-                                        {s.title}
-                                    </h3>
-                                </div>
-                                <div className="my-4" style={{ width: 24, height: 2, background: "var(--orange)" }} />
-                                <p className="font-serif" style={{ fontSize: 14.5, lineHeight: 1.55, color: "var(--ink)" }}>
-                                    {s.body}
+                <div className="mt-14 grid grid-cols-1 lg:grid-cols-3 gap-x-10 gap-y-12" style={{ borderTop: "2px solid var(--navy)", paddingTop: 40 }}>
+                    {servicePhases.map((p, i) => (
+                        <div key={p.phase} data-testid={`k12-phase-${i}`}>
+                            <div className="flex items-baseline gap-3">
+                                <span
+                                    className="font-display"
+                                    style={{
+                                        fontSize: 32,
+                                        lineHeight: 1,
+                                        color: "var(--orange)",
+                                        fontWeight: 600,
+                                        letterSpacing: "-0.02em",
+                                    }}
+                                >
+                                    {p.phase}
+                                </span>
+                                <p
+                                    className="font-mono"
+                                    style={{
+                                        fontSize: 11,
+                                        letterSpacing: "0.22em",
+                                        textTransform: "uppercase",
+                                        color: "var(--steel)",
+                                        fontWeight: 500,
+                                    }}
+                                >
+                                    {p.label}
                                 </p>
-                            </article>
-                        );
-                    })}
+                            </div>
+                            <div className="mt-4" style={{ width: 32, height: 2, background: "var(--orange)" }} />
+
+                            <ul className="mt-6 space-y-3.5">
+                                {p.items.map((it, j) => (
+                                    <li
+                                        key={j}
+                                        className="flex items-start gap-3"
+                                        data-testid={`k12-phase-${i}-item-${j}`}
+                                    >
+                                        <span
+                                            aria-hidden="true"
+                                            style={{
+                                                marginTop: 9,
+                                                width: 6,
+                                                height: 6,
+                                                background: "var(--navy)",
+                                                flexShrink: 0,
+                                                borderRadius: "50%",
+                                            }}
+                                        />
+                                        <p
+                                            className="font-serif"
+                                            style={{ fontSize: 16, lineHeight: 1.55, color: "var(--ink)" }}
+                                        >
+                                            {it}
+                                        </p>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    ))}
                 </div>
             </section>
 
