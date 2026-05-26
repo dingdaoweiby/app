@@ -9,8 +9,13 @@ export default function Marquee() {
     return (
         <section
             data-testid="marquee"
-            className="rule-bottom no-scrollbar"
-            style={{ background: "var(--mist)", overflow: "hidden" }}
+            className="no-scrollbar"
+            style={{
+                background: "var(--mist-deep)",
+                overflow: "hidden",
+                borderTop: "1px solid var(--line-strong)",
+                borderBottom: "1px solid var(--line-strong)",
+            }}
         >
             <div className="py-5 overflow-hidden">
                 <div className="marquee-track">

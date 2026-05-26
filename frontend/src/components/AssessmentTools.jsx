@@ -1,31 +1,33 @@
+import { ClipboardList, CalendarCheck, FileText, Target, Map, MessagesSquare } from "lucide-react";
+
 const tools = [
     {
-        n: "01",
+        Icon: ClipboardList,
         title: "Student Diagnostic Questionnaire",
         body: "A structured intake questionnaire that maps a student's academic profile, extracurricular depth, motivation style, and family dynamics before our first session.",
     },
     {
-        n: "02",
+        Icon: CalendarCheck,
         title: "Quarterly Checkpoint",
         body: "A quarterly review framework we complete together — tracking academic progress, activity development, narrative clarity, and emotional wellbeing across each season.",
     },
     {
-        n: "03",
+        Icon: FileText,
         title: "Comprehensive Student Report",
         body: "A full profile of your child's strengths, gaps, learning style, and long-term direction.",
     },
     {
-        n: "04",
+        Icon: Target,
         title: "School Selection Strategy",
         body: "A curated, data-grounded school list built around your child's profile and goals.",
     },
     {
-        n: "05",
+        Icon: Map,
         title: "Application Roadmap with Milestone Tracking",
         body: "A structured, month-by-month execution plan from Grade 9 through submission.",
     },
     {
-        n: "06",
+        Icon: MessagesSquare,
         title: "Family Communication Audit",
         body: "A quarterly review of parent–child communication patterns and expectation alignment — helping families navigate the highest-pressure years without damaging the relationship.",
     },
@@ -70,47 +72,50 @@ export default function AssessmentTools() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0" style={{ borderTop: "2px solid var(--navy)" }}>
-                {tools.map((t, i) => (
-                    <article
-                        key={t.n}
-                        data-testid={`tool-${i}`}
-                        className="p-8 lg:p-10"
-                        style={{
-                            background: "var(--paper)",
-                            borderRight: (i % 3) !== 2 ? "1px solid var(--line)" : "none",
-                            borderBottom: "1px solid var(--line)",
-                        }}
-                    >
-                        <span
-                            className="font-display"
+                {tools.map((t, i) => {
+                    const Icon = t.Icon;
+                    return (
+                        <article
+                            key={t.title}
+                            data-testid={`tool-${i}`}
+                            className="p-6 lg:p-7"
                             style={{
-                                fontSize: 48,
-                                lineHeight: 0.85,
-                                color: "var(--orange)",
-                                fontWeight: 600,
-                                letterSpacing: "-0.02em",
+                                background: "var(--paper)",
+                                borderRight: (i % 3) !== 2 ? "1px solid var(--line)" : "none",
+                                borderBottom: "1px solid var(--line)",
                             }}
                         >
-                            {t.n}
-                        </span>
-                        <h3
-                            className="font-display mt-5"
-                            style={{
-                                fontSize: 21,
-                                lineHeight: 1.2,
-                                color: "var(--navy)",
-                                fontWeight: 600,
-                                letterSpacing: "-0.005em",
-                            }}
-                        >
-                            {t.title}
-                        </h3>
-                        <div className="my-5" style={{ width: 30, height: 2, background: "var(--orange)" }} />
-                        <p className="font-serif" style={{ fontSize: 16, lineHeight: 1.6, color: "var(--ink)" }}>
-                            {t.body}
-                        </p>
-                    </article>
-                ))}
+                            <div
+                                className="flex items-center justify-center"
+                                style={{
+                                    width: 44,
+                                    height: 44,
+                                    background: "var(--mist)",
+                                    border: "1px solid var(--line)",
+                                    color: "var(--orange)",
+                                }}
+                            >
+                                <Icon size={22} strokeWidth={1.75} />
+                            </div>
+                            <h3
+                                className="font-display mt-4"
+                                style={{
+                                    fontSize: 18,
+                                    lineHeight: 1.25,
+                                    color: "var(--navy)",
+                                    fontWeight: 600,
+                                    letterSpacing: "-0.005em",
+                                }}
+                            >
+                                {t.title}
+                            </h3>
+                            <div className="my-3" style={{ width: 24, height: 2, background: "var(--orange)" }} />
+                            <p className="font-serif" style={{ fontSize: 14.5, lineHeight: 1.55, color: "var(--ink)" }}>
+                                {t.body}
+                            </p>
+                        </article>
+                    );
+                })}
             </div>
         </section>
     );
