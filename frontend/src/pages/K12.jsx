@@ -332,13 +332,6 @@ export default function K12() {
                         </li>
                     ))}
                 </ol>
-
-                <p
-                    className="font-serif italic mt-12"
-                    style={{ fontSize: "clamp(18px, 1.8vw, 24px)", lineHeight: 1.4, color: "var(--navy)", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}
-                >
-                    “Every child deserves to be seen clearly. We make sure the right school sees them.”
-                </p>
             </section>
 
             <ClosingCTA />

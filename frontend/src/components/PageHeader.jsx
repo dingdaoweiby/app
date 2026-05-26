@@ -66,11 +66,13 @@ export default function PageHeader({ eyebrow, title, italicWord, subtitle, bread
                 <p
                     className="font-serif italic mt-6"
                     style={{
-                        fontSize: "clamp(20px, 1.9vw, 28px)",
-                        lineHeight: 1.5,
+                        fontSize: "clamp(18px, 1.7vw, 24px)",
+                        lineHeight: 1.4,
                         color: "var(--navy)",
-                        maxWidth: 880,
                         fontWeight: 500,
+                        whiteSpace: "nowrap",
+                        overflow: "hidden",
+                        textOverflow: "ellipsis",
                     }}
                 >
                     {subtitle}
