@@ -141,7 +141,7 @@ export default function K12() {
                 eyebrow="K–12 Private School Admissions"
                 title="The right school."
                 italicWord="The right fit."
-                subtitle="Day schools and boarding schools, Kindergarten through 9th grade — guided by people who know how admissions offices actually read an application."
+                subtitle="Every child deserves to be seen clearly. We make sure the right school sees them."
                 breadcrumb={[{ label: "K–12" }]}
             />
 
