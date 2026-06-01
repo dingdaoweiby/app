@@ -185,39 +185,14 @@ export default function CollegeStrategy() {
 
             {/* Specialists */}
             <section className="section-x section-y" style={{ background: "var(--mist)" }}>
-                <div className="grid grid-cols-12 gap-x-10 mb-12 items-end">
-                    <div className="col-span-12 lg:col-span-7">
-                        <div className="flex items-center gap-3">
-                            <div style={{ width: 28, height: 1, background: "var(--orange)" }} />
-                            <p
-                                className="font-mono"
-                                style={{ fontSize: 11, letterSpacing: "0.24em", textTransform: "uppercase", color: "var(--orange)", fontWeight: 500 }}
-                            >
-                                Who Serves Your Family
-                            </p>
-                        </div>
-                        <h2
-                            className="font-display mt-5"
-                            style={{
-                                fontSize: "clamp(28px, 2.6vw, 38px)",
-                                lineHeight: 1.15,
-                                letterSpacing: "-0.01em",
-                                fontWeight: 500,
-                                color: "var(--navy)",
-                                whiteSpace: "nowrap",
-                            }}
-                        >
-                            Four experts for one student <em style={{ fontStyle: "italic", color: "var(--orange)", fontWeight: 500 }}>/ one family.</em>
-                        </h2>
-                    </div>
-                    <div className="col-span-12 lg:col-span-5">
-                        <p className="font-serif" style={{ fontSize: 17, lineHeight: 1.6, color: "var(--steel)", fontStyle: "italic" }}>
-                            Every decision passes through all four. Your child is never handed off.
-                        </p>
-                    </div>
-                </div>
+                <SectionHeading
+                    eyebrow="Who Serves Your Family"
+                    title="Four experts for one student"
+                    italic="/ one family."
+                    subtitle="Every decision passes through all four. Your child is never handed off."
+                />
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
                     {specialists.map((s, i) => {
                         const Icon = s.Icon;
                         // Pairings:
