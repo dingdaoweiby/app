@@ -42,7 +42,7 @@ const tracks = [
 
 const selfDirected = {
     Icon: Compass,
-    label: "Self-Directed Applicants",
+    label: "Self-Directed Applicants (DIY Support)",
     intro: "On-demand coaching for self-directed graduate applicants who want expert feedback at key decision points — without committing to a full-service package.",
     items: [
         "Targeted reviews of drafts — SOP, CV, or essay supplements",
@@ -133,7 +133,6 @@ export default function Graduate() {
                 eyebrow="Graduate Admissions"
                 title="A focused advisory practice for"
                 italicWord="graduate admissions."
-                subtitle="Strategic guidance for medical school, doctoral, MBA, and self-directed applicants."
                 breadcrumb={[{ label: "Graduate" }]}
                 background="var(--paper)"
                 nowrap
