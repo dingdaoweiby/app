@@ -1,6 +1,7 @@
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import PageHeader from "@/components/PageHeader";
+import SectionHeading from "@/components/SectionHeading";
 import ClosingCTA from "@/components/ClosingCTA";
 import { Compass, ShieldCheck, CalendarRange, HeartHandshake } from "lucide-react";
 
@@ -129,24 +130,36 @@ export default function CollegeStrategy() {
             />
 
             <section className="section-x section-y" style={{ background: "var(--paper)" }}>
-                <div className="grid grid-cols-12 gap-x-10 gap-y-10">
+                <SectionHeading
+                    eyebrow="Our Belief"
+                    title="Success isn't the letter."
+                    italic="It's the student."
+                />
+
+                <div className="mt-12 grid grid-cols-12 gap-x-10 gap-y-10 items-start">
                     <div className="col-span-12 lg:col-span-5">
-                        <p className="eyebrow">Our Belief</p>
-                        <h2 className="font-display mt-5" style={{ fontSize: "clamp(32px, 4vw, 56px)", lineHeight: 1.05, letterSpacing: "-0.02em", fontWeight: 500, color: "var(--navy)" }}>
-                            Success isn't the letter. It's the student.
-                        </h2>
+                        <div className="overflow-hidden" style={{ aspectRatio: "4/5", border: "1px solid var(--line)" }}>
+                            <img
+                                src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=900&q=85&auto=format&fit=crop"
+                                alt="High school student studying with focus"
+                                className="w-full h-full object-cover"
+                                style={{ filter: "grayscale(35%) contrast(1.05)" }}
+                            />
+                        </div>
+                        <p className="eyebrow mt-3">Plate C-II — Authentic Growth</p>
                     </div>
                     <div className="col-span-12 lg:col-span-7">
-                        <p className="font-display" style={{ fontSize: "clamp(20px, 1.7vw, 26px)", lineHeight: 1.4, color: "var(--orange)", fontWeight: 500, fontStyle: "italic" }}>
+                        <p className="font-display" style={{ fontSize: "clamp(18px, 1.5vw, 22px)", lineHeight: 1.4, color: "var(--orange)", fontWeight: 500, fontStyle: "italic" }}>
                             Motivation cannot be imposed. It must be awakened.
                         </p>
-                        <p className="font-display mt-3" style={{ fontSize: "clamp(20px, 1.7vw, 26px)", lineHeight: 1.4, color: "var(--orange)", fontWeight: 500, fontStyle: "italic" }}>
+                        <p className="font-display mt-3" style={{ fontSize: "clamp(18px, 1.5vw, 22px)", lineHeight: 1.4, color: "var(--orange)", fontWeight: 500, fontStyle: "italic" }}>
                             We build students for themselves, not simply for an application.
                         </p>
-                        <p className="font-serif mt-8" style={{ fontSize: 17, lineHeight: 1.65, color: "var(--ink)" }}>
+                        <div className="mt-6" style={{ width: 36, height: 2, background: "var(--navy)" }} />
+                        <p className="font-serif mt-6" style={{ fontSize: 16.5, lineHeight: 1.7, color: "var(--ink)" }}>
                             Through challenge, guidance, and genuine belief in each child, we cultivate what no consultant can manufacture: discipline that comes from within, a sense of direction that belongs to them, and the quiet confidence that doesn't need to perform to be seen.
                         </p>
-                        <p className="font-serif mt-5" style={{ fontSize: 17, lineHeight: 1.65, color: "var(--ink)" }}>
+                        <p className="font-serif mt-5" style={{ fontSize: 16.5, lineHeight: 1.7, color: "var(--ink)" }}>
                             By the time application season arrives, nothing needs to be forced. What colleges see is the result of years of authentic growth. What your child carries forward is far more valuable than any acceptance letter: not only tactics, but enduring strengths — the skills, mindset, and clarity that carry value in education, in a career, and in a life.
                         </p>
                     </div>
