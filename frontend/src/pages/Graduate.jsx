@@ -68,7 +68,7 @@ function TrackCard({ Icon, label, intro, items, fullWidth = false, testid }) {
             }}
             data-testid={testid}
         >
-            <div className="flex items-center gap-4">
+            <div className={`flex items-center gap-4 ${fullWidth ? "justify-center" : ""}`}>
                 <div
                     className="flex items-center justify-center"
                     style={{
@@ -96,8 +96,8 @@ function TrackCard({ Icon, label, intro, items, fullWidth = false, testid }) {
                     {label}
                 </h3>
             </div>
-            <div className="my-4" style={{ width: 32, height: 2, background: "var(--orange)" }} />
-            <p className="font-serif" style={{ fontSize: 15.5, lineHeight: 1.6, color: "var(--ink)" }}>
+            <div className={`my-4 ${fullWidth ? "mx-auto" : ""}`} style={{ width: 32, height: 2, background: "var(--orange)" }} />
+            <p className="font-serif" style={{ fontSize: 15.5, lineHeight: 1.6, color: "var(--ink)", textAlign: fullWidth ? "center" : "left" }}>
                 {intro}
             </p>
             <ul className={`mt-5 ${fullWidth ? "grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2.5" : "space-y-2.5"}`}>
