@@ -321,46 +321,45 @@ export default function CollegeStrategy() {
                 </p>
             </section>
 
-            {/* Four Dimensions */}
+            {/* How We Help You */}
             <section className="section-x section-y" style={{ background: "var(--paper)" }}>
-                <p className="eyebrow">What You Receive</p>
-                <h2 className="font-display mt-5" style={{ fontSize: "clamp(32px, 4vw, 56px)", lineHeight: 1.05, letterSpacing: "-0.02em", fontWeight: 500, color: "var(--navy)" }}>
-                    Four core dimensions on a yearly basis.
-                </h2>
-                <p className="font-serif mt-6" style={{ fontSize: 17, lineHeight: 1.6, color: "var(--ink)", maxWidth: 820 }}>
-                    Every family receives four structured deliverables — the tools we use to make decisions, track progress, and keep your child on course from Grade 9 through application season.
-                </p>
+                <SectionHeading
+                    eyebrow="How We Help You"
+                    title="Our four-part workflow,"
+                    italic="built for the long run."
+                    subtitle="A coordinated practice — assessment, strategy, roadmap, and accountability — repeated and refined year after year, from Grade 9 through application season."
+                />
 
-                <ol className="mt-14" style={{ borderTop: "2px solid var(--navy)" }}>
+                <ol className="mt-12" style={{ borderTop: "2px solid var(--navy)" }}>
                     {dimensions.map((d, i) => (
-                        <li key={d.title} className="py-12" style={{ borderBottom: "1px solid var(--line)" }} data-testid={`dimension-${i}`}>
-                            <div className="grid grid-cols-12 gap-x-10">
+                        <li key={d.title} className="py-8" style={{ borderBottom: "1px solid var(--line)" }} data-testid={`dimension-${i}`}>
+                            <div className="grid grid-cols-12 gap-x-8 gap-y-4">
                                 <div className="col-span-12 lg:col-span-4">
-                                    <span className="font-display" style={{ fontSize: 56, lineHeight: 0.85, color: "var(--orange)", fontWeight: 600 }}>{String(i + 1).padStart(2, "0")}</span>
-                                    <h3 className="font-display mt-4" style={{ fontSize: "clamp(22px, 1.9vw, 28px)", lineHeight: 1.15, color: "var(--navy)", fontWeight: 600, letterSpacing: "-0.005em" }}>{d.title}</h3>
-                                    <p className="font-serif italic mt-4" style={{ fontSize: 16, lineHeight: 1.5, color: "var(--steel)" }}>{d.tagline}</p>
+                                    <span className="font-display" style={{ fontSize: 40, lineHeight: 0.9, color: "var(--orange)", fontWeight: 600 }}>{String(i + 1).padStart(2, "0")}</span>
+                                    <h3 className="font-display mt-3" style={{ fontSize: "clamp(20px, 1.6vw, 24px)", lineHeight: 1.2, color: "var(--navy)", fontWeight: 600, letterSpacing: "-0.005em" }}>{d.title}</h3>
+                                    <p className="font-serif italic mt-3" style={{ fontSize: 15, lineHeight: 1.5, color: "var(--steel)" }}>{d.tagline}</p>
                                 </div>
-                                <div className="col-span-12 lg:col-span-8 mt-6 lg:mt-0">
+                                <div className="col-span-12 lg:col-span-8">
                                     {d.items && (
-                                        <ul className="space-y-2">
+                                        <ul className="space-y-1.5">
                                             {d.items.map((it, j) => (
                                                 <li key={j} className="flex items-start gap-3">
                                                     <span className="font-mono" style={{ fontSize: 10, color: "var(--orange)", marginTop: 6 }}>▸</span>
-                                                    <p className="font-serif" style={{ fontSize: 16, lineHeight: 1.55, color: "var(--ink)" }}>{it}</p>
+                                                    <p className="font-serif" style={{ fontSize: 15, lineHeight: 1.5, color: "var(--ink)" }}>{it}</p>
                                                 </li>
                                             ))}
                                         </ul>
                                     )}
                                     {d.groups && (
-                                        <div className="space-y-6">
+                                        <div className="space-y-4">
                                             {d.groups.map((g, j) => (
                                                 <div key={j}>
                                                     <p className="font-mono" style={{ fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--orange)", fontWeight: 500 }}>{g.h}</p>
-                                                    <ul className="mt-2 space-y-2">
+                                                    <ul className="mt-1.5 space-y-1.5">
                                                         {g.items.map((it, k) => (
                                                             <li key={k} className="flex items-start gap-3">
                                                                 <span className="font-mono" style={{ fontSize: 10, color: "var(--orange)", marginTop: 6 }}>▸</span>
-                                                                <p className="font-serif" style={{ fontSize: 16, lineHeight: 1.55, color: "var(--ink)" }}>{it}</p>
+                                                                <p className="font-serif" style={{ fontSize: 15, lineHeight: 1.5, color: "var(--ink)" }}>{it}</p>
                                                             </li>
                                                         ))}
                                                     </ul>
@@ -368,9 +367,9 @@ export default function CollegeStrategy() {
                                             ))}
                                         </div>
                                     )}
-                                    <div className="mt-6 pt-5" style={{ borderTop: "1px solid var(--line)" }}>
+                                    <div className="mt-4 pt-3" style={{ borderTop: "1px solid var(--line)" }}>
                                         <p className="font-mono" style={{ fontSize: 10, letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--steel)" }}>→ Deliverable</p>
-                                        <p className="font-display mt-1" style={{ fontSize: 17, color: "var(--navy)", fontWeight: 600 }}>{d.deliverable}</p>
+                                        <p className="font-display mt-1" style={{ fontSize: 16, color: "var(--navy)", fontWeight: 600 }}>{d.deliverable}</p>
                                     </div>
                                 </div>
                             </div>
@@ -378,7 +377,7 @@ export default function CollegeStrategy() {
                     ))}
                 </ol>
 
-                <p className="font-serif italic mt-10" style={{ fontSize: "clamp(20px, 2vw, 28px)", lineHeight: 1.4, color: "var(--navy)", maxWidth: 820 }}>
+                <p className="font-serif italic mt-8" style={{ fontSize: "clamp(18px, 1.7vw, 24px)", lineHeight: 1.4, color: "var(--navy)", maxWidth: 820 }}>
                     “Three years from now, your child won't just be applying to college. They'll be ready for it.”
                 </p>
             </section>
