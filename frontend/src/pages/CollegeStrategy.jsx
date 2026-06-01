@@ -3,7 +3,7 @@ import Footer from "@/components/Footer";
 import PageHeader from "@/components/PageHeader";
 import SectionHeading from "@/components/SectionHeading";
 import ClosingCTA from "@/components/ClosingCTA";
-import { Compass, ShieldCheck, CalendarRange, HeartHandshake } from "lucide-react";
+import { Compass, ShieldCheck, CalendarRange, HeartHandshake, GraduationCap, Users, Award } from "lucide-react";
 
 const specialists = [
     {
@@ -117,15 +117,18 @@ const dimensions = [
 
 const partnership = [
     {
-        h: "Student Effort",
+        Icon: GraduationCap,
+        label: "Student Effort",
         body: "Curiosity, discipline, and the willingness to show up — the most important ingredient, and the only one we can't substitute.",
     },
     {
-        h: "Parent Engagement",
+        Icon: Users,
+        label: "Parent Engagement",
         body: "Calibrated expectations, steady support, and an honest dialogue at home — without which strategy quickly unravels.",
     },
     {
-        h: "Consulting Expertise",
+        Icon: Award,
+        label: "Consulting Expertise",
         body: "Coordinated specialists, institutional insight, and an operating system that turns intention into outcomes.",
     },
 ];
@@ -401,124 +404,51 @@ export default function CollegeStrategy() {
                     subtitle="Outcomes don't come from any single party. They come from the way three groups work together — month after month, year after year."
                 />
 
-                {/* Three circles connected by a triangle of soft lines */}
-                <div className="mt-16 flex justify-center">
-                    <div
-                        className="relative"
-                        data-testid="partnership-trio"
-                        style={{ width: "min(720px, 100%)", aspectRatio: "1 / 0.6" }}
-                    >
-                        {/* Triangle connector */}
-                        <svg
-                            aria-hidden="true"
-                            viewBox="0 0 100 60"
-                            preserveAspectRatio="none"
-                            style={{ position: "absolute", inset: 0, width: "100%", height: "100%" }}
-                        >
-                            <polygon
-                                points="50,10 14,52 86,52"
-                                fill="none"
-                                stroke="var(--orange)"
-                                strokeOpacity="0.45"
-                                strokeWidth="0.5"
-                                strokeDasharray="1.2 1.6"
-                            />
-                        </svg>
-
-                        {[
-                            { x: "50%", y: "0%",   bg: "var(--navy)",   accent: "var(--orange)", label: "Student",    sub: "Effort" },
-                            { x: "10%", y: "70%",  bg: "var(--orange)", accent: "var(--navy)",   label: "Parent",     sub: "Engagement" },
-                            { x: "90%", y: "70%",  bg: "var(--navy-deep)", accent: "var(--orange)", label: "Consulting", sub: "Expertise" },
-                        ].map((c, i) => (
-                            <div
-                                key={i}
-                                style={{
-                                    position: "absolute",
-                                    left: c.x,
-                                    top: c.y,
-                                    transform: "translate(-50%, 0)",
-                                    width: 132,
-                                    height: 132,
-                                    borderRadius: "50%",
-                                    background: c.bg,
-                                    color: "#fff",
-                                    display: "flex",
-                                    flexDirection: "column",
-                                    alignItems: "center",
-                                    justifyContent: "center",
-                                    textAlign: "center",
-                                    boxShadow: "0 8px 22px rgba(15,26,48,0.15)",
-                                }}
-                            >
-                                <span
-                                    style={{
-                                        fontFamily: "'Playfair Display', serif",
-                                        fontWeight: 600,
-                                        fontSize: 18,
-                                        lineHeight: 1.1,
-                                        letterSpacing: "-0.01em",
-                                    }}
-                                >
-                                    {c.label}
-                                </span>
-                                <span
-                                    style={{
-                                        marginTop: 4,
-                                        fontFamily: "'IBM Plex Mono', monospace",
-                                        fontSize: 10,
-                                        letterSpacing: "0.18em",
-                                        textTransform: "uppercase",
-                                        color: c.accent,
-                                    }}
-                                >
-                                    {c.sub}
-                                </span>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-
-                <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-px" style={{ background: "var(--line)", border: "1px solid var(--line)" }}>
-                    {partnership.map((l, i) => (
-                        <article
-                            key={l.h}
-                            className="p-7 lg:p-8"
-                            style={{ background: "var(--paper)" }}
-                            data-testid={`partnership-${i}`}
-                        >
-                            <h3 className="font-display" style={{ fontSize: 20, color: "var(--navy)", fontWeight: 600, letterSpacing: "-0.005em" }}>{l.h}</h3>
-                            <div className="my-4" style={{ width: 28, height: 2, background: "var(--orange)" }} />
-                            <p className="font-serif" style={{ fontSize: 15.5, lineHeight: 1.65, color: "var(--ink)" }}>{l.body}</p>
-                        </article>
-                    ))}
-                </div>
-            </section>
-
-            {/* Atmospheric campus image — soft, dreamy, students on a quad */}
-            <section style={{ background: "var(--paper)", paddingTop: 24, paddingBottom: 48 }}>
                 <div
-                    className="overflow-hidden"
-                    style={{
-                        width: "100%",
-                        aspectRatio: "21/8",
-                        position: "relative",
-                    }}
+                    className="mt-14 grid grid-cols-1 lg:grid-cols-3 gap-x-12 gap-y-12"
+                    style={{ borderTop: "2px solid var(--navy)", paddingTop: 48 }}
                 >
-                    <img
-                        src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=2000&q=85&auto=format&fit=crop"
-                        alt="Students walking across a soft, sunlit university quad"
-                        className="w-full h-full object-cover"
-                        style={{ filter: "grayscale(20%) contrast(0.95) brightness(1.02)" }}
-                    />
-                    {/* Soft fade overlay for a dreamy feel */}
-                    <div
-                        aria-hidden="true"
-                        style={{
-                            position: "absolute",
-                            inset: 0,
-                            background: "linear-gradient(180deg, rgba(255,255,255,0.18) 0%, rgba(0,0,0,0) 50%, rgba(15,26,48,0.20) 100%)",
-                        }}
-                    />
+                    {partnership.map((p, i) => {
+                        const Icon = p.Icon;
+                        return (
+                            <div key={p.label} data-testid={`partnership-${i}`}>
+                                <div className="flex flex-col items-center text-center">
+                                    <div
+                                        className="flex items-center justify-center"
+                                        style={{
+                                            width: 64,
+                                            height: 64,
+                                            background: "var(--orange)",
+                                            color: "#fff",
+                                            borderRadius: "50%",
+                                            boxShadow: "0 4px 14px rgba(255,152,0,0.28)",
+                                        }}
+                                    >
+                                        <Icon size={30} strokeWidth={1.75} />
+                                    </div>
+                                    <p
+                                        className="font-mono mt-5"
+                                        style={{
+                                            fontSize: 14,
+                                            letterSpacing: "0.22em",
+                                            textTransform: "uppercase",
+                                            color: "var(--navy)",
+                                            fontWeight: 600,
+                                        }}
+                                    >
+                                        {p.label}
+                                    </p>
+                                    <div className="mt-4" style={{ width: 32, height: 2, background: "var(--orange)" }} />
+                                </div>
+                                <p
+                                    className="font-serif mt-6"
+                                    style={{ fontSize: 15.5, lineHeight: 1.65, color: "var(--ink)", textAlign: "center", maxWidth: 360, margin: "24px auto 0" }}
+                                >
+                                    {p.body}
+                                </p>
+                            </div>
+                        );
+                    })}
                 </div>
             </section>
 
