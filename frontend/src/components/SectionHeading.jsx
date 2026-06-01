@@ -38,7 +38,7 @@ export default function SectionHeading({
             >
                 {title}
                 {italic && (
-                    <> <em style={{ fontStyle: "italic", color: "var(--steel)", fontWeight: 500 }}>{italic}</em></>
+                    <> <em style={{ fontStyle: "italic", color: "var(--orange)", fontWeight: 500 }}>{italic}</em></>
                 )}
             </h2>
             {subtitle && (
