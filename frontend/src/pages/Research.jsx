@@ -1,12 +1,12 @@
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import PageHeader from "@/components/PageHeader";
-import PageCTA from "@/components/PageCTA";
-
-const HERO_IMG = "https://images.unsplash.com/photo-1507413245164-6160d8298b31?w=1200&q=85&auto=format&fit=crop";
+import ClosingCTA from "@/components/ClosingCTA";
+import { FlaskConical, LineChart, BookOpen, Landmark, User, Users } from "lucide-react";
 
 const fields = [
     {
+        Icon: FlaskConical,
         h: "STEM",
         items: [
             "Biology and Biomedical Sciences",
@@ -18,6 +18,7 @@ const fields = [
         ],
     },
     {
+        Icon: LineChart,
         h: "Business",
         items: [
             "Finance and Economics",
@@ -27,6 +28,7 @@ const fields = [
         ],
     },
     {
+        Icon: Landmark,
         h: "Social Sciences",
         items: [
             "Psychology and Behavioral Science",
@@ -36,6 +38,7 @@ const fields = [
         ],
     },
     {
+        Icon: BookOpen,
         h: "Humanities",
         items: [
             "History and Philosophy",
@@ -48,7 +51,8 @@ const fields = [
 
 const formats = [
     {
-        h: "Format A — One-on-One Mentorship",
+        Icon: User,
+        h: "One-on-One Mentorship",
         sub: "Paired directly with a PhD-level research instructor for individualized guidance.",
         items: [
             "One-on-one online research method and paper-writing instruction with assigned mentor",
@@ -61,7 +65,8 @@ const formats = [
         ],
     },
     {
-        h: "Format B — Team Research Project",
+        Icon: Users,
+        h: "Team Research Project",
         sub: "Collaborative research in a small cohort (3–5 students), guided by a lead researcher.",
         items: [
             "Structured team project with assigned roles and shared deliverables",
@@ -142,76 +147,188 @@ export default function Research() {
                 eyebrow="Research Mentorship"
                 title="From curiosity to publication."
                 italicWord="Real research. Real output."
-                subtitle="We pair students with active researchers and PhD mentors. Every project produces a tangible academic output — a conference paper, a research report, or a competition submission."
                 breadcrumb={[{ label: "Research" }]}
+                background="var(--paper)"
             />
 
-            <section className="section-x" style={{ background: "var(--paper)", paddingTop: 48, paddingBottom: 0 }}>
-                <div className="img-bordered overflow-hidden" style={{ aspectRatio: "16/7" }}>
-                    <img src={HERO_IMG} alt="Student conducting research in a science lab" className="w-full h-full object-cover" style={{ filter: "grayscale(40%) contrast(1.05)" }} />
-                </div>
-                <p className="eyebrow mt-3">Plate R — The Lab</p>
-            </section>
-
             {/* Fields */}
-            <section className="section-x section-y" style={{ background: "var(--paper)" }}>
-                <p className="eyebrow">Research Fields</p>
-                <h2 className="font-display mt-5" style={{ fontSize: "clamp(32px, 4vw, 56px)", lineHeight: 1.05, letterSpacing: "-0.02em", fontWeight: 500, color: "var(--navy)" }}>
-                    What you can study.
+            <section className="section-x section-y" style={{ background: "var(--mist)" }}>
+                <div className="flex items-center gap-3">
+                    <div style={{ width: 28, height: 1, background: "var(--orange)" }} />
+                    <p
+                        className="font-mono"
+                        style={{ fontSize: 11, letterSpacing: "0.24em", textTransform: "uppercase", color: "var(--orange)", fontWeight: 500 }}
+                    >
+                        Research Fields
+                    </p>
+                </div>
+                <h2
+                    className="font-display mt-5"
+                    style={{
+                        fontSize: "clamp(32px, 3vw, 44px)",
+                        lineHeight: 1.15,
+                        letterSpacing: "-0.01em",
+                        fontWeight: 500,
+                        color: "var(--navy)",
+                        maxWidth: 880,
+                    }}
+                >
+                    What you can <em style={{ fontStyle: "italic", color: "var(--orange)", fontWeight: 500 }}>study.</em>
                 </h2>
-                <p className="font-serif mt-6" style={{ fontSize: 17, lineHeight: 1.6, color: "var(--ink)", maxWidth: 820 }}>
-                    We match students with active researchers and PhD mentors across four broad disciplines. Every project is designed to produce a tangible academic output — a conference paper, a research report, or a competition submission.
+                <div className="mt-8" style={{ width: 56, height: 2, background: "var(--navy)" }} />
+                <p className="font-serif mt-6" style={{ fontSize: 16.5, lineHeight: 1.65, color: "var(--ink)", maxWidth: 820 }}>
+                    Four broad disciplines, dozens of focused topics. Every project ends with a tangible academic output — a conference paper, research report, or competition submission.
                 </p>
 
-                <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-0" style={{ borderTop: "2px solid var(--navy)" }}>
-                    {fields.map((f, i) => (
-                        <article key={f.h} className="p-8" style={{
-                            background: "var(--paper)",
-                            borderRight: i < fields.length - 1 ? "1px solid var(--line)" : "none",
-                            borderBottom: "1px solid var(--line)",
-                        }} data-testid={`research-field-${i}`}>
-                            <h3 className="font-display" style={{ fontSize: 22, color: "var(--navy)", fontWeight: 600 }}>{f.h}</h3>
-                            <div className="my-4" style={{ width: 30, height: 2, background: "var(--orange)" }} />
-                            <ul className="space-y-2">
-                                {f.items.map((it, j) => (
-                                    <li key={j} className="font-serif" style={{ fontSize: 15, lineHeight: 1.5, color: "var(--ink)" }}>· {it}</li>
-                                ))}
-                            </ul>
-                        </article>
-                    ))}
+                <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    {fields.map((f, i) => {
+                        const Icon = f.Icon;
+                        return (
+                            <article
+                                key={f.h}
+                                className="p-7 flex flex-col"
+                                style={{
+                                    background: "var(--paper)",
+                                    border: "1px solid var(--line)",
+                                }}
+                                data-testid={`research-field-${i}`}
+                            >
+                                <div
+                                    className="flex items-center justify-center"
+                                    style={{
+                                        width: 52,
+                                        height: 52,
+                                        background: "var(--mist)",
+                                        border: "1px solid var(--line)",
+                                        color: "var(--orange)",
+                                    }}
+                                >
+                                    <Icon size={26} strokeWidth={1.75} />
+                                </div>
+                                <h3
+                                    className="font-display mt-5"
+                                    style={{ fontSize: 20, color: "var(--navy)", fontWeight: 600, letterSpacing: "-0.005em", lineHeight: 1.2 }}
+                                >
+                                    {f.h}
+                                </h3>
+                                <div className="my-4" style={{ width: 28, height: 2, background: "var(--orange)" }} />
+                                <ul className="space-y-2">
+                                    {f.items.map((it, j) => (
+                                        <li key={j} className="flex items-start gap-2.5">
+                                            <span
+                                                aria-hidden="true"
+                                                style={{
+                                                    marginTop: 8,
+                                                    width: 5,
+                                                    height: 5,
+                                                    background: "var(--navy)",
+                                                    flexShrink: 0,
+                                                    borderRadius: "50%",
+                                                }}
+                                            />
+                                            <p className="font-serif" style={{ fontSize: 14.5, lineHeight: 1.5, color: "var(--ink)" }}>
+                                                {it}
+                                            </p>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </article>
+                        );
+                    })}
                 </div>
             </section>
 
             {/* Formats */}
-            <section className="section-x section-y" style={{ background: "var(--mist)" }}>
-                <p className="eyebrow">Program Formats</p>
-                <h2 className="font-display mt-5" style={{ fontSize: "clamp(32px, 4vw, 56px)", lineHeight: 1.05, letterSpacing: "-0.02em", fontWeight: 500, color: "var(--navy)" }}>
-                    Two formats.
+            <section className="section-x section-y" style={{ background: "var(--paper)" }}>
+                <div className="flex items-center gap-3">
+                    <div style={{ width: 28, height: 1, background: "var(--orange)" }} />
+                    <p
+                        className="font-mono"
+                        style={{ fontSize: 11, letterSpacing: "0.24em", textTransform: "uppercase", color: "var(--orange)", fontWeight: 500 }}
+                    >
+                        Program Formats
+                    </p>
+                </div>
+                <h2
+                    className="font-display mt-5"
+                    style={{
+                        fontSize: "clamp(32px, 3vw, 44px)",
+                        lineHeight: 1.15,
+                        letterSpacing: "-0.01em",
+                        fontWeight: 500,
+                        color: "var(--navy)",
+                        maxWidth: 880,
+                    }}
+                >
+                    Two formats. <em style={{ fontStyle: "italic", color: "var(--orange)", fontWeight: 500 }}>One standard.</em>
                 </h2>
-                <p className="font-serif mt-6" style={{ fontSize: 17, lineHeight: 1.6, color: "var(--ink)", maxWidth: 820 }}>
+                <div className="mt-8" style={{ width: 56, height: 2, background: "var(--navy)" }} />
+                <p className="font-serif mt-6" style={{ fontSize: 16.5, lineHeight: 1.65, color: "var(--ink)", maxWidth: 820 }}>
                     Two formats to fit different students and goals. Same standard across both: every student finishes with a publishable output and first-author credit.
                 </p>
 
-                <div className="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-0" style={{ borderTop: "2px solid var(--navy)" }}>
-                    {formats.map((f, i) => (
-                        <article key={f.h} className="p-10" style={{
-                            background: "var(--paper)",
-                            borderRight: i === 0 ? "1px solid var(--line)" : "none",
-                            borderBottom: "1px solid var(--line)",
-                        }} data-testid={`research-format-${i}`}>
-                            <h3 className="font-display" style={{ fontSize: "clamp(22px, 1.9vw, 28px)", lineHeight: 1.15, color: "var(--navy)", fontWeight: 600, letterSpacing: "-0.005em" }}>{f.h}</h3>
-                            <p className="font-serif italic mt-3" style={{ fontSize: 16, lineHeight: 1.5, color: "var(--steel)" }}>{f.sub}</p>
-                            <div className="my-6" style={{ width: 36, height: 2, background: "var(--orange)" }} />
-                            <ul className="space-y-3">
-                                {f.items.map((it, j) => (
-                                    <li key={j} className="flex items-start gap-3">
-                                        <span className="font-mono" style={{ fontSize: 10, color: "var(--orange)", marginTop: 6 }}>▸</span>
-                                        <p className="font-serif" style={{ fontSize: 16, lineHeight: 1.55, color: "var(--ink)" }}>{it}</p>
-                                    </li>
-                                ))}
-                            </ul>
-                        </article>
-                    ))}
+                <div className="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    {formats.map((f, i) => {
+                        const Icon = f.Icon;
+                        return (
+                            <article
+                                key={f.h}
+                                className="p-8 lg:p-10"
+                                style={{
+                                    background: "var(--mist)",
+                                    border: "1px solid var(--line)",
+                                }}
+                                data-testid={`research-format-${i}`}
+                            >
+                                <div className="flex items-center gap-4">
+                                    <div
+                                        className="flex items-center justify-center"
+                                        style={{
+                                            width: 56,
+                                            height: 56,
+                                            borderRadius: "50%",
+                                            background: "var(--orange)",
+                                            color: "#fff",
+                                            boxShadow: "0 4px 14px rgba(255,152,0,0.28)",
+                                            flexShrink: 0,
+                                        }}
+                                    >
+                                        <Icon size={28} strokeWidth={1.75} />
+                                    </div>
+                                    <h3
+                                        className="font-display"
+                                        style={{ fontSize: "clamp(22px, 1.8vw, 26px)", lineHeight: 1.2, color: "var(--navy)", fontWeight: 600, letterSpacing: "-0.005em" }}
+                                    >
+                                        {f.h}
+                                    </h3>
+                                </div>
+                                <p className="font-serif italic mt-4" style={{ fontSize: 16, lineHeight: 1.55, color: "var(--steel)" }}>
+                                    {f.sub}
+                                </p>
+                                <div className="my-5" style={{ width: 32, height: 2, background: "var(--orange)" }} />
+                                <ul className="space-y-2.5">
+                                    {f.items.map((it, j) => (
+                                        <li key={j} className="flex items-start gap-3">
+                                            <span
+                                                aria-hidden="true"
+                                                style={{
+                                                    marginTop: 9,
+                                                    width: 5,
+                                                    height: 5,
+                                                    background: "var(--navy)",
+                                                    flexShrink: 0,
+                                                    borderRadius: "50%",
+                                                }}
+                                            />
+                                            <p className="font-serif" style={{ fontSize: 15.5, lineHeight: 1.55, color: "var(--ink)" }}>
+                                                {it}
+                                            </p>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </article>
+                        );
+                    })}
                 </div>
             </section>
 
@@ -253,7 +370,7 @@ export default function Research() {
                 </p>
             </section>
 
-            <PageCTA />
+            <ClosingCTA />
             <Footer />
         </main>
     );

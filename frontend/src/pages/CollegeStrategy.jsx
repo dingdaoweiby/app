@@ -148,12 +148,13 @@ export default function CollegeStrategy() {
 
             <section className="section-x section-y" style={{ background: "var(--mist)" }}>
                 <div className="grid grid-cols-12 gap-x-12 gap-y-10 items-start">
-                    <aside className="col-span-12 lg:col-span-5">
+                    <aside className="col-span-12 lg:col-span-4">
                         <div
                             className="overflow-hidden"
                             style={{
                                 aspectRatio: "1/1",
                                 border: "1px solid var(--line)",
+                                maxWidth: 360,
                             }}
                         >
                             <img
@@ -166,7 +167,7 @@ export default function CollegeStrategy() {
                         <p className="eyebrow mt-3">Authentic Growth</p>
                     </aside>
 
-                    <div className="col-span-12 lg:col-span-7 lg:pl-2">
+                    <div className="col-span-12 lg:col-span-8 lg:pl-2">
                         <div className="flex items-center gap-3">
                             <div style={{ width: 28, height: 1, background: "var(--orange)" }} />
                             <p
