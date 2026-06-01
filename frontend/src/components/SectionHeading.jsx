@@ -6,6 +6,7 @@ export default function SectionHeading({
     align = "left",
     maxTitle = 880,
     maxSubtitle = 720,
+    nowrap = false,
 }) {
     const alignCls = align === "center" ? "items-center text-center" : "items-start";
     return (
@@ -34,6 +35,7 @@ export default function SectionHeading({
                     fontWeight: 500,
                     color: "var(--navy)",
                     maxWidth: maxTitle,
+                    whiteSpace: nowrap ? "nowrap" : undefined,
                 }}
             >
                 {title}

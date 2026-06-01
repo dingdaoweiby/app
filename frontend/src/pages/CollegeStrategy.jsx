@@ -100,6 +100,12 @@ const dimensions = [
     },
     {
         title: "Progress Report + Regular Follow-Up Meetings",
+        titleNode: (
+            <>
+                Progress Report +<br />
+                Regular Follow-Up Meetings
+            </>
+        ),
         tagline: "The accountability structure. Strategy means nothing without execution.",
         groups: [
             { h: "1) Core Academics", items: ["Course selection", "Academic criteria — GPA and rigor balance", "Standardized tests — SAT / AP planning"] },
@@ -328,6 +334,7 @@ export default function CollegeStrategy() {
                     title="Our four-part workflow,"
                     italic="built for the long run."
                     subtitle="A coordinated practice — assessment, strategy, roadmap, and accountability — repeated and refined year after year, from Grade 9 through application season."
+                    nowrap
                 />
 
                 <ol className="mt-12" style={{ borderTop: "2px solid var(--navy)" }}>
@@ -336,7 +343,7 @@ export default function CollegeStrategy() {
                             <div className="grid grid-cols-12 gap-x-8 gap-y-4">
                                 <div className="col-span-12 lg:col-span-4">
                                     <span className="font-display" style={{ fontSize: 40, lineHeight: 0.9, color: "var(--orange)", fontWeight: 600 }}>{String(i + 1).padStart(2, "0")}</span>
-                                    <h3 className="font-display mt-3" style={{ fontSize: "clamp(20px, 1.6vw, 24px)", lineHeight: 1.2, color: "var(--navy)", fontWeight: 600, letterSpacing: "-0.005em" }}>{d.title}</h3>
+                                    <h3 className="font-display mt-3" style={{ fontSize: "clamp(20px, 1.6vw, 24px)", lineHeight: 1.2, color: "var(--navy)", fontWeight: 600, letterSpacing: "-0.005em" }}>{d.titleNode || d.title}</h3>
                                     <p className="font-serif italic mt-3" style={{ fontSize: 15, lineHeight: 1.5, color: "var(--steel)" }}>{d.tagline}</p>
                                 </div>
                                 <div className="col-span-12 lg:col-span-8">
@@ -376,10 +383,6 @@ export default function CollegeStrategy() {
                         </li>
                     ))}
                 </ol>
-
-                <p className="font-serif italic mt-8" style={{ fontSize: "clamp(18px, 1.7vw, 24px)", lineHeight: 1.4, color: "var(--navy)", maxWidth: 820 }}>
-                    “Three years from now, your child won't just be applying to college. They'll be ready for it.”
-                </p>
             </section>
 
             {/* Operating Rhythm */}
