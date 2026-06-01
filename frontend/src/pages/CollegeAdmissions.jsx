@@ -44,6 +44,16 @@ const stages = [
         ],
     },
     {
+        h: "Submission Review and Financial Aid Support",
+        items: [
+            "Comprehensive final review of every essay, form, and supporting document",
+            "Coordinated submission across Common App, UC, Coalition, and school portals",
+            "FAFSA and CSS Profile preparation and submission guidance",
+            "Scholarship identification — institutional, merit-based, and external awards",
+            "Financial aid appeal letters and net-cost comparison support",
+        ],
+    },
+    {
         h: "Interview Preparation",
         items: [
             "Mock interviews with targeted, school-specific feedback",
@@ -53,13 +63,13 @@ const stages = [
         ],
     },
     {
-        h: "Decision and Financial Aid Support",
+        h: "Decision Support",
         items: [
             "Application status tracking and follow-up with colleges",
             "Decision release support — reviewing offers, waitlists, and deferrals",
-            "Scholarship identification and merit-aid strategy",
-            "FAFSA and CSS Profile guidance — financial aid application support",
-            "Enrollment decision advising — comparing offers and final selection",
+            "Waitlist strategy — letters of continued interest and timing",
+            "Enrollment decision advising — comparing offers and final school selection",
+            "Pre-matriculation guidance — housing, course planning, and transition support",
         ],
     },
 ];
