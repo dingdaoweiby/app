@@ -262,21 +262,21 @@ export default function CollegeAdmissions() {
                                     </h3>
                                 </div>
                                 <div className="col-span-12 lg:col-span-9">
-                                    <ul className="space-y-2">
+                                    <ul className="space-y-2.5">
                                         {b.items.map((it, j) => (
                                             <li key={j} className="flex items-start gap-3">
                                                 <span
                                                     aria-hidden="true"
                                                     style={{
-                                                        marginTop: 9,
-                                                        width: 5,
-                                                        height: 5,
+                                                        marginTop: 10,
+                                                        width: 6,
+                                                        height: 6,
                                                         background: "var(--navy)",
                                                         flexShrink: 0,
                                                         borderRadius: "50%",
                                                     }}
                                                 />
-                                                <p className="font-serif" style={{ fontSize: 16.5, lineHeight: 1.6, color: "var(--ink)" }}>
+                                                <p className="font-serif" style={{ fontSize: 18, lineHeight: 1.6, color: "var(--ink)" }}>
                                                     {it}
                                                 </p>
                                             </li>
