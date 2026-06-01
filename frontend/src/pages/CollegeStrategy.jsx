@@ -5,8 +5,6 @@ import SectionHeading from "@/components/SectionHeading";
 import ClosingCTA from "@/components/ClosingCTA";
 import { Compass, ShieldCheck, CalendarRange, HeartHandshake } from "lucide-react";
 
-const HERO_IMG = "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=1200&q=85&auto=format&fit=crop";
-
 const specialists = [
     {
         Icon: Compass,
@@ -117,10 +115,19 @@ const dimensions = [
     },
 ];
 
-const operatingLayers = [
-    { h: "Student work", body: "Identity coaching, academic strategy, and the ongoing conversation about who they're becoming." },
-    { h: "Parent work", body: "Family system coaching, expectation calibration, and support for the hardest years of parenting." },
-    { h: "Admissions-track work", body: "Testing, course selection, activities, and the technical execution every serious consultant offers." },
+const partnership = [
+    {
+        h: "Student Effort",
+        body: "Curiosity, discipline, and the willingness to show up — the most important ingredient, and the only one we can't substitute.",
+    },
+    {
+        h: "Parent Engagement",
+        body: "Calibrated expectations, steady support, and an honest dialogue at home — without which strategy quickly unravels.",
+    },
+    {
+        h: "Consulting Expertise",
+        body: "Coordinated specialists, institutional insight, and an operating system that turns intention into outcomes.",
+    },
 ];
 
 export default function CollegeStrategy() {
@@ -385,53 +392,134 @@ export default function CollegeStrategy() {
                 </ol>
             </section>
 
-            {/* Operating Rhythm */}
+            {/* Our Partnership — 3-way cooperation */}
             <section className="section-x section-y" style={{ background: "var(--mist)" }}>
-                <p className="eyebrow">Our Operating Rhythm</p>
-                <h2 className="font-display mt-5" style={{ fontSize: "clamp(32px, 4vw, 56px)", lineHeight: 1.05, letterSpacing: "-0.02em", fontWeight: 500, color: "var(--navy)" }}>
-                    Three layers, every month.
-                </h2>
-                <p className="font-serif mt-6" style={{ fontSize: 17, lineHeight: 1.6, color: "var(--ink)", maxWidth: 700 }}>
-                    The mix shifts with age, but all three stay in motion.
-                </p>
+                <SectionHeading
+                    eyebrow="Our Partnership"
+                    title="Three forces,"
+                    italic="one shared mission."
+                    subtitle="Outcomes don't come from any single party. They come from the way three groups work together — month after month, year after year."
+                />
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-0 mt-12" style={{ borderTop: "2px solid var(--navy)" }}>
-                    {operatingLayers.map((l, i) => (
-                        <article key={l.h} className="p-8 lg:p-10" style={{
-                            background: "var(--paper)",
-                            borderRight: i < 2 ? "1px solid var(--line)" : "none",
-                            borderBottom: "1px solid var(--line)",
-                        }} data-testid={`layer-${i}`}>
-                            <span className="font-display" style={{ fontSize: 48, lineHeight: 0.85, color: "var(--orange)", fontWeight: 600 }}>{String(i + 1).padStart(2, "0")}</span>
-                            <h3 className="font-display mt-4" style={{ fontSize: 22, color: "var(--navy)", fontWeight: 600, letterSpacing: "-0.005em" }}>{l.h}</h3>
-                            <div className="my-4" style={{ width: 30, height: 2, background: "var(--orange)" }} />
-                            <p className="font-serif" style={{ fontSize: 16, lineHeight: 1.6, color: "var(--ink)" }}>{l.body}</p>
+                {/* Three circles connected by a triangle of soft lines */}
+                <div className="mt-16 flex justify-center">
+                    <div
+                        className="relative"
+                        data-testid="partnership-trio"
+                        style={{ width: "min(720px, 100%)", aspectRatio: "1 / 0.6" }}
+                    >
+                        {/* Triangle connector */}
+                        <svg
+                            aria-hidden="true"
+                            viewBox="0 0 100 60"
+                            preserveAspectRatio="none"
+                            style={{ position: "absolute", inset: 0, width: "100%", height: "100%" }}
+                        >
+                            <polygon
+                                points="50,10 14,52 86,52"
+                                fill="none"
+                                stroke="var(--orange)"
+                                strokeOpacity="0.45"
+                                strokeWidth="0.5"
+                                strokeDasharray="1.2 1.6"
+                            />
+                        </svg>
+
+                        {[
+                            { x: "50%", y: "0%",   bg: "var(--navy)",   accent: "var(--orange)", label: "Student",    sub: "Effort" },
+                            { x: "10%", y: "70%",  bg: "var(--orange)", accent: "var(--navy)",   label: "Parent",     sub: "Engagement" },
+                            { x: "90%", y: "70%",  bg: "var(--navy-deep)", accent: "var(--orange)", label: "Consulting", sub: "Expertise" },
+                        ].map((c, i) => (
+                            <div
+                                key={i}
+                                style={{
+                                    position: "absolute",
+                                    left: c.x,
+                                    top: c.y,
+                                    transform: "translate(-50%, 0)",
+                                    width: 132,
+                                    height: 132,
+                                    borderRadius: "50%",
+                                    background: c.bg,
+                                    color: "#fff",
+                                    display: "flex",
+                                    flexDirection: "column",
+                                    alignItems: "center",
+                                    justifyContent: "center",
+                                    textAlign: "center",
+                                    boxShadow: "0 8px 22px rgba(15,26,48,0.15)",
+                                }}
+                            >
+                                <span
+                                    style={{
+                                        fontFamily: "'Playfair Display', serif",
+                                        fontWeight: 600,
+                                        fontSize: 18,
+                                        lineHeight: 1.1,
+                                        letterSpacing: "-0.01em",
+                                    }}
+                                >
+                                    {c.label}
+                                </span>
+                                <span
+                                    style={{
+                                        marginTop: 4,
+                                        fontFamily: "'IBM Plex Mono', monospace",
+                                        fontSize: 10,
+                                        letterSpacing: "0.18em",
+                                        textTransform: "uppercase",
+                                        color: c.accent,
+                                    }}
+                                >
+                                    {c.sub}
+                                </span>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+
+                <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-px" style={{ background: "var(--line)", border: "1px solid var(--line)" }}>
+                    {partnership.map((l, i) => (
+                        <article
+                            key={l.h}
+                            className="p-7 lg:p-8"
+                            style={{ background: "var(--paper)" }}
+                            data-testid={`partnership-${i}`}
+                        >
+                            <h3 className="font-display" style={{ fontSize: 20, color: "var(--navy)", fontWeight: 600, letterSpacing: "-0.005em" }}>{l.h}</h3>
+                            <div className="my-4" style={{ width: 28, height: 2, background: "var(--orange)" }} />
+                            <p className="font-serif" style={{ fontSize: 15.5, lineHeight: 1.65, color: "var(--ink)" }}>{l.body}</p>
                         </article>
                     ))}
                 </div>
-
-                <div className="mt-14 p-10" style={{ background: "var(--paper)", border: "1px solid var(--line)" }}>
-                    <p className="eyebrow">Quarterly Written Deliverable</p>
-                    <p className="font-display italic mt-5" style={{ fontSize: "clamp(22px, 2.2vw, 30px)", lineHeight: 1.35, color: "var(--navy)", fontWeight: 500 }}>
-                        “Here's how your child is coming into focus.”
-                    </p>
-                    <p className="font-serif mt-4" style={{ fontSize: 17, lineHeight: 1.55, color: "var(--ink)" }}>
-                        — a short written narrative that makes the invisible work visible.
-                    </p>
-                </div>
             </section>
 
-            {/* Long View image — placed just above the closing CTA */}
-            <section className="section-x" style={{ background: "var(--paper)", paddingTop: 24, paddingBottom: 48 }}>
-                <div className="img-bordered overflow-hidden" style={{ aspectRatio: "16/7" }}>
+            {/* Atmospheric campus image — soft, dreamy, students on a quad */}
+            <section style={{ background: "var(--paper)", paddingTop: 24, paddingBottom: 48 }}>
+                <div
+                    className="overflow-hidden"
+                    style={{
+                        width: "100%",
+                        aspectRatio: "21/8",
+                        position: "relative",
+                    }}
+                >
                     <img
-                        src={HERO_IMG}
-                        alt="High school student focused on academic planning"
+                        src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=2000&q=85&auto=format&fit=crop"
+                        alt="Students walking across a soft, sunlit university quad"
                         className="w-full h-full object-cover"
-                        style={{ filter: "grayscale(40%) contrast(1.05)" }}
+                        style={{ filter: "grayscale(20%) contrast(0.95) brightness(1.02)" }}
+                    />
+                    {/* Soft fade overlay for a dreamy feel */}
+                    <div
+                        aria-hidden="true"
+                        style={{
+                            position: "absolute",
+                            inset: 0,
+                            background: "linear-gradient(180deg, rgba(255,255,255,0.18) 0%, rgba(0,0,0,0) 50%, rgba(15,26,48,0.20) 100%)",
+                        }}
                     />
                 </div>
-                <p className="eyebrow mt-3">Plate C-I — The Long View</p>
             </section>
 
             <ClosingCTA />
