@@ -185,16 +185,34 @@ export default function CollegeStrategy() {
 
             {/* Specialists */}
             <section className="section-x section-y" style={{ background: "var(--mist)" }}>
-                <div className="grid grid-cols-12 gap-x-10 mb-12">
+                <div className="grid grid-cols-12 gap-x-10 mb-12 items-end">
                     <div className="col-span-12 lg:col-span-7">
-                        <p className="eyebrow">Who Serves Your Family</p>
-                        <h2 className="font-display mt-5" style={{ fontSize: "clamp(32px, 4vw, 56px)", lineHeight: 1.05, letterSpacing: "-0.02em", fontWeight: 500, color: "var(--navy)" }}>
-                            Four experts for one student / one family.
+                        <div className="flex items-center gap-3">
+                            <div style={{ width: 28, height: 1, background: "var(--orange)" }} />
+                            <p
+                                className="font-mono"
+                                style={{ fontSize: 11, letterSpacing: "0.24em", textTransform: "uppercase", color: "var(--orange)", fontWeight: 500 }}
+                            >
+                                Who Serves Your Family
+                            </p>
+                        </div>
+                        <h2
+                            className="font-display mt-5"
+                            style={{
+                                fontSize: "clamp(28px, 2.6vw, 38px)",
+                                lineHeight: 1.15,
+                                letterSpacing: "-0.01em",
+                                fontWeight: 500,
+                                color: "var(--navy)",
+                                whiteSpace: "nowrap",
+                            }}
+                        >
+                            Four experts for one student <em style={{ fontStyle: "italic", color: "var(--orange)", fontWeight: 500 }}>/ one family.</em>
                         </h2>
                     </div>
-                    <div className="col-span-12 lg:col-span-5 flex items-end">
+                    <div className="col-span-12 lg:col-span-5">
                         <p className="font-serif" style={{ fontSize: 17, lineHeight: 1.6, color: "var(--steel)", fontStyle: "italic" }}>
-                            We assign four specialists who work in coordination — from the first meeting through the acceptance letter. Every decision passes through all four. Your child is never handed off.
+                            Every decision passes through all four. Your child is never handed off.
                         </p>
                     </div>
                 </div>
@@ -202,11 +220,14 @@ export default function CollegeStrategy() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     {specialists.map((s, i) => {
                         const Icon = s.Icon;
+                        // Pairings:
+                        // Strategic Counselor (0) + Family Coach (3) → mist
+                        // Admissions Officer (1) + Resource Manager (2) → mist-deep
                         const palettes = [
                             { bg: "var(--mist)",      accent: "var(--orange)" },
-                            { bg: "#fff4e0",          accent: "var(--orange)" },
                             { bg: "var(--mist-deep)", accent: "var(--orange)" },
-                            { bg: "#fff7ec",          accent: "var(--orange)" },
+                            { bg: "var(--mist-deep)", accent: "var(--orange)" },
+                            { bg: "var(--mist)",      accent: "var(--orange)" },
                         ];
                         const palette = palettes[i % palettes.length];
                         return (
@@ -234,33 +255,36 @@ export default function CollegeStrategy() {
                                     }}
                                 />
                                 <div className="relative">
-                                    <div
-                                        className="flex items-center justify-center"
-                                        style={{
-                                            width: 56,
-                                            height: 56,
-                                            borderRadius: "50%",
-                                            background: palette.accent,
-                                            color: "#fff",
-                                            boxShadow: "0 4px 14px rgba(255,152,0,0.25)",
-                                        }}
-                                    >
-                                        <Icon size={26} strokeWidth={1.75} />
+                                    <div className="flex items-center gap-4">
+                                        <div
+                                            className="flex items-center justify-center"
+                                            style={{
+                                                width: 52,
+                                                height: 52,
+                                                borderRadius: "50%",
+                                                background: palette.accent,
+                                                color: "#fff",
+                                                boxShadow: "0 4px 14px rgba(255,152,0,0.25)",
+                                                flexShrink: 0,
+                                            }}
+                                        >
+                                            <Icon size={24} strokeWidth={1.75} />
+                                        </div>
+                                        <h3
+                                            className="font-display"
+                                            style={{
+                                                fontSize: 22,
+                                                lineHeight: 1.2,
+                                                color: "var(--navy)",
+                                                fontWeight: 600,
+                                                letterSpacing: "-0.005em",
+                                            }}
+                                        >
+                                            {s.role}
+                                        </h3>
                                     </div>
-                                    <h3
-                                        className="font-display mt-5"
-                                        style={{
-                                            fontSize: 22,
-                                            lineHeight: 1.2,
-                                            color: "var(--navy)",
-                                            fontWeight: 600,
-                                            letterSpacing: "-0.005em",
-                                        }}
-                                    >
-                                        {s.role}
-                                    </h3>
                                     <p
-                                        className="font-mono mt-2"
+                                        className="font-mono mt-3"
                                         style={{ fontSize: 11, letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--orange)", fontWeight: 500 }}
                                     >
                                         {s.sub}
