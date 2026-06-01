@@ -1,13 +1,14 @@
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import PageHeader from "@/components/PageHeader";
-import PageCTA from "@/components/PageCTA";
+import ClosingCTA from "@/components/ClosingCTA";
+import { Compass, ShieldCheck, CalendarRange, HeartHandshake } from "lucide-react";
 
 const HERO_IMG = "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=1200&q=85&auto=format&fit=crop";
 
 const specialists = [
     {
-        n: "01",
+        Icon: Compass,
         role: "Strategic Counselor",
         sub: "Direction and long-term planning",
         bullets: [
@@ -18,7 +19,7 @@ const specialists = [
         ],
     },
     {
-        n: "02",
+        Icon: ShieldCheck,
         role: "Admissions Officer",
         sub: "Quality and institutional perspective",
         bullets: [
@@ -29,7 +30,7 @@ const specialists = [
         ],
     },
     {
-        n: "03",
+        Icon: CalendarRange,
         role: "Resource Manager",
         sub: "Execution and opportunities",
         bullets: [
@@ -40,7 +41,7 @@ const specialists = [
         ],
     },
     {
-        n: "04",
+        Icon: HeartHandshake,
         role: "Family Coach",
         sub: "Mental health and family dynamics",
         bullets: [
@@ -127,14 +128,6 @@ export default function CollegeStrategy() {
                 breadcrumb={[{ label: "College", to: "/college/strategic-planning" }, { label: "9–11th Grade Strategic Planning" }]}
             />
 
-            <section className="section-x" style={{ background: "var(--paper)", paddingTop: 48, paddingBottom: 0 }}>
-                <div className="img-bordered overflow-hidden" style={{ aspectRatio: "16/7" }}>
-                    <img src={HERO_IMG} alt="High school student focused on academic planning" className="w-full h-full object-cover" style={{ filter: "grayscale(40%) contrast(1.05)" }} />
-                </div>
-                <p className="eyebrow mt-3">Plate C-I — The Long View</p>
-            </section>
-
-            {/* Our Belief */}
             <section className="section-x section-y" style={{ background: "var(--paper)" }}>
                 <div className="grid grid-cols-12 gap-x-10 gap-y-10">
                     <div className="col-span-12 lg:col-span-5">
@@ -176,30 +169,97 @@ export default function CollegeStrategy() {
                     </div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-0" style={{ borderTop: "2px solid var(--navy)" }}>
-                    {specialists.map((s, i) => (
-                        <article key={s.n} className="p-8 lg:p-10" style={{
-                            background: "var(--paper)",
-                            borderRight: i % 2 === 0 ? "1px solid var(--line)" : "none",
-                            borderBottom: "1px solid var(--line)",
-                        }} data-testid={`specialist-${i}`}>
-                            <div className="flex items-baseline gap-4 mb-6">
-                                <span className="font-display" style={{ fontSize: 56, lineHeight: 0.85, color: "var(--orange)", fontWeight: 600 }}>{s.n}</span>
-                                <p className="font-mono" style={{ fontSize: 10, letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--steel)" }}>Specialist {s.n}</p>
-                            </div>
-                            <h3 className="font-display" style={{ fontSize: 24, lineHeight: 1.15, color: "var(--navy)", fontWeight: 600 }}>{s.role}</h3>
-                            <p className="font-mono mt-2" style={{ fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--orange)" }}>{s.sub}</p>
-                            <div className="my-5" style={{ width: 36, height: 2, background: "var(--orange)" }} />
-                            <ul className="space-y-2">
-                                {s.bullets.map((b, j) => (
-                                    <li key={j} className="flex items-start gap-3">
-                                        <span className="font-mono" style={{ fontSize: 10, color: "var(--orange)", marginTop: 6 }}>▸</span>
-                                        <p className="font-serif" style={{ fontSize: 16, lineHeight: 1.55, color: "var(--ink)" }}>{b}</p>
-                                    </li>
-                                ))}
-                            </ul>
-                        </article>
-                    ))}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    {specialists.map((s, i) => {
+                        const Icon = s.Icon;
+                        const palettes = [
+                            { bg: "var(--mist)",      accent: "var(--orange)" },
+                            { bg: "#fff4e0",          accent: "var(--orange)" },
+                            { bg: "var(--mist-deep)", accent: "var(--orange)" },
+                            { bg: "#fff7ec",          accent: "var(--orange)" },
+                        ];
+                        const palette = palettes[i % palettes.length];
+                        return (
+                            <article
+                                key={s.role}
+                                className="p-7 lg:p-8 relative overflow-hidden"
+                                style={{
+                                    background: palette.bg,
+                                    border: "1px solid var(--line)",
+                                }}
+                                data-testid={`specialist-${i}`}
+                            >
+                                {/* Decorative corner accent */}
+                                <div
+                                    aria-hidden="true"
+                                    style={{
+                                        position: "absolute",
+                                        right: -36,
+                                        top: -36,
+                                        width: 120,
+                                        height: 120,
+                                        borderRadius: "50%",
+                                        background: "var(--paper)",
+                                        opacity: 0.6,
+                                    }}
+                                />
+                                <div className="relative">
+                                    <div
+                                        className="flex items-center justify-center"
+                                        style={{
+                                            width: 56,
+                                            height: 56,
+                                            borderRadius: "50%",
+                                            background: palette.accent,
+                                            color: "#fff",
+                                            boxShadow: "0 4px 14px rgba(255,152,0,0.25)",
+                                        }}
+                                    >
+                                        <Icon size={26} strokeWidth={1.75} />
+                                    </div>
+                                    <h3
+                                        className="font-display mt-5"
+                                        style={{
+                                            fontSize: 22,
+                                            lineHeight: 1.2,
+                                            color: "var(--navy)",
+                                            fontWeight: 600,
+                                            letterSpacing: "-0.005em",
+                                        }}
+                                    >
+                                        {s.role}
+                                    </h3>
+                                    <p
+                                        className="font-mono mt-2"
+                                        style={{ fontSize: 11, letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--orange)", fontWeight: 500 }}
+                                    >
+                                        {s.sub}
+                                    </p>
+                                    <div className="my-4" style={{ width: 28, height: 2, background: "var(--orange)" }} />
+                                    <ul className="space-y-2.5">
+                                        {s.bullets.map((b, j) => (
+                                            <li key={j} className="flex items-start gap-3">
+                                                <span
+                                                    aria-hidden="true"
+                                                    style={{
+                                                        marginTop: 8,
+                                                        width: 5,
+                                                        height: 5,
+                                                        background: "var(--navy)",
+                                                        flexShrink: 0,
+                                                        borderRadius: "50%",
+                                                    }}
+                                                />
+                                                <p className="font-serif" style={{ fontSize: 15, lineHeight: 1.55, color: "var(--ink)" }}>
+                                                    {b}
+                                                </p>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            </article>
+                        );
+                    })}
                 </div>
 
                 <p className="font-serif italic mt-10" style={{ fontSize: 18, lineHeight: 1.5, color: "var(--navy)", maxWidth: 900 }}>
@@ -305,7 +365,20 @@ export default function CollegeStrategy() {
                 </div>
             </section>
 
-            <PageCTA />
+            {/* Long View image — placed just above the closing CTA */}
+            <section className="section-x" style={{ background: "var(--paper)", paddingTop: 24, paddingBottom: 48 }}>
+                <div className="img-bordered overflow-hidden" style={{ aspectRatio: "16/7" }}>
+                    <img
+                        src={HERO_IMG}
+                        alt="High school student focused on academic planning"
+                        className="w-full h-full object-cover"
+                        style={{ filter: "grayscale(40%) contrast(1.05)" }}
+                    />
+                </div>
+                <p className="eyebrow mt-3">Plate C-I — The Long View</p>
+            </section>
+
+            <ClosingCTA />
             <Footer />
         </main>
     );
