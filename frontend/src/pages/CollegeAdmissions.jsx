@@ -148,7 +148,7 @@ function PlacementCard({ region, schools }) {
     return (
         <article
             className="p-7 lg:p-8"
-            style={{ background: "var(--paper)" }}
+            style={{ background: "var(--mist)" }}
             data-testid={`ca-region-${region.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}
         >
             <div className="flex items-center gap-3">
@@ -173,7 +173,7 @@ function PlacementCard({ region, schools }) {
                         className="flex items-center gap-2"
                         style={{
                             padding: "6px 10px 6px 6px",
-                            background: "var(--mist)",
+                            background: "var(--paper)",
                             border: "1px solid var(--line)",
                         }}
                     >
@@ -208,10 +208,12 @@ export default function CollegeAdmissions() {
                 italicWord="admissions consulting."
                 subtitle="Expert-led, full-service guidance for students applying to top US universities."
                 breadcrumb={[{ label: "College", to: "/college/strategic-planning" }, { label: "Admissions Consulting" }]}
+                background="var(--paper)"
+                nowrap
             />
 
-            {/* FIVE STAGES */}
-            <section className="section-x" style={{ background: "var(--paper)", paddingTop: 56, paddingBottom: 56 }}>
+            {/* SEVEN STAGES */}
+            <section className="section-x" style={{ background: "var(--mist)", paddingTop: 56, paddingBottom: 56 }}>
                 <ol style={{ borderTop: "2px solid var(--navy)" }}>
                     {stages.map((b, i) => (
                         <li
@@ -288,7 +290,7 @@ export default function CollegeAdmissions() {
             </section>
 
             {/* STUDENT STORIES + WHERE THEY GOT IN */}
-            <section className="section-x section-y" style={{ background: "var(--mist)" }}>
+            <section className="section-x section-y" style={{ background: "var(--paper)" }}>
                 <SectionHeading
                     eyebrow="Student Stories"
                     title="How our students"

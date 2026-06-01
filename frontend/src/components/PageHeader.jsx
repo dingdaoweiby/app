@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-export default function PageHeader({ eyebrow, title, italicWord, subtitle, breadcrumb, background = "var(--mist)" }) {
+export default function PageHeader({ eyebrow, title, italicWord, subtitle, breadcrumb, background = "var(--mist)", nowrap = false }) {
     return (
         <section
             data-testid="page-header"
@@ -46,12 +46,13 @@ export default function PageHeader({ eyebrow, title, italicWord, subtitle, bread
             <h1
                 className="font-display mt-6"
                 style={{
-                    fontSize: "clamp(40px, 5.4vw, 78px)",
+                    fontSize: nowrap ? "clamp(32px, 4vw, 60px)" : "clamp(40px, 5.4vw, 78px)",
                     lineHeight: 1.02,
                     letterSpacing: "-0.025em",
                     fontWeight: 500,
                     color: "var(--navy)",
-                    maxWidth: 1000,
+                    maxWidth: nowrap ? "none" : 1000,
+                    whiteSpace: nowrap ? "nowrap" : undefined,
                 }}
             >
                 {title}
