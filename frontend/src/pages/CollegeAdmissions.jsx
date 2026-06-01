@@ -44,12 +44,22 @@ const stages = [
         ],
     },
     {
-        h: "Interview and Decision Support",
+        h: "Interview Preparation",
         items: [
-            "Mock interviews with targeted feedback",
+            "Mock interviews with targeted, school-specific feedback",
+            "Storytelling, presence, and composure coaching",
+            "Alumni and admissions-officer interview formats",
+            "Wardrobe, body language, and on-camera readiness for virtual interviews",
+        ],
+    },
+    {
+        h: "Decision and Financial Aid Support",
+        items: [
             "Application status tracking and follow-up with colleges",
             "Decision release support — reviewing offers, waitlists, and deferrals",
-            "Scholarship identification and FAFSA / CSS Profile guidance",
+            "Scholarship identification and merit-aid strategy",
+            "FAFSA and CSS Profile guidance — financial aid application support",
+            "Enrollment decision advising — comparing offers and final selection",
         ],
     },
 ];
