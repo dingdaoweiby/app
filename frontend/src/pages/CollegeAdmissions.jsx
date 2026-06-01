@@ -196,12 +196,12 @@ export default function CollegeAdmissions() {
                     {stages.map((b, i) => (
                         <li
                             key={b.h}
-                            className="py-7"
+                            className="py-5"
                             style={{ borderBottom: "1px solid var(--line)" }}
                             data-testid={`college-admissions-stage-${i}`}
                         >
                             <div className="grid grid-cols-12 gap-x-8 gap-y-4 items-start">
-                                <div className="col-span-12 lg:col-span-4">
+                                <div className="col-span-12 lg:col-span-3">
                                     <div className="flex items-baseline gap-3">
                                         <span
                                             className="font-display"
@@ -239,7 +239,7 @@ export default function CollegeAdmissions() {
                                         {b.h}
                                     </h3>
                                 </div>
-                                <div className="col-span-12 lg:col-span-8">
+                                <div className="col-span-12 lg:col-span-9">
                                     <ul className="space-y-2">
                                         {b.items.map((it, j) => (
                                             <li key={j} className="flex items-start gap-3">
@@ -254,7 +254,7 @@ export default function CollegeAdmissions() {
                                                         borderRadius: "50%",
                                                     }}
                                                 />
-                                                <p className="font-serif" style={{ fontSize: 15, lineHeight: 1.55, color: "var(--ink)" }}>
+                                                <p className="font-serif" style={{ fontSize: 16.5, lineHeight: 1.6, color: "var(--ink)" }}>
                                                     {it}
                                                 </p>
                                             </li>
