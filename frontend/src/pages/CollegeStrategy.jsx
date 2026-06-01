@@ -185,12 +185,37 @@ export default function CollegeStrategy() {
 
             {/* Specialists */}
             <section className="section-x section-y" style={{ background: "var(--mist)" }}>
-                <SectionHeading
-                    eyebrow="Who Serves Your Family"
-                    title="Four experts for one student"
-                    italic="/ one family."
-                    subtitle="Every decision passes through all four. Your child is never handed off."
-                />
+                <div className="flex flex-col items-start">
+                    <div className="flex items-center gap-3">
+                        <div style={{ width: 28, height: 1, background: "var(--orange)" }} />
+                        <p
+                            className="font-mono"
+                            style={{ fontSize: 11, letterSpacing: "0.24em", textTransform: "uppercase", color: "var(--orange)", fontWeight: 500 }}
+                        >
+                            Who Serves Your Family
+                        </p>
+                    </div>
+                    <h2
+                        className="font-display mt-5"
+                        style={{
+                            fontSize: "clamp(32px, 3vw, 44px)",
+                            lineHeight: 1.15,
+                            letterSpacing: "-0.01em",
+                            fontWeight: 500,
+                            color: "var(--navy)",
+                            maxWidth: 880,
+                        }}
+                    >
+                        <em style={{ fontStyle: "italic", color: "var(--orange)", fontWeight: 500 }}>Four experts</em>{" "}
+                        for one student <span style={{ color: "var(--navy)" }}>/ one family.</span>
+                    </h2>
+                    <p
+                        className="font-serif mt-5"
+                        style={{ fontSize: 16.5, lineHeight: 1.65, color: "var(--ink)", maxWidth: 720 }}
+                    >
+                        Every decision passes through all four. Your child is never handed off.
+                    </p>
+                </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
                     {specialists.map((s, i) => {
