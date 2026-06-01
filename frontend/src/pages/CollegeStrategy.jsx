@@ -169,17 +169,16 @@ export default function CollegeStrategy() {
                             style={{
                                 aspectRatio: "1/1",
                                 border: "1px solid var(--line)",
-                                maxWidth: 280,
                             }}
                         >
                             <img
-                                src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=600&q=85&auto=format&fit=crop"
+                                src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=900&q=85&auto=format&fit=crop"
                                 alt="Open book on a quiet desk — a symbol of authentic study"
                                 className="w-full h-full object-cover"
                                 style={{ filter: "grayscale(40%) contrast(1.05)" }}
                             />
                         </div>
-                        <p className="eyebrow mt-3">Plate C-II — Authentic Growth</p>
+                        <p className="eyebrow mt-3">Authentic Growth</p>
                     </aside>
                 </div>
             </section>
