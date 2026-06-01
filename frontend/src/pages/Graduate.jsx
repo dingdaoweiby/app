@@ -1,12 +1,12 @@
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import PageHeader from "@/components/PageHeader";
-import SectionHeading from "@/components/SectionHeading";
 import ClosingCTA from "@/components/ClosingCTA";
+import { Stethoscope, FlaskConical, Briefcase, Compass } from "lucide-react";
 
 const tracks = [
     {
-        phase: "01",
+        Icon: Stethoscope,
         label: "Medical School — MD / DO",
         intro: "Strategic advising for pre-med students applying to US allopathic and osteopathic programs — from academic planning through primary applications and interviews.",
         items: [
@@ -17,7 +17,7 @@ const tracks = [
         ],
     },
     {
-        phase: "02",
+        Icon: FlaskConical,
         label: "Doctoral Programs — Ph.D.",
         intro: "Research-fit analysis, statement of purpose development, and outreach strategy for competitive PhD programs in STEM, social sciences, and humanities.",
         items: [
@@ -28,7 +28,7 @@ const tracks = [
         ],
     },
     {
-        phase: "03",
+        Icon: Briefcase,
         label: "Business School — MBA",
         intro: "Story-first positioning for top business school candidates — essays, recommendations, and interview prep grounded in your leadership trajectory.",
         items: [
@@ -38,24 +38,91 @@ const tracks = [
             "Recommendation strategy and mock interviews",
         ],
     },
-    {
-        phase: "04",
-        label: "Self-Directed Applicants",
-        intro: "On-demand coaching for self-directed graduate applicants who want expert feedback at key decision points without a full-service package.",
-        items: [
-            "Targeted reviews of drafts — SOP, CV, or essay supplements",
-            "School list sanity checks and application timeline audits",
-            "Hour-based or milestone-based engagements",
-            "Ideal for candidates managing most of the process independently",
-        ],
-    },
 ];
 
+const selfDirected = {
+    Icon: Compass,
+    label: "Self-Directed Applicants",
+    intro: "On-demand coaching for self-directed graduate applicants who want expert feedback at key decision points — without committing to a full-service package.",
+    items: [
+        "Targeted reviews of drafts — SOP, CV, or essay supplements",
+        "School list sanity checks and application timeline audits",
+        "Hour-based or milestone-based engagements",
+        "Ideal for candidates managing most of the process independently",
+    ],
+};
+
 const placements = [
-    { region: "Medical School", programs: ["Harvard Medical School", "Johns Hopkins SOM", "UCSF", "Stanford SOM", "Columbia VP&S", "Yale SOM", "Perelman / Penn", "Weill Cornell", "NYU Grossman", "Mount Sinai Icahn"] },
+    { region: "Medical School",  programs: ["Harvard Medical School", "Johns Hopkins SOM", "UCSF", "Stanford SOM", "Columbia VP&S", "Yale SOM", "Perelman / Penn", "Weill Cornell", "NYU Grossman", "Mount Sinai Icahn"] },
     { region: "Doctoral Programs", programs: ["MIT EECS PhD", "Stanford Bioengineering", "Harvard GSAS", "Princeton Politics", "Yale Economics", "Caltech Physics", "Berkeley Chemistry", "Cornell CS", "Chicago Sociology"] },
-    { region: "MBA Programs", programs: ["Harvard Business School", "Stanford GSB", "Wharton", "Chicago Booth", "MIT Sloan", "Kellogg", "Columbia Business", "Yale SOM", "Tuck", "Haas"] },
+    { region: "MBA Programs",    programs: ["Harvard Business School", "Stanford GSB", "Wharton", "Chicago Booth", "MIT Sloan", "Kellogg", "Columbia Business", "Yale SOM", "Tuck", "Haas"] },
 ];
+
+function TrackCard({ Icon, label, intro, items, fullWidth = false, testid }) {
+    return (
+        <article
+            className="p-7 lg:p-8"
+            style={{
+                background: "var(--paper)",
+                border: "1px solid var(--line)",
+            }}
+            data-testid={testid}
+        >
+            <div className="flex items-center gap-4">
+                <div
+                    className="flex items-center justify-center"
+                    style={{
+                        width: 56,
+                        height: 56,
+                        borderRadius: "50%",
+                        background: "var(--orange)",
+                        color: "#fff",
+                        boxShadow: "0 4px 14px rgba(255,152,0,0.28)",
+                        flexShrink: 0,
+                    }}
+                >
+                    <Icon size={28} strokeWidth={1.75} />
+                </div>
+                <h3
+                    className="font-display"
+                    style={{
+                        fontSize: 19,
+                        lineHeight: 1.2,
+                        color: "var(--navy)",
+                        fontWeight: 600,
+                        letterSpacing: "-0.005em",
+                    }}
+                >
+                    {label}
+                </h3>
+            </div>
+            <div className="my-4" style={{ width: 32, height: 2, background: "var(--orange)" }} />
+            <p className="font-serif" style={{ fontSize: 15.5, lineHeight: 1.6, color: "var(--ink)" }}>
+                {intro}
+            </p>
+            <ul className={`mt-5 ${fullWidth ? "grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2.5" : "space-y-2.5"}`}>
+                {items.map((it, j) => (
+                    <li key={j} className="flex items-start gap-3">
+                        <span
+                            aria-hidden="true"
+                            style={{
+                                marginTop: 9,
+                                width: 5,
+                                height: 5,
+                                background: "var(--navy)",
+                                flexShrink: 0,
+                                borderRadius: "50%",
+                            }}
+                        />
+                        <p className="font-serif" style={{ fontSize: 15.5, lineHeight: 1.55, color: "var(--ink)" }}>
+                            {it}
+                        </p>
+                    </li>
+                ))}
+            </ul>
+        </article>
+    );
+}
 
 export default function Graduate() {
     return (
@@ -64,116 +131,58 @@ export default function Graduate() {
 
             <PageHeader
                 eyebrow="Graduate Admissions"
-                title="The next chapter."
-                italicWord="Made deliberate."
+                title="A focused advisory practice for"
+                italicWord="graduate admissions."
                 subtitle="Strategic guidance for medical school, doctoral, MBA, and self-directed applicants."
                 breadcrumb={[{ label: "Graduate" }]}
+                background="var(--paper)"
+                nowrap
             />
 
-            {/* WHAT WE DO */}
-            <section className="section-x section-y" style={{ background: "var(--paper)" }}>
-                <SectionHeading
-                    eyebrow="What We Do"
-                    title="A focused advisory practice for graduate admissions."
-                    subtitle="From research fit to interview prep, our work spans the full graduate application year — across four distinct tracks."
-                />
-
-                <div
-                    className="mt-14 grid grid-cols-1 lg:grid-cols-2 gap-x-12 gap-y-14"
-                    style={{ borderTop: "2px solid var(--navy)", paddingTop: 48 }}
-                >
-                    {tracks.map((p, i) => (
-                        <div key={p.phase} data-testid={`graduate-track-${i}`}>
-                            <div className="flex flex-col items-center text-center">
-                                <div
-                                    className="flex items-center justify-center"
-                                    style={{
-                                        width: 56,
-                                        height: 56,
-                                        background: "var(--orange)",
-                                        color: "#fff",
-                                        borderRadius: "50%",
-                                        boxShadow: "0 4px 14px rgba(255,152,0,0.28)",
-                                    }}
-                                >
-                                    <span
-                                        className="font-display"
-                                        style={{ fontSize: 24, lineHeight: 1, color: "#fff", fontWeight: 600, letterSpacing: "-0.01em" }}
-                                    >
-                                        {p.phase}
-                                    </span>
-                                </div>
-                                <p
-                                    className="font-mono mt-5"
-                                    style={{
-                                        fontSize: 14,
-                                        letterSpacing: "0.22em",
-                                        textTransform: "uppercase",
-                                        color: "var(--navy)",
-                                        fontWeight: 600,
-                                    }}
-                                >
-                                    {p.label}
-                                </p>
-                                <div className="mt-4" style={{ width: 32, height: 2, background: "var(--orange)" }} />
-                            </div>
-
-                            <p
-                                className="font-serif mt-6"
-                                style={{ fontSize: 16, lineHeight: 1.65, color: "var(--ink)", maxWidth: 560, margin: "24px auto 0" }}
-                            >
-                                {p.intro}
-                            </p>
-
-                            <ul className="mt-6 space-y-3.5" style={{ maxWidth: 560, margin: "24px auto 0" }}>
-                                {p.items.map((it, j) => (
-                                    <li
-                                        key={j}
-                                        className="flex items-start gap-3"
-                                        data-testid={`graduate-track-${i}-item-${j}`}
-                                    >
-                                        <span
-                                            aria-hidden="true"
-                                            style={{
-                                                marginTop: 9,
-                                                width: 6,
-                                                height: 6,
-                                                background: "var(--navy)",
-                                                flexShrink: 0,
-                                                borderRadius: "50%",
-                                            }}
-                                        />
-                                        <p
-                                            className="font-serif"
-                                            style={{ fontSize: 15.5, lineHeight: 1.55, color: "var(--ink)" }}
-                                        >
-                                            {it}
-                                        </p>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
+            {/* TRACKS */}
+            <section className="section-x" style={{ background: "var(--mist)", paddingTop: 56, paddingBottom: 64 }}>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    {tracks.map((t, i) => (
+                        <TrackCard key={t.label} {...t} testid={`graduate-track-${i}`} />
                     ))}
+                </div>
+
+                <div className="mt-6">
+                    <TrackCard {...selfDirected} fullWidth testid="graduate-track-self-directed" />
                 </div>
             </section>
 
-            {/* WHERE STUDENTS GO */}
-            <section className="section-x section-y" style={{ background: "var(--mist)" }}>
-                <SectionHeading
-                    eyebrow="Where Our Students Go"
-                    title="Graduate programs where our applicants have been admitted."
-                    subtitle="A representative selection across medicine, doctoral research, and business."
-                />
-
-                <div
-                    className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-px"
-                    style={{ background: "var(--line)", border: "1px solid var(--line)" }}
+            {/* PLACEMENTS */}
+            <section className="section-x section-y" style={{ background: "var(--paper)" }}>
+                <div className="flex items-center gap-3 mb-6">
+                    <div style={{ width: 28, height: 1, background: "var(--orange)" }} />
+                    <p
+                        className="font-mono"
+                        style={{ fontSize: 11, letterSpacing: "0.24em", textTransform: "uppercase", color: "var(--orange)", fontWeight: 500 }}
+                    >
+                        Where Our Students Go
+                    </p>
+                </div>
+                <h2
+                    className="font-display"
+                    style={{
+                        fontSize: "clamp(28px, 2.8vw, 40px)",
+                        lineHeight: 1.15,
+                        letterSpacing: "-0.01em",
+                        fontWeight: 500,
+                        color: "var(--navy)",
+                    }}
                 >
+                    Graduate programs where our applicants have been{" "}
+                    <em style={{ fontStyle: "italic", color: "var(--orange)", fontWeight: 500 }}>admitted.</em>
+                </h2>
+
+                <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-px" style={{ background: "var(--line)", border: "1px solid var(--line)" }}>
                     {placements.map((g, i) => (
                         <article
                             key={g.region}
-                            className="p-8 lg:p-10"
-                            style={{ background: "var(--paper)" }}
+                            className="p-7 lg:p-8"
+                            style={{ background: "var(--mist)" }}
                             data-testid={`graduate-placement-${i}`}
                         >
                             <div className="flex items-center gap-3">
@@ -186,15 +195,14 @@ export default function Graduate() {
                                 </p>
                             </div>
                             <div className="mt-5 flex flex-wrap gap-2">
-                                {g.programs.map((s, j) => (
+                                {g.programs.map((s) => (
                                     <span
                                         key={s}
-                                        data-testid={`graduate-placement-${i}-school-${j}`}
                                         className="font-display"
                                         style={{
                                             display: "inline-block",
                                             padding: "8px 12px",
-                                            background: "var(--mist)",
+                                            background: "var(--paper)",
                                             border: "1px solid var(--line)",
                                             color: "var(--navy)",
                                             fontSize: 13.5,
