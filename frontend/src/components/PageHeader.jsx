@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-export default function PageHeader({ eyebrow, title, italicWord, subtitle, breadcrumb }) {
+export default function PageHeader({ eyebrow, title, italicWord, subtitle, breadcrumb, background = "var(--mist)" }) {
     return (
         <section
             data-testid="page-header"
@@ -8,7 +8,7 @@ export default function PageHeader({ eyebrow, title, italicWord, subtitle, bread
             style={{
                 paddingTop: "clamp(48px, 6vw, 88px)",
                 paddingBottom: "clamp(40px, 5vw, 72px)",
-                background: "var(--mist)",
+                background: background,
                 borderBottom: "1px solid var(--line)",
             }}
         >

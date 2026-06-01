@@ -143,9 +143,10 @@ export default function CollegeStrategy() {
                 italicWord="The offer is the proof."
                 subtitle="Skills, mindset, substance — built through three years of authentic development, not just application tactics."
                 breadcrumb={[{ label: "College", to: "/college/strategic-planning" }, { label: "9–11th Grade Strategic Planning" }]}
+                background="var(--paper)"
             />
 
-            <section className="section-x section-y" style={{ background: "var(--paper)" }}>
+            <section className="section-x section-y" style={{ background: "var(--mist)" }}>
                 <SectionHeading
                     eyebrow="Our Belief"
                     title="Success isn't the letter."
@@ -200,7 +201,7 @@ export default function CollegeStrategy() {
             </section>
 
             {/* Specialists */}
-            <section className="section-x section-y" style={{ background: "var(--mist)" }}>
+            <section className="section-x section-y" style={{ background: "var(--paper)" }}>
                 <div className="flex flex-col items-start">
                     <div className="flex items-center gap-3">
                         <div style={{ width: 28, height: 1, background: "var(--orange)" }} />
@@ -338,7 +339,7 @@ export default function CollegeStrategy() {
             </section>
 
             {/* How We Help You */}
-            <section className="section-x section-y" style={{ background: "var(--paper)" }}>
+            <section className="section-x section-y" style={{ background: "var(--mist)" }}>
                 <SectionHeading
                     eyebrow="How We Help You"
                     title="Our four-part workflow,"
@@ -396,7 +397,7 @@ export default function CollegeStrategy() {
             </section>
 
             {/* Our Partnership — 3-way cooperation */}
-            <section className="section-x section-y" style={{ background: "var(--mist)" }}>
+            <section className="section-x section-y" style={{ background: "var(--paper)" }}>
                 <SectionHeading
                     eyebrow="Our Partnership"
                     title="Three forces,"
