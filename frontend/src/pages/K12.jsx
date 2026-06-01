@@ -143,10 +143,11 @@ export default function K12() {
                 italicWord="The right fit."
                 subtitle="Every child deserves to be seen clearly. We make sure the right school sees them."
                 breadcrumb={[{ label: "K–12" }]}
+                background="var(--paper)"
             />
 
             {/* WHAT WE DO */}
-            <section className="section-x section-y" style={{ background: "var(--paper)" }}>
+            <section className="section-x section-y" style={{ background: "var(--mist)" }}>
                 <SectionHeading
                     eyebrow="What We Do"
                     title="A complete advisory practice for private school admissions."
@@ -230,7 +231,7 @@ export default function K12() {
             </section>
 
             {/* WHERE STUDENTS GO */}
-            <section className="section-x section-y" style={{ background: "var(--mist)" }}>
+            <section className="section-x section-y" style={{ background: "var(--paper)" }}>
                 <SectionHeading
                     eyebrow="Where Our Students Go"
                     title="Day and boarding schools where our families have been admitted."
@@ -288,7 +289,7 @@ export default function K12() {
             </section>
 
             {/* STUDENT STORIES */}
-            <section className="section-x section-y" style={{ background: "var(--paper)" }}>
+            <section className="section-x section-y" style={{ background: "var(--mist)" }}>
                 <SectionHeading
                     eyebrow="Student Stories"
                     title="How four families found the right fit."
