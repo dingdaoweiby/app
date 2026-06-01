@@ -147,40 +147,8 @@ export default function CollegeStrategy() {
             />
 
             <section className="section-x section-y" style={{ background: "var(--mist)" }}>
-                <SectionHeading
-                    eyebrow="Our Belief"
-                    title="Success isn't the letter."
-                    italic="It's the student."
-                />
-
-                <div className="mt-12 grid grid-cols-12 gap-x-12 gap-y-10 items-start">
-                    <div className="col-span-12 lg:col-span-8">
-                        <p
-                            className="font-display"
-                            style={{
-                                fontSize: "clamp(18px, 1.4vw, 21px)",
-                                lineHeight: 1.45,
-                                color: "var(--orange)",
-                                fontWeight: 500,
-                                fontStyle: "italic",
-                            }}
-                        >
-                            “Motivation cannot be imposed. It must be awakened.
-                            <br />
-                            We build students for themselves, not simply for an application.”
-                        </p>
-
-                        <div className="mt-7" style={{ width: 36, height: 2, background: "var(--navy)" }} />
-
-                        <p className="font-serif mt-7" style={{ fontSize: 16, lineHeight: 1.75, color: "var(--ink)" }}>
-                            Through challenge, guidance, and genuine belief in each child, we cultivate what no consultant can manufacture: discipline that comes from within, a sense of direction that belongs to them, and the quiet confidence that doesn't need to perform to be seen.
-                        </p>
-                        <p className="font-serif mt-5" style={{ fontSize: 16, lineHeight: 1.75, color: "var(--ink)" }}>
-                            By the time application season arrives, nothing needs to be forced. What colleges see is the result of years of authentic growth — and what your child carries forward is far more valuable than any acceptance letter.
-                        </p>
-                    </div>
-
-                    <aside className="col-span-12 lg:col-span-4 lg:pl-6 lg:border-l" style={{ borderColor: "var(--line)" }}>
+                <div className="grid grid-cols-12 gap-x-12 gap-y-10 items-start">
+                    <aside className="col-span-12 lg:col-span-5">
                         <div
                             className="overflow-hidden"
                             style={{
@@ -197,6 +165,48 @@ export default function CollegeStrategy() {
                         </div>
                         <p className="eyebrow mt-3">Authentic Growth</p>
                     </aside>
+
+                    <div className="col-span-12 lg:col-span-7 lg:pl-2">
+                        <div className="flex items-center gap-3">
+                            <div style={{ width: 28, height: 1, background: "var(--orange)" }} />
+                            <p
+                                className="font-mono"
+                                style={{
+                                    fontSize: 11,
+                                    letterSpacing: "0.24em",
+                                    textTransform: "uppercase",
+                                    color: "var(--orange)",
+                                    fontWeight: 500,
+                                }}
+                            >
+                                Our Belief
+                            </p>
+                        </div>
+
+                        <p
+                            className="font-display mt-6"
+                            style={{
+                                fontSize: "clamp(20px, 1.7vw, 26px)",
+                                lineHeight: 1.4,
+                                color: "var(--orange)",
+                                fontWeight: 500,
+                                fontStyle: "italic",
+                            }}
+                        >
+                            “Motivation cannot be imposed. It must be awakened.
+                            <br />
+                            We build students for themselves, not simply for an application.”
+                        </p>
+
+                        <div className="mt-7" style={{ width: 36, height: 2, background: "var(--navy)" }} />
+
+                        <p className="font-serif mt-7" style={{ fontSize: 16.5, lineHeight: 1.75, color: "var(--ink)" }}>
+                            Through challenge, guidance, and genuine belief in each child, we cultivate what no consultant can manufacture: discipline that comes from within, a sense of direction that belongs to them, and the quiet confidence that doesn't need to perform to be seen.
+                        </p>
+                        <p className="font-serif mt-5" style={{ fontSize: 16.5, lineHeight: 1.75, color: "var(--ink)" }}>
+                            By the time application season arrives, nothing needs to be forced. What colleges see is the result of years of authentic growth — and what your child carries forward is far more valuable than any acceptance letter.
+                        </p>
+                    </div>
                 </div>
             </section>
 
