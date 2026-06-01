@@ -243,7 +243,7 @@ export default function K12() {
                         <article
                             key={g.region}
                             className="p-8 lg:p-10"
-                            style={{ background: "var(--paper)" }}
+                            style={{ background: "var(--mist)" }}
                             data-testid={`k12-region-${i}`}
                         >
                             <div className="flex items-center gap-3">
@@ -270,7 +270,7 @@ export default function K12() {
                                         style={{
                                             display: "inline-block",
                                             padding: "8px 12px",
-                                            background: "var(--mist)",
+                                            background: "var(--paper)",
                                             border: "1px solid var(--line)",
                                             color: "var(--navy)",
                                             fontSize: 13.5,
