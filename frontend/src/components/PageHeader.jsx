@@ -1,6 +1,22 @@
 import { Link } from "react-router-dom";
 import { useT } from "@/i18n/LanguageContext";
 
+// Render title text breaking on ". " into spans + mobile-only <br />.
+// Desktop: appears as one paragraph; mobile: each sentence on its own line.
+function renderTitleLines(title) {
+    if (!title) return null;
+    const parts = title.split(/(?<=\. )/);
+    return parts.map((p, i) => {
+        const isLast = i === parts.length - 1;
+        return (
+            <span key={i}>
+                {p}
+                {!isLast && <br className="md:hidden" />}
+            </span>
+        );
+    });
+}
+
 export default function PageHeader({ eyebrow, title, italicWord, subtitle, breadcrumb, background = "var(--mist)", nowrap = false, stack = false }) {
     const t = useT();
     return (
@@ -56,12 +72,16 @@ export default function PageHeader({ eyebrow, title, italicWord, subtitle, bread
                     maxWidth: nowrap ? "none" : 1000,
                 }}
             >
-                {title}
+                {renderTitleLines(title)}
                 {italicWord && (
                     stack ? (
                         <><br /><em style={{ fontStyle: "italic", color: "var(--orange)", fontWeight: 500 }}>{italicWord}</em></>
                     ) : (
-                        <> <em style={{ fontStyle: "italic", color: "var(--orange)", fontWeight: 500 }}>{italicWord}</em></>
+                        <>
+                            <br className="md:hidden" />
+                            <span className="hidden md:inline"> </span>
+                            <em style={{ fontStyle: "italic", color: "var(--orange)", fontWeight: 500 }}>{italicWord}</em>
+                        </>
                     )
                 )}
             </h1>

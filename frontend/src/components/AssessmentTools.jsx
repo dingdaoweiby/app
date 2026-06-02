@@ -31,7 +31,7 @@ export default function AssessmentTools() {
                         maxWidth: 880,
                     }}
                 >
-                    {a.titlePre} <em style={{ fontStyle: "italic", color: "var(--orange)", fontWeight: 500 }}>{a.titleItalic}</em>{a.titlePost}
+                    {a.titlePre} <em style={{ fontStyle: "italic", color: "var(--orange)", fontWeight: 500 }}>{a.titleItalic}</em>,<br className="md:hidden" /><span className="hidden md:inline">{" "}</span>{a.titlePost.replace(/^,\s*/, "")}
                 </h2>
                 <div className="mt-8" style={{ width: 56, height: 2, background: "var(--navy)" }} />
                 <p className="font-serif italic mt-6" style={{ fontSize: 17, lineHeight: 1.65, color: "var(--steel)", maxWidth: 620 }}>
