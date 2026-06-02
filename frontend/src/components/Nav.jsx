@@ -5,6 +5,7 @@ import { useT } from "@/i18n/LanguageContext";
 export default function Nav() {
     const t = useT();
     const navItems = [
+        { label: t.nav.home, to: "/" },
         { label: t.nav.k12, to: "/k-12" },
         {
             label: t.nav.college,
@@ -152,6 +153,7 @@ export default function Nav() {
                             <NavLink
                                 key={item.to}
                                 to={item.to}
+                                end={item.to === "/"}
                                 data-testid={`nav-link-${item.label.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}
                                 style={({ isActive }) => ({
                                     ...linkBase,
@@ -243,6 +245,8 @@ export default function Nav() {
                                 ) : (
                                     <NavLink
                                         to={item.to}
+                                        end={item.to === "/"}
+                                        onClick={() => setMobileOpen(false)}
                                         className="block py-3 font-display"
                                         style={{ fontSize: 18, color: "#fff", fontWeight: 500 }}
                                     >

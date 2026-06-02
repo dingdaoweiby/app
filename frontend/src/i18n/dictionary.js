@@ -6,6 +6,7 @@
 export const dict = {
     en: {
         nav: {
+            home: "Home",
             k12: "K–12",
             college: "College",
             collegeMenuHeading: "College Admissions",
@@ -225,6 +226,7 @@ export const dict = {
 
     zh: {
         nav: {
+            home: "首页",
             k12: "K–12 升学",
             college: "本科",
             collegeMenuHeading: "本科升学",
