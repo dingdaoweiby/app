@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import PageHeader from "@/components/PageHeader";
 import ClosingCTA from "@/components/ClosingCTA";
 import { Stethoscope, FlaskConical, Briefcase, Compass } from "lucide-react";
+import { useT } from "@/i18n/LanguageContext";
 
 const tracks = [
     {
@@ -125,15 +126,17 @@ function TrackCard({ Icon, label, intro, items, fullWidth = false, testid }) {
 }
 
 export default function Graduate() {
+    const tt = useT();
+    const p = tt.pages.graduate;
     return (
         <main data-testid="page-graduate" className="min-h-screen">
             <Nav />
 
             <PageHeader
-                eyebrow="Graduate Admissions"
-                title="A focused advisory practice for"
-                italicWord="graduate admissions."
-                breadcrumb={[{ label: "Graduate" }]}
+                eyebrow={p.eyebrow}
+                title={p.title}
+                italicWord={p.italic}
+                breadcrumb={[{ label: p.crumb }]}
                 background="var(--paper)"
                 nowrap
             />

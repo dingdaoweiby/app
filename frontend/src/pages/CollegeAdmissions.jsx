@@ -4,6 +4,7 @@ import PageHeader from "@/components/PageHeader";
 import SectionHeading from "@/components/SectionHeading";
 import ClosingCTA from "@/components/ClosingCTA";
 import SchoolLogo from "@/components/SchoolLogo";
+import { useT } from "@/i18n/LanguageContext";
 
 const stages = [
     {
@@ -198,16 +199,18 @@ function PlacementCard({ region, schools }) {
 }
 
 export default function CollegeAdmissions() {
+    const t = useT();
+    const p = t.pages.admissions;
     return (
         <main data-testid="page-college-admissions" className="min-h-screen">
             <Nav />
 
             <PageHeader
-                eyebrow="College Admissions Consulting"
-                title="Full-cycle college"
-                italicWord="admissions consulting."
-                subtitle="Expert-led, full-service guidance for students applying to top US universities."
-                breadcrumb={[{ label: "College", to: "/college/strategic-planning" }, { label: "Admissions Consulting" }]}
+                eyebrow={p.eyebrow}
+                title={p.title}
+                italicWord={p.italic}
+                subtitle={p.subtitle}
+                breadcrumb={[{ label: p.crumbCollege, to: "/college/strategic-planning" }, { label: p.crumbSelf }]}
                 background="var(--paper)"
                 nowrap
             />

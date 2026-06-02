@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import PageHeader from "@/components/PageHeader";
 import ClosingCTA from "@/components/ClosingCTA";
 import { FlaskConical, LineChart, BookOpen, Landmark, User, Users } from "lucide-react";
+import { useT } from "@/i18n/LanguageContext";
 
 const fields = [
     {
@@ -168,15 +169,17 @@ const projects = [
 ];
 
 export default function Research() {
+    const tt = useT();
+    const p = tt.pages.research;
     return (
         <main data-testid="page-research" className="min-h-screen">
             <Nav />
             <PageHeader
-                eyebrow="Research Mentorship"
-                title="From curiosity to publication."
-                italicWord="Real research. Real output."
-                subtitle="A research paper is more than a credential — it's proof your child can think at the level colleges are looking for."
-                breadcrumb={[{ label: "Research" }]}
+                eyebrow={p.eyebrow}
+                title={p.title}
+                italicWord={p.italic}
+                subtitle={p.subtitle}
+                breadcrumb={[{ label: p.crumb }]}
                 background="var(--paper)"
                 stack
             />

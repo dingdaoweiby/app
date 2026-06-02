@@ -1,21 +1,23 @@
 import { useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
-
-const navItems = [
-    { label: "K–12", to: "/k-12" },
-    {
-        label: "College",
-        children: [
-            { label: "9–11th Grade Strategic Planning", to: "/college/strategic-planning" },
-            { label: "Admissions Consulting", to: "/college/admissions-consulting" },
-        ],
-    },
-    { label: "Graduate", to: "/graduate" },
-    { label: "Research", to: "/research" },
-    { label: "International", to: "/international" },
-];
+import { useT } from "@/i18n/LanguageContext";
 
 export default function Nav() {
+    const t = useT();
+    const navItems = [
+        { label: t.nav.k12, to: "/k-12" },
+        {
+            label: t.nav.college,
+            children: [
+                { label: t.nav.collegeStrategy, to: "/college/strategic-planning" },
+                { label: t.nav.collegeAdmissions, to: "/college/admissions-consulting" },
+            ],
+        },
+        { label: t.nav.graduate, to: "/graduate" },
+        { label: t.nav.research, to: "/research" },
+        { label: t.nav.international, to: "/international" },
+    ];
+
     const [scrolled, setScrolled] = useState(false);
     const [openCollege, setOpenCollege] = useState(false);
     const [mobileOpen, setMobileOpen] = useState(false);
@@ -121,7 +123,7 @@ export default function Nav() {
                                     >
                                         <div className="px-6 py-3" style={{ borderBottom: "1px solid var(--line)" }}>
                                             <p className="font-mono" style={{ fontSize: 10, letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--orange)", fontWeight: 500 }}>
-                                                College Admissions
+                                                {t.nav.collegeMenuHeading}
                                             </p>
                                         </div>
                                         {item.children.map((c) => (
@@ -185,7 +187,7 @@ export default function Nav() {
                         onMouseEnter={(e) => { e.currentTarget.style.background = "var(--orange)"; e.currentTarget.style.borderColor = "var(--orange)"; e.currentTarget.style.color = "#fff"; }}
                         onMouseLeave={(e) => { e.currentTarget.style.background = "#fff"; e.currentTarget.style.borderColor = "#fff"; e.currentTarget.style.color = "var(--navy)"; }}
                     >
-                        Schedule a Consultation
+                        {t.nav.cta}
                     </Link>
 
                     <button
@@ -202,7 +204,7 @@ export default function Nav() {
                             cursor: "pointer",
                         }}
                     >
-                        {mobileOpen ? "Close" : "Menu"}
+                        {mobileOpen ? t.nav.close : t.nav.menu}
                     </button>
                 </div>
             </div>

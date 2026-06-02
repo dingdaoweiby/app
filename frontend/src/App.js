@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import "@/App.css";
+import { LanguageProvider } from "@/i18n/LanguageContext";
 
 import Home from "@/pages/Home";
 import K12 from "@/pages/K12";
@@ -22,7 +23,8 @@ function ScrollToTop() {
 function App() {
     return (
         <div className="App" data-testid="app-root">
-            <BrowserRouter>
+            <LanguageProvider>
+                <BrowserRouter>
                 <ScrollToTop />
                 <Routes>
                     <Route path="/" element={<Home />} />
@@ -37,6 +39,7 @@ function App() {
                     <Route path="/privacy" element={<Privacy />} />
                 </Routes>
             </BrowserRouter>
+            </LanguageProvider>
         </div>
     );
 }

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import { useT } from "@/i18n/LanguageContext";
 
 const ROLES = ["Parent", "Guardian"];
 const GRADES = [
@@ -79,6 +80,7 @@ const baseInput = {
 };
 
 export default function Contact() {
+    const tt = useT();
     const [role, setRole] = useState("Parent");
     const [contactMethod, setContactMethod] = useState("email");
     const [submitted, setSubmitted] = useState(false);
@@ -98,9 +100,9 @@ export default function Contact() {
                     className="flex items-center gap-2 mb-10 font-mono"
                     style={{ fontSize: 12, letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--steel)" }}
                 >
-                    <a href="/" className="link-underline" data-testid="breadcrumb-home">Home</a>
+                    <a href="/" className="link-underline" data-testid="breadcrumb-home">{tt.breadcrumb.home}</a>
                     <span style={{ color: "var(--line-strong)" }}>/</span>
-                    <span style={{ color: "var(--orange)" }}>Schedule a Consultation</span>
+                    <span style={{ color: "var(--orange)" }}>{tt.pages.contact.crumb}</span>
                 </nav>
 
                 {submitted ? (

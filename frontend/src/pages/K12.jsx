@@ -4,6 +4,7 @@ import PageHeader from "@/components/PageHeader";
 import SectionHeading from "@/components/SectionHeading";
 import ClosingCTA from "@/components/ClosingCTA";
 import SchoolLogo from "@/components/SchoolLogo";
+import { useT } from "@/i18n/LanguageContext";
 
 const servicePhases = [
     {
@@ -133,16 +134,18 @@ const stories = [
 ];
 
 export default function K12() {
+    const t = useT();
+    const p = t.pages.k12;
     return (
         <main data-testid="page-k12" className="min-h-screen">
             <Nav />
 
             <PageHeader
-                eyebrow="K–12 Private School Admissions"
-                title="The right school."
-                italicWord="The right fit."
-                subtitle="Every child deserves to be seen clearly. We make sure the right school sees them."
-                breadcrumb={[{ label: "K–12" }]}
+                eyebrow={p.eyebrow}
+                title={p.title}
+                italicWord={p.italic}
+                subtitle={p.subtitle}
+                breadcrumb={[{ label: p.crumb }]}
                 background="var(--paper)"
             />
 

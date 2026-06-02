@@ -4,6 +4,7 @@ import PageHeader from "@/components/PageHeader";
 import SectionHeading from "@/components/SectionHeading";
 import ClosingCTA from "@/components/ClosingCTA";
 import { Compass, ShieldCheck, CalendarRange, HeartHandshake, GraduationCap, Users, Award } from "lucide-react";
+import { useT } from "@/i18n/LanguageContext";
 
 const specialists = [
     {
@@ -134,15 +135,17 @@ const partnership = [
 ];
 
 export default function CollegeStrategy() {
+    const t = useT();
+    const p = t.pages.strategy;
     return (
         <main data-testid="page-college-strategy" className="min-h-screen">
             <Nav />
             <PageHeader
-                eyebrow="9–11th Grade Cultivation"
-                title="Real capability. Real growth."
-                italicWord="The offer is the proof."
-                subtitle="Skills, mindset, substance — built through three years of authentic development, not just application tactics."
-                breadcrumb={[{ label: "College", to: "/college/strategic-planning" }, { label: "9–11th Grade Strategic Planning" }]}
+                eyebrow={p.eyebrow}
+                title={p.title}
+                italicWord={p.italic}
+                subtitle={p.subtitle}
+                breadcrumb={[{ label: p.crumbCollege, to: "/college/strategic-planning" }, { label: p.crumbSelf }]}
                 background="var(--paper)"
                 stack
             />

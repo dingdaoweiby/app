@@ -1,6 +1,7 @@
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import PageHeader from "@/components/PageHeader";
+import { useT } from "@/i18n/LanguageContext";
 
 const SECTIONS = [
     {
@@ -106,16 +107,18 @@ const SECTIONS = [
 ];
 
 export default function Terms() {
+    const t = useT();
+    const p = t.pages.terms;
     return (
         <main data-testid="page-terms" className="min-h-screen">
             <Nav />
 
             <PageHeader
-                eyebrow="Legal"
-                title="Terms and"
-                italicWord="Conditions."
-                subtitle="The agreement between your family and Supernova when you engage our services."
-                breadcrumb={[{ label: "Terms" }]}
+                eyebrow={p.eyebrow}
+                title={p.title}
+                italicWord={p.italic}
+                subtitle={p.subtitle}
+                breadcrumb={[{ label: p.crumb }]}
                 background="var(--paper)"
             />
 

@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
+import { useT } from "@/i18n/LanguageContext";
 
 export default function ClosingCTA() {
+    const t = useT();
+    const c = t.closingCta;
     return (
         <section
             data-testid="closing-cta"
@@ -9,7 +12,7 @@ export default function ClosingCTA() {
             style={{ background: "var(--mist)", borderTop: "1px solid var(--line)" }}
         >
             <div className="max-w-3xl mx-auto text-center">
-                <p className="eyebrow" style={{ color: "var(--orange)" }}>Begin</p>
+                <p className="eyebrow" style={{ color: "var(--orange)" }}>{c.eyebrow}</p>
 
                 <h2
                     className="font-display mt-6"
@@ -21,7 +24,7 @@ export default function ClosingCTA() {
                         color: "var(--navy)",
                     }}
                 >
-                    Start with a diagnostic conversation.
+                    {c.title}
                 </h2>
 
                 <p
@@ -34,9 +37,9 @@ export default function ClosingCTA() {
                         maxWidth: 640,
                     }}
                 >
-                    No sales pitch. Just a real conversation.
+                    {c.sub1}
                     <br />
-                    You'll leave having learned something about your child you didn't know before.
+                    {c.sub2}
                 </p>
 
                 <div className="mt-10 inline-flex flex-col items-center gap-3">
@@ -46,7 +49,7 @@ export default function ClosingCTA() {
                         className="btn-primary"
                         style={{ padding: "16px 32px" }}
                     >
-                        Begin the Conversation
+                        {c.button}
                         <span style={{ fontFamily: "serif", marginLeft: 6 }}>→</span>
                     </Link>
                 </div>

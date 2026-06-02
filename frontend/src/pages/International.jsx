@@ -2,6 +2,7 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import PageHeader from "@/components/PageHeader";
 import ClosingCTA from "@/components/ClosingCTA";
+import { useT } from "@/i18n/LanguageContext";
 import { Plane, Home, ShieldCheck } from "lucide-react";
 
 const services = [
@@ -42,16 +43,18 @@ const services = [
 ];
 
 export default function International() {
+    const t = useT();
+    const p = t.pages.international;
     return (
         <main data-testid="page-international" className="min-h-screen">
             <Nav />
 
             <PageHeader
-                eyebrow="International Student Support"
-                title="A softer landing."
-                italicWord="A stronger start."
-                subtitle="We help international students settle into American life — visas, host families, and a guardian on the ground."
-                breadcrumb={[{ label: "International" }]}
+                eyebrow={p.eyebrow}
+                title={p.title}
+                italicWord={p.italic}
+                subtitle={p.subtitle}
+                breadcrumb={[{ label: p.crumb }]}
                 background="var(--paper)"
                 nowrap
             />

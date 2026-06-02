@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
+import { useT } from "@/i18n/LanguageContext";
 
 export default function PageHeader({ eyebrow, title, italicWord, subtitle, breadcrumb, background = "var(--mist)", nowrap = false, stack = false }) {
+    const t = useT();
     return (
         <section
             data-testid="page-header"
@@ -17,7 +19,7 @@ export default function PageHeader({ eyebrow, title, italicWord, subtitle, bread
                     className="flex items-center gap-2 mb-10 font-mono"
                     style={{ fontSize: 12, letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--steel)" }}
                 >
-                    <Link to="/" className="link-underline" data-testid="breadcrumb-home">Home</Link>
+                    <Link to="/" className="link-underline" data-testid="breadcrumb-home">{t.breadcrumb.home}</Link>
                     {breadcrumb.map((b, i) => (
                         <span key={i} className="flex items-center gap-2">
                             <span style={{ color: "var(--line-strong)" }}>/</span>

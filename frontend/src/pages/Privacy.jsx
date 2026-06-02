@@ -1,6 +1,7 @@
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import PageHeader from "@/components/PageHeader";
+import { useT } from "@/i18n/LanguageContext";
 
 const SECTIONS = [
     {
@@ -105,16 +106,18 @@ const SECTIONS = [
 ];
 
 export default function Privacy() {
+    const t = useT();
+    const p = t.pages.privacy;
     return (
         <main data-testid="page-privacy" className="min-h-screen">
             <Nav />
 
             <PageHeader
-                eyebrow="Legal"
-                title="Privacy"
-                italicWord="Policy."
-                subtitle="How we collect, use, and protect the information you share with us."
-                breadcrumb={[{ label: "Privacy" }]}
+                eyebrow={p.eyebrow}
+                title={p.title}
+                italicWord={p.italic}
+                subtitle={p.subtitle}
+                breadcrumb={[{ label: p.crumb }]}
                 background="var(--paper)"
             />
 
