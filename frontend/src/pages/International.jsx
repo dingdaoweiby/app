@@ -53,6 +53,7 @@ export default function International() {
                 subtitle="We help international students settle into American life — visas, host families, and a guardian on the ground."
                 breadcrumb={[{ label: "International" }]}
                 background="var(--paper)"
+                nowrap
             />
 
             {/* Services */}
@@ -67,26 +68,29 @@ export default function International() {
                                 style={{ background: "var(--paper)", border: "1px solid var(--line)" }}
                                 data-testid={`intl-service-${i}`}
                             >
-                                <div className="flex items-center justify-center"
-                                    style={{
-                                        width: 64,
-                                        height: 64,
-                                        borderRadius: "50%",
-                                        background: "var(--orange)",
-                                        color: "#fff",
-                                        boxShadow: "0 4px 14px rgba(255,152,0,0.28)",
-                                    }}
-                                >
-                                    <Icon size={30} strokeWidth={1.75} />
+                                <div className="flex items-center gap-4">
+                                    <div className="flex items-center justify-center"
+                                        style={{
+                                            width: 56,
+                                            height: 56,
+                                            borderRadius: "50%",
+                                            background: "var(--orange)",
+                                            color: "#fff",
+                                            boxShadow: "0 4px 14px rgba(255,152,0,0.28)",
+                                            flexShrink: 0,
+                                        }}
+                                    >
+                                        <Icon size={26} strokeWidth={1.75} />
+                                    </div>
+                                    <h3
+                                        className="font-display"
+                                        style={{ fontSize: 22, lineHeight: 1.2, color: "var(--navy)", fontWeight: 600, letterSpacing: "-0.005em" }}
+                                    >
+                                        {s.h}
+                                    </h3>
                                 </div>
-                                <h3
-                                    className="font-display mt-5"
-                                    style={{ fontSize: 22, lineHeight: 1.2, color: "var(--navy)", fontWeight: 600, letterSpacing: "-0.005em" }}
-                                >
-                                    {s.h}
-                                </h3>
                                 <p
-                                    className="font-mono mt-2"
+                                    className="font-mono mt-3"
                                     style={{ fontSize: 11, letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--orange)", fontWeight: 500 }}
                                 >
                                     {s.sub}
