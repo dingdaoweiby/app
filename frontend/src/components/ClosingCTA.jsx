@@ -31,10 +31,12 @@ export default function ClosingCTA() {
                         lineHeight: 1.6,
                         color: "var(--ink)",
                         fontStyle: "italic",
-                        maxWidth: 560,
+                        maxWidth: 640,
                     }}
                 >
-                    No sales pitch. Just a real conversation. You'll leave having learned something about your child you didn't know before.
+                    No sales pitch. Just a real conversation.
+                    <br />
+                    You'll leave having learned something about your child you didn't know before.
                 </p>
 
                 <div className="mt-10 inline-flex flex-col items-center gap-3">
@@ -47,17 +49,6 @@ export default function ClosingCTA() {
                         Begin the Conversation
                         <span style={{ fontFamily: "serif", marginLeft: 6 }}>→</span>
                     </Link>
-                    <p
-                        className="font-mono"
-                        style={{
-                            fontSize: 11,
-                            letterSpacing: "0.18em",
-                            textTransform: "uppercase",
-                            color: "var(--steel)",
-                        }}
-                    >
-                        Response within 24 hours
-                    </p>
                 </div>
             </div>
         </section>
