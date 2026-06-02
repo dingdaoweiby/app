@@ -93,7 +93,7 @@ export default function Contact() {
             <Nav />
 
             {/* FORM SECTION */}
-            <section className="section-x section-y" style={{ background: "var(--mist)" }}>
+            <section className="section-x" style={{ background: "var(--mist)", paddingTop: "clamp(48px, 6vw, 88px)", paddingBottom: 32 }}>
                 <nav
                     className="flex items-center gap-2 mb-10 font-mono"
                     style={{ fontSize: 12, letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--steel)" }}
@@ -305,7 +305,7 @@ export default function Contact() {
                             onMouseEnter={(e) => { e.currentTarget.style.background = "var(--orange)"; e.currentTarget.style.borderColor = "var(--orange)"; }}
                             onMouseLeave={(e) => { e.currentTarget.style.background = "var(--navy)"; e.currentTarget.style.borderColor = "var(--navy)"; }}
                         >
-                            Schedule a Consultation
+                            Submit
                         </button>
                         <p className="font-serif italic mt-4" style={{ fontSize: 14, color: "var(--steel)" }}>
                             We respond within 24 hours.
@@ -315,7 +315,7 @@ export default function Contact() {
             </section>
 
             {/* WHAT HAPPENS NEXT */}
-            <section className="section-x section-y" style={{ background: "var(--paper)" }}>
+            <section className="section-x" style={{ background: "var(--paper)", paddingTop: 40, paddingBottom: "clamp(48px, 6vw, 88px)" }}>
                 <div className="flex items-center gap-3">
                     <div style={{ width: 28, height: 1, background: "var(--orange)" }} />
                     <p
