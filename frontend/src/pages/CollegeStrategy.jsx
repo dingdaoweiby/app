@@ -144,6 +144,7 @@ export default function CollegeStrategy() {
                 subtitle="Skills, mindset, substance — built through three years of authentic development, not just application tactics."
                 breadcrumb={[{ label: "College", to: "/college/strategic-planning" }, { label: "9–11th Grade Strategic Planning" }]}
                 background="var(--paper)"
+                stack
             />
 
             <section className="section-x section-y" style={{ background: "var(--mist)" }}>

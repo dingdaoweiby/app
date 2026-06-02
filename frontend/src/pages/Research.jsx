@@ -178,6 +178,7 @@ export default function Research() {
                 subtitle="A research paper is more than a credential — it's proof your child can think at the level colleges are looking for."
                 breadcrumb={[{ label: "Research" }]}
                 background="var(--paper)"
+                stack
             />
 
             {/* Fields */}

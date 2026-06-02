@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-export default function PageHeader({ eyebrow, title, italicWord, subtitle, breadcrumb, background = "var(--mist)", nowrap = false }) {
+export default function PageHeader({ eyebrow, title, italicWord, subtitle, breadcrumb, background = "var(--mist)", nowrap = false, stack = false }) {
     return (
         <section
             data-testid="page-header"
@@ -57,7 +57,11 @@ export default function PageHeader({ eyebrow, title, italicWord, subtitle, bread
             >
                 {title}
                 {italicWord && (
-                    <> <em style={{ fontStyle: "italic", color: "var(--orange)", fontWeight: 500 }}>{italicWord}</em></>
+                    stack ? (
+                        <><br /><em style={{ fontStyle: "italic", color: "var(--orange)", fontWeight: 500 }}>{italicWord}</em></>
+                    ) : (
+                        <> <em style={{ fontStyle: "italic", color: "var(--orange)", fontWeight: 500 }}>{italicWord}</em></>
+                    )
                 )}
             </h1>
 
