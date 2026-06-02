@@ -99,15 +99,15 @@ export default function Footer() {
                                             +1 (908) 758 · 3488
                                         </a>
                                     </li>
-                                    <li className="flex items-center gap-2" style={{ color: "rgba(255,255,255,0.85)" }}>
+                                    <li className="flex items-center gap-2" style={{ color: "#fff" }}>
                                         <span style={{ fontSize: 13, color: "rgba(255,255,255,0.55)" }}>{f.wechat}</span>
-                                        <span style={{ color: "var(--orange)" }}>supernova-seed</span>
+                                        <span style={{ color: "#fff" }}>supernova-seed</span>
                                     </li>
                                 </ul>
                             </div>
 
                             {/* Hours */}
-                            <div>
+                            <div className="md:pl-10">
                                 <p style={colHeading}>{f.hours}</p>
                                 <p className="font-serif" style={{ fontSize: 16, color: "#fff", lineHeight: 1.7 }}>
                                     {f.hoursLine}
