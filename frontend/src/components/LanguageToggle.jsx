@@ -13,8 +13,8 @@ export default function LanguageToggle() {
             onClick={() => setLang(next)}
             className="inline-flex items-center"
             style={{
-                background: "transparent",
-                color: "#fff",
+                background: "#fff",
+                color: "var(--navy)",
                 fontFamily: "'Source Serif Pro', Georgia, serif",
                 fontSize: 15,
                 fontWeight: 500,
@@ -22,10 +22,10 @@ export default function LanguageToggle() {
                 padding: "12px 26px",
                 border: "1px solid #fff",
                 cursor: "pointer",
-                transition: "background-color 220ms ease, color 220ms ease",
+                transition: "background-color 220ms ease, border-color 220ms ease, color 220ms ease",
             }}
-            onMouseEnter={(e) => { e.currentTarget.style.background = "#fff"; e.currentTarget.style.color = "var(--navy)"; }}
-            onMouseLeave={(e) => { e.currentTarget.style.background = "transparent"; e.currentTarget.style.color = "#fff"; }}
+            onMouseEnter={(e) => { e.currentTarget.style.background = "var(--orange)"; e.currentTarget.style.borderColor = "var(--orange)"; e.currentTarget.style.color = "#fff"; }}
+            onMouseLeave={(e) => { e.currentTarget.style.background = "#fff"; e.currentTarget.style.borderColor = "#fff"; e.currentTarget.style.color = "var(--navy)"; }}
         >
             {label}
         </button>
