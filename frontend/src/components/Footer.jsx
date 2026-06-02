@@ -71,11 +71,11 @@ export default function Footer() {
                         </div>
                     </div>
 
-                    {/* Right group — 3 columns sharing one top line, group itself centered against brand block */}
+                    {/* Right group — 3 equal columns sharing one top line, group itself centered against brand block */}
                     <div className="col-span-12 md:col-span-7 self-center">
-                        <div className="grid grid-cols-12 gap-x-10 gap-y-14">
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
                             {/* Studio */}
-                            <div className="col-span-6 md:col-span-3">
+                            <div>
                                 <p style={colHeading}>{f.studio}</p>
                                 <p className="font-serif" style={{ fontSize: 16, color: "#fff", lineHeight: 1.7 }}>
                                     {f.studioCity}<br />{f.studioState}
@@ -86,7 +86,7 @@ export default function Footer() {
                             </div>
 
                             {/* Contact */}
-                            <div className="col-span-6 md:col-span-5">
+                            <div>
                                 <p style={colHeading}>{f.contact}</p>
                                 <ul className="space-y-3 font-serif" style={{ fontSize: 16, color: "#fff" }}>
                                     <li>
@@ -107,7 +107,7 @@ export default function Footer() {
                             </div>
 
                             {/* Hours */}
-                            <div className="col-span-12 md:col-span-4">
+                            <div>
                                 <p style={colHeading}>{f.hours}</p>
                                 <p className="font-serif" style={{ fontSize: 16, color: "#fff", lineHeight: 1.7 }}>
                                     {f.hoursLine}
