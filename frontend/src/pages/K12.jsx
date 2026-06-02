@@ -202,7 +202,7 @@ export default function K12() {
                     {schoolGroups.map((g, i) => (
                         <article
                             key={g.regionKey}
-                            className="p-8 lg:p-10"
+                            className="p-8 lg:p-10 lift"
                             style={{ background: "var(--mist)" }}
                             data-testid={`k12-region-${i}`}
                         >

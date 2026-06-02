@@ -193,7 +193,7 @@ const PAGE_LABELS = {
 function PlacementCard({ region, schools, testidKey }) {
     return (
         <article
-            className="p-7 lg:p-8"
+            className="p-7 lg:p-8 lift"
             style={{ background: "var(--mist)" }}
             data-testid={`ca-region-${testidKey}`}
         >

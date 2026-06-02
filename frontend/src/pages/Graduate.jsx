@@ -124,7 +124,7 @@ const PLACEMENTS_HEADING = {
 function TrackCard({ Icon, label, intro, items, fullWidth = false, testid }) {
     return (
         <article
-            className="p-7 lg:p-8"
+            className="p-7 lg:p-8 lift"
             style={{
                 background: "var(--paper)",
                 border: "1px solid var(--line)",
@@ -133,7 +133,7 @@ function TrackCard({ Icon, label, intro, items, fullWidth = false, testid }) {
         >
             <div className={`flex items-center gap-4 ${fullWidth ? "justify-center" : ""}`}>
                 <div
-                    className="flex items-center justify-center"
+                    className="flex items-center justify-center pulse-circle"
                     style={{
                         width: 56,
                         height: 56,

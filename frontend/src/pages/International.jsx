@@ -32,12 +32,12 @@ export default function International() {
                         return (
                             <article
                                 key={i}
-                                className="p-7 lg:p-8 flex flex-col"
+                                className="p-7 lg:p-8 flex flex-col lift"
                                 style={{ background: "var(--paper)", border: "1px solid var(--line)" }}
                                 data-testid={`intl-service-${i}`}
                             >
                                 <div className="flex items-center gap-4">
-                                    <div className="flex items-center justify-center"
+                                    <div className="flex items-center justify-center pulse-circle"
                                         style={{
                                             width: 56,
                                             height: 56,

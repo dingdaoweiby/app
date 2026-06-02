@@ -138,7 +138,7 @@ export default function Research() {
 
                 <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     {fields.map((f, i) => (
-                        <article key={i} className="p-7 flex flex-col" style={{ background: "var(--paper)", border: "1px solid var(--line)" }} data-testid={`research-field-${i}`}>
+                        <article key={i} className="p-7 flex flex-col lift" style={{ background: "var(--paper)", border: "1px solid var(--line)" }} data-testid={`research-field-${i}`}>
                             <h3 className="font-display" style={{ fontSize: 22, color: "var(--navy)", fontWeight: 600, letterSpacing: "-0.005em", lineHeight: 1.2 }}>{f.h}</h3>
                             <div className="my-4" style={{ width: 28, height: 2, background: "var(--orange)" }} />
                             <ul className="space-y-2.5">
@@ -174,9 +174,9 @@ export default function Research() {
                     {formats.map((f, i) => {
                         const Icon = f.Icon;
                         return (
-                            <article key={i} className="p-8 lg:p-10" style={{ background: "var(--mist)", border: "1px solid var(--line)" }} data-testid={`research-format-${i}`}>
+                            <article key={i} className="p-8 lg:p-10 lift" style={{ background: "var(--mist)", border: "1px solid var(--line)" }} data-testid={`research-format-${i}`}>
                                 <div className="flex items-center gap-4">
-                                    <div className="flex items-center justify-center" style={{ width: 56, height: 56, borderRadius: "50%", background: "var(--orange)", color: "#fff", boxShadow: "0 4px 14px rgba(255,152,0,0.28)", flexShrink: 0 }}>
+                                    <div className="flex items-center justify-center pulse-circle" style={{ width: 56, height: 56, borderRadius: "50%", background: "var(--orange)", color: "#fff", boxShadow: "0 4px 14px rgba(255,152,0,0.28)", flexShrink: 0 }}>
                                         <Icon size={28} strokeWidth={1.75} />
                                     </div>
                                     <h3 className="font-display" style={{ fontSize: "clamp(22px, 1.8vw, 26px)", lineHeight: 1.2, color: "var(--navy)", fontWeight: 600, letterSpacing: "-0.005em" }}>
@@ -217,8 +217,8 @@ export default function Research() {
 
                 <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {projects.map((pr, i) => (
-                        <article key={i} className="" style={{ background: "var(--paper)", border: "1px solid var(--line)" }} data-testid={`research-project-${i}`}>
-                            <div className="overflow-hidden" style={{ aspectRatio: "16/10", background: "var(--mist)" }}>
+                        <article key={i} className="lift" style={{ background: "var(--paper)", border: "1px solid var(--line)" }} data-testid={`research-project-${i}`}>
+                            <div className="zoom" style={{ aspectRatio: "16/10", background: "var(--mist)" }}>
                                 <img src={pr.img} alt={pr.title} className="w-full h-full object-cover" style={{ filter: "grayscale(30%) contrast(1.05)" }} />
                             </div>
                             <div className="p-6">

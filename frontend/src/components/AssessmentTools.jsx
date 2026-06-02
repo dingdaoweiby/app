@@ -49,7 +49,7 @@ export default function AssessmentTools() {
                         <article
                             key={i}
                             data-testid={`tool-${i}`}
-                            className="p-6 lg:p-7"
+                            className="p-6 lg:p-7 lift"
                             style={{
                                 background: "var(--paper)",
                                 borderRight: (i % 3) !== 2 ? "1px solid var(--line)" : "none",

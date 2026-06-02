@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import "@/App.css";
 import { LanguageProvider } from "@/i18n/LanguageContext";
 import BackToTop from "@/components/BackToTop";
+import ScrollProgress from "@/components/ScrollProgress";
 
 import Home from "@/pages/Home";
 import K12 from "@/pages/K12";
@@ -39,6 +40,7 @@ function App() {
                     <Route path="/terms" element={<Terms />} />
                     <Route path="/privacy" element={<Privacy />} />
                 </Routes>
+                <ScrollProgress />
                 <BackToTop />
             </BrowserRouter>
             </LanguageProvider>

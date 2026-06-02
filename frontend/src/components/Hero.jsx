@@ -1,4 +1,6 @@
 import { useT } from "@/i18n/LanguageContext";
+import CountUp from "@/components/CountUp";
+import Reveal from "@/components/Reveal";
 
 export default function Hero() {
     const t = useT();
@@ -61,7 +63,7 @@ export default function Hero() {
                                     style={{ borderBottom: i < arr.length - 1 ? "1px solid var(--line)" : "none" }}
                                 >
                                     <span className="font-display tabular" style={{ fontSize: 32, lineHeight: 1, color: "var(--navy)", fontWeight: 600, letterSpacing: "-0.01em" }}>
-                                        {s.num}
+                                        <CountUp value={s.num} duration={1400 + i * 120} />
                                     </span>
                                     <span className="font-mono text-right" style={{ fontSize: 11, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--steel)", lineHeight: 1.4, flex: "1 1 auto", minWidth: 0, marginLeft: 12 }}>
                                         {s.label}

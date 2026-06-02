@@ -283,11 +283,11 @@ export default function CollegeStrategy() {
                         ];
                         const palette = palettes[i % palettes.length];
                         return (
-                            <article key={i} className="p-7 lg:p-8 relative overflow-hidden" style={{ background: palette.bg, border: "1px solid var(--line)" }} data-testid={`specialist-${i}`}>
+                            <article key={i} className="p-7 lg:p-8 relative overflow-hidden lift" style={{ background: palette.bg, border: "1px solid var(--line)" }} data-testid={`specialist-${i}`}>
                                 <div aria-hidden="true" style={{ position: "absolute", right: -36, top: -36, width: 120, height: 120, borderRadius: "50%", background: "var(--paper)", opacity: 0.6 }} />
                                 <div className="relative">
                                     <div className="flex items-center gap-4">
-                                        <div className="flex items-center justify-center" style={{ width: 52, height: 52, borderRadius: "50%", background: palette.accent, color: "#fff", boxShadow: "0 4px 14px rgba(255,152,0,0.25)", flexShrink: 0 }}>
+                                        <div className="flex items-center justify-center pulse-circle" style={{ width: 52, height: 52, borderRadius: "50%", background: palette.accent, color: "#fff", boxShadow: "0 4px 14px rgba(255,152,0,0.25)", flexShrink: 0 }}>
                                             <Icon size={24} strokeWidth={1.75} />
                                         </div>
                                         <h3 className="font-display" style={{ fontSize: 22, lineHeight: 1.2, color: "var(--navy)", fontWeight: 600, letterSpacing: "-0.005em" }}>{s.role}</h3>
