@@ -16,7 +16,7 @@ export default function PageHeader({ eyebrow, title, italicWord, subtitle, bread
         >
             {breadcrumb && (
                 <nav
-                    className="flex items-center gap-2 mb-10 font-mono"
+                    className="flex flex-wrap items-center gap-x-2 gap-y-1 mb-10 font-mono"
                     style={{ fontSize: 12, letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--steel)" }}
                 >
                     <Link to="/" className="link-underline" data-testid="breadcrumb-home">{t.breadcrumb.home}</Link>
@@ -46,7 +46,7 @@ export default function PageHeader({ eyebrow, title, italicWord, subtitle, bread
             </div>
 
             <h1
-                className="font-display mt-6"
+                className={`font-display mt-6 ${nowrap ? "md:whitespace-nowrap" : ""}`}
                 style={{
                     fontSize: "clamp(32px, 4vw, 60px)",
                     lineHeight: 1.05,
@@ -54,7 +54,6 @@ export default function PageHeader({ eyebrow, title, italicWord, subtitle, bread
                     fontWeight: 500,
                     color: "var(--navy)",
                     maxWidth: nowrap ? "none" : 1000,
-                    whiteSpace: nowrap ? "nowrap" : undefined,
                 }}
             >
                 {title}
@@ -73,13 +72,11 @@ export default function PageHeader({ eyebrow, title, italicWord, subtitle, bread
                 <p
                     className="font-serif italic mt-6"
                     style={{
-                        fontSize: "clamp(18px, 1.7vw, 24px)",
-                        lineHeight: 1.4,
+                        fontSize: "clamp(16px, 1.7vw, 24px)",
+                        lineHeight: 1.5,
                         color: "var(--navy)",
                         fontWeight: 500,
-                        whiteSpace: "nowrap",
-                        overflow: "hidden",
-                        textOverflow: "ellipsis",
+                        maxWidth: 920,
                     }}
                 >
                     {subtitle}

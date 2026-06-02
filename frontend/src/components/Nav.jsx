@@ -53,37 +53,37 @@ export default function Nav() {
             }}
         >
             <div
-                className="flex items-center"
+                className="flex items-center justify-between"
                 style={{
                     height: 88,
-                    paddingLeft: "clamp(24px, 4vw, 56px)",
-                    paddingRight: "clamp(24px, 4vw, 56px)",
-                    gap: 56,
+                    paddingLeft: "clamp(20px, 4vw, 56px)",
+                    paddingRight: "clamp(20px, 4vw, 56px)",
+                    gap: 16,
                 }}
             >
-                <Link to="/" data-testid="nav-logo" className="flex items-center gap-2">
+                <Link to="/" data-testid="nav-logo" className="flex items-center gap-2" style={{ minWidth: 0, flexShrink: 1 }}>
                     <img
                         src="/logo-seed.png"
                         alt="Supernova Education"
-                        style={{ height: 72, width: "auto", display: "block", mixBlendMode: "lighten" }}
+                        style={{ height: 64, width: "auto", display: "block", mixBlendMode: "lighten", flexShrink: 0 }}
                     />
-                    <span className="flex flex-col" style={{ lineHeight: 1.05 }}>
+                    <span className="flex flex-col" style={{ lineHeight: 1.05, minWidth: 0 }}>
                         <span
                             className="font-display"
-                            style={{ fontSize: 22, color: "#fff", fontWeight: 700, letterSpacing: "-0.01em" }}
+                            style={{ fontSize: "clamp(18px, 1.8vw, 22px)", color: "#fff", fontWeight: 700, letterSpacing: "-0.01em" }}
                         >
                             Supernova
                         </span>
                         <span
                             className="font-display"
-                            style={{ fontSize: 22, color: "rgba(255,255,255,0.92)", fontWeight: 400, letterSpacing: "-0.005em", marginTop: 2 }}
+                            style={{ fontSize: "clamp(18px, 1.8vw, 22px)", color: "rgba(255,255,255,0.92)", fontWeight: 400, letterSpacing: "-0.005em", marginTop: 2 }}
                         >
                             Education
                         </span>
                     </span>
                 </Link>
 
-                <nav className="hidden lg:flex items-center ml-auto" style={{ gap: 44 }}>
+                <nav className="hidden lg:flex items-center" style={{ gap: 36, marginLeft: "auto", marginRight: 24 }}>
                     {navItems.map((item) =>
                         item.children ? (
                             <div

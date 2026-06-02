@@ -38,9 +38,10 @@ export default function Pillars() {
             </div>
 
             <div className="mt-16">
-                <div className="relative grid grid-cols-3 gap-6 md:gap-10">
+                <div className="relative grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-10">
                     <div
                         aria-hidden="true"
+                        className="hidden md:block"
                         style={{
                             position: "absolute",
                             top: 36,

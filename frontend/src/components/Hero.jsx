@@ -20,8 +20,8 @@ export default function Hero() {
                         data-testid="hero-headline"
                         className="rise delay-1 font-display"
                         style={{
-                            fontSize: "clamp(38px, 5.4vw, 78px)",
-                            lineHeight: 1.02,
+                            fontSize: "clamp(36px, 5.4vw, 78px)",
+                            lineHeight: 1.05,
                             letterSpacing: "-0.02em",
                             fontWeight: 500,
                             color: "var(--navy)",
@@ -63,7 +63,7 @@ export default function Hero() {
                                     <span className="font-display tabular" style={{ fontSize: 32, lineHeight: 1, color: "var(--navy)", fontWeight: 600, letterSpacing: "-0.01em" }}>
                                         {s.num}
                                     </span>
-                                    <span className="font-mono text-right" style={{ fontSize: 12, letterSpacing: "0.16em", textTransform: "uppercase", color: "var(--steel)", lineHeight: 1.4, maxWidth: 220 }}>
+                                    <span className="font-mono text-right" style={{ fontSize: 11, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--steel)", lineHeight: 1.4, maxWidth: 220 }}>
                                         {s.label}
                                     </span>
                                 </li>
