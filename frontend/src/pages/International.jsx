@@ -2,45 +2,10 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import PageHeader from "@/components/PageHeader";
 import ClosingCTA from "@/components/ClosingCTA";
-import { useT } from "@/i18n/LanguageContext";
 import { Plane, Home, ShieldCheck } from "lucide-react";
+import { useT } from "@/i18n/LanguageContext";
 
-const services = [
-    {
-        Icon: Plane,
-        h: "Visa Support",
-        sub: "F-1 student visa, end to end.",
-        items: [
-            "Application strategy aligned with program start date and travel needs",
-            "Document preparation — financial evidence, sponsor letters, transcripts, school correspondence",
-            "Interview preparation — practice prompts, concise study plans, grounded answers",
-            "Status tracking, renewals, travel signatures, and transfer coordination",
-        ],
-        footnote: "We provide educational consulting support; visa decisions are made solely by U.S. government agencies.",
-    },
-    {
-        Icon: Home,
-        h: "Homestay Program",
-        sub: "A second home, carefully matched.",
-        items: [
-            "Detailed intake on routine, diet, commute, study habits, and house expectations",
-            "Placement with hosts experienced in welcoming international students",
-            "Orientation on house rules, communication norms, and points of contact",
-            "Ongoing check-ins and calm mediation when adjustments are needed",
-        ],
-    },
-    {
-        Icon: ShieldCheck,
-        h: "Guardian Program",
-        sub: "A trusted local adult, on call.",
-        items: [
-            "Designated U.S.-based guardian for emergencies and required school meetings",
-            "Authorized pickup, medical visits, and school conferences when parents are abroad",
-            "Liaison with school nurses, deans, and residential offices",
-            "Real-time updates to parents through the channels you already use",
-        ],
-    },
-];
+const ICONS = [Plane, Home, ShieldCheck];
 
 export default function International() {
     const t = useT();
@@ -62,11 +27,11 @@ export default function International() {
             {/* Services */}
             <section className="section-x section-y" style={{ background: "var(--mist)" }}>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    {services.map((s, i) => {
-                        const Icon = s.Icon;
+                    {p.services.map((s, i) => {
+                        const Icon = ICONS[i];
                         return (
                             <article
-                                key={s.h}
+                                key={i}
                                 className="p-7 lg:p-8 flex flex-col"
                                 style={{ background: "var(--paper)", border: "1px solid var(--line)" }}
                                 data-testid={`intl-service-${i}`}

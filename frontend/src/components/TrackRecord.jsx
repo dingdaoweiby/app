@@ -35,6 +35,8 @@ const k12 = [
     { school: "Deerfield Academy",     domain: "deerfield.edu",      initials: "K.R.", note: "9th · Boarding" },
 ];
 
+import { useT } from "@/i18n/LanguageContext";
+
 function SchoolLogo({ domain, name }) {
     return (
         <div
@@ -62,12 +64,12 @@ function SchoolLogo({ domain, name }) {
     );
 }
 
-function Group({ title, schools, columns = 4 }) {
+function Group({ title, schools, classLabel, columns = 4 }) {
     return (
         <div className="mt-10" data-testid={`tr-group-${title.toLowerCase().replace(/[^a-z]+/g, "-")}`}>
             <div className="flex items-end justify-between mb-6" style={{ borderBottom: "2px solid var(--navy)", paddingBottom: 10 }}>
                 <h3 className="font-display" style={{ fontSize: "clamp(20px, 1.8vw, 26px)", color: "var(--navy)", fontWeight: 600, letterSpacing: "-0.005em" }}>{title}</h3>
-                <p className="font-mono" style={{ fontSize: 10, letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--steel)" }}>Class of 2026</p>
+                <p className="font-mono" style={{ fontSize: 10, letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--steel)" }}>{classLabel}</p>
             </div>
 
             <div
@@ -116,6 +118,8 @@ function Group({ title, schools, columns = 4 }) {
 }
 
 export default function TrackRecord() {
+    const t = useT();
+    const tr = t.home.track;
     return (
         <section
             data-testid="track-record"
@@ -127,7 +131,7 @@ export default function TrackRecord() {
                 <div className="flex items-center gap-3">
                     <div style={{ width: 32, height: 1, background: "var(--orange)" }} />
                     <p className="font-mono" style={{ fontSize: 11, letterSpacing: "0.24em", textTransform: "uppercase", color: "var(--orange)", fontWeight: 500 }}>
-                        Track Record
+                        {tr.eyebrow}
                     </p>
                 </div>
                 <h2
@@ -141,17 +145,17 @@ export default function TrackRecord() {
                         maxWidth: 880,
                     }}
                 >
-                    Where our students <em style={{ fontStyle: "italic", color: "var(--orange)", fontWeight: 500 }}>actually went.</em>
+                    {tr.titlePre} <em style={{ fontStyle: "italic", color: "var(--orange)", fontWeight: 500 }}>{tr.titleItalic}</em>
                 </h2>
                 <div className="mt-8" style={{ width: 56, height: 2, background: "var(--navy)" }} />
                 <p className="font-serif italic mt-6" style={{ fontSize: 17, lineHeight: 1.65, color: "var(--steel)", maxWidth: 620 }}>
-                    Class of 2026 admissions outcomes — Ivy League, Top 15 and Elite Technical, and K–12 Private Schools. Initials shown out of respect for privacy.
+                    {tr.subtitle}
                 </p>
             </div>
 
-            <Group title="Ivy League"               schools={ivy}   columns={4} />
-            <Group title="Top 15 and Elite Technical" schools={top15} columns={4} />
-            <Group title="K–12 Private School"      schools={k12}   columns={4} />
+            <Group title={tr.groups.ivy}   schools={ivy}   classLabel={tr.classOf} columns={4} />
+            <Group title={tr.groups.top15} schools={top15} classLabel={tr.classOf} columns={4} />
+            <Group title={tr.groups.k12}   schools={k12}   classLabel={tr.classOf} columns={4} />
         </section>
     );
 }

@@ -1,6 +1,6 @@
-# Supernova Elite Education Destination — v11 (i18n Phase 1)
+# Supernova Elite Education Destination — v12 (Full Bilingual Body)
 
-## Status: Bilingual shell live · Footer redesigned · Subpage bodies still EN
+## Status: All service pages fully bilingual EN ↔ ZH
 
 ## Latest (Feb 2026)
 ### i18n infrastructure

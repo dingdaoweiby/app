@@ -1,6 +1,7 @@
 // Site-wide bilingual dictionary.
 // Phase 1: shell only (Nav, Footer, ClosingCTA, all PageHeaders).
-// Body content of each subpage will be translated in subsequent phases.
+// Phase 2: service body content. Academic terminologies (SAT, AP, ISEE, school
+// names, degree types) intentionally kept in English per client direction.
 
 export const dict = {
     en: {
@@ -42,6 +43,66 @@ export const dict = {
             button: "Begin the Conversation",
         },
         breadcrumb: { home: "Home" },
+
+        home: {
+            hero: {
+                line1: "Growth Mindset.",
+                line2: "Clear Goals.",
+                line3: "Consistent Effort.",
+                tag: "K–12 · Ivy League · Top 15 Admissions",
+                outcomesLabel: "Outcomes",
+                stats: [
+                    { num: "70%",  label: "Placement in Top 25" },
+                    { num: "95%",  label: "Admitted to Reach School" },
+                    { num: "100%", label: "Overall Acceptance Rate" },
+                    { num: "3 : 1", label: "Student-to-Specialist Ratio" },
+                ],
+                body: "Through personalized guidance and genuine understanding, we help students build meaningful academic and extracurricular profiles, tell their authentic stories, and navigate admissions with clarity and confidence — from K–12 private school to the Ivy League and Top 15 colleges.",
+                ctaPrimary: "Schedule a Conversation",
+                ctaSubLine1: "No sales pitch. A diagnostic conversation —",
+                ctaSubLine2: "you leave with a clearer picture of your child.",
+                trustedEyebrow: "Trusted Approach",
+                trustedQuote: "\u201CReal coaching, not consulting. We work with twenty to thirty families a year — and we know each of them by name.\u201D",
+                trustedAttribution: "— Founding Principal",
+            },
+            pillars: {
+                eyebrow: "Approach",
+                titleLine1: "Three convictions —",
+                titleLine2: "the practice we built around them.",
+                subtitle: "These principles shape every decision we make on behalf of a family — from first conversation to submitted application.",
+                items: [
+                    { title: "Personalized Guidance, Rooted in Potential", body: "We guide students based on their unique strengths and aspirations. Deep expertise in U.S. admissions translates into individualized strategy — from course selection to essay development — aligned with who your student truly is and where they're headed." },
+                    { title: "Goal-Oriented, Results-Driven", body: "Clear objectives from day one. We establish concrete milestones and strategic timelines that lead to measurable outcomes. Every step is purposeful; every decision intentional — a coherent path from where students are to where they want to be." },
+                    { title: "Mental Well-Being and Holistic Development", body: "Beyond academics, we prioritize character growth, emotional resilience, and psychological health. The application journey should build confidence and self-awareness — not anxiety — through a supportive environment where students thrive." },
+                ],
+            },
+            assessment: {
+                eyebrow: "Assessment Tools",
+                titlePre: "Start with",
+                titleItalic: "diagnosis",
+                titlePost: ", not templates.",
+                subtitle: "Every student's path is uniquely theirs. The frameworks below guide our partnership — from the first session through application submission.",
+                footnote: "Six structured frameworks · one coordinated practice",
+                items: [
+                    { title: "Student Diagnostic Questionnaire", body: "A structured intake questionnaire that maps a student's academic profile, extracurricular depth, motivation style, and family dynamics before our first session." },
+                    { title: "Quarterly Checkpoint", body: "A quarterly review framework we complete together — tracking academic progress, activity development, narrative clarity, and emotional wellbeing across each season." },
+                    { title: "Comprehensive Student Report", body: "A full profile of your child's strengths, gaps, learning style, and long-term direction." },
+                    { title: "School Selection Strategy", body: "A curated, data-grounded school list built around your child's profile and goals." },
+                    { title: "Application Roadmap with Milestone Tracking", body: "A structured, month-by-month execution plan from Grade 9 through submission." },
+                    { title: "Family Communication Audit", body: "A quarterly review of parent–child communication patterns and expectation alignment — helping families navigate the highest-pressure years without damaging the relationship." },
+                ],
+            },
+            track: {
+                eyebrow: "Track Record",
+                titlePre: "Where our students",
+                titleItalic: "actually went.",
+                subtitle: "Class of 2026 admissions outcomes — Ivy League, Top 15 and Elite Technical, and K–12 Private Schools. Initials shown out of respect for privacy.",
+                classOf: "Class of 2026",
+                groups: { ivy: "Ivy League", top15: "Top 15 and Elite Technical", k12: "K–12 Private School" },
+            },
+        },
+
+        // Service page body content
         pages: {
             k12: {
                 eyebrow: "K–12 Private School Admissions",
@@ -49,6 +110,41 @@ export const dict = {
                 italic: "The right fit.",
                 subtitle: "Every child deserves to be seen clearly. We make sure the right school sees them.",
                 crumb: "K–12",
+                whatWeDo: {
+                    eyebrow: "What We Do",
+                    title: "A complete advisory practice for private school admissions.",
+                    subtitle: "From first conversation to enrollment day, our work spans every stage of the application year — testing, narrative, interviews, school selection, and decision support.",
+                },
+                phases: [
+                    { label: "Discovery & Fit", items: [
+                        "Personalized student assessment — strengths, interests, learning style",
+                        "Family education philosophy — what matters most to your family",
+                        "School selection guidance — curated for fit, not just rankings",
+                        "School visit strategy — what to look for, what to ask",
+                    ]},
+                    { label: "Application & Preparation", items: [
+                        "Timeline and step-by-step application plan",
+                        "ISEE / SSAT preparation — diagnostic, study plan, practice tests",
+                        "Parent and student essay guidance — brainstorming, drafting, editing",
+                        "Interview and visit-day coaching — for parents and students",
+                        "Recommender strategy — who to ask and how to approach them",
+                    ]},
+                    { label: "Submission & Beyond", items: [
+                        "Final application review and submission management",
+                        "Waitlist strategy and post-decision advising",
+                        "Enrollment transition guidance — academic, social, logistical",
+                    ]},
+                ],
+                whereGo: {
+                    eyebrow: "Where Our Students Go",
+                    title: "Day and boarding schools where our families have been admitted.",
+                    subtitle: "A representative selection across the country — boarding programs and leading day schools in New Jersey, New York, and California.",
+                },
+                stories: {
+                    eyebrow: "Student Stories",
+                    title: "How four families found the right fit.",
+                    subtitle: "Short cases from recent admissions cycles. Initials shown out of respect for privacy.",
+                },
             },
             strategy: {
                 eyebrow: "9–11th Grade Cultivation",
@@ -86,6 +182,26 @@ export const dict = {
                 italic: "A stronger start.",
                 subtitle: "We help international students settle into American life — visas, host families, and a guardian on the ground.",
                 crumb: "International",
+                services: [
+                    { h: "Visa Support", sub: "F-1 student visa, end to end.", items: [
+                        "Application strategy aligned with program start date and travel needs",
+                        "Document preparation — financial evidence, sponsor letters, transcripts, school correspondence",
+                        "Interview preparation — practice prompts, concise study plans, grounded answers",
+                        "Status tracking, renewals, travel signatures, and transfer coordination",
+                    ], footnote: "We provide educational consulting support; visa decisions are made solely by U.S. government agencies." },
+                    { h: "Homestay Program", sub: "A second home, carefully matched.", items: [
+                        "Detailed intake on routine, diet, commute, study habits, and house expectations",
+                        "Placement with hosts experienced in welcoming international students",
+                        "Orientation on house rules, communication norms, and points of contact",
+                        "Ongoing check-ins and calm mediation when adjustments are needed",
+                    ]},
+                    { h: "Guardian Program", sub: "A trusted local adult, on call.", items: [
+                        "Designated U.S.-based guardian for emergencies and required school meetings",
+                        "Authorized pickup, medical visits, and school conferences when parents are abroad",
+                        "Liaison with school nurses, deans, and residential offices",
+                        "Real-time updates to parents through the channels you already use",
+                    ]},
+                ],
             },
             contact: {
                 crumb: "Schedule a Consultation",
@@ -106,6 +222,7 @@ export const dict = {
             },
         },
     },
+
     zh: {
         nav: {
             k12: "K–12 升学",
@@ -145,6 +262,65 @@ export const dict = {
             button: "开始对话",
         },
         breadcrumb: { home: "首页" },
+
+        home: {
+            hero: {
+                line1: "成长心态。",
+                line2: "清晰目标。",
+                line3: "持续努力。",
+                tag: "K–12 · 常春藤 · Top 15 录取",
+                outcomesLabel: "录取结果",
+                stats: [
+                    { num: "70%",  label: "Top 25 录取" },
+                    { num: "95%",  label: "冲刺校录取" },
+                    { num: "100%", label: "总体录取率" },
+                    { num: "3 : 1", label: "学生 — 顾问配比" },
+                ],
+                body: "我们以个性化的指导与真诚的理解，帮助学生构建有深度的学术与课外档案，讲述真实的自己，并带着清晰的方向与笃定的信心走完升学之路——从 K–12 私立学校到常春藤盟校与 Top 15 大学。",
+                ctaPrimary: "预约一次对话",
+                ctaSubLine1: "不推销。这是一次诊断式对话 ——",
+                ctaSubLine2: "你会带着对孩子更清晰的认识离开。",
+                trustedEyebrow: "我们的方式",
+                trustedQuote: "\u201C我们不是顾问公司，是真正的陪跑者。我们每年只服务 20–30 个家庭——每一个家庭，我们都记得他们的名字。\u201D",
+                trustedAttribution: "—— 主理人",
+            },
+            pillars: {
+                eyebrow: "理念",
+                titleLine1: "三个信念 ——",
+                titleLine2: "我们围绕它们建立了整套实践。",
+                subtitle: "这些原则塑造我们为每一个家庭所做的每一个决定——从第一次对话，到最终递交申请。",
+                items: [
+                    { title: "因材施教，扎根于潜能", body: "我们根据每个学生独特的优势与志向给予指导。对美国升学体系的深度理解，转化为个性化的策略——从选课到文书——与你的孩子真正是谁、要去哪里，紧紧契合。" },
+                    { title: "目标导向，结果驱动", body: "从第一天起就有明确目标。我们建立具体的里程碑与战略时间表，导向可衡量的成果。每一步都有意图，每个决定都有意义——从孩子现在所在的位置，走向他想要到达的地方。" },
+                    { title: "心理健康与全人发展", body: "学业之外，我们更看重品格成长、情绪韧性与心理健康。申请之路应当帮助孩子建立自信与自我认知——而非焦虑——在一个被支持的环境中真正茁壮成长。" },
+                ],
+            },
+            assessment: {
+                eyebrow: "评估工具",
+                titlePre: "从",
+                titleItalic: "诊断",
+                titlePost: "开始，而不是套模板。",
+                subtitle: "每个学生的路径都独一无二。下面这些框架贯穿我们的合作——从第一次会面到提交申请。",
+                footnote: "六套结构化框架 · 一个协同实践",
+                items: [
+                    { title: "学生诊断问卷", body: "一份结构化的入学问卷，在我们的第一次面谈之前，全面映射学生的学术状况、课外深度、内驱方式以及家庭关系。" },
+                    { title: "季度回顾", body: "我们一同完成的季度回顾框架——追踪学业进展、活动发展、叙事清晰度与每个季度的情绪状态。" },
+                    { title: "综合学生报告", body: "对孩子的优势、短板、学习风格与长期方向的完整画像。" },
+                    { title: "选校策略", body: "围绕孩子的个人特点与目标，精心策展、数据支撑的选校列表。" },
+                    { title: "申请路线图与里程碑追踪", body: "从九年级到提交申请，按月推进的结构化执行计划。" },
+                    { title: "家庭沟通审视", body: "对父母与孩子之间沟通模式与期望对齐的季度回顾——帮助家庭在最高压的几年里，不损伤亲子关系地走过。" },
+                ],
+            },
+            track: {
+                eyebrow: "过往成果",
+                titlePre: "孩子们",
+                titleItalic: "去到了哪里。",
+                subtitle: "Class of 2026 录取结果——常春藤、Top 15 与精英理工院校、K–12 私立学校。出于隐私保护，以首字母呈现。",
+                classOf: "Class of 2026",
+                groups: { ivy: "常春藤盟校", top15: "Top 15 与精英理工", k12: "K–12 私立学校" },
+            },
+        },
+
         pages: {
             k12: {
                 eyebrow: "K–12 私立学校升学",
@@ -152,6 +328,41 @@ export const dict = {
                 italic: "对的契合。",
                 subtitle: "每个孩子都值得被看见。我们让对的学校真正看见他。",
                 crumb: "K–12 升学",
+                whatWeDo: {
+                    eyebrow: "我们做什么",
+                    title: "私立学校升学的完整顾问实践。",
+                    subtitle: "从第一次对话到入学日，我们的工作贯穿申请年度的每个阶段——标化、叙事、面试、选校与决策支持。",
+                },
+                phases: [
+                    { label: "探索与契合", items: [
+                        "个性化学生评估 —— 优势、兴趣、学习风格",
+                        "家庭教育理念 —— 对你家最重要的是什么",
+                        "选校指导 —— 以契合度而非排名为核心",
+                        "校园探访策略 —— 看什么、问什么",
+                    ]},
+                    { label: "申请与备考", items: [
+                        "时间线与逐步推进的申请计划",
+                        "ISEE / SSAT 备考 —— 诊断、学习计划、模拟测试",
+                        "家长与学生文书指导 —— 头脑风暴、起草、修改",
+                        "面试与探访日辅导 —— 面向家长与学生",
+                        "推荐人策略 —— 找谁、如何沟通",
+                    ]},
+                    { label: "提交与之后", items: [
+                        "最终申请审阅与提交管理",
+                        "Waitlist 策略与决定后建议",
+                        "入学过渡指导 —— 学术、社交、生活",
+                    ]},
+                ],
+                whereGo: {
+                    eyebrow: "孩子们去了哪里",
+                    title: "我们的家庭被录取的走读与寄宿学校。",
+                    subtitle: "覆盖全美的代表性选择——顶尖寄宿项目，以及新泽西、纽约与加州的领先走读学校。",
+                },
+                stories: {
+                    eyebrow: "学生故事",
+                    title: "四个家庭如何找到对的契合。",
+                    subtitle: "近几届申请季的简短案例。出于隐私保护，以首字母呈现。",
+                },
             },
             strategy: {
                 eyebrow: "9–11 年级深耕",
@@ -180,15 +391,35 @@ export const dict = {
                 eyebrow: "学术研究指导",
                 title: "从好奇到发表。",
                 italic: "真实的研究。真实的成果。",
-                subtitle: "一篇研究论文不只是一张证书 — 它证明你的孩子能用顶尖大学所期望的思维方式思考。",
+                subtitle: "一篇研究论文不只是一张证书——它证明你的孩子能用顶尖大学所期望的思维方式思考。",
                 crumb: "学术研究",
             },
             international: {
                 eyebrow: "国际学生支持",
                 title: "更平稳的落地。",
                 italic: "更扎实的起步。",
-                subtitle: "我们帮助国际学生融入美国生活 — 签证、寄宿家庭、本地监护人，一站全程。",
+                subtitle: "我们帮助国际学生融入美国生活——签证、寄宿家庭、本地监护人，一站全程。",
                 crumb: "国际学生",
+                services: [
+                    { h: "签证支持", sub: "F-1 学生签证，全程陪同。", items: [
+                        "结合开学日期与出行需求的申请策略",
+                        "材料准备 —— 财力证明、担保信、成绩单、学校往来函件",
+                        "面签辅导 —— 模拟问题、清晰的学习计划、扎实的回答",
+                        "状态追踪、续签、旅行签字与转学协调",
+                    ], footnote: "我们提供教育咨询支持；签证决定由美国政府机构独立作出。" },
+                    { h: "寄宿家庭项目", sub: "第二个家，精心匹配。", items: [
+                        "对作息、饮食、通勤、学习习惯与家庭期望的详细评估",
+                        "匹配有接待国际学生经验的寄宿家庭",
+                        "家规、沟通方式与联系人的入住引导",
+                        "持续回访与平和的适应期调解",
+                    ]},
+                    { h: "本地监护人项目", sub: "随时在的本地成年人。", items: [
+                        "在美指定监护人，处理紧急情况与学校要求的家长出席",
+                        "在家长不在美时，授权接送、医疗就诊、学校会议",
+                        "与校医、学部主任、宿舍管理处对接",
+                        "通过您熟悉的渠道，向家长实时反馈",
+                    ]},
+                ],
             },
             contact: {
                 crumb: "预约咨询",

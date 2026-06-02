@@ -1,39 +1,11 @@
 import { ClipboardList, CalendarCheck, FileText, Target, Map, MessagesSquare } from "lucide-react";
+import { useT } from "@/i18n/LanguageContext";
 
-const tools = [
-    {
-        Icon: ClipboardList,
-        title: "Student Diagnostic Questionnaire",
-        body: "A structured intake questionnaire that maps a student's academic profile, extracurricular depth, motivation style, and family dynamics before our first session.",
-    },
-    {
-        Icon: CalendarCheck,
-        title: "Quarterly Checkpoint",
-        body: "A quarterly review framework we complete together — tracking academic progress, activity development, narrative clarity, and emotional wellbeing across each season.",
-    },
-    {
-        Icon: FileText,
-        title: "Comprehensive Student Report",
-        body: "A full profile of your child's strengths, gaps, learning style, and long-term direction.",
-    },
-    {
-        Icon: Target,
-        title: "School Selection Strategy",
-        body: "A curated, data-grounded school list built around your child's profile and goals.",
-    },
-    {
-        Icon: Map,
-        title: "Application Roadmap with Milestone Tracking",
-        body: "A structured, month-by-month execution plan from Grade 9 through submission.",
-    },
-    {
-        Icon: MessagesSquare,
-        title: "Family Communication Audit",
-        body: "A quarterly review of parent–child communication patterns and expectation alignment — helping families navigate the highest-pressure years without damaging the relationship.",
-    },
-];
+const ICONS = [ClipboardList, CalendarCheck, FileText, Target, Map, MessagesSquare];
 
 export default function AssessmentTools() {
+    const t = useT();
+    const a = t.home.assessment;
     return (
         <section
             data-testid="assessment-tools"
@@ -45,7 +17,7 @@ export default function AssessmentTools() {
                 <div className="flex items-center gap-3">
                     <div style={{ width: 32, height: 1, background: "var(--orange)" }} />
                     <p className="font-mono" style={{ fontSize: 11, letterSpacing: "0.24em", textTransform: "uppercase", color: "var(--orange)", fontWeight: 500 }}>
-                        Assessment Tools
+                        {a.eyebrow}
                     </p>
                 </div>
                 <h2
@@ -59,23 +31,23 @@ export default function AssessmentTools() {
                         maxWidth: 880,
                     }}
                 >
-                    Start with <em style={{ fontStyle: "italic", color: "var(--orange)", fontWeight: 500 }}>diagnosis</em>, not templates.
+                    {a.titlePre} <em style={{ fontStyle: "italic", color: "var(--orange)", fontWeight: 500 }}>{a.titleItalic}</em>{a.titlePost}
                 </h2>
                 <div className="mt-8" style={{ width: 56, height: 2, background: "var(--navy)" }} />
                 <p className="font-serif italic mt-6" style={{ fontSize: 17, lineHeight: 1.65, color: "var(--steel)", maxWidth: 620 }}>
-                    Every student's path is uniquely theirs. The frameworks below guide our partnership — from the first session through application submission.
+                    {a.subtitle}
                 </p>
                 <p className="font-mono mt-5" style={{ fontSize: 10.5, letterSpacing: "0.24em", textTransform: "uppercase", color: "var(--steel)", fontWeight: 500 }}>
-                    Six structured frameworks · one coordinated practice
+                    {a.footnote}
                 </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0" style={{ borderTop: "2px solid var(--navy)" }}>
-                {tools.map((t, i) => {
-                    const Icon = t.Icon;
+                {a.items.map((item, i) => {
+                    const Icon = ICONS[i];
                     return (
                         <article
-                            key={t.title}
+                            key={i}
                             data-testid={`tool-${i}`}
                             className="p-6 lg:p-7"
                             style={{
@@ -108,12 +80,12 @@ export default function AssessmentTools() {
                                         letterSpacing: "-0.005em",
                                     }}
                                 >
-                                    {t.title}
+                                    {item.title}
                                 </h3>
                             </div>
                             <div className="my-4" style={{ width: 24, height: 2, background: "var(--orange)" }} />
                             <p className="font-serif" style={{ fontSize: 14.5, lineHeight: 1.55, color: "var(--ink)" }}>
-                                {t.body}
+                                {item.body}
                             </p>
                         </article>
                     );

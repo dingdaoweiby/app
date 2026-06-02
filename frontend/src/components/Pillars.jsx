@@ -1,25 +1,8 @@
-const pillars = [
-    {
-        n: "I",
-        roman: "01",
-        title: "Personalized Guidance, Rooted in Potential",
-        body: "We guide students based on their unique strengths and aspirations. Deep expertise in U.S. admissions translates into individualized strategy — from course selection to essay development — aligned with who your student truly is and where they're headed.",
-    },
-    {
-        n: "II",
-        roman: "02",
-        title: "Goal-Oriented, Results-Driven",
-        body: "Clear objectives from day one. We establish concrete milestones and strategic timelines that lead to measurable outcomes. Every step is purposeful; every decision intentional — a coherent path from where students are to where they want to be.",
-    },
-    {
-        n: "III",
-        roman: "03",
-        title: "Mental Well-Being and Holistic Development",
-        body: "Beyond academics, we prioritize character growth, emotional resilience, and psychological health. The application journey should build confidence and self-awareness — not anxiety — through a supportive environment where students thrive.",
-    },
-];
+import { useT } from "@/i18n/LanguageContext";
 
 export default function Pillars() {
+    const t = useT();
+    const p = t.home.pillars;
     return (
         <section
             data-testid="pillars"
@@ -31,7 +14,7 @@ export default function Pillars() {
                 <div className="flex items-center gap-3">
                     <div style={{ width: 32, height: 1, background: "var(--orange)" }} />
                     <p className="font-mono" style={{ fontSize: 11, letterSpacing: "0.24em", textTransform: "uppercase", color: "var(--orange)", fontWeight: 500 }}>
-                        Approach
+                        {p.eyebrow}
                     </p>
                 </div>
                 <h2
@@ -45,19 +28,17 @@ export default function Pillars() {
                         maxWidth: 880,
                     }}
                 >
-                    Three convictions —<br />
-                    <em style={{ fontStyle: "italic", color: "var(--orange)", fontWeight: 500 }}>the practice we built around them.</em>
+                    {p.titleLine1}<br />
+                    <em style={{ fontStyle: "italic", color: "var(--orange)", fontWeight: 500 }}>{p.titleLine2}</em>
                 </h2>
                 <div className="mt-8" style={{ width: 56, height: 2, background: "var(--navy)" }} />
                 <p className="font-serif italic mt-6" style={{ fontSize: 17, lineHeight: 1.65, color: "var(--steel)", maxWidth: 620 }}>
-                    These principles shape every decision we make on behalf of a family — from first conversation to submitted application.
+                    {p.subtitle}
                 </p>
             </div>
 
             <div className="mt-16">
-                {/* Circles with connecting line */}
                 <div className="relative grid grid-cols-3 gap-6 md:gap-10">
-                    {/* horizontal connector line behind circles */}
                     <div
                         aria-hidden="true"
                         style={{
@@ -71,9 +52,9 @@ export default function Pillars() {
                             zIndex: 0,
                         }}
                     />
-                    {pillars.map((p, i) => (
+                    {p.items.map((item, i) => (
                         <div
-                            key={p.n}
+                            key={i}
                             data-testid={`pillar-${i}`}
                             className="relative flex flex-col items-center text-center"
                             style={{ zIndex: 1 }}
@@ -115,7 +96,7 @@ export default function Pillars() {
                                     maxWidth: 320,
                                 }}
                             >
-                                {p.title}
+                                {item.title}
                             </h3>
                             <div className="mt-4" style={{ width: 28, height: 2, background: "var(--orange)" }} />
                             <p
@@ -127,7 +108,7 @@ export default function Pillars() {
                                     maxWidth: 320,
                                 }}
                             >
-                                {p.body}
+                                {item.body}
                             </p>
                         </div>
                     ))}
