@@ -65,11 +65,19 @@ export default function Nav() {
                         alt="Supernova Education"
                         style={{ height: 72, width: "auto", display: "block", mixBlendMode: "lighten" }}
                     />
-                    <span
-                        className="font-display"
-                        style={{ fontSize: 26, color: "#fff", fontWeight: 600, letterSpacing: "-0.015em", lineHeight: 1, whiteSpace: "nowrap" }}
-                    >
-                        Supernova Education
+                    <span className="flex flex-col" style={{ lineHeight: 1 }}>
+                        <span
+                            className="font-display"
+                            style={{ fontSize: 30, color: "#fff", fontWeight: 600, letterSpacing: "-0.015em", lineHeight: 1 }}
+                        >
+                            Supernova
+                        </span>
+                        <span
+                            className="font-mono"
+                            style={{ fontSize: 11, color: "rgba(255,255,255,0.78)", fontWeight: 500, letterSpacing: "0.36em", textTransform: "uppercase", marginTop: 8, paddingLeft: 2 }}
+                        >
+                            Education
+                        </span>
                     </span>
                 </Link>
 

@@ -12,11 +12,19 @@ export default function Footer() {
                                 alt="Supernova Education"
                                 style={{ height: 88, width: "auto", display: "block", mixBlendMode: "lighten" }}
                             />
-                            <span
-                                className="font-display"
-                                style={{ fontSize: 30, color: "#fff", fontWeight: 600, letterSpacing: "-0.015em", lineHeight: 1, whiteSpace: "nowrap" }}
-                            >
-                                Supernova Education
+                            <span className="flex flex-col" style={{ lineHeight: 1 }}>
+                                <span
+                                    className="font-display"
+                                    style={{ fontSize: 36, color: "#fff", fontWeight: 600, letterSpacing: "-0.015em", lineHeight: 1 }}
+                                >
+                                    Supernova
+                                </span>
+                                <span
+                                    className="font-mono"
+                                    style={{ fontSize: 12, color: "rgba(255,255,255,0.78)", fontWeight: 500, letterSpacing: "0.36em", textTransform: "uppercase", marginTop: 10, paddingLeft: 2 }}
+                                >
+                                    Education
+                                </span>
                             </span>
                         </div>
                         <p
