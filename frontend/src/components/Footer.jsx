@@ -71,47 +71,52 @@ export default function Footer() {
                         </div>
                     </div>
 
-                    {/* Studio */}
-                    <div className="col-span-6 md:col-span-2 self-center">
-                        <p style={colHeading}>{f.studio}</p>
-                        <p className="font-serif" style={{ fontSize: 16, color: "#fff", lineHeight: 1.7 }}>
-                            {f.studioCity}<br />{f.studioState}
-                        </p>
-                        <p className="font-serif mt-2" style={{ fontSize: 13, color: "rgba(255,255,255,0.6)", fontStyle: "italic" }}>
-                            {f.studioMode}
-                        </p>
-                    </div>
+                    {/* Right group — 3 columns sharing one top line, group itself centered against brand block */}
+                    <div className="col-span-12 md:col-span-7 self-center">
+                        <div className="grid grid-cols-12 gap-x-10 gap-y-14">
+                            {/* Studio */}
+                            <div className="col-span-6 md:col-span-3">
+                                <p style={colHeading}>{f.studio}</p>
+                                <p className="font-serif" style={{ fontSize: 16, color: "#fff", lineHeight: 1.7 }}>
+                                    {f.studioCity}<br />{f.studioState}
+                                </p>
+                                <p className="font-serif mt-2" style={{ fontSize: 13, color: "rgba(255,255,255,0.6)", fontStyle: "italic" }}>
+                                    {f.studioMode}
+                                </p>
+                            </div>
 
-                    {/* Contact */}
-                    <div className="col-span-6 md:col-span-3 self-center">
-                        <p style={colHeading}>{f.contact}</p>
-                        <ul className="space-y-3 font-serif" style={{ fontSize: 16, color: "#fff" }}>
-                            <li>
-                                <a href="mailto:info@supernovaedu.com" className="link-underline" data-testid="footer-email">
-                                    info@supernovaedu.com
-                                </a>
-                            </li>
-                            <li>
-                                <a href="tel:+19087583488" className="link-underline tabular" data-testid="footer-phone">
-                                    +1 (908) 758 · 3488
-                                </a>
-                            </li>
-                            <li className="flex items-center gap-2" style={{ color: "rgba(255,255,255,0.85)" }}>
-                                <span style={{ fontSize: 13, color: "rgba(255,255,255,0.55)" }}>{f.wechat}</span>
-                                <span style={{ color: "var(--orange)" }}>supernova-seed</span>
-                            </li>
-                        </ul>
-                    </div>
+                            {/* Contact */}
+                            <div className="col-span-6 md:col-span-5">
+                                <p style={colHeading}>{f.contact}</p>
+                                <ul className="space-y-3 font-serif" style={{ fontSize: 16, color: "#fff" }}>
+                                    <li>
+                                        <a href="mailto:info@supernovaedu.com" className="link-underline" data-testid="footer-email">
+                                            info@supernovaedu.com
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="tel:+19087583488" className="link-underline tabular" data-testid="footer-phone">
+                                            +1 (908) 758 · 3488
+                                        </a>
+                                    </li>
+                                    <li className="flex items-center gap-2" style={{ color: "rgba(255,255,255,0.85)" }}>
+                                        <span style={{ fontSize: 13, color: "rgba(255,255,255,0.55)" }}>{f.wechat}</span>
+                                        <span style={{ color: "var(--orange)" }}>supernova-seed</span>
+                                    </li>
+                                </ul>
+                            </div>
 
-                    {/* Hours */}
-                    <div className="col-span-12 md:col-span-2 self-center">
-                        <p style={colHeading}>{f.hours}</p>
-                        <p className="font-serif" style={{ fontSize: 16, color: "#fff", lineHeight: 1.7 }}>
-                            {f.hoursLine}
-                        </p>
-                        <p className="font-serif mt-2" style={{ fontSize: 13, color: "rgba(255,255,255,0.6)", fontStyle: "italic" }}>
-                            {f.hoursMode}
-                        </p>
+                            {/* Hours */}
+                            <div className="col-span-12 md:col-span-4">
+                                <p style={colHeading}>{f.hours}</p>
+                                <p className="font-serif" style={{ fontSize: 16, color: "#fff", lineHeight: 1.7 }}>
+                                    {f.hoursLine}
+                                </p>
+                                <p className="font-serif mt-2" style={{ fontSize: 13, color: "rgba(255,255,255,0.6)", fontStyle: "italic" }}>
+                                    {f.hoursMode}
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
