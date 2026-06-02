@@ -162,84 +162,52 @@ export default function Research() {
                         Research Fields
                     </p>
                 </div>
-                <h2
-                    className="font-display mt-5"
-                    style={{
-                        fontSize: "clamp(32px, 3vw, 44px)",
-                        lineHeight: 1.15,
-                        letterSpacing: "-0.01em",
-                        fontWeight: 500,
-                        color: "var(--navy)",
-                        maxWidth: 880,
-                    }}
-                >
-                    What you can <em style={{ fontStyle: "italic", color: "var(--orange)", fontWeight: 500 }}>study.</em>
-                </h2>
-                <div className="mt-8" style={{ width: 56, height: 2, background: "var(--navy)" }} />
-                <p className="font-serif mt-6" style={{ fontSize: 16.5, lineHeight: 1.65, color: "var(--ink)", maxWidth: 820 }}>
-                    Four broad disciplines, dozens of focused topics. Every project ends with a tangible academic output — a conference paper, research report, or competition submission.
-                </p>
 
-                <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    {fields.map((f, i) => {
-                        const Icon = f.Icon;
-                        return (
-                            <article
-                                key={f.h}
-                                className="p-7 flex flex-col"
-                                style={{
-                                    background: "var(--paper)",
-                                    border: "1px solid var(--line)",
-                                }}
-                                data-testid={`research-field-${i}`}
+                <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    {fields.map((f, i) => (
+                        <article
+                            key={f.h}
+                            className="p-7 flex flex-col"
+                            style={{
+                                background: "var(--paper)",
+                                border: "1px solid var(--line)",
+                            }}
+                            data-testid={`research-field-${i}`}
+                        >
+                            <h3
+                                className="font-display"
+                                style={{ fontSize: 22, color: "var(--navy)", fontWeight: 600, letterSpacing: "-0.005em", lineHeight: 1.2 }}
                             >
-                                <div
-                                    className="flex items-center justify-center"
-                                    style={{
-                                        width: 52,
-                                        height: 52,
-                                        background: "var(--mist)",
-                                        border: "1px solid var(--line)",
-                                        color: "var(--orange)",
-                                    }}
-                                >
-                                    <Icon size={26} strokeWidth={1.75} />
-                                </div>
-                                <h3
-                                    className="font-display mt-5"
-                                    style={{ fontSize: 20, color: "var(--navy)", fontWeight: 600, letterSpacing: "-0.005em", lineHeight: 1.2 }}
-                                >
-                                    {f.h}
-                                </h3>
-                                <div className="my-4" style={{ width: 28, height: 2, background: "var(--orange)" }} />
-                                <ul className="space-y-2">
-                                    {f.items.map((it, j) => (
-                                        <li key={j} className="flex items-start gap-2.5">
-                                            <span
-                                                aria-hidden="true"
-                                                style={{
-                                                    marginTop: 8,
-                                                    width: 5,
-                                                    height: 5,
-                                                    background: "var(--navy)",
-                                                    flexShrink: 0,
-                                                    borderRadius: "50%",
-                                                }}
-                                            />
-                                            <p className="font-serif" style={{ fontSize: 14.5, lineHeight: 1.5, color: "var(--ink)" }}>
-                                                {it}
-                                            </p>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </article>
-                        );
-                    })}
+                                {f.h}
+                            </h3>
+                            <div className="my-4" style={{ width: 28, height: 2, background: "var(--orange)" }} />
+                            <ul className="space-y-2.5">
+                                {f.items.map((it, j) => (
+                                    <li key={j} className="flex items-start gap-2.5">
+                                        <span
+                                            aria-hidden="true"
+                                            style={{
+                                                marginTop: 9,
+                                                width: 5,
+                                                height: 5,
+                                                background: "var(--navy)",
+                                                flexShrink: 0,
+                                                borderRadius: "50%",
+                                            }}
+                                        />
+                                        <p className="font-serif" style={{ fontSize: 16, lineHeight: 1.55, color: "var(--ink)" }}>
+                                            {it}
+                                        </p>
+                                    </li>
+                                ))}
+                            </ul>
+                        </article>
+                    ))}
                 </div>
             </section>
 
             {/* Formats */}
-            <section className="section-x section-y" style={{ background: "var(--paper)" }}>
+            <section className="section-x" style={{ background: "var(--paper)", paddingTop: 64, paddingBottom: 24 }}>
                 <div className="flex items-center gap-3">
                     <div style={{ width: 28, height: 1, background: "var(--orange)" }} />
                     <p
@@ -333,16 +301,35 @@ export default function Research() {
             </section>
 
             {/* Current projects */}
-            <section className="section-x section-y" style={{ background: "var(--paper)" }}>
-                <p className="eyebrow">Current Projects</p>
-                <h2 className="font-display mt-5" style={{ fontSize: "clamp(32px, 4vw, 56px)", lineHeight: 1.05, letterSpacing: "-0.02em", fontWeight: 500, color: "var(--navy)" }}>
-                    Open projects this cycle.
+            <section className="section-x" style={{ background: "var(--paper)", paddingTop: 24, paddingBottom: 88 }}>
+                <div className="flex items-center gap-3">
+                    <div style={{ width: 28, height: 1, background: "var(--orange)" }} />
+                    <p
+                        className="font-mono"
+                        style={{ fontSize: 11, letterSpacing: "0.24em", textTransform: "uppercase", color: "var(--orange)", fontWeight: 500 }}
+                    >
+                        Current Projects
+                    </p>
+                </div>
+                <h2
+                    className="font-display mt-5"
+                    style={{
+                        fontSize: "clamp(32px, 3vw, 44px)",
+                        lineHeight: 1.15,
+                        letterSpacing: "-0.01em",
+                        fontWeight: 500,
+                        color: "var(--navy)",
+                        maxWidth: 880,
+                    }}
+                >
+                    Open projects / <em style={{ fontStyle: "italic", color: "var(--orange)", fontWeight: 500 }}>this cycle.</em>
                 </h2>
-                <p className="font-serif mt-6" style={{ fontSize: 17, lineHeight: 1.6, color: "var(--ink)", maxWidth: 820 }}>
+                <div className="mt-8" style={{ width: 56, height: 2, background: "var(--navy)" }} />
+                <p className="font-serif mt-6" style={{ fontSize: 16.5, lineHeight: 1.65, color: "var(--ink)", maxWidth: 820 }}>
                     The following projects are currently available for enrollment. Spots are limited per project. Contact us to confirm availability and begin matching.
                 </p>
 
-                <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+                <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
                     {projects.map((p, i) => (
                         <article key={i} className="" style={{ background: "var(--paper)", border: "1px solid var(--line)" }} data-testid={`research-project-${i}`}>
                             <div className="overflow-hidden" style={{ aspectRatio: "16/9", background: "var(--mist)" }}>
