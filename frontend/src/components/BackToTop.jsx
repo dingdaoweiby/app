@@ -21,8 +21,8 @@ export default function BackToTop() {
             onClick={scrollTop}
             style={{
                 position: "fixed",
-                right: "clamp(16px, 3vw, 32px)",
-                bottom: "clamp(16px, 3vw, 32px)",
+                right: "max(clamp(20px, 4vw, 40px), calc((100vw - 1200px) / 2 + 8px))",
+                bottom: "28vh",
                 width: 48,
                 height: 48,
                 borderRadius: "50%",
