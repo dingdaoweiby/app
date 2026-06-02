@@ -137,6 +137,34 @@ const projects = [
         time: "Course starts 2026/08/02",
         img: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=800&q=80",
     },
+    {
+        field: "Humanities — Literature and Cultural Studies",
+        title: "Identity, Memory, and Voice: Reading Contemporary Diaspora Literature",
+        mentor: "M.K., Columbia University (Associate Professor, Comparative Literature)",
+        time: "Paper deadline 2026/07/10",
+        img: "https://images.unsplash.com/photo-1532012197267-da84d127e765?w=800&q=80",
+    },
+    {
+        field: "Humanities — History and Philosophy",
+        title: "Reason and Revolution: Tracing the Enlightenment's Legacy in Modern Democracies",
+        mentor: "J.B., University of Chicago (Professor, Intellectual History)",
+        time: "Paper deadline 2026/07/10",
+        img: "https://images.unsplash.com/photo-1568667256549-094345857637?w=800&q=80",
+    },
+    {
+        field: "Humanities — Art History and Visual Culture",
+        title: "From Patronage to Pixels: The Changing Economy of Art across Five Centuries",
+        mentor: "E.R., NYU Institute of Fine Arts (Senior Lecturer)",
+        time: "Paper deadline 2026/06/26",
+        img: "https://images.unsplash.com/photo-1577720580479-7d839d829c73?w=800&q=80",
+    },
+    {
+        field: "Humanities — Linguistics and Communication",
+        title: "Language as Power: Rhetoric, Framing, and Modern Political Discourse",
+        mentor: "S.T., Georgetown University (Assistant Professor, Linguistics)",
+        time: "Paper deadline 2026/07/10",
+        img: "https://images.unsplash.com/photo-1457369804613-52c61a468e7d?w=800&q=80",
+    },
 ];
 
 export default function Research() {
