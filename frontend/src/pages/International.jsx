@@ -1,46 +1,42 @@
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import PageHeader from "@/components/PageHeader";
-import PageCTA from "@/components/PageCTA";
-
-const HERO_IMG = "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=1200&q=85&auto=format&fit=crop";
+import ClosingCTA from "@/components/ClosingCTA";
+import { Plane, Home, ShieldCheck } from "lucide-react";
 
 const services = [
     {
+        Icon: Plane,
         h: "Visa Support",
-        sub: "Guidance through US F-1 student visa applications, renewals, and status maintenance.",
-        body: "A successful F-1 process depends on timing, clean documentation, and a coherent story at the interview — not only on completing forms. We help families build a realistic schedule that lines up school enrollment, I-20 issuance, SEVIS fee payment, and consular appointments, then walk through each deliverable so materials stay consistent across DS-160, financial evidence, and academic records.",
-        bulletsHeader: "What we help with",
+        sub: "F-1 student visa, end to end.",
         items: [
-            "Application strategy and milestone planning matched to your program start date and travel needs",
-            "Document preparation: financial evidence, sponsor letters, transcripts, and school correspondence",
-            "Interview preparation — practice prompts, concise study plans, and grounded answers that reflect your file",
-            "Status tracking after submission, including guidance if administrative processing or extra evidence is requested",
-            "Renewals, travel signatures, and transfer coordination when you change programs or schools",
-            "Coordination with your school's international office and, when relevant, host-family logistics",
+            "Application strategy aligned with program start date and travel needs",
+            "Document preparation — financial evidence, sponsor letters, transcripts, school correspondence",
+            "Interview preparation — practice prompts, concise study plans, grounded answers",
+            "Status tracking, renewals, travel signatures, and transfer coordination",
         ],
         footnote: "We provide educational consulting support; visa decisions are made solely by U.S. government agencies.",
     },
     {
+        Icon: Home,
         h: "Homestay Program",
-        sub: "Carefully vetted homestay placements that feel like a second home for international students.",
-        body: "Matching a student to the right household is part logistics and part chemistry. We collect detailed preferences on routine, diet, commute, study habits, and expectations on both sides, then place students with hosts who understand the responsibility of welcoming an international minor or young adult. Orientation covers house rules, communication norms, and who to contact when questions arise.",
-        bulletsHeader: "How we work with families",
+        sub: "A second home, carefully matched.",
         items: [
-            "Structured intake for student and host priorities, boundaries, and academic-year milestones",
-            "Ongoing check-ins during the first weeks and periodic touchpoints when schedules shift",
-            "Lightweight mediation when misunderstandings appear — early, calmly, and with clear next steps",
+            "Detailed intake on routine, diet, commute, study habits, and house expectations",
+            "Placement with hosts experienced in welcoming international students",
+            "Orientation on house rules, communication norms, and points of contact",
+            "Ongoing check-ins and calm mediation when adjustments are needed",
         ],
     },
     {
+        Icon: ShieldCheck,
         h: "Guardian Program",
-        sub: "Trusted local guardian services for international minors studying in the US.",
-        body: "Many schools require a U.S.-based adult who can respond to emergencies, attend required meetings, and advocate for the student when parents are overseas. We designate experienced local guardians who know how to liaise with school nurses, deans, and residential offices while keeping parents informed in real time. The arrangement emphasizes safety, transparency, and age-appropriate independence — not replacing parents, but standing in responsibly when distance makes daily presence impossible.",
-        bulletsHeader: "Typical responsibilities",
+        sub: "A trusted local adult, on call.",
         items: [
-            "Emergency contact availability aligned with school and host-family protocols",
-            "Authorized pickup, medical visits, or school conferences when parental travel is not feasible",
-            "Clear reporting rhythms — short updates after key events and channels parents already use",
+            "Designated U.S.-based guardian for emergencies and required school meetings",
+            "Authorized pickup, medical visits, and school conferences when parents are abroad",
+            "Liaison with school nurses, deans, and residential offices",
+            "Real-time updates to parents through the channels you already use",
         ],
     },
 ];
@@ -49,62 +45,88 @@ export default function International() {
     return (
         <main data-testid="page-international" className="min-h-screen">
             <Nav />
+
             <PageHeader
                 eyebrow="International Student Support"
-                title="From acceptance"
-                italicWord="through the school year."
-                subtitle="Visa guidance, homestay placement, and guardian services — structured so families, schools, and hosts stay aligned."
+                title="A softer landing."
+                italicWord="A stronger start."
+                subtitle="We help international students settle into American life — visas, host families, and a guardian on the ground."
                 breadcrumb={[{ label: "International" }]}
+                background="var(--paper)"
             />
 
-            <section className="section-x" style={{ background: "var(--paper)", paddingTop: 48, paddingBottom: 0 }}>
-                <div className="img-bordered overflow-hidden" style={{ aspectRatio: "16/7" }}>
-                    <img src={HERO_IMG} alt="Students on a university campus" className="w-full h-full object-cover" style={{ filter: "grayscale(40%) contrast(1.05)" }} />
+            {/* Services */}
+            <section className="section-x section-y" style={{ background: "var(--mist)" }}>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    {services.map((s, i) => {
+                        const Icon = s.Icon;
+                        return (
+                            <article
+                                key={s.h}
+                                className="p-7 lg:p-8 flex flex-col"
+                                style={{ background: "var(--paper)", border: "1px solid var(--line)" }}
+                                data-testid={`intl-service-${i}`}
+                            >
+                                <div className="flex items-center justify-center"
+                                    style={{
+                                        width: 64,
+                                        height: 64,
+                                        borderRadius: "50%",
+                                        background: "var(--orange)",
+                                        color: "#fff",
+                                        boxShadow: "0 4px 14px rgba(255,152,0,0.28)",
+                                    }}
+                                >
+                                    <Icon size={30} strokeWidth={1.75} />
+                                </div>
+                                <h3
+                                    className="font-display mt-5"
+                                    style={{ fontSize: 22, lineHeight: 1.2, color: "var(--navy)", fontWeight: 600, letterSpacing: "-0.005em" }}
+                                >
+                                    {s.h}
+                                </h3>
+                                <p
+                                    className="font-mono mt-2"
+                                    style={{ fontSize: 11, letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--orange)", fontWeight: 500 }}
+                                >
+                                    {s.sub}
+                                </p>
+                                <div className="my-4" style={{ width: 28, height: 2, background: "var(--orange)" }} />
+                                <ul className="space-y-2.5">
+                                    {s.items.map((it, j) => (
+                                        <li key={j} className="flex items-start gap-3">
+                                            <span
+                                                aria-hidden="true"
+                                                style={{
+                                                    marginTop: 9,
+                                                    width: 5,
+                                                    height: 5,
+                                                    background: "var(--navy)",
+                                                    flexShrink: 0,
+                                                    borderRadius: "50%",
+                                                }}
+                                            />
+                                            <p className="font-serif" style={{ fontSize: 15.5, lineHeight: 1.55, color: "var(--ink)" }}>
+                                                {it}
+                                            </p>
+                                        </li>
+                                    ))}
+                                </ul>
+                                {s.footnote && (
+                                    <p
+                                        className="font-serif italic mt-5 pt-4"
+                                        style={{ fontSize: 13, lineHeight: 1.5, color: "var(--steel)", borderTop: "1px solid var(--line)" }}
+                                    >
+                                        {s.footnote}
+                                    </p>
+                                )}
+                            </article>
+                        );
+                    })}
                 </div>
-                <p className="eyebrow mt-3">Plate INT — The Quad</p>
             </section>
 
-            <section className="section-x section-y" style={{ background: "var(--paper)" }}>
-                <ol style={{ borderTop: "2px solid var(--navy)" }}>
-                    {services.map((s, i) => (
-                        <li key={s.h} className="py-14" style={{
-                            borderBottom: "1px solid var(--line)",
-                            background: i % 2 === 1 ? "var(--mist)" : "var(--paper)",
-                            marginLeft: "calc(-1 * max(clamp(20px, 4vw, 40px), (100vw - 1200px) / 2))",
-                            marginRight: "calc(-1 * max(clamp(20px, 4vw, 40px), (100vw - 1200px) / 2))",
-                            paddingLeft: "max(clamp(20px, 4vw, 40px), calc((100vw - 1200px) / 2))",
-                            paddingRight: "max(clamp(20px, 4vw, 40px), calc((100vw - 1200px) / 2))",
-                        }} data-testid={`intl-service-${i}`}>
-                            <div className="grid grid-cols-12 gap-x-10">
-                                <div className="col-span-12 lg:col-span-4">
-                                    <span className="font-display" style={{ fontSize: 56, lineHeight: 0.85, color: "var(--orange)", fontWeight: 600 }}>{String(i + 1).padStart(2, "0")}</span>
-                                    <h3 className="font-display mt-4" style={{ fontSize: "clamp(24px, 2.2vw, 32px)", lineHeight: 1.1, color: "var(--navy)", fontWeight: 600, letterSpacing: "-0.01em" }}>{s.h}</h3>
-                                    <p className="font-mono mt-3" style={{ fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--orange)", lineHeight: 1.5 }}>{s.sub}</p>
-                                </div>
-                                <div className="col-span-12 lg:col-span-8 mt-6 lg:mt-0">
-                                    <p className="font-serif" style={{ fontSize: 17, lineHeight: 1.65, color: "var(--ink)" }}>{s.body}</p>
-                                    <p className="font-mono mt-8 mb-4" style={{ fontSize: 11, letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--orange)", fontWeight: 500 }}>{s.bulletsHeader}</p>
-                                    <ul className="space-y-3">
-                                        {s.items.map((it, j) => (
-                                            <li key={j} className="flex items-start gap-3">
-                                                <span className="font-mono" style={{ fontSize: 10, color: "var(--orange)", marginTop: 6 }}>▸</span>
-                                                <p className="font-serif" style={{ fontSize: 16, lineHeight: 1.55, color: "var(--ink)" }}>{it}</p>
-                                            </li>
-                                        ))}
-                                    </ul>
-                                    {s.footnote && (
-                                        <p className="font-serif italic mt-8 pt-4" style={{ fontSize: 14, lineHeight: 1.55, color: "var(--steel)", borderTop: "1px solid var(--line)" }}>
-                                            {s.footnote}
-                                        </p>
-                                    )}
-                                </div>
-                            </div>
-                        </li>
-                    ))}
-                </ol>
-            </section>
-
-            <PageCTA />
+            <ClosingCTA />
             <Footer />
         </main>
     );
