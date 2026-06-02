@@ -72,7 +72,7 @@ export default function Footer() {
                     </div>
 
                     {/* Studio */}
-                    <div className="col-span-6 md:col-span-2 flex flex-col h-full justify-end">
+                    <div className="col-span-6 md:col-span-2 self-center">
                         <p style={colHeading}>{f.studio}</p>
                         <p className="font-serif" style={{ fontSize: 16, color: "#fff", lineHeight: 1.7 }}>
                             {f.studioCity}<br />{f.studioState}
@@ -83,7 +83,7 @@ export default function Footer() {
                     </div>
 
                     {/* Contact */}
-                    <div className="col-span-6 md:col-span-3 flex flex-col h-full justify-end">
+                    <div className="col-span-6 md:col-span-3 self-center">
                         <p style={colHeading}>{f.contact}</p>
                         <ul className="space-y-3 font-serif" style={{ fontSize: 16, color: "#fff" }}>
                             <li>
@@ -104,7 +104,7 @@ export default function Footer() {
                     </div>
 
                     {/* Hours */}
-                    <div className="col-span-12 md:col-span-2 flex flex-col h-full justify-end">
+                    <div className="col-span-12 md:col-span-2 self-center">
                         <p style={colHeading}>{f.hours}</p>
                         <p className="font-serif" style={{ fontSize: 16, color: "#fff", lineHeight: 1.7 }}>
                             {f.hoursLine}
