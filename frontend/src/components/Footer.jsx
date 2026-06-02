@@ -60,7 +60,7 @@ export default function Footer() {
                         </p>
 
                         {/* Language toggle */}
-                        <div className="flex flex-col gap-3">
+                        <div className="flex flex-col items-start gap-3">
                             <p
                                 className="font-mono"
                                 style={{ fontSize: 10, letterSpacing: "0.24em", textTransform: "uppercase", color: "rgba(255,255,255,0.5)", fontWeight: 500 }}
