@@ -6,19 +6,25 @@ export default function Footer() {
             <div className="section-x" style={{ paddingTop: 80, paddingBottom: 48 }}>
                 <div className="grid grid-cols-12 gap-x-10 gap-y-12">
                     <div className="col-span-12 md:col-span-5">
-                        <div className="flex items-center gap-3 mb-5">
+                        <div className="flex items-center gap-4 mb-6">
                             <img
                                 src="/logo-seed.png"
-                                alt="Supernova Elite Education Destination"
-                                style={{ height: 68, width: "auto", display: "block", mixBlendMode: "lighten" }}
+                                alt="Supernova Education"
+                                style={{ height: 88, width: "auto", display: "block", mixBlendMode: "lighten" }}
                             />
                             <span
                                 className="font-display"
-                                style={{ fontSize: 19, color: "#fff", fontWeight: 500, letterSpacing: "-0.005em", lineHeight: 1.2, maxWidth: 240 }}
+                                style={{ fontSize: 30, color: "#fff", fontWeight: 600, letterSpacing: "-0.015em", lineHeight: 1, whiteSpace: "nowrap" }}
                             >
-                                Supernova Elite Education Destination
+                                Supernova Education
                             </span>
                         </div>
+                        <p
+                            className="font-mono"
+                            style={{ fontSize: 11, letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--orange)", fontWeight: 500, marginBottom: 12 }}
+                        >
+                            Supernova Elite Education Destination, LLC
+                        </p>
                         <p className="font-serif" style={{ fontSize: 17, color: "rgba(255,255,255,0.78)", lineHeight: 1.55, fontStyle: "italic", maxWidth: 380 }}>
                             Growth Mindset. Clear Goals. Consistent Effort.
                         </p>

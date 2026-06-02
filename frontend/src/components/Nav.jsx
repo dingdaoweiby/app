@@ -59,17 +59,17 @@ export default function Nav() {
                     gap: 56,
                 }}
             >
-                <Link to="/" data-testid="nav-logo" className="flex items-center gap-3">
+                <Link to="/" data-testid="nav-logo" className="flex items-center gap-4">
                     <img
                         src="/logo-seed.png"
-                        alt="Supernova Elite Education Destination"
-                        style={{ height: 56, width: "auto", display: "block", mixBlendMode: "lighten" }}
+                        alt="Supernova Education"
+                        style={{ height: 72, width: "auto", display: "block", mixBlendMode: "lighten" }}
                     />
                     <span
                         className="font-display"
-                        style={{ fontSize: 16, color: "#fff", fontWeight: 500, letterSpacing: "-0.005em", lineHeight: 1.15, whiteSpace: "nowrap" }}
+                        style={{ fontSize: 26, color: "#fff", fontWeight: 600, letterSpacing: "-0.015em", lineHeight: 1, whiteSpace: "nowrap" }}
                     >
-                        Supernova Elite Education Destination
+                        Supernova Education
                     </span>
                 </Link>
 
