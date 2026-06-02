@@ -73,9 +73,9 @@ function Group({ title, schools, classLabel, columns = 4 }) {
             </div>
 
             <div
-                className="grid gap-px"
+                className="grid gap-px tr-grid"
                 style={{
-                    gridTemplateColumns: `repeat(${columns}, minmax(0, 1fr))`,
+                    "--tr-cols": columns,
                     background: "var(--line)",
                     border: "1px solid var(--line)",
                 }}

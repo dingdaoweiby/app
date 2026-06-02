@@ -187,6 +187,17 @@ html, body {
 /* Prevent horizontal scroll on all viewport widths */
 html, body { overflow-x: hidden; max-width: 100%; }
 
+/* Mobile fix: 12-column grids would overflow with 40px gaps (11×40=440px > viewport).
+   On phones, collapse all grid-cols-12 column gaps so col-span-12 cells fit cleanly. */
+@media (max-width: 767px) {
+    .grid.grid-cols-12 { column-gap: 0 !important; }
+}
+
+/* TrackRecord — responsive school grid (mobile: 2 cols, md: 3, lg: takes prop) */
+.tr-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (min-width: 768px)  { .tr-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (min-width: 1024px) { .tr-grid { grid-template-columns: repeat(var(--tr-cols, 4), minmax(0, 1fr)); } }
+
 .no-scrollbar::-webkit-scrollbar { display: none; }
 .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 

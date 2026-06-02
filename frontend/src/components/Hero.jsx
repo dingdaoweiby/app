@@ -63,7 +63,7 @@ export default function Hero() {
                                     <span className="font-display tabular" style={{ fontSize: 32, lineHeight: 1, color: "var(--navy)", fontWeight: 600, letterSpacing: "-0.01em" }}>
                                         {s.num}
                                     </span>
-                                    <span className="font-mono text-right" style={{ fontSize: 11, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--steel)", lineHeight: 1.4, maxWidth: 220 }}>
+                                    <span className="font-mono text-right" style={{ fontSize: 11, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--steel)", lineHeight: 1.4, flex: "1 1 auto", minWidth: 0, marginLeft: 12 }}>
                                         {s.label}
                                     </span>
                                 </li>

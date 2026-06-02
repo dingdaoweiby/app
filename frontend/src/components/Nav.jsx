@@ -252,6 +252,24 @@ export default function Nav() {
                             </li>
                         ))}
                     </ul>
+
+                    <Link
+                        to="/contact"
+                        data-testid="nav-mobile-cta"
+                        onClick={() => setMobileOpen(false)}
+                        className="block text-center mt-5 font-display"
+                        style={{
+                            background: "#fff",
+                            color: "var(--navy)",
+                            fontSize: 16,
+                            fontWeight: 500,
+                            padding: "14px 24px",
+                            border: "1px solid #fff",
+                            letterSpacing: "-0.005em",
+                        }}
+                    >
+                        {t.nav.cta}
+                    </Link>
                 </div>
             )}
         </header>
