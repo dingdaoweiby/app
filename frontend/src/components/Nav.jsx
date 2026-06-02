@@ -60,23 +60,16 @@ export default function Nav() {
                 }}
             >
                 <Link to="/" data-testid="nav-logo" className="flex items-center gap-3">
-                    <svg width="30" height="36" viewBox="0 0 26 32" aria-hidden="true">
-                        <path d="M1 1 H25 V21 L13 31 L1 21 Z" fill="none" stroke="#fff" strokeWidth="1.5" />
-                        <path d="M13 7 V25 M7 13 H19" stroke="var(--orange)" strokeWidth="1.5" />
-                    </svg>
-                    <span className="flex flex-col" style={{ lineHeight: 1 }}>
-                        <span
-                            className="font-display"
-                            style={{ fontSize: 19, color: "#fff", fontWeight: 600, letterSpacing: "-0.012em", lineHeight: 1 }}
-                        >
-                            Supernova Elite
-                        </span>
-                        <span
-                            className="font-mono"
-                            style={{ fontSize: 10, color: "var(--orange)", fontWeight: 500, letterSpacing: "0.22em", textTransform: "uppercase", marginTop: 5 }}
-                        >
-                            Education Destination
-                        </span>
+                    <img
+                        src="/logo-seed.png"
+                        alt="Supernova Elite Education Destination"
+                        style={{ height: 56, width: "auto", display: "block", mixBlendMode: "lighten" }}
+                    />
+                    <span
+                        className="font-display"
+                        style={{ fontSize: 16, color: "#fff", fontWeight: 500, letterSpacing: "-0.005em", lineHeight: 1.15, whiteSpace: "nowrap" }}
+                    >
+                        Supernova Elite Education Destination
                     </span>
                 </Link>
 

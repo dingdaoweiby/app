@@ -7,23 +7,16 @@ export default function Footer() {
                 <div className="grid grid-cols-12 gap-x-10 gap-y-12">
                     <div className="col-span-12 md:col-span-5">
                         <div className="flex items-center gap-3 mb-5">
-                            <svg width="28" height="34" viewBox="0 0 26 32" aria-hidden="true">
-                                <path d="M1 1 H25 V21 L13 31 L1 21 Z" fill="none" stroke="#fff" strokeWidth="1.5" />
-                                <path d="M13 7 V25 M7 13 H19" stroke="var(--orange)" strokeWidth="1.5" />
-                            </svg>
-                            <span className="flex flex-col" style={{ lineHeight: 1 }}>
-                                <span
-                                    className="font-display"
-                                    style={{ fontSize: 22, color: "#fff", fontWeight: 600, letterSpacing: "-0.012em", lineHeight: 1 }}
-                                >
-                                    Supernova Elite
-                                </span>
-                                <span
-                                    className="font-mono"
-                                    style={{ fontSize: 11, color: "var(--orange)", fontWeight: 500, letterSpacing: "0.22em", textTransform: "uppercase", marginTop: 6 }}
-                                >
-                                    Education Destination
-                                </span>
+                            <img
+                                src="/logo-seed.png"
+                                alt="Supernova Elite Education Destination"
+                                style={{ height: 68, width: "auto", display: "block", mixBlendMode: "lighten" }}
+                            />
+                            <span
+                                className="font-display"
+                                style={{ fontSize: 19, color: "#fff", fontWeight: 500, letterSpacing: "-0.005em", lineHeight: 1.2, maxWidth: 240 }}
+                            >
+                                Supernova Elite Education Destination
                             </span>
                         </div>
                         <p className="font-serif" style={{ fontSize: 17, color: "rgba(255,255,255,0.78)", lineHeight: 1.55, fontStyle: "italic", maxWidth: 380 }}>
