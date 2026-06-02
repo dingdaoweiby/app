@@ -6,22 +6,22 @@ export default function Footer() {
             <div className="section-x" style={{ paddingTop: 80, paddingBottom: 48 }}>
                 <div className="grid grid-cols-12 gap-x-10 gap-y-12">
                     <div className="col-span-12 md:col-span-5">
-                        <div className="flex items-center gap-4 mb-6">
+                        <div className="flex items-center gap-2 mb-6">
                             <img
                                 src="/logo-seed.png"
                                 alt="Supernova Education"
                                 style={{ height: 88, width: "auto", display: "block", mixBlendMode: "lighten" }}
                             />
-                            <span className="flex flex-col" style={{ lineHeight: 1 }}>
+                            <span className="flex flex-col" style={{ lineHeight: 1.05 }}>
                                 <span
                                     className="font-display"
-                                    style={{ fontSize: 36, color: "#fff", fontWeight: 600, letterSpacing: "-0.015em", lineHeight: 1 }}
+                                    style={{ fontSize: 26, color: "#fff", fontWeight: 700, letterSpacing: "-0.01em" }}
                                 >
                                     Supernova
                                 </span>
                                 <span
-                                    className="font-mono"
-                                    style={{ fontSize: 12, color: "rgba(255,255,255,0.78)", fontWeight: 500, letterSpacing: "0.36em", textTransform: "uppercase", marginTop: 10, paddingLeft: 2 }}
+                                    className="font-display"
+                                    style={{ fontSize: 26, color: "rgba(255,255,255,0.92)", fontWeight: 400, letterSpacing: "-0.005em", marginTop: 2 }}
                                 >
                                     Education
                                 </span>
