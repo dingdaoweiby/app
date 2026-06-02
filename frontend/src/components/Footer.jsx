@@ -73,7 +73,7 @@ export default function Footer() {
 
                     {/* Right group — 3 equal columns sharing one top line, group itself centered against brand block */}
                     <div className="col-span-12 md:col-span-7 self-center">
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-x-16 gap-y-10">
                             {/* Studio */}
                             <div>
                                 <p style={colHeading}>{f.studio}</p>
