@@ -289,19 +289,19 @@ export default function K12() {
             </section>
 
             {/* STUDENT STORIES */}
-            <section className="section-x section-y" style={{ background: "var(--mist)" }}>
+            <section className="section-x section-y" style={{ background: "var(--paper)" }}>
                 <SectionHeading
                     eyebrow="Student Stories"
                     title="How four families found the right fit."
                     subtitle="Short cases from recent admissions cycles. Initials shown out of respect for privacy."
                 />
 
-                <ol className="mt-12" style={{ borderTop: "2px solid var(--navy)" }}>
+                <ol className="mt-12 grid grid-cols-1 gap-px" style={{ background: "var(--line)", border: "1px solid var(--line)" }}>
                     {stories.map((s, i) => (
                         <li
                             key={s.school + i}
-                            className="grid grid-cols-12 gap-x-6 py-8"
-                            style={{ borderBottom: "1px solid var(--line)" }}
+                            className="grid grid-cols-12 gap-x-6 p-8 lg:p-10"
+                            style={{ background: "var(--mist)" }}
                             data-testid={`k12-story-${i}`}
                         >
                             <div className="col-span-12 lg:col-span-3">
