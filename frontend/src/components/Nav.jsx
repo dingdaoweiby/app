@@ -46,7 +46,6 @@ export default function Nav() {
             style={{
                 backgroundColor: "var(--navy)",
                 color: "#fff",
-                borderBottom: "1px solid var(--orange)",
                 boxShadow: scrolled ? "0 1px 0 rgba(0,0,0,0.18)" : "none",
                 transition: "box-shadow 200ms ease",
             }}
