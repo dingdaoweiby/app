@@ -143,10 +143,11 @@ export default function K12() {
                 italicWord="The right fit."
                 subtitle="Every child deserves to be seen clearly. We make sure the right school sees them."
                 breadcrumb={[{ label: "K–12" }]}
+                background="var(--paper)"
             />
 
             {/* WHAT WE DO */}
-            <section className="section-x section-y" style={{ background: "var(--paper)" }}>
+            <section className="section-x section-y" style={{ background: "var(--mist)" }}>
                 <SectionHeading
                     eyebrow="What We Do"
                     title="A complete advisory practice for private school admissions."
@@ -230,7 +231,7 @@ export default function K12() {
             </section>
 
             {/* WHERE STUDENTS GO */}
-            <section className="section-x section-y" style={{ background: "var(--mist)" }}>
+            <section className="section-x section-y" style={{ background: "var(--paper)" }}>
                 <SectionHeading
                     eyebrow="Where Our Students Go"
                     title="Day and boarding schools where our families have been admitted."
@@ -242,7 +243,7 @@ export default function K12() {
                         <article
                             key={g.region}
                             className="p-8 lg:p-10"
-                            style={{ background: "var(--paper)" }}
+                            style={{ background: "var(--mist)" }}
                             data-testid={`k12-region-${i}`}
                         >
                             <div className="flex items-center gap-3">
@@ -269,7 +270,7 @@ export default function K12() {
                                         style={{
                                             display: "inline-block",
                                             padding: "8px 12px",
-                                            background: "var(--mist)",
+                                            background: "var(--paper)",
                                             border: "1px solid var(--line)",
                                             color: "var(--navy)",
                                             fontSize: 13.5,
@@ -288,7 +289,7 @@ export default function K12() {
             </section>
 
             {/* STUDENT STORIES */}
-            <section className="section-x section-y" style={{ background: "var(--paper)" }}>
+            <section className="section-x section-y" style={{ background: "var(--mist)" }}>
                 <SectionHeading
                     eyebrow="Student Stories"
                     title="How four families found the right fit."
