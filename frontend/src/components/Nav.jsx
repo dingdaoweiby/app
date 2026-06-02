@@ -64,11 +64,19 @@ export default function Nav() {
                         <path d="M1 1 H25 V21 L13 31 L1 21 Z" fill="none" stroke="#fff" strokeWidth="1.5" />
                         <path d="M13 7 V25 M7 13 H19" stroke="var(--orange)" strokeWidth="1.5" />
                     </svg>
-                    <span
-                        className="font-display"
-                        style={{ fontSize: 24, color: "#fff", fontWeight: 600, letterSpacing: "-0.015em", lineHeight: 1 }}
-                    >
-                        Supernova Education
+                    <span className="flex flex-col" style={{ lineHeight: 1 }}>
+                        <span
+                            className="font-display"
+                            style={{ fontSize: 19, color: "#fff", fontWeight: 600, letterSpacing: "-0.012em", lineHeight: 1 }}
+                        >
+                            Supernova Elite
+                        </span>
+                        <span
+                            className="font-mono"
+                            style={{ fontSize: 10, color: "var(--orange)", fontWeight: 500, letterSpacing: "0.22em", textTransform: "uppercase", marginTop: 5 }}
+                        >
+                            Education Destination
+                        </span>
                     </span>
                 </Link>
 

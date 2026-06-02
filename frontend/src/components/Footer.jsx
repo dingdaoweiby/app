@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Footer() {
     return (
         <footer data-testid="footer" style={{ background: "var(--navy)", color: "#fff" }}>
@@ -9,12 +11,23 @@ export default function Footer() {
                                 <path d="M1 1 H25 V21 L13 31 L1 21 Z" fill="none" stroke="#fff" strokeWidth="1.5" />
                                 <path d="M13 7 V25 M7 13 H19" stroke="var(--orange)" strokeWidth="1.5" />
                             </svg>
-                            <p className="font-display" style={{ fontSize: 24, color: "#fff", fontWeight: 600, letterSpacing: "-0.01em" }}>
-                                Supernova Education
-                            </p>
+                            <span className="flex flex-col" style={{ lineHeight: 1 }}>
+                                <span
+                                    className="font-display"
+                                    style={{ fontSize: 22, color: "#fff", fontWeight: 600, letterSpacing: "-0.012em", lineHeight: 1 }}
+                                >
+                                    Supernova Elite
+                                </span>
+                                <span
+                                    className="font-mono"
+                                    style={{ fontSize: 11, color: "var(--orange)", fontWeight: 500, letterSpacing: "0.22em", textTransform: "uppercase", marginTop: 6 }}
+                                >
+                                    Education Destination
+                                </span>
+                            </span>
                         </div>
                         <p className="font-serif" style={{ fontSize: 17, color: "rgba(255,255,255,0.78)", lineHeight: 1.55, fontStyle: "italic", maxWidth: 380 }}>
-                            Clarity into outcomes — from discovery to college acceptance.
+                            Growth Mindset. Clear Goals. Consistent Effort.
                         </p>
                     </div>
 
@@ -56,11 +69,11 @@ export default function Footer() {
 
                 <div className="mt-16 pt-6 flex flex-wrap items-center justify-between gap-4" style={{ borderTop: "1px solid rgba(255,255,255,0.18)" }}>
                     <p className="font-mono" style={{ fontSize: 11, letterSpacing: "0.2em", textTransform: "uppercase", color: "rgba(255,255,255,0.55)" }}>
-                        © {new Date().getFullYear()} Supernova Education · All Rights Reserved
+                        © 2018 Supernova Elite Education Destination · All Rights Reserved
                     </p>
                     <div className="flex items-center gap-6">
-                        <a href="#" className="link-underline font-mono" style={{ fontSize: 11, letterSpacing: "0.2em", textTransform: "uppercase", color: "rgba(255,255,255,0.7)" }}>Privacy</a>
-                        <a href="#" className="link-underline font-mono" style={{ fontSize: 11, letterSpacing: "0.2em", textTransform: "uppercase", color: "rgba(255,255,255,0.7)" }}>Terms</a>
+                        <Link to="/privacy" data-testid="footer-privacy" className="link-underline font-mono" style={{ fontSize: 11, letterSpacing: "0.2em", textTransform: "uppercase", color: "rgba(255,255,255,0.7)" }}>Privacy</Link>
+                        <Link to="/terms" data-testid="footer-terms" className="link-underline font-mono" style={{ fontSize: 11, letterSpacing: "0.2em", textTransform: "uppercase", color: "rgba(255,255,255,0.7)" }}>Terms</Link>
                     </div>
                 </div>
             </div>
