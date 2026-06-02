@@ -46,8 +46,8 @@ export default function PageHeader({ eyebrow, title, italicWord, subtitle, bread
             <h1
                 className="font-display mt-6"
                 style={{
-                    fontSize: nowrap ? "clamp(32px, 4vw, 60px)" : "clamp(40px, 5.4vw, 78px)",
-                    lineHeight: 1.02,
+                    fontSize: "clamp(32px, 4vw, 60px)",
+                    lineHeight: 1.05,
                     letterSpacing: "-0.025em",
                     fontWeight: 500,
                     color: "var(--navy)",
