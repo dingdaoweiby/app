@@ -244,8 +244,8 @@ export default function Contact() {
                                             className="font-display"
                                             style={{
                                                 padding: "10px 22px",
-                                                background: active ? "var(--navy)" : "var(--paper)",
-                                                border: `1px solid ${active ? "var(--navy)" : "var(--line-strong)"}`,
+                                                background: active ? "var(--orange)" : "var(--paper)",
+                                                border: `1px solid ${active ? "var(--orange)" : "var(--line-strong)"}`,
                                                 color: active ? "#fff" : "var(--navy)",
                                                 fontSize: 15,
                                                 fontWeight: 500,
