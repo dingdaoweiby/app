@@ -100,7 +100,7 @@ export default function Contact() {
                 >
                     <a href="/" className="link-underline" data-testid="breadcrumb-home">Home</a>
                     <span style={{ color: "var(--line-strong)" }}>/</span>
-                    <span style={{ color: "var(--orange)" }}>Contact</span>
+                    <span style={{ color: "var(--orange)" }}>Schedule a Consultation</span>
                 </nav>
 
                 {submitted ? (
@@ -197,15 +197,11 @@ export default function Contact() {
                             </Field>
                         </div>
 
-                        {/* School */}
-                        <div className="mb-5">
+                        {/* School + Grade */}
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-5">
                             <Field label="Current school">
                                 <input data-testid="input-school" name="school" type="text" placeholder="School your student currently attends" style={baseInput} />
                             </Field>
-                        </div>
-
-                        {/* Grade */}
-                        <div className="mb-5">
                             <Field label="Grade this fall" required>
                                 <select
                                     data-testid="input-grade"

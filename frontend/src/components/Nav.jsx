@@ -13,7 +13,6 @@ const navItems = [
     { label: "Graduate", to: "/graduate" },
     { label: "Research", to: "/research" },
     { label: "International", to: "/international" },
-    { label: "Contact", to: "/contact" },
 ];
 
 export default function Nav() {
