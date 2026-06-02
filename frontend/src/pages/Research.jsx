@@ -147,6 +147,7 @@ export default function Research() {
                 eyebrow="Research Mentorship"
                 title="From curiosity to publication."
                 italicWord="Real research. Real output."
+                subtitle="A research paper is more than a credential — it's proof your child can think at the level colleges are looking for."
                 breadcrumb={[{ label: "Research" }]}
                 background="var(--paper)"
             />
@@ -329,32 +330,24 @@ export default function Research() {
                     The following projects are currently available for enrollment. Spots are limited per project. Contact us to confirm availability and begin matching.
                 </p>
 
-                <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+                <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {projects.map((p, i) => (
                         <article key={i} className="" style={{ background: "var(--paper)", border: "1px solid var(--line)" }} data-testid={`research-project-${i}`}>
-                            <div className="overflow-hidden" style={{ aspectRatio: "16/9", background: "var(--mist)" }}>
+                            <div className="overflow-hidden" style={{ aspectRatio: "16/10", background: "var(--mist)" }}>
                                 <img src={p.img} alt={p.title} className="w-full h-full object-cover" style={{ filter: "grayscale(30%) contrast(1.05)" }} />
                             </div>
-                            <div className="p-7">
+                            <div className="p-6">
                                 <p className="font-mono" style={{ fontSize: 10, letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--orange)", fontWeight: 500 }}>{p.field}</p>
-                                <h3 className="font-display mt-3" style={{ fontSize: 19, lineHeight: 1.3, color: "var(--navy)", fontWeight: 600 }}>{p.title}</h3>
-                                <div className="my-5" style={{ width: 28, height: 1, background: "var(--orange)" }} />
-                                <p className="font-serif" style={{ fontSize: 15, lineHeight: 1.55, color: "var(--ink)" }}>
+                                <h3 className="font-display mt-3" style={{ fontSize: 18, lineHeight: 1.3, color: "var(--navy)", fontWeight: 600 }}>{p.title}</h3>
+                                <div className="my-4" style={{ width: 28, height: 1, background: "var(--orange)" }} />
+                                <p className="font-serif" style={{ fontSize: 14.5, lineHeight: 1.55, color: "var(--ink)" }}>
                                     <span className="font-mono" style={{ fontSize: 10, letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--steel)", marginRight: 8 }}>Mentor</span>
                                     {p.mentor}
-                                </p>
-                                <p className="font-serif mt-3" style={{ fontSize: 15, lineHeight: 1.55, color: "var(--ink)" }}>
-                                    <span className="font-mono" style={{ fontSize: 10, letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--steel)", marginRight: 8 }}>Time</span>
-                                    {p.time}
                                 </p>
                             </div>
                         </article>
                     ))}
                 </div>
-
-                <p className="font-serif italic mt-14" style={{ fontSize: "clamp(20px, 2vw, 28px)", lineHeight: 1.4, color: "var(--navy)", maxWidth: 820 }}>
-                    A research paper is more than a credential. It's proof that your child can think at the level colleges are looking for.
-                </p>
             </section>
 
             <ClosingCTA />
