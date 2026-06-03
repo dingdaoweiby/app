@@ -161,6 +161,8 @@ const baseInput = {
     transition: "border-color 180ms ease",
 };
 
+const WEB3FORMS_ACCESS_KEY = "88941cf7-947e-4099-ad69-46d06f19d3ea";
+
 export default function Contact() {
     const tt = useT();
     const { lang } = useLang();
@@ -173,11 +175,61 @@ export default function Contact() {
 
     const [role, setRole] = useState(roles[0]);
     const [contactMethod, setContactMethod] = useState("email");
-    const [submitted, setSubmitted] = useState(false);
+    const [status, setStatus] = useState("idle");
+    const [errorMsg, setErrorMsg] = useState("");
 
-    const onSubmit = (e) => {
+    const onSubmit = async (e) => {
         e.preventDefault();
-        setSubmitted(true);
+        setStatus("submitting");
+        setErrorMsg("");
+
+        const form = e.currentTarget;
+        const data = Object.fromEntries(new FormData(form).entries());
+        const contactValue = data[`contact_${contactMethod}`] || "";
+        const fullName = [data.firstName, data.lastName].filter(Boolean).join(" ");
+
+        const payload = {
+            access_key: WEB3FORMS_ACCESS_KEY,
+            subject: "New Consultation Request — Supernova Education",
+            from_name: "Supernova Education Website",
+            name: fullName || "Website inquiry",
+            email: contactMethod === "email" ? contactValue : "yingban2013@gmail.com",
+            role,
+            country: data.country || "—",
+            state: data.state || "—",
+            school: data.school || "—",
+            grade: data.grade || "—",
+            interest: data.interest || "—",
+            preferred_contact: contactMethod,
+            contact_value: contactValue || "—",
+            message: data.message || "—",
+        };
+
+        try {
+            const res = await fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                headers: { "Content-Type": "application/json", Accept: "application/json" },
+                body: JSON.stringify(payload),
+            });
+
+            let result = null;
+            try {
+                result = await res.json();
+            } catch {
+                result = null;
+            }
+
+            if (res.ok && result && result.success) {
+                setStatus("success");
+                form.reset();
+            } else {
+                setStatus("error");
+                setErrorMsg((result && result.message) || "Something went wrong. Please try again.");
+            }
+        } catch {
+            setStatus("error");
+            setErrorMsg("Network error. Please check your connection and try again.");
+        }
     };
 
     return (
@@ -195,7 +247,7 @@ export default function Contact() {
                     <span style={{ color: "var(--orange)" }}>{tt.pages.contact.crumb}</span>
                 </nav>
 
-                {submitted ? (
+                {status === "success" ? (
                     <div
                         className="p-10 lg:p-14 mx-auto"
                         style={{ background: "var(--paper)", border: "1px solid var(--line)", maxWidth: 760 }}
@@ -374,6 +426,7 @@ export default function Contact() {
                             type="submit"
                             data-testid="submit-consultation"
                             className="font-display"
+                            disabled={status === "submitting"}
                             style={{
                                 background: "var(--navy)",
                                 color: "#fff",
@@ -384,12 +437,18 @@ export default function Contact() {
                                 cursor: "pointer",
                                 letterSpacing: "-0.005em",
                                 transition: "all 220ms ease",
+                                opacity: status === "submitting" ? 0.65 : 1,
                             }}
                             onMouseEnter={(e) => { e.currentTarget.style.background = "var(--orange)"; e.currentTarget.style.borderColor = "var(--orange)"; }}
                             onMouseLeave={(e) => { e.currentTarget.style.background = "var(--navy)"; e.currentTarget.style.borderColor = "var(--navy)"; }}
                         >
-                            {L.submit}
+                            {status === "submitting" ? "Sending..." : L.submit}
                         </button>
+                        {status === "error" && (
+                            <p data-testid="contact-error" className="font-serif mt-4" style={{ fontSize: 14, color: "#b00020" }}>
+                                {errorMsg}
+                            </p>
+                        )}
                         <p className="font-serif italic mt-4" style={{ fontSize: 14, color: "var(--steel)" }}>
                             {L.respondNote}
                         </p>

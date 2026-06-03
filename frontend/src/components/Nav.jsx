@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { useT } from "@/i18n/LanguageContext";
+import ConsultationModal from "@/components/ConsultationModal";
 
 export default function Nav() {
     const t = useT();
@@ -22,6 +23,7 @@ export default function Nav() {
     const [scrolled, setScrolled] = useState(false);
     const [openCollege, setOpenCollege] = useState(false);
     const [mobileOpen, setMobileOpen] = useState(false);
+    const [consultOpen, setConsultOpen] = useState(false);
     const location = useLocation();
 
     useEffect(() => {
@@ -171,8 +173,9 @@ export default function Nav() {
                 </nav>
 
                 <div className="flex items-center gap-3">
-                    <Link
-                        to="/contact"
+                    <button
+                        type="button"
+                        onClick={() => setConsultOpen(true)}
                         data-testid="nav-cta"
                         className="hidden md:inline-flex items-center"
                         style={{
@@ -184,13 +187,14 @@ export default function Nav() {
                             letterSpacing: "-0.005em",
                             padding: "14px 26px",
                             border: "1px solid #fff",
+                            cursor: "pointer",
                             transition: "background-color 220ms ease, border-color 220ms ease, color 220ms ease",
                         }}
                         onMouseEnter={(e) => { e.currentTarget.style.background = "var(--orange)"; e.currentTarget.style.borderColor = "var(--orange)"; e.currentTarget.style.color = "#fff"; }}
                         onMouseLeave={(e) => { e.currentTarget.style.background = "#fff"; e.currentTarget.style.borderColor = "#fff"; e.currentTarget.style.color = "var(--navy)"; }}
                     >
                         {t.nav.cta}
-                    </Link>
+                    </button>
 
                     <button
                         data-testid="nav-mobile-trigger"
@@ -256,26 +260,28 @@ export default function Nav() {
                             </li>
                         ))}
                     </ul>
-
-                    <Link
-                        to="/contact"
-                        data-testid="nav-mobile-cta"
-                        onClick={() => setMobileOpen(false)}
-                        className="block text-center mt-5 font-display"
+                    <button
+                        type="button"
+                        data-testid="nav-cta-mobile"
+                        onClick={() => { setMobileOpen(false); setConsultOpen(true); }}
+                        className="mt-5 w-full"
                         style={{
                             background: "#fff",
                             color: "var(--navy)",
+                            fontFamily: "'Source Serif Pro', Georgia, serif",
                             fontSize: 16,
                             fontWeight: 500,
-                            padding: "14px 24px",
+                            padding: "14px 26px",
                             border: "1px solid #fff",
-                            letterSpacing: "-0.005em",
+                            cursor: "pointer",
                         }}
                     >
                         {t.nav.cta}
-                    </Link>
+                    </button>
                 </div>
             )}
+
+            <ConsultationModal open={consultOpen} onClose={() => setConsultOpen(false)} />
         </header>
     );
 }
